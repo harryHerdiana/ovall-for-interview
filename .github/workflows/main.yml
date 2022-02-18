@@ -1,0 +1,37 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - uses: browser-actions/setup-chrome@latest
+      - name: Install node_modules
+        run: yarn install
+      - name: Build app
+        run: yarn build
+      - name: Run Unit Tests
+        run: npm run test:unit
+      - name: Install operating system dependencies
+        run: npx playwright install
+      - name: Run server
+        run: yarn start -p 3001 & npx wait-on http://localhost:3001
+      - name: Run End-to-end tests
+        run: xvfb-run --auto-servernum -- npx playwright test  --retries=3
+      - name: Upload trace files
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: trace-files
+          path: test-results/**/trace.zip

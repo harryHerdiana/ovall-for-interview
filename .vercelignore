@@ -1,0 +1,5 @@
+# See https://nextjs.org/docs/basic-features/environment-variables#environment-variables-on-vercel
+
+# NOTE: The `.env` file holds credentials for development and test and should not override staging and production
+# credentials when deployed via Vercel.
+.env
