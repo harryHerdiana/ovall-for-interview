@@ -1,6 +1,6 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://yoself.de',
-  generateRobotsTxt: false, // (optional)
-  exclude: ['/checkout', '/thank-you', '/danke-fuer-deine-anmeldung']
+  siteUrl: process.env.SITE_URL || 'https://ovallskincare.de',
+  generateRobotsTxt: false,
+  exclude: ['/checkout', '/thank-you']
   // ...other options
 }
