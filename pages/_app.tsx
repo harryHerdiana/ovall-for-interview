@@ -1,4 +1,5 @@
 import React from 'react'
+import { appWithTranslation } from 'next-i18next'
 // import { useRouter } from "next/router";
 import { AppProps } from 'next/app'
 // import smoothscroll from "smoothscroll-polyfill";
@@ -33,4 +34,4 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
     <Component {...pageProps} />
   </StoreProvider>
 )
-export default MyApp
+export default appWithTranslation(MyApp)

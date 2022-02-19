@@ -1,6 +1,7 @@
 // NOTE: This is the way to add a lang attribute to the <html> tag, see:
 // https://nextjs.org/docs/advanced-features/custom-document
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import { mapLocaleString } from '@lib/utils'
 
 class MyDocument extends Document {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -12,7 +13,7 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="de">
+      <Html lang={mapLocaleString(this.context.locale)}>
         <Head />
         <body>
           <Main />
