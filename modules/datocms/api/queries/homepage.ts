@@ -8,7 +8,6 @@ import {
 export const HOMEPAGE_QUERY = ` 
   query getHomePage($locale: SiteLocale!) {
     homepage(locale: $locale) {
-      id
       accordionSection {
         ...ProductInfoAccordionRecordFragment
       }

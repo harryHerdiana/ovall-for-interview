@@ -1,0 +1,67 @@
+:root {
+  --burgerSize: 40px;
+  --margin: 10px;
+  --thickness: 2px;
+  --color: #000;
+}
+
+.burger {
+  height: var(--burgerSize);
+  width: var(--burgerSize);
+  background-color: #fff;
+  position: relative;
+  outline: 0;
+  color: inherit;
+}
+
+.burger::before,
+.burger::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-radius: calc(var(--thickness) / 2);
+  width: calc(var(--burgerSize) - (2 * var(--margin)));
+  height: var(--thickness);
+  background-color: var(--color);
+  transition: all 0.5s ease-in-out;
+}
+
+.burger::before {
+  top: 50%;
+  transform: translateY(calc(-50% - 6px));
+  left: var(--margin);
+}
+
+.burger::after {
+  bottom: 50%;
+  transform: translateY(calc(50% + 6px));
+  left: var(--margin);
+}
+
+.burger span {
+  display: block;
+  border-radius: calc(var(--thickness) / 2);
+  width: calc(var(--burgerSize) - (2 * var(--margin)));
+  height: var(--thickness);
+  background-color: var(--color);
+  position: absolute;
+  left: var(--margin);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-is-open .burger span {
+  opacity: 0;
+  margin-left: -40px;
+}
+
+.menu-is-open .burger::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.menu-is-open .burger::after {
+  top: 50%;
+  transform: translateY(-50%) rotate(-135deg);
+}

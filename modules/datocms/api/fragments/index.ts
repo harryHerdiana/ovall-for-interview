@@ -61,3 +61,42 @@ export const MoodSlideShowFragment = `
     }
   }
 `
+export const ProductInfoBannerFragment = `
+  fragment ProductInfoBannerFragment on ProductInfoBannerRecord {
+    _modelApiKey
+    content {
+      ... on SectionWithGradientBackgroundRecord {
+        _modelApiKey
+        backgroundColor
+        title
+        image {
+          responsiveImage {
+            alt
+            base64
+            bgColor
+            title
+          }
+        }
+      }
+      ... on SectionTextRecord {
+        _modelApiKey
+        text
+      }
+      ... on SectionHeadlineRecord {
+        _modelApiKey
+        text
+      }
+      ... on SectionCallToActionRecord {
+        _modelApiKey
+        id
+        text
+        openInNewTab
+        elementType
+        dropdownText {
+          value
+        }
+      }
+    }
+  }
+
+`

@@ -4,5 +4,6 @@ export enum Languages {
 }
 
 export enum Pages {
-  Homepage = 'Homepage'
+  Homepage = 'Homepage',
+  ProductPage = 'ProductPage'
 }

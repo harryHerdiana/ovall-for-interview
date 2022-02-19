@@ -1,0 +1,28 @@
+.post-image-container {
+  height: calc(100vh - 200px);
+  width: calc(100vw - 1rem);
+  position: relative;
+}
+
+.post-content p {
+  @apply mt-1 mb-3
+}
+
+.post-content ul {
+  @apply list-disc mb-3 ml-5
+}
+
+.post-content ol {
+  @apply list-decimal mb-3 ml-5
+}
+
+.post-content img {
+  @apply my-5 w-full
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  @apply text-lg font-bold
+}

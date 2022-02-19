@@ -1,0 +1,58 @@
+.menu-height {
+  height: calc(100vh - 54px);
+}
+
+@media (max-width: 768px) {
+  .menu-height {
+    height: calc(100vh - 54px);
+    right: -100vw;
+    transition: right ease-in-out 0.4s;
+    display: none !important;
+  }
+}
+
+body.menu-is-open {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.menu-is-open .menu-height {
+  right: 0;
+  display: flex !important;
+}
+
+.aspect-square,
+.aspect-landscape {
+  position: relative;
+}
+
+.aspect-square::before {
+  content: '';
+  display: block;
+  padding-bottom: calc(100% / 1 / 1);
+}
+
+.aspect-landscape::before {
+  content: '';
+  display: block;
+  padding-bottom: calc(50% - 4px);
+}
+
+@media (min-width: 768px) {
+  nav ul li:hover > ul {
+    display: flex;
+  }
+
+  nav > div > ul {
+    position: initial !important;
+  }
+
+  .aspect-landscape::before {
+    padding-bottom: 50%;
+  }
+}
+
+/* set trust-shop-badge behind the menu */
+div[id*='trustbadge-container'] {
+  z-index: 40 !important;
+}

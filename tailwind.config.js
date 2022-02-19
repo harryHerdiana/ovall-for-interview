@@ -14,11 +14,16 @@ module.exports = {
       decimal: 'decimal'
     },
     fontFamily: {
-      sans: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
-      hand: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
-      body: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
-      hydeep: ['Montserrat', 'Helvetica', 'system-ui'],
-      main: ['ReferenzGrotesk', 'Helvetica', 'Arial', 'Verdana', 'system-ui']
+      // sans: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
+      // hand: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
+      // body: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
+      // hydeep: ['Montserrat', 'Helvetica', 'system-ui'],
+      // main: ['ReferenzGrotesk', 'Helvetica', 'Arial', 'Verdana', 'system-ui']
+      sans: ['Helvetica', 'system-ui'],
+      hand: ['Helvetica', 'system-ui'],
+      body: ['Helvetica', 'system-ui'],
+      hydeep: ['Helvetica', 'system-ui'],
+      main: ['Helvetica', 'Arial', 'Verdana', 'system-ui']
     },
     fontSize: {
       xxs: '.625rem', // 10px for mobile subtext
@@ -236,7 +241,7 @@ module.exports = {
           200: '#F8F5EC', // background for sections
           300: '#F2EBDA' // background for text boxes and buttons
         }
-        // 'yoself-green': {
+        // 'ovall-green': {
         //   light: '#83886F',
         //   DEFAULT: 'rgba(79, 93, 51)'
         // }
