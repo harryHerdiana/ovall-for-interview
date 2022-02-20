@@ -1,12 +1,11 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
 
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
-import { IPageProps, IHomePageData } from '@lib/types'
+import { IHomePageData } from '@lib/types'
 
-const HomePage: React.FC<IHomePageProps> = ({ seoTags, menu, ...data }) => (
+const HomePage: React.FC<IHomePageData> = ({ seoTags, menu, ...data }) => (
   <Layout seoTags={seoTags} menu={menu}>
     <h1>Ovall HomePage</h1>
     <p>{seoTags.description}</p>
