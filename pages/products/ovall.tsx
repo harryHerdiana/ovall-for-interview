@@ -2,19 +2,15 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 
 import Layout from '@component/Layout'
+import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
-import { Pages } from '@lib/enums'
-import { IPageProps } from '@lib/types'
-// import datoCMSAPI from '@modules/datocms/api/client'
+import { IProductPageData } from '@lib/types'
 
-// import shopifyClient from '@modules/shopify/api/buy/client'
-
-interface IProductPageProps extends IPageProps {
-  mainSection: any
-}
-
-const ProductPage: React.FC<IProductPageProps> = ({ seoTags, menu, ...data }) => {
-  console.log('rest', data)
+const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
+  const { seoTags, menu, shopifyProduct } = props
+  const [variantSku, setVariantSku] = React.useState(shopifyProduct.variants[0].sku)
+  const variant = shopifyProduct.variants.find((v) => v.sku === variantSku)
+  console.log('rest')
   // const { locale, locales, asPath } = useRouter()
   // React.useEffect(async () => {
   //   const newCheckout = await shopifyClient.checkout.create()
@@ -33,19 +29,20 @@ const ProductPage: React.FC<IProductPageProps> = ({ seoTags, menu, ...data }) =>
   // }, [])
   return (
     <Layout seoTags={seoTags} menu={menu}>
-      <div>
-        <h1>Ovall ProductPage</h1>
-        <p>{seoTags.description}</p>
-      </div>
+      <ProductStage
+        {...props}
+        variant={variant}
+        activeSku={variantSku}
+        setVariantSku={setVariantSku}
+      />
+      <p>{seoTags.description}</p>
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const pageDataService = new PageDataService(context)
-  const data = await pageDataService.get(Pages.ProductPage)
-
-  console.log('context', data)
+  const data = await pageDataService.product()
 
   return {
     props: data

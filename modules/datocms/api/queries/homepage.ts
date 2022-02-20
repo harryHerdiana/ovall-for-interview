@@ -5,7 +5,7 @@ import {
   ResponsiveImageFragment
 } from '@modules/datocms/api/fragments'
 
-export const HOMEPAGE_QUERY = ` 
+const HOMEPAGE_QUERY = ` 
   query getHomePage($locale: SiteLocale!) {
     homepage(locale: $locale) {
       accordionSection {

@@ -2,19 +2,17 @@ import React from 'react'
 
 import Link from 'next/link'
 import { ShoppingBagIcon } from '@heroicons/react/outline'
+import ShopContext from '@context/StoreContext'
 import Menu from './Menu'
-// import ShopContext from '../../../../context/ShopContext'
 
 interface INavigation {
   menu: any[]
 }
 
 const Navigation: React.FC<INavigation> = ({ menu }) => {
-  // const shopContext = React.useContext(ShopContext)
-  // const isShoppingBagFilled: boolean =
-  //   !!shopContext.coupon?.code || shopContext.checkout.lineItems.length > 0
-
-  const isCartHasItems = true
+  const shopContext = React.useContext(ShopContext)
+  console.log('TSET', shopContext.checkout.lineItems)
+  const isCartHasItems: boolean = shopContext.checkout.lineItems.length > 0
 
   const toggleMenu = () => {
     document.body.classList.toggle('menu-is-open')
@@ -65,10 +63,9 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
           <button
             aria-label="Warenkorb"
             className="focus:outline-none relative p-2"
-            // onClick={() => {
-            //   shopContext.setShowShoppingCart(true)
-            //   closeMenu()
-            // }}
+            onClick={() => {
+              shopContext.setShowCart(true)
+            }}
             type="button">
             <ShoppingBagIcon className="h-6 w-6" />
 

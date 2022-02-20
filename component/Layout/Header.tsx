@@ -1,10 +1,10 @@
 import React from 'react'
-import { Menu } from '@lib/types'
+import { IMenu } from '@lib/types'
 import Navigation from '@component/Navigation'
 import SlideOver from '@component/Navigation/SlideOver'
 
 type IHeader = {
-  menu: Menu
+  menu: IMenu
 }
 
 const Header: React.FC<IHeader> = ({ menu }) => (

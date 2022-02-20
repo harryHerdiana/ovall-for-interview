@@ -1,12 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
-import { Menu, SeoTags } from '@lib/types'
+import { IMenu, SeoTags } from '@lib/types'
 import Header from '@component/Layout/Header'
 
 interface ILayout {
   seoTags: SeoTags
-  children: React.ReactElement
-  menu: Menu
+  children: React.ReactElement[]
+  menu: IMenu
 }
 
 const Layout: React.FC<ILayout> = ({ seoTags, menu, children }) => (

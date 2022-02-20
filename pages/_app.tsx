@@ -12,7 +12,7 @@ import { StoreProvider } from '@context/StoreContext'
 //   setOriginalPageLocation,
 // } from "../utils/tracking";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
+const MyApp: React.FC<AppProps> = ({ Component, pageProps, router }) => (
   // const router = useRouter();
   // const { asPath } = router || {};
 
@@ -30,7 +30,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
   // useEffect(() => setOriginalPageLocation(), []);
   // useEffect(() => smoothscroll.polyfill());
 
-  <StoreProvider>
+  <StoreProvider locale={router.locale}>
     <Component {...pageProps} />
   </StoreProvider>
 )

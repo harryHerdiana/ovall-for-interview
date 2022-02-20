@@ -29,6 +29,7 @@ export default `
       deliveryTime
       faqButtonText
       colorCaption
+      addToCartLabel
       seoTags {
         description
         title

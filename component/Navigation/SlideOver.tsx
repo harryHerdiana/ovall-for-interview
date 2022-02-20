@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
 import Button from '@component/Button'
+import ShopContext from '@context/StoreContext'
 // import { useRouter } from 'next/router'
 
 // import Button from '../../../../components/shared/Button'
@@ -12,31 +13,22 @@ import Button from '@component/Button'
 // import trackBeginCheckoutEvent from '../../../common/lib/tracking/trackBeginCheckoutEvent'
 
 const SlideOver: React.FC = () => {
-  // const { checkout, cartProducts, loading, setShowShoppingCart, showShoppingCart } =
-  //   useContext(ShopContext)
+  const { checkout, loading, showCart, setShowCart } = React.useContext(ShopContext)
 
   const handleCheckout = () => {
     // trackBeginCheckoutEvent(checkout.lineItems, cartProducts)
-    // window.location.href = checkout.webUrl
-    alert('handleCheckout')
+    window.location.href = checkout.webUrl
+    // alert('handleCheckout')
   }
-
-  const checkout = {
-    totalPrice: 1700,
-    lineItems: []
-  }
-
-  const setShowShoppingCart = (test: boolean) => { }
-  const showShoppingCart = false
 
   return (
-    <Transition.Root show={showShoppingCart} as={Fragment}>
+    <Transition.Root show={showCart} as={Fragment}>
       <Dialog
         as="div"
         static
         className="fixed inset-0 overflow-hidden z-50"
-        open={showShoppingCart}
-        onClose={setShowShoppingCart}>
+        open={showCart}
+        onClose={setShowCart}>
         <div className="absolute inset-0 overflow-hidden bg-gray-700-75">
           <Dialog.Overlay className="absolute inset-0" />
 
@@ -56,7 +48,7 @@ const SlideOver: React.FC = () => {
                       <div className="h-7 flex flex-shrink-0 items-center">
                         <button
                           className="bg-white rounded-md focus:outline-none"
-                          onClick={() => setShowShoppingCart(false)}
+                          onClick={() => setShowCart(false)}
                           type="button">
                           <span className="sr-only">Warenkorb schließen</span>
 
