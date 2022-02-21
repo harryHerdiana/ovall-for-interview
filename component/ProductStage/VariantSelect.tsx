@@ -5,28 +5,46 @@ interface IVariantSelect {
   setVariantSku: (string) => void
   variantSku: string
   variants: IShopifyProductVariant[]
+  quantityCaption: string
 }
 
-const VariantSelect: React.FC<IVariantSelect> = ({ setVariantSku, variantSku, variants }) => {
-  const handleChange = (e) => {
-    setVariantSku(e.target.value)
-  }
-
-  return (
-    <form className="mx-auto md:mx-0 md:text-left mt-6 order-1 md:order-2 w-full">
-      <label className="flex flex-col w-min mx-auto md:mx-0 ">
-        <span className="text-xxs font-medium pb-2"> {'Variante:'.toUpperCase()}</span>
-
-        <select value={variantSku} onChange={handleChange} className="border-2 rounded text-sm">
+const VariantSelect: React.FC<IVariantSelect> = ({
+  setVariantSku,
+  variantSku,
+  variants,
+  quantityCaption
+}) => (
+  <>
+    <div className="flex flex-row gap-2 mb-4 justify-between">
+      <div className="flex flex-col justify-center">
+        {' '}
+        <span className="text-sm items-center font-bold my-2 text-left">
+          {' '}
+          {'FARBE WÄHLEN:'.toUpperCase()}
+        </span>
+        <div className="flex flex-row gap-2">
           {variants.map((variant) => (
-            <option key={variant.sku} value={variant.sku}>
-              {variant.title}
-            </option>
+            <button
+              className={`focus:ring-1 focus:ring-offset-2 focus:ring-black w-4 h-4 rounded-full bg-${variant.sku}-500`}
+              type="button"
+              key={variant.sku}
+              value={variant.sku}
+              onClick={() => setVariantSku(variant.sku)}
+              aria-hidden="true"
+            />
           ))}
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <span className="text-sm items-center font-bold my-2 text-left">
+          {quantityCaption.toUpperCase()}
+        </span>
+        <select>
+          <option value="1">1</option>
         </select>
-      </label>
-    </form>
-  )
-}
+      </div>
+    </div>
+  </>
+)
 
 export default VariantSelect

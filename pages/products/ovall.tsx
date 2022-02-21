@@ -18,7 +18,6 @@ const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <p className="self-center">some</p>
     </Layout>
   )
 }
