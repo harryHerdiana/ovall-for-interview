@@ -1,30 +1,3 @@
-@font-face {
-  font-family: ReferenzGrotesk;
-  font-weight: 400;
-  font-style: normal;
-  src: url(/fonts/ReferenzGroteskYoself-Regular.woff2) format('woff2'),
-    url(/fonts/ReferenzGroteskYoself-Regular.woff) format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: ReferenzGrotesk;
-  font-weight: 700;
-  font-style: normal;
-  src: url(/fonts/ReferenzGroteskYoself-Bold.woff2) format('woff2'),
-    url(/fonts/ReferenzGroteskYoself-Bold.woff) format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: ReferenzGrotesk;
-  font-weight: 800;
-  font-style: normal;
-  src: url(/fonts/ReferenzGroteskYoself-ExtraBold.woff2) format('woff2'),
-    url(/fonts/ReferenzGroteskYoself-ExtraBold.woff) format('woff');
-  font-display: swap;
-}
-
 html {
   -webkit-overflow-scrolling: touch;
   /* scroll-behavior: smooth; */
@@ -42,37 +15,6 @@ html {
 .slick-next::before,
 .slick-prev::before {
   color: #000;
-}
-
-.yt-lite:hover > .lty-playbtn,
-.lty-playbtn {
-  @apply bg-white rounded-full p-12 shadow-2xl;
-  background-color: #fff !important;
-  border-radius: 100% !important;
-  opacity: 1 !important;
-}
-
-.yt-lite.lyt-activated:before,
-.yt-lite.lyt-activated > .lty-playbtn {
-  opacity: 0 !important;
-}
-
-.yt-lite:hover > .lty-playbtn {
-  background-color: #000 !important;
-}
-
-.yt-lite > .lty-playbtn:before {
-  border-width: 18px 0 18px 29px !important;
-  margin-left: 5px;
-  border-color: transparent transparent transparent #000 !important;
-}
-
-.yt-lite:hover > .lty-playbtn:before {
-  border-color: transparent transparent transparent #fff !important;
-}
-
-.yt-lite:before {
-  display: none !important;
 }
 
 /* Popup style */
@@ -387,7 +329,7 @@ button:hover .triangle {
 }
 
 .scroll-offset:before {
-  content: '';
+  content: "";
   display: block;
   height: 72px;
   margin: -72px 0 0;

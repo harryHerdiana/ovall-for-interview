@@ -34,6 +34,19 @@ export default `
         description
         title
       }
+      productDescriptionSection {
+        ... on SectionHeadlineRecord {
+          _modelApiKey
+          text
+        }
+        ... on SectionTextRecord {
+          text
+          _modelApiKey
+        }
+        ... on VideoUrlRecord {
+          url
+        }
+      }
       productInfoBannerSection {
         ...ProductInfoBannerFragment
       }

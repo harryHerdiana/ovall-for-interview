@@ -10,7 +10,6 @@ const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
   const { seoTags, menu, shopifyProduct } = props
   const [variantSku, setVariantSku] = React.useState(shopifyProduct.variants[0].sku)
   const variant = shopifyProduct.variants.find((v) => v.sku === variantSku)
-
   return (
     <Layout seoTags={seoTags} menu={menu}>
       <ProductStage
@@ -19,7 +18,7 @@ const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <p className="self-center" />
+      <p className="self-center">some</p>
     </Layout>
   )
 }
