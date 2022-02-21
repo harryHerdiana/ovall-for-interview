@@ -1,11 +1,10 @@
 import { IShopifyCheckout } from '@modules/shopify/types'
+import { LOCALSTORAGE_CHECKOUT_KEY } from '@lib/constants'
 
 const isBrowser = typeof window !== `undefined`
-const localStorageKey = `shopify_checkout_id`
 
 const fetchNewOrExistingCheckout = async (shopifyClient): Promise<IShopifyCheckout> => {
-  console.log('INIT CHECKOUT')
-  const existingCheckoutID = isBrowser ? localStorage.getItem(localStorageKey) : null
+  const existingCheckoutID = isBrowser ? localStorage.getItem(LOCALSTORAGE_CHECKOUT_KEY) : null
 
   if (existingCheckoutID && existingCheckoutID !== `null`) {
     try {
@@ -16,7 +15,7 @@ const fetchNewOrExistingCheckout = async (shopifyClient): Promise<IShopifyChecko
       }
     } catch (e) {
       console.error('ERROR initializing checkout', e)
-      localStorage.setItem(localStorageKey, null)
+      localStorage.setItem(LOCALSTORAGE_CHECKOUT_KEY, null)
     }
   }
 

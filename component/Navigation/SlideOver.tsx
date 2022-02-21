@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
 import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
+import Cart from '@component/Cart'
 // import { useRouter } from 'next/router'
 
 // import Button from '../../../../components/shared/Button'
@@ -65,7 +66,7 @@ const SlideOver: React.FC = () => {
                   </div>
 
                   <div className="md:mt-6 relative flex-1">
-                    {/* {!loading && <ShoppingCart interactive />} */}
+                    <Cart />
 
                     <div className="bg-white bottom-0 sticky pt-6 pb-8 w-full shadow-top">
                       <div className="flex flex-wrap justify-center px-4 items-center">

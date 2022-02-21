@@ -2,6 +2,8 @@ import React from 'react'
 import ShopContext from '@context/StoreContext'
 import { IProductPageData } from '@lib/types'
 import { IShopifyProductVariant } from '@modules/shopify/types'
+import Slider from '@component/Slider'
+import { toEuro } from '@lib/utils'
 import VariantSelect from './VariantSelect'
 import AddToCartButton from './AddToCartButton'
 
@@ -26,6 +28,11 @@ const ProductStage: React.FC<IProductStateProps> = ({
   return (
     <section className="gap-8 grid grid-cols-1 md:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
+        <div className="relative w-full px-4">
+          <Slider items={[]} />
+        </div>
+      </div>
+      <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
         <h1 className="w-full font-extrabold text-3xl md:text-4xl lg:text-4xl leading-headline mb-1">
           {product.title}
         </h1>
@@ -35,6 +42,7 @@ const ProductStage: React.FC<IProductStateProps> = ({
           variants={product.variants}
         />
         <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
+        <div>{toEuro(variant.priceV2.amount)}</div>
       </div>
     </section>
   )

@@ -64,7 +64,6 @@ export default class PageDataService {
     const content = datoCMSResponse[datoCMSModelKey]
 
     if (!content.seoTags) {
-      // throw new Error('Page Data does not include SeoTags')
       console.warn('Page Data does not contain SeoTags')
     }
     return {

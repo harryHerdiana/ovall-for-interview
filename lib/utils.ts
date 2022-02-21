@@ -1,3 +1,5 @@
+import currency from 'currency.js'
+
 const isBrowser = typeof window !== `undefined`
 
 export function mapLocaleString(locale: string): string {
@@ -17,3 +19,8 @@ export function setLocalStorageSafe(key: string, value: string): void {
     localStorage.setItem(key, value)
   }
 }
+
+export const toEuro = (amount: number | string): string =>
+  currency(amount, { symbol: '€', separator: '.', decimal: '.', pattern: '# !' }).format({
+    decimal: ','
+  })

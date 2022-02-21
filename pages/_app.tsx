@@ -30,7 +30,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps, router }) => (
   // useEffect(() => setOriginalPageLocation(), []);
   // useEffect(() => smoothscroll.polyfill());
 
-  <StoreProvider locale={router.locale}>
+  <StoreProvider locale={router.locale} shopifyProduct={pageProps.shopifyProduct}>
     <Component {...pageProps} />
   </StoreProvider>
 )

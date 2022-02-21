@@ -13,7 +13,7 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang={mapLocaleString(this.context.locale)}>
+      <Html lang={mapLocaleString(this.props.locale)}>
         <Head />
         <body>
           <Main />

@@ -2,16 +2,17 @@ import React from 'react'
 
 import Link from 'next/link'
 import { ShoppingBagIcon } from '@heroicons/react/outline'
+import Icon from '@component/Icon'
 import ShopContext from '@context/StoreContext'
+import { IMenu } from '@lib/types'
 import Menu from './Menu'
 
 interface INavigation {
-  menu: any[]
+  menu: IMenu
 }
 
 const Navigation: React.FC<INavigation> = ({ menu }) => {
   const shopContext = React.useContext(ShopContext)
-  console.log('TSET', shopContext.checkout.lineItems)
   const isCartHasItems: boolean = shopContext.checkout.lineItems.length > 0
 
   const toggleMenu = () => {
@@ -43,7 +44,7 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
             <a onClick={closeMenu}>
               <img
-                src="/images/logo/ovall-logo.svg"
+                src="/images/ovall-logo.png"
                 width="110"
                 height="74"
                 alt="ovall logo"
@@ -53,7 +54,7 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
           </Link>
         </div>
 
-        <Menu items={menu} closeMenu={closeMenu} />
+        <Menu items={menu} />
 
         <div className="flex order-2 md:order-last justify-end w-[100px]">
           <button className="burger mr-1 md:hidden" type="button" onClick={toggleMenu}>
@@ -67,7 +68,7 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
               shopContext.setShowCart(true)
             }}
             type="button">
-            <ShoppingBagIcon className="h-6 w-6" />
+            <Icon src="/images/cart.svg" className="h-8 w-8" />
 
             {isCartHasItems && (
               <div className="absolute bottom-0 right-0 block h-4 w-4 rounded-full bg-green-600 mb-0.5 mr-0.5 border-2 border-white" />

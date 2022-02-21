@@ -16,7 +16,9 @@ export type SeoTags = {
 }
 
 export type MenuItem = {
+  id: string
   path: string
+  label: string
 }
 
 export type IMenu = MenuItem[]

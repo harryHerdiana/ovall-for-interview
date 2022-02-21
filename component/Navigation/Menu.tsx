@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import { IMenu } from '@lib/types'
 
-const Menu: React.FC<any> = ({ items }) => (
+const Menu: React.FC<{ items: IMenu }> = ({ items }) => (
   <ul className="-mx-4 w-screen relative order-last md:order-2 flex flex-col overflow-y-auto p-3 pb-16 menu-height bg-white md:mt-0 md:flex-row md:justify-center md:h-auto md:w-auto md:overflow-y-visible md:p-0 md:ml-0 border-t md:border-t-0 border-gray-300">
     {items.map((menuItem) => (
       <li

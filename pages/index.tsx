@@ -8,12 +8,11 @@ import { IHomePageData } from '@lib/types'
 const HomePage: React.FC<IHomePageData> = ({ seoTags, menu, ...data }) => (
   <Layout seoTags={seoTags} menu={menu}>
     <h1>Ovall HomePage</h1>
-    <p>{seoTags.description}</p>
     <div>{JSON.stringify(data.heroSection)}</div>
-    {/* <div>{JSON.stringify(data.infoSection)}</div> */}
-    {/* <div>{JSON.stringify(data.slideshowSection)}</div> */}
-    {/* <div>{JSON.stringify(data.testimonialSection)}</div>
-        <div>{JSON.stringify(data.productInfoSection)}</div> */}
+    <div>{JSON.stringify(data.infoSection)}</div>
+    <div>{JSON.stringify(data.slideshowSection)}</div>
+    <div>{JSON.stringify(data.testimonialSection)}</div>
+    <div>{JSON.stringify(data.productInfoSection)}</div>
   </Layout>
 )
 

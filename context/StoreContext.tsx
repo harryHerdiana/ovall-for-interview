@@ -1,8 +1,9 @@
 import React from 'react'
-import { IShopifyLineItem, IShopifyProductVariant } from '@modules/shopify/types'
+import { IShopifyLineItem, IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import { getShopifyClient } from '@modules/shopify/api/buy/client'
 import { Language } from '@lib/types'
 import * as utils from '@lib/utils'
+import { LOCALSTORAGE_CHECKOUT_KEY } from '@lib/constants'
 import fetchNewOrExistingCheckout from './fetchNewOrExistingCheckout'
 
 /* eslint-disable */
@@ -13,7 +14,7 @@ export const defaultValues = {
   updateLineItem: (lineItem: IShopifyLineItem, quantity: number): void => { },
   removeLineItem: (lineItem: IShopifyLineItem): void => { },
   setShowCart: (bool: boolean): void => { },
-  products: {},
+  product: null,
   checkout: {
     id: null,
     lineItems: [],
@@ -27,23 +28,23 @@ export const defaultValues = {
 export interface GlobalContext {
   children?: JSX.Element
   locale: string
+  shopifyProduct: IShopifyProduct
 }
-
-const localStorageKey = `shopify_checkout_id`
 
 export const StoreContext = React.createContext(defaultValues)
 
-export const StoreProvider: React.FC<GlobalContext> = ({ children, locale }) => {
+export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopifyProduct }) => {
   const [checkout, setCheckout] = React.useState(defaultValues.checkout)
   const [loading, setLoading] = React.useState(false)
   const [showCart, setShowCart] = React.useState(false)
+  const [product] = React.useState(shopifyProduct)
 
   const initializeCheckout = async () => {
     const newOrExistingCheckout = await fetchNewOrExistingCheckout(
       getShopifyClient(locale as Language)
     )
     setCheckout(newOrExistingCheckout)
-    utils.setLocalStorageSafe(localStorageKey, newOrExistingCheckout.id)
+    utils.setLocalStorageSafe(LOCALSTORAGE_CHECKOUT_KEY, newOrExistingCheckout.id)
   }
 
   React.useEffect(() => {
@@ -72,9 +73,7 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale }) => 
 
   const updateLineItem = (lineItem, quantity) => {
     setLoading(true)
-
     const lineItemsToUpdate = [{ id: lineItem.id, quantity: parseInt(quantity, 10) }]
-
     return getShopifyClient(locale as Language)
       .checkout.updateLineItems(checkout.id, lineItemsToUpdate)
       .then((response) => {
@@ -110,7 +109,8 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale }) => 
         removeLineItem,
         setShowCart,
         showCart,
-        checkout
+        checkout,
+        product
       }}>
       {children}
     </StoreContext.Provider>
