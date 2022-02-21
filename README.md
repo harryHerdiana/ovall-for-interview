@@ -79,6 +79,11 @@ This is an excerpt from a VSCode config that uses [prettier-vscode](https://gith
 }
 ```
 
+- Please keep the code DRY (two instances of a given piece of code is fine, from three times it should be refactored)
+- That applies as well for querying DatoCMS. Since there are quite a few models that are being shared between pages, we can use fragments to reuse the subqueries
+- Take the time to specify the types, including those for the page data (search for "TODO" in the project)
+- Please create a PR early in the process. Tag it with "work and progress" and "ready", respectively. 
+
 ### Find Unused Files
 
 With the help of the `next-unused` package (https://www.npmjs.com/package/next-unused), you can simply run:
