@@ -29,7 +29,8 @@ export default `
       deliveryTime
       faqButtonText
       colorCaption
-      quantityCaption(fallbackLocales: de)
+      deliveryTime
+      quantityCaption
       addToCartLabel
       seoTags {
         description

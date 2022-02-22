@@ -17,7 +17,7 @@ const Button: React.FC<IButton> = ({
   ariaLabel
 }) => (
   <button
-    className={`${backgroundColor} text-center flex bg-black text-white mt-8 md:mt-0 px-5 pt-4 pb-3 font-bold text-sm-button fullhd:text-tiny-button uppercase tracking-wider rounded-sm hover:bg-gray-800 items-center ${textColor}`}
+    className={`${backgroundColor} flex justify-center bg-black text-white mt-8 md:mt-0 px-5 pt-4 pb-3 font-bold text-sm-button fullhd:text-tiny-button uppercase tracking-wider rounded-sm hover:bg-gray-800 items-center ${textColor}`}
     disabled={disabled}
     onClick={onClick}
     type="button"

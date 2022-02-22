@@ -200,7 +200,7 @@ module.exports = {
           700: '#707070'
         },
         greenLinks: {
-          500: '#bbd4c2ff'
+          500: '#9cd4b9'
         },
         'Ovall-Pink': {
           500: '#eebdb7'

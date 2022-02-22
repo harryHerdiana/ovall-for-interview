@@ -21,14 +21,16 @@ const ProductStage: React.FC<IProductStateProps> = ({
   setVariantSku,
   addToCartLabel,
   quantityCaption,
-  productClaims
+  productClaims,
+  colorCaption,
+  deliveryTime,
+  freeShippingCaption
 }) => {
   const shopContext = React.useContext(ShopContext)
   const handleAddToCartClick = () => {
     shopContext.addVariantToCart(variant, 1)
     shopContext.setShowCart(true)
   }
-  console.log(productClaims)
   return (
     <section className="gap-8 grid grid-cols-1 md:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
@@ -47,16 +49,18 @@ const ProductStage: React.FC<IProductStateProps> = ({
             <div className="line-through ">{toEuro(variant.compareAtPriceV2.amount)}</div>
           </div>
         </div>
-
         <VariantSelect
-          variantSku={activeSku}
+          colorCaption={colorCaption}
           setVariantSku={setVariantSku}
           variants={product.variants}
           quantityCaption={quantityCaption}
         />
-
-        <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel} </AddToCartButton>
-        {/* <ProductClaimsSection productClaims={productClaims} /> */}
+        <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
+        <div className="flex justify-between my-4">
+          <div>{deliveryTime}</div>
+          <div className="font-bold text-greenLinks-500">{freeShippingCaption}</div>
+        </div>
+        <ProductClaimsSection productClaims={productClaims} />
       </div>
     </section>
   )

@@ -52,9 +52,11 @@ export interface IProductPageData extends IPageProps {
     title: string
   }[]
   quantityCaption: string
+  deliveryTime: string
   shopifyProduct: IShopifyProduct
   addToCartLabel: string
   colorCaption: string
+  freeShippingCaption: string
   faqButtonText: string
   faqSubtitle: string
   faqTitle: string
