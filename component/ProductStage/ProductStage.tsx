@@ -44,9 +44,9 @@ const ProductStage: React.FC<IProductStateProps> = ({
         </h1>
         <div className="text-left flex flex-row ">
           <div className="text-2xl self-center font-bold">{toEuro(variant.priceV2.amount)}</div>
-          <div className="text-md ml-10">
-            <div className="font-bold text-greenLinks-500">Spare 20% </div>
-            <div className="line-through ">{toEuro(variant.compareAtPriceV2.amount)}</div>
+          <div className="text-md ml-8 md:ml-10">
+            <div className="font-bold text-greenLinks-500 text-sm md:text-md">Spare 20% </div>
+            <div className="line-through font-bold">{toEuro(variant.compareAtPriceV2.amount)}</div>
           </div>
         </div>
         <VariantSelect
@@ -57,7 +57,7 @@ const ProductStage: React.FC<IProductStateProps> = ({
         />
         <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
         <div className="flex justify-between my-4">
-          <div>{deliveryTime}</div>
+          <div className="w-32 md:w-max text-left">{deliveryTime}</div>
           <div className="font-bold text-greenLinks-500">{freeShippingCaption}</div>
         </div>
         <ProductClaimsSection productClaims={productClaims} />

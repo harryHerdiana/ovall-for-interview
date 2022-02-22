@@ -16,7 +16,8 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   colorCaption
 }) => {
   const option = [1, 2, 3, 4, 5, 6, 7]
-  const [options, setOptions] = useState<number>(0)
+  const [options, setOptions] = useState<string>('')
+
   return (
     <>
       <div className="flex flex-row gap-2 mb-4 justify-between">

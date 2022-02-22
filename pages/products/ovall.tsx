@@ -5,6 +5,7 @@ import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IProductPageData } from '@lib/types'
+// import ProductDescription from '@component/ProductDescription/ProductDescription'
 
 const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
   const { seoTags, menu, shopifyProduct } = props
@@ -18,6 +19,7 @@ const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
+      <></>
     </Layout>
   )
 }

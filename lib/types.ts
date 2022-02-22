@@ -51,6 +51,9 @@ export interface IProductPageData extends IPageProps {
     text: string
     title: string
   }[]
+  productDescriptionSection: {
+    text: string
+  }[]
   quantityCaption: string
   deliveryTime: string
   shopifyProduct: IShopifyProduct
