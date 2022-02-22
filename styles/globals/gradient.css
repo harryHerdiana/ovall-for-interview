@@ -1,0 +1,7 @@
+.people_solid{
+    background-color: #b6dcff;
+}
+
+.people_gradient{
+    background: conic-gradient(from 243deg at 60% 40%, #b6dcff, #b9b7e5);
+}

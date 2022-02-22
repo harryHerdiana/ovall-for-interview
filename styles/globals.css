@@ -3,6 +3,8 @@
 @import "./globals/menu.css";
 @import "./globals/custom-global-styles.css";
 @import "./globals/slider-scrollbar.css";
+@import "./globals//gradient.css";
+
 
 /* defaults for the page (like the text color, background color, or font family) */
 @import "tailwindcss/base";
