@@ -37,9 +37,13 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
   return (
     <nav className="mx-auto w-full border-b border-gray-300">
       <div
-        className={`section-content-width flex flex-wrap items-center justify-between h-14 bg-white duration-200 ease-in-out ${isScrollDown ? 'md:h-16 lg:h-16 xl:h-16 fullhd:h-18' : 'md:h-20 lg:h-24 xl:h-32'
-          }`}>
-        <div className="flex z-50 order-first md:w-36 md:-mr-12">
+        className={`section-content-width flex flex-wrap items-center justify-between h-14 bg-white duration-200 ease-in-out ${
+          isScrollDown ? 'md:h-16 lg:h-16 xl:h-16 fullhd:h-18' : 'md:h-20 lg:h-24 xl:h-32'
+        }`}>
+        <button className="burger order-first mr-1 md:hidden" type="button" onClick={toggleMenu}>
+          <span />
+        </button>
+        <div className="flex z-50 md:w-36 md:-mr-12 ">
           <Link href="/">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
             <a onClick={closeMenu}>
@@ -53,28 +57,20 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
             </a>
           </Link>
         </div>
-
         <Menu items={menu} />
+        <button
+          aria-label="Warenkorb"
+          className="focus:outline-none md:order-last relative p-2"
+          onClick={() => {
+            shopContext.setShowCart(true)
+          }}
+          type="button">
+          <Icon src="/images/cart.svg" className="h-8 w-8" />
 
-        <div className="flex order-2 md:order-last justify-end w-[100px]">
-          <button className="burger mr-1 md:hidden" type="button" onClick={toggleMenu}>
-            <span />
-          </button>
-
-          <button
-            aria-label="Warenkorb"
-            className="focus:outline-none relative p-2"
-            onClick={() => {
-              shopContext.setShowCart(true)
-            }}
-            type="button">
-            <Icon src="/images/cart.svg" className="h-8 w-8" />
-
-            {isCartHasItems && (
-              <div className="absolute bottom-0 right-0 block h-4 w-4 rounded-full bg-green-600 mb-0.5 mr-0.5 border-2 border-white" />
-            )}
-          </button>
-        </div>
+          {isCartHasItems && (
+            <div className="absolute bottom-0 right-0 block h-4 w-4 rounded-full bg-green-600 mb-0.5 mr-0.5 border-2 border-white" />
+          )}
+        </button>
       </div>
     </nav>
   )

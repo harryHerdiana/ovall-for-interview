@@ -29,9 +29,15 @@ export default `
       deliveryTime
       faqButtonText
       colorCaption
+      deliveryTime
+      quantityCaption
       addToCartLabel
       seoTags {
         description
+        title
+      }
+      productClaims{
+        text
         title
       }
       productDescriptionSection {
@@ -39,6 +45,7 @@ export default `
           _modelApiKey
           text
         }
+    
         ... on SectionTextRecord {
           text
           _modelApiKey

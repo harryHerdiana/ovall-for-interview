@@ -47,9 +47,19 @@ export interface IHomePageData extends IPageProps {
 }
 
 export interface IProductPageData extends IPageProps {
+  productClaims: {
+    text: string
+    title: string
+  }[]
+  productDescriptionSection: {
+    text: string
+  }[]
+  quantityCaption: string
+  deliveryTime: string
   shopifyProduct: IShopifyProduct
   addToCartLabel: string
   colorCaption: string
+  freeShippingCaption: string
   faqButtonText: string
   faqSubtitle: string
   faqTitle: string
