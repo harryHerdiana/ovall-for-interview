@@ -5,8 +5,9 @@ import shopifyStoreFrontAPI from '@modules/shopify/api/storefront/client'
 import { GET_PRODUCT } from '@modules/shopify/api/storefront/queries'
 import parseProductResponse from '@modules/shopify/api/storefront/parser'
 import { IShopifyProduct } from '@modules/shopify/types'
-import { Context, IHomePageData, IProductPageData } from './types'
+import { Context, IHomePage, IProductPage } from './types'
 import { mapLocaleString } from './utils'
+import mapProductPageData from './mapper/productPage'
 
 export default class PageDataService {
   context: Context
@@ -58,26 +59,28 @@ export default class PageDataService {
    * @param entryKey model name in datocms
    * @returns IPageProps
    */
-  private async requestDatoCMSWithBaseData(query, datoCMSModelKey) {
-    const [menu, shopifyProduct] = await Promise.all([this.getMenu(), this.getProductData()])
+  private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?) {
+    const [menu, product] = await Promise.all([this.getMenu(), this.getProductData()])
     const datoCMSResponse = await this.requestDatoCMS(query)
     const content = datoCMSResponse[datoCMSModelKey]
+    const mappedContent = mappingFn ? mappingFn(content) : content
 
     if (!content.seoTags) {
       console.warn('Page Data does not contain SeoTags')
     }
     return {
+      seoTags: content.seoTags,
       menu,
-      shopifyProduct,
-      ...content
+      product,
+      ...mappedContent
     }
   }
 
-  public async homepage(): Promise<IHomePageData> {
+  public async homepage(): Promise<IHomePage> {
     return this.requestDatoCMSWithBaseData(HOMEPAGE_QUERY, 'homepage')
   }
 
-  public async product(): Promise<IProductPageData> {
-    return this.requestDatoCMSWithBaseData(PRODUCT_QUERY, 'product')
+  public async product(): Promise<IProductPage> {
+    return this.requestDatoCMSWithBaseData(PRODUCT_QUERY, 'product', mapProductPageData)
   }
 }

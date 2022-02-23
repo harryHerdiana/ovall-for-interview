@@ -3,16 +3,16 @@ import { GetStaticProps } from 'next'
 
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
-import { IHomePageData } from '@lib/types'
+import { IDefaultProps, IHomePage } from '@lib/types'
 
-const HomePage: React.FC<IHomePageData> = ({ seoTags, menu, ...data }) => (
-  <Layout seoTags={seoTags} menu={menu}>
+const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => (
+  <Layout seoTags={props.seoTags} menu={props.menu}>
     <h1>Ovall HomePage</h1>
-    <div>{JSON.stringify(data.heroSection)}</div>
-    <div>{JSON.stringify(data.infoSection)}</div>
-    <div>{JSON.stringify(data.slideshowSection)}</div>
-    <div>{JSON.stringify(data.testimonialSection)}</div>
-    <div>{JSON.stringify(data.productInfoSection)}</div>
+    <div>{JSON.stringify(props.heroSection)}</div>
+    <div>{JSON.stringify(props.infoSection)}</div>
+    <div>{JSON.stringify(props.slideshowSection)}</div>
+    <div>{JSON.stringify(props.testimonialSection)}</div>
+    <div>{JSON.stringify(props.productInfoSection)}</div>
   </Layout>
 )
 

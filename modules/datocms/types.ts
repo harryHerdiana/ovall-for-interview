@@ -1,0 +1,98 @@
+import { StructuredTextDocument } from 'react-datocms'
+
+export type SeoTags = {
+  description: string
+  title: string
+  imageUrl?: string
+}
+
+export type DatoCMSResponsiveImage = {
+  alt: string
+  base64: string
+  sizes: string
+  src: string
+  srcSet: string
+  with: number
+  height: number
+}
+
+export type DatoProductVariantImage = {
+  color: 'blue' | 'rose' | 'green'
+  image: {
+    gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people'
+    image: DatoCMSResponsiveImage
+  }[]
+}
+
+export type SectionHeadline = {
+  _modelApiKey: 'section_headline'
+  text: string
+}
+
+export type SectionCallToAction = {
+  _modelApiKey: 'section_call_to_action'
+  text: string
+  elementType: string
+  openInNewTab: boolean
+  dropdownText?: StructuredTextDocument
+}
+
+export type SectionWithGradientBackground = {
+  _modelApiKey: 'section_with_gradient_background'
+  backgroundColor: string
+  title: string
+  image: DatoCMSResponsiveImage
+}
+
+export type SectionText = {
+  _modelApiKey: 'section_text'
+  text: string
+}
+
+export interface IDatoProductBannerSection {
+  content: Array<
+    SectionHeadline | SectionCallToAction | SectionWithGradientBackground | SectionText
+  >
+}
+
+export interface IDatoNewsletterSection {
+  placeholder: string
+  subheader: string
+  title: string
+  disclaimer: {
+    value: StructuredTextDocument
+  }
+  description: {
+    value: StructuredTextDocument
+  }
+  buttonText: string
+}
+
+export interface IDatoProductPage {
+  seoTags: SeoTags
+  quantityCaption: string
+  deliveryTime: string
+  addToCartLabel: string
+  colorCaption: string
+  freeShippingCaption: string
+  faqButtonText: string
+  faqSubtitle: string
+  faqTitle: string
+  slug: string // check: do we need this?
+  variantImages: DatoProductVariantImage[]
+  productClaims: {
+    id: string
+    text: string
+    title: string
+    image?: DatoCMSResponsiveImage
+  }[]
+  productDescriptionSection: {
+    _modelApiKey: string
+    text: string
+  }[]
+  productInfoBannerSection: IDatoProductBannerSection
+  moodSlideshowSection: any // TODO add type
+  productInfoBannerFeatures: IDatoProductBannerSection
+  productInfoBannerMiniSpa: IDatoProductBannerSection
+  newsletterSection: IDatoNewsletterSection
+}

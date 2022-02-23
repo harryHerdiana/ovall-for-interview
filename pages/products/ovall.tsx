@@ -4,22 +4,23 @@ import { GetStaticProps } from 'next'
 import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
-import { IProductPageData } from '@lib/types'
-// import ProductDescription from '@component/ProductDescription/ProductDescription'
+import { IDefaultProps, IProductPage } from '@lib/types'
+import ProductDescription from '@component/ProductDescription'
 
-const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
-  const { seoTags, menu, shopifyProduct } = props
-  const [variantSku, setVariantSku] = React.useState(shopifyProduct.variants[0].sku)
-  const variant = shopifyProduct.variants.find((v) => v.sku === variantSku)
+const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
+  const { seoTags, menu, product } = props
+  const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
+  const variant = product.variants.find((v) => v.sku === variantSku)
   return (
     <Layout seoTags={seoTags} menu={menu}>
       <ProductStage
         {...props}
+        product={product}
         variant={variant}
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <></>
+      <ProductDescription {...props.descriptionSection} />
     </Layout>
   )
 }

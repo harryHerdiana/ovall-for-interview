@@ -1,30 +1,33 @@
 import React from 'react'
 import ShopContext from '@context/StoreContext'
-import { IProductPageData } from '@lib/types'
-import { IShopifyProductVariant } from '@modules/shopify/types'
+import { IProductPage } from '@lib/types'
+import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import Slider from '@component/Slider'
 import { toEuro } from '@lib/utils'
 import VariantSelect from './VariantSelect'
 import AddToCartButton from './AddToCartButton'
 import ProductClaimsSection from './ProductClaims'
 
-interface IProductStateProps extends IProductPageData {
+interface IProductStageProps extends IProductPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
   activeSku: string
   setVariantSku: (sku: string) => void
+  product: IShopifyProduct
 }
 
-const ProductStage: React.FC<IProductStateProps> = ({
-  shopifyProduct: product,
+const ProductStage: React.FC<IProductStageProps> = ({
+  product,
   variant,
   activeSku,
   setVariantSku,
-  addToCartLabel,
-  quantityCaption,
-  productClaims,
-  colorCaption,
-  deliveryTime,
-  freeShippingCaption
+  stageSection: {
+    addToCartLabel,
+    quantityCaption,
+    productClaims,
+    colorCaption,
+    deliveryTime,
+    freeShippingCaption
+  }
 }) => {
   const shopContext = React.useContext(ShopContext)
   const handleAddToCartClick = () => {
