@@ -36,7 +36,8 @@ export default `
         description
         title
       }
-      productClaims{
+      productClaims {
+        id
         text
         title
       }
@@ -45,12 +46,12 @@ export default `
           _modelApiKey
           text
         }
-    
         ... on SectionTextRecord {
-          text
           _modelApiKey
+          text
         }
         ... on VideoUrlRecord {
+          _modelApiKey
           url
         }
       }

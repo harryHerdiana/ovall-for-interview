@@ -1,4 +1,6 @@
+import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
+import { StructuredTextDocument } from 'react-datocms'
 import { Languages } from './enums'
 
 export type Language = Languages.English | Languages.German
@@ -23,22 +25,15 @@ export type MenuItem = {
 
 export type IMenu = MenuItem[]
 
-export interface IPageProps {
+export interface IDefaultProps {
+  product: IShopifyProduct
   seoTags: SeoTags
   menu: IMenu
 }
 
-export type ProductVariantImage = {
-  color: 'blue' | 'rose' | 'green'
-  image: {
-    gradientBackground: 'rose' | 'green' | 'blue'
-    image: DatoCMSResponsiveImage
-  }[]
-}
-
 /** ***** PAGES ************** */
 
-export interface IHomePageData extends IPageProps {
+export interface IHomePage {
   heroSection: any // TODO add type
   infoSection: any // TODO add type
   slideshowSection: any // TODO add type
@@ -46,43 +41,60 @@ export interface IHomePageData extends IPageProps {
   productInfoSection: any // TODO add type
 }
 
-export interface IProductPageData extends IPageProps {
-  productClaims: {
-    text: string
+export interface IProductVariantImage {
+  color: string
+  background: string
+  image: DatoCMSResponsiveImage
+}
+
+export interface IProductPage {
+  stageSection: {
+    quantityCaption: string
+    addToCartLabel: string
+    colorCaption: string
+    freeShippingCaption: string
+    deliveryTime: string
+    productClaims: {
+      id: string
+      text: string
+      title: string
+      image?: DatoCMSResponsiveImage
+    }[]
+    variantImages: IProductVariantImage[]
+  }
+  faqSection: {
+    faqButtonText: string
+    faqSubtitle: string
+    faqTitle: string
+  }
+  descriptionSection: {
     title: string
-  }[]
-  productDescriptionSection: {
     text: string
-  }[]
-  quantityCaption: string
-  deliveryTime: string
-  shopifyProduct: IShopifyProduct
-  addToCartLabel: string
-  colorCaption: string
-  freeShippingCaption: string
-  faqButtonText: string
-  faqSubtitle: string
-  faqTitle: string
-  slug: string // check: do we need this?
-  variantImages: ProductVariantImage[]
-  moodSlideshowSection: any // TODO add type
-  newsletterSection: any // TODO add type
-  productInfoBannerFeatures: any // TODO add type
-  productInfoBannerMiniSpa: any // TODO add type
-  productInfoBannersection: any // TODO add type
+    videoUrl: string
+  }
+  productInfoBannerSection: {
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    title: string
+    body: string
+    buttonText: string
+    dropDownText: StructuredTextDocument // see https://www.datocms.com/docs/react/structured-text-fields
+  }
+  newsletterSection: {
+    placeholder: string
+    subheader: string
+    title: string
+    disclaimer: StructuredTextDocument
+    description: StructuredTextDocument
+    buttonText: string
+  }
+  // slug: string // check: do we need this?
+  // moodSlideshowSection: any // TODO add type
+  // productInfoBannerFeatures: any // TODO add type
+  // productInfoBannerMiniSpa: any // TODO add type
 }
 /** ************************* */
 
 /** ******** DATOCMS ********* */
-
-export type DatoCMSResponsiveImage = {
-  alt: string
-  base64: string
-  sizes: string
-  src: string
-  srcSet: string
-  with: number
-  height: number
-}
 
 /** *************  ********** */

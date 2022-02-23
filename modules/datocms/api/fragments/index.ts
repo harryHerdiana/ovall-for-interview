@@ -71,10 +71,7 @@ export const ProductInfoBannerFragment = `
         title
         image {
           responsiveImage {
-            alt
-            base64
-            bgColor
-            title
+            ...ResponsiveImageFragment
           }
         }
       }
