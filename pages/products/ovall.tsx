@@ -5,12 +5,13 @@ import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
-import ProductDescription from '@component/ProductDescription'
+import GradientBanner from '@component/GradientBanner'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   const { seoTags, menu, product } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
+  console.log(props)
   return (
     <Layout seoTags={seoTags} menu={menu}>
       <ProductStage
@@ -20,7 +21,12 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <GradientBanner variant="people" />
+      <GradientBanner
+        body={props.productInfoBannerSection.body}
+        buttonText={props.productInfoBannerSection.buttonText}
+        variant="people"
+        contentPlacement="right"
+      />
     </Layout>
   )
 }

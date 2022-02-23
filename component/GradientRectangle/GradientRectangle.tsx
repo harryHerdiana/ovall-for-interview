@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface IGradientRectangle {
-  variantGradient: 'people' | 'blue' | 'green' | 'lotus-pink'
+  variantGradient: 'people' | 'blue' | 'green' | 'pink'
   className: string
 }
 
@@ -13,10 +13,14 @@ const GradientRectangle: React.FC<IGradientRectangle> = ({ variantGradient, clas
     gradient = 'blue_gradient_rectangle'
   } else if (variantGradient === 'green') {
     gradient = 'green_gradient_rectangle'
-  } else if (variantGradient === 'lotus-pink') {
+  } else if (variantGradient === 'pink') {
     gradient = 'pink_gradient_rectangle'
   }
-  return <div className={`${gradient} ${className}`} />
+  return (
+    <div className={`${gradient} ${className} flex justify-center`}>
+      <img src="/images/girl_placeholder.png" alt="placeholder" className="h-72 w-max self-end" />
+    </div>
+  )
 }
 
 export default GradientRectangle

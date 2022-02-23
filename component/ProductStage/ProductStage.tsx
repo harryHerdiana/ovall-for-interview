@@ -34,6 +34,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
     shopContext.addVariantToCart(variant, 1)
     shopContext.setShowCart(true)
   }
+
   return (
     <section className="gap-8 grid grid-cols-1 md:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
