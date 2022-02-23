@@ -2,6 +2,19 @@
     background-color: #b6dcff;
 }
 
-.people_gradient{
+.people_gradient_rectangle{
     background: conic-gradient(from 243deg at 60% 40%, #b6dcff, #b9b7e5);
 }
+
+.blue_gradient_rectangle{
+    background: conic-gradient(from 243deg at 60% 40%, #fff7ef, #fee8e0);
+}
+
+.pink_gradient_rectangle{
+    background: conic-gradient(from 243deg at 60% 40%, #e9f4ff, #eae9f7);
+}
+
+.green_gradient_rectangle{
+    background: conic-gradient(from 243deg at 60% 40%, #d2d6f2, #f2e0ff);
+}
+

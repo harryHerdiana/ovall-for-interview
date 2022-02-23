@@ -5,7 +5,7 @@ import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IProductPageData } from '@lib/types'
-import GradientBanner from '@component/GradientBanner/GradientBanner'
+import GradientBanner from '@component/GradientBanner'
 
 const ProductPage: React.FC<IProductPageData> = (props: IProductPageData) => {
   const { seoTags, menu, shopifyProduct } = props

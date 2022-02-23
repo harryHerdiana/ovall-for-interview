@@ -1,15 +1,15 @@
 import React from 'react'
 import Icon from '@component/Icon'
+import GradientRectangle from '@component/GradientRectangle'
 interface IGradientBanner {
-  variant: string
+  variant: 'people' | 'blue' | 'green' | 'lotus-pink'
 }
 
 const GradientBanner: React.FC<IGradientBanner> = ({ variant }) => {
   let solid = ''
-  let gradient = ''
+
   if (variant === 'people') {
     solid = 'people_solid'
-    gradient = 'people_gradient'
   }
   return (
     <div className="flex h-64">
@@ -22,7 +22,7 @@ const GradientBanner: React.FC<IGradientBanner> = ({ variant }) => {
           </div>
         </div>
       </div>
-      <div className={`${gradient} w-1/2`} />
+      <GradientRectangle variantGradient={variant} className="w-1/2" />
     </div>
   )
 }
