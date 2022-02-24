@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface IGradientRectangle {
-  variantGradient: 'people' | 'blue' | 'green' | 'pink'
+  variantGradient: string
   className: string
 }
 

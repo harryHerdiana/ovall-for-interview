@@ -8,10 +8,9 @@ import { IDefaultProps, IProductPage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
-  const { seoTags, menu, product } = props
+  const { seoTags, menu, product, productInfoBannerSection } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
-  console.log(props)
   return (
     <Layout seoTags={seoTags} menu={menu}>
       <ProductStage
@@ -22,8 +21,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         setVariantSku={setVariantSku}
       />
       <GradientBanner
-        body={props.productInfoBannerSection.body}
-        buttonText={props.productInfoBannerSection.buttonText}
+        productInfoBannerSection={productInfoBannerSection}
         variant="people"
         contentPlacement="right"
       />
