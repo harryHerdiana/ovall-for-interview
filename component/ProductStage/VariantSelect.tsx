@@ -17,7 +17,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   colorCaption
 }) => {
   const option = [1, 2, 3, 4, 5, 6, 7]
-  let [options, setOptions] = useState<number>(0)
+  let [options, setOptions] = useState<number>(1)
   const increase = () => {
     setOptions((options += 1))
   }
@@ -28,9 +28,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     <>
       <div className="flex flex-row gap-2 mb-4 justify-between">
         <div className="flex flex-col justify-center">
-          <span className="text-sm items-center font-bold my-2 text-left">
-            {colorCaption.toUpperCase()}
-          </span>
+          <h6 className="text-sm items-center my-2 text-left">{colorCaption.toUpperCase()}</h6>
           <div className="flex flex-row gap-2">
             {variants.map((variant) => (
               <button
@@ -45,9 +43,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm items-center font-bold my-2 text-left md:text-right">
+          <h6 className="text-sm items-center my-2 text-left md:text-right">
             {quantityCaption.toUpperCase()}
-          </span>
+          </h6>
           <div className="block md:hidden">
             <select value={options} onChange={(e) => setOptions(+e.target.value)}>
               {option.map((v) => (
@@ -58,7 +56,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
             </select>
           </div>
           <div className="hidden md:flex border-2 border-black">
-            <button disabled={options === 0} type="button" onClick={decrease}>
+            <button disabled={options === 1} type="button" onClick={decrease}>
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>
 

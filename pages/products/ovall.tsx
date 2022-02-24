@@ -27,6 +27,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         buttonText={productInfoBannerSection.buttonText}
         image={productInfoBannerSection.image}
         contentPlacement="right"
+        dropDownText={productInfoBannerSection.dropDownText}
       />
     </Layout>
   )

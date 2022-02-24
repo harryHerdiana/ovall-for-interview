@@ -2,7 +2,8 @@ import React from 'react'
 import Icon from '@component/Icon'
 import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-// import { StructuredTextDocument } from 'react-datocms'
+import { StructuredTextDocument } from 'react-datocms'
+import { StructuredText } from 'react-datocms'
 
 type IGradientBannerProps = {
   backgroundColor: string
@@ -10,7 +11,7 @@ type IGradientBannerProps = {
   title: string
   body: string
   buttonText: string
-  // dropDownText: StructuredTextDocument
+  dropDownText: StructuredTextDocument
 
   contentPlacement: 'left' | 'right'
 }
@@ -22,10 +23,12 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   title,
   body,
   buttonText,
-  contentPlacement
+  contentPlacement,
+  dropDownText
 
   // eslint-disable-next-line arrow-body-style
 }) => {
+  console.log(dropDownText)
   return (
     <div className="flex h-80">
       <div
@@ -47,12 +50,13 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
           contentPlacement === 'right' ? 'flex' : 'hidden'
         } w-1/2 flex-col items-start justify-center`}>
         <div className="flex flex-col w-3/4 ">
-          <div className="font-bold text-lg">{title}</div>
-          <div className="text-sm my-4">{body}</div>
+          <h3 className="font-bold">{title}</h3>
+          <p className=" my-4">{body}</p>
           <div className="uppercase text-sm flex items-center gap-6">
             {buttonText}
             <Icon src="/images/arrow-small.svg" className="h-6 w-6" />
           </div>
+          {/* <StructuredText data={dropDownText} /> */}
         </div>
       </div>
     </div>
