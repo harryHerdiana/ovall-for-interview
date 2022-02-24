@@ -21,8 +21,11 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         setVariantSku={setVariantSku}
       />
       <GradientBanner
-        productInfoBannerSection={productInfoBannerSection}
-        variant="people"
+        body={productInfoBannerSection.body}
+        title={productInfoBannerSection.title}
+        backgroundColor={productInfoBannerSection.backgroundColor}
+        buttonText={productInfoBannerSection.buttonText}
+        image={productInfoBannerSection.image}
         contentPlacement="right"
       />
     </Layout>

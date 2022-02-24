@@ -1,23 +1,23 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 
 interface IGradientRectangle {
   variantGradient: string
   className: string
+  image: string
 }
 
-const GradientRectangle: React.FC<IGradientRectangle> = ({ variantGradient, className }) => {
-  let gradient = ''
-  if (variantGradient === 'people') {
-    gradient = 'people_gradient_rectangle'
-  } else if (variantGradient === 'blue') {
-    gradient = 'blue_gradient_rectangle'
-  } else if (variantGradient === 'green') {
-    gradient = 'green_gradient_rectangle'
-  } else if (variantGradient === 'pink') {
-    gradient = 'pink_gradient_rectangle'
+const GradientRectangle: React.FC<IGradientRectangle> = ({ variantGradient, className, image }) => {
+  const gradientMap = {
+    people: 'people_gradient_rectangle',
+    blue: 'blue_gradient_rectangle',
+    green: 'green_gradient_rectangle',
+    pink: 'pink_gradient_rectangle'
   }
+  const gradient = gradientMap[variantGradient]
   return (
     <div className={`${gradient} ${className} flex justify-center`}>
+      {/* <img src={`${image}`} alt="placeholder" className="h-72 w-max self-end" /> */}
       <img src="/images/girl_placeholder.png" alt="placeholder" className="h-72 w-max self-end" />
     </div>
   )
