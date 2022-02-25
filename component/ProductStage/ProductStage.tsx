@@ -51,7 +51,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
             {toEuro(variant.priceV2.amount)}
           </h3>
           <div className="text-md ml-8 md:ml-10">
-            <div className="font-bold text-greenLinks-500 text-sm md:text-md font-subtitleFont">
+            <div className="font-bold text-greenLink text-sm md:text-md font-subtitleFont">
               Spare 20%{' '}
             </div>
             <h6 className="line-through font-bold font-subtitleFont">
@@ -68,7 +68,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
         <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
         <div className="flex justify-between my-4">
           <p className="w-32 md:w-max text-left font-subTagFont text-sm">{deliveryTime}</p>
-          <a className="font-subTagFont text-sm text-greenLinks-500">{freeShippingCaption}</a>
+          <a className="font-subTagFont text-sm text-greenLink">{freeShippingCaption}</a>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
       </div>

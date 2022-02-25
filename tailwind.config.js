@@ -204,9 +204,7 @@ module.exports = {
           '900-45': 'rgba(55,55,55,0.45)',
           700: '#707070'
         },
-        greenLinks: {
-          500: '#9cd4b9'
-        },
+        greenLink: '#9cd4b9',
         'Ovall-Pink': {
           500: '#eebdb7'
         },

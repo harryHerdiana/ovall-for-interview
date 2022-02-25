@@ -82,11 +82,9 @@ const SlideOver: React.FC = () => {
 
                         <div className="w-full sm:w-1/2 flex justify-center sm:justify-end sm:pr-4">
                           <Button
-                            backgroundColor={`${checkout.lineItems.length === 0 && 'opacity-25'
-                              } bg-black hover:bg-pine-green-500 hover:shadow-lg flex items-center px-8 md:py-4 py-3`}
+                            buttonType="primary"
                             disabled={checkout.lineItems.length === 0}
-                            onClick={handleCheckout}
-                            textColor="text-white">
+                            onClick={handleCheckout}>
                             <div className="inline-block mr-4">
                               <ShoppingBagIcon className="h-6 w-6" />
                             </div>
