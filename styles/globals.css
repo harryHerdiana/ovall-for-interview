@@ -22,7 +22,7 @@
     font-family: 'SourceCodeProRegular';
     font-style: normal;
     font-display:swap;
-    src: url('/fonts/SourceCode/SourceCodePro-Regular.ttf') format('truetype');
+    src: url('/fonts/SourceCode/SourceCodePro-Regular.woff2') format('truetype');
     
 }
 
@@ -30,7 +30,7 @@
     font-family: 'SourceCodeProSemibold';
     font-style: normal;
     font-display:swap;
-    src: url('/fonts/SourceCode/SourceCodePro-SemiBold.ttf') format('truetype');
+    src: url('/fonts/SourceCode/SourceCodePro-SemiBold.woff2') format('truetype');
     
 }
 
@@ -38,7 +38,7 @@
     font-family: 'WorkSansMedium';
     font-style: normal;
     font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-Medium.ttf') format('truetype');
+    src: url('/fonts/WorkSans/WorkSans-Medium.woff2') format('truetype');
     
 }
 
@@ -46,7 +46,7 @@
     font-family: 'WorkSansRegular';
     font-style: normal;
     font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-Regular.ttf') format('truetype');
+    src: url('/fonts/WorkSans/WorkSans-Regular.woff2') format('truetype');
     
 }
 
@@ -54,70 +54,13 @@
     font-family: 'WorkSansLight';
     font-style: normal;
     font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-Light.ttf') format('truetype');
+    src: url('/fonts/WorkSans/WorkSans-Light.woff2') format('truetype');
     
 }
 @font-face {
     font-family: 'WorkSansSemiBold';
     font-style: normal;
     font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-SemiBold.ttf') format('truetype');
+    src: url('/fonts/WorkSans/WorkSans-SemiBold.woff2') format('truetype');
     
-}
-
-
-
-h1, h2 {
-    font-family: SourceCodeProSemibold;
-    font-size: 26px;
-    line-height: 30px;
-    word-spacing: -15px;
-}
-
-h3{
-    font-family: SourceCodeProRegular;
-    font-size: 18px;
-    line-height: 21px;
-  
-    font-style: normal;
-    font-display: swap;
-
-}
-
-h4{
-    font-family: WorkSansMedium;
-    font-size: 17px;
-    line-height: 23px;
-    font-style: normal;
-}
-
-h5, h6{
-    font-family: WorkSansRegular;
-    font-size: 17px;
-    line-height: 23px;
-    font-style: normal;
-}
-
-p{
-    font-family: WorkSansLight;
-    font-size: 17px;
-    line-height: 23px;
-    font-style: normal;
-  
-}
-
-p.caption strong {
-    font-family: WorkSansSemiBold;
-    font-size: 17px;
-    line-height: 23px;
-    font-style: normal;
-}
-
-a{
-    font-family: WorkSansSemiBold;
-    font-size: 17px;
-    line-height: 23px;
-    font-style: normal;
-    color: #9cd4b9;
-    text-decoration: underline;
 }

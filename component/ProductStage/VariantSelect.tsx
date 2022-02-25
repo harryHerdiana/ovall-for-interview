@@ -28,7 +28,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     <>
       <div className="flex flex-row gap-2 mb-4 justify-between">
         <div className="flex flex-col justify-center">
-          <h6 className="text-sm items-center my-2 text-left">{colorCaption.toUpperCase()}</h6>
+          <h6 className="text-sm items-center my-2 text-left font-tagFont">
+            {colorCaption.toUpperCase()}
+          </h6>
           <div className="flex flex-row gap-2">
             {variants.map((variant) => (
               <button
@@ -43,7 +45,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
         <div className="flex flex-col">
-          <h6 className="text-sm items-center my-2 text-left md:text-right">
+          <h6 className="text-sm items-center my-2 text-left md:text-right font-tagFont">
             {quantityCaption.toUpperCase()}
           </h6>
           <div className="block md:hidden">

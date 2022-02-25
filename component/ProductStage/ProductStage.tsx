@@ -43,14 +43,20 @@ const ProductStage: React.FC<IProductStageProps> = ({
         </div>
       </div>
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-col flex-wrap self-center">
-        <h2 className="w-full text-left  text-3xl md:text-4xl lg:text-4xl leading-headline mb-1">
+        <h2 className="w-full font-titleFont text-left  text-3xl md:text-4xl lg:text-4xl leading-headline mb-1">
           {product.title}
         </h2>
         <div className="text-left flex flex-row ">
-          <h3 className=" self-center ">{toEuro(variant.priceV2.amount)}</h3>
+          <h3 className=" self-center font-subtitleFont text-lg">
+            {toEuro(variant.priceV2.amount)}
+          </h3>
           <div className="text-md ml-8 md:ml-10">
-            <div className="font-bold text-greenLinks-500 text-sm md:text-md">Spare 20% </div>
-            <h6 className="line-through font-bold">{toEuro(variant.compareAtPriceV2.amount)}</h6>
+            <div className="font-bold text-greenLinks-500 text-sm md:text-md font-subtitleFont">
+              Spare 20%{' '}
+            </div>
+            <h6 className="line-through font-bold font-subtitleFont">
+              {toEuro(variant.compareAtPriceV2.amount)}
+            </h6>
           </div>
         </div>
         <VariantSelect
@@ -61,8 +67,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
         />
         <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
         <div className="flex justify-between my-4">
-          <p className="w-32 md:w-max text-left">{deliveryTime}</p>
-          <a>{freeShippingCaption}</a>
+          <p className="w-32 md:w-max text-left font-subTagFont text-sm">{deliveryTime}</p>
+          <a className="font-subTagFont text-sm text-greenLinks-500">{freeShippingCaption}</a>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
       </div>

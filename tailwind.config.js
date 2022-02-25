@@ -19,11 +19,16 @@ module.exports = {
       // body: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
       // hydeep: ['Montserrat', 'Helvetica', 'system-ui'],
       // main: ['ReferenzGrotesk', 'Helvetica', 'Arial', 'Verdana', 'system-ui']
-      sans: ['Helvetica', 'system-ui'],
-      hand: ['Helvetica', 'system-ui'],
-      body: ['Helvetica', 'system-ui'],
-      hydeep: ['Helvetica', 'system-ui'],
-      main: ['Helvetica', 'Arial', 'Verdana', 'system-ui']
+      subtitleFont: ['SourceCodeProRegular', 'Helvetica', 'system-ui'],
+      titleFont: ['SourceCodeProSemibold'],
+      tagFont: ['WorkSansMedium'],
+      subTagFont: ['WorkSansRegular'],
+      textFont: ['WorkSansLight'],
+      textFontBold: ['WorkSansSemiBold']
+      // hand: ['Helvetica', 'system-ui'],
+      // body: ['Helvetica', 'system-ui'],
+      // hydeep: ['Helvetica', 'system-ui'],
+      // main: ['Helvetica', 'Arial', 'Verdana', 'system-ui']
     },
     fontSize: {
       xxs: '.625rem', // 10px for mobile subtext

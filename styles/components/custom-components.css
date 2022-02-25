@@ -1,6 +1,6 @@
 @layer components {
   .menu-level-one-link  {
-    @apply block pt-1 pb-0.5 uppercase text-sm font-main font-bold tracking-wide md:p-2 md:text-xs lg:px-4 lg:text-tiny xl:px-6
+    @apply block pt-1 pb-0.5 uppercase text-sm font-textFont font-bold tracking-wide md:p-2 md:text-xs lg:px-4 lg:text-tiny xl:px-6
   }
 
   .section-headline {
