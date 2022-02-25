@@ -23,10 +23,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   title,
   body,
   buttonText,
-  contentPlacement,
-  dropDownText
+  contentPlacement
 }) => {
-  console.log(backgroundColor)
+  console.log(buttonText)
   return (
     <div className="flex h-80">
       <div
