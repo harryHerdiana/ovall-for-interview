@@ -34,6 +34,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
     shopContext.addVariantToCart(variant, 1)
     shopContext.setShowCart(true)
   }
+
   return (
     <section className="gap-8 grid grid-cols-1 md:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
@@ -42,14 +43,20 @@ const ProductStage: React.FC<IProductStageProps> = ({
         </div>
       </div>
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-col flex-wrap self-center">
-        <h1 className="w-full text-left font-extrabold text-3xl md:text-4xl lg:text-4xl leading-headline mb-1">
+        <h2 className="w-full font-titleFont text-left  text-3xl md:text-4xl lg:text-4xl leading-headline mb-1">
           {product.title}
-        </h1>
+        </h2>
         <div className="text-left flex flex-row ">
-          <div className="text-2xl self-center font-bold">{toEuro(variant.priceV2.amount)}</div>
+          <h3 className=" self-center font-subtitleFont text-lg">
+            {toEuro(variant.priceV2.amount)}
+          </h3>
           <div className="text-md ml-8 md:ml-10">
-            <div className="font-bold text-greenLinks-500 text-sm md:text-md">Spare 20% </div>
-            <div className="line-through font-bold">{toEuro(variant.compareAtPriceV2.amount)}</div>
+            <div className="font-bold text-greenLink text-sm md:text-md font-subtitleFont">
+              Spare 20%{' '}
+            </div>
+            <h6 className="line-through font-bold font-subtitleFont">
+              {toEuro(variant.compareAtPriceV2.amount)}
+            </h6>
           </div>
         </div>
         <VariantSelect
@@ -60,8 +67,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
         />
         <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
         <div className="flex justify-between my-4">
-          <div className="w-32 md:w-max text-left">{deliveryTime}</div>
-          <div className="font-bold text-greenLinks-500">{freeShippingCaption}</div>
+          <p className="w-32 md:w-max text-left font-subTagFont text-sm">{deliveryTime}</p>
+          <a className="font-subTagFont text-sm text-greenLink">{freeShippingCaption}</a>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
       </div>
