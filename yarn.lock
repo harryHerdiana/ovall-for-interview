@@ -927,37 +927,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@paypal/paypal-js@^4.0.8":
-  version "4.2.2"
-  resolved "https://registry.npmjs.org/@paypal/paypal-js/-/paypal-js-4.2.2.tgz"
-  integrity sha512-Hl/h5DmVPRnMuK99+PuaQS0Ml3F3lgSHYetUiXS/uzaR+YULCZPH1x93UWtYRWFbpFnhmMEBeQUpJBOuXcLrIQ==
-  dependencies:
-    promise-polyfill "^8.2.1"
-
-"@paypal/paypal-js@^5.0.2":
-  version "5.0.2"
-  resolved "https://registry.npmjs.org/@paypal/paypal-js/-/paypal-js-5.0.2.tgz"
-  integrity sha512-bRQ6P0sftCkunQXKjujDjxCbfCdIZpn29JoQU5HTW50lV1yFGKf8q9DJIAnzHPgDDc0CTJ27dlkLD94oKEd6Jg==
-  dependencies:
-    promise-polyfill "^8.2.1"
-
-"@paypal/react-paypal-js@^7.3.0":
-  version "7.6.0"
-  resolved "https://registry.npmjs.org/@paypal/react-paypal-js/-/react-paypal-js-7.6.0.tgz"
-  integrity sha512-GPaFXOVEh2bCNKOmLmArxWoBM6gfzoP41HfDdEr58geJi+t32/FtVKdaoxymE6f3oStaobt6KDdzxPpKuNeisQ==
-  dependencies:
-    "@paypal/paypal-js" "^5.0.2"
-    "@paypal/sdk-constants" "^1.0.116"
-
-"@paypal/sdk-constants@^1.0.116":
-  version "1.0.116"
-  resolved "https://registry.npmjs.org/@paypal/sdk-constants/-/sdk-constants-1.0.116.tgz"
-  integrity sha512-V/f5Heit1W/O/4KD1y+3ymgCyN3QbZfx6ST5vvAM8dMGrrLFwGHxljP/aJntR/Rn167T0ujPaZq6VWaaMScyMA==
-  dependencies:
-    cross-domain-utils "^2.0.10"
-    hi-base32 "^0.5.0"
-    zalgo-promise "^1.0.28"
-
 "@playwright/test@^1.17.2":
   version "1.19.0"
   resolved "https://registry.npmjs.org/@playwright/test/-/test-1.19.0.tgz"
@@ -1187,18 +1156,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stripe/react-stripe-js@^1.4.1":
-  version "1.7.0"
-  resolved "https://registry.npmjs.org/@stripe/react-stripe-js/-/react-stripe-js-1.7.0.tgz"
-  integrity sha512-L20v8Jq0TDZFL2+y+uXD751t6q9SalSFkSYZpmZ2VWrGZGK7HAGfRQ804dzYSSr5fGenW6iz6y7U0YKfC/TK3g==
-  dependencies:
-    prop-types "^15.7.2"
-
-"@stripe/stripe-js@^1.17.1":
-  version "1.22.0"
-  resolved "https://registry.npmjs.org/@stripe/stripe-js/-/stripe-js-1.22.0.tgz"
-  integrity sha512-fm8TR8r4LwbXgBIYdPmeMjJJkxxFC66tvoliNnmXOpUgZSgQKoNPW3ON0ZphZIiif1oqWNhAaSrr7tOvGu+AFg==
-
 "@tailwindcss/forms@^0.3.3":
   version "0.3.4"
   resolved "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.3.4.tgz"
@@ -1378,7 +1335,7 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@>=8.1.0":
+"@types/node@*":
   version "17.0.17"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.17.tgz"
   integrity sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==
@@ -2318,13 +2275,6 @@ cosmiconfig@^7.0.1:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.10.0"
-
-cross-domain-utils@^2.0.10:
-  version "2.0.38"
-  resolved "https://registry.npmjs.org/cross-domain-utils/-/cross-domain-utils-2.0.38.tgz"
-  integrity sha512-zZfi3+2EIR9l4chrEiXI2xFleyacsJf8YMLR1eJ0Veb5FTMXeJ3DpxDjZkto2FhL/g717WSELqbptNSo85UJDw==
-  dependencies:
-    zalgo-promise "^1.0.11"
 
 cross-fetch@^3.0.6:
   version "3.1.5"
@@ -3708,11 +3658,6 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
-
-hi-base32@^0.5.0:
-  version "0.5.1"
-  resolved "https://registry.npmjs.org/hi-base32/-/hi-base32-0.5.1.tgz"
-  integrity sha512-EmBBpvdYh/4XxsnUybsPag6VikPYnN30td+vQk+GI3qpahVEG9+gTkG0aXVxTjBqQ5T6ijbWIu77O+C5WFWsnA==
 
 hoist-non-react-statics@^3.2.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
@@ -5951,11 +5896,6 @@ progress@2.0.3, progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-promise-polyfill@^8.2.1:
-  version "8.2.1"
-  resolved "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-8.2.1.tgz"
-  integrity sha512-3p9zj0cEHbp7NVUxEYUWjQlffXqnXaZIMPkAO7HhFh8u5636xLRDHOUo2vpWSK0T2mqm6fKLXYn1KP6PAZ2gKg==
-
 prompts@^2.0.1:
   version "2.4.2"
   resolved "https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz"
@@ -6039,7 +5979,7 @@ purgecss@^4.0.3:
     postcss "^8.3.5"
     postcss-selector-parser "^6.0.6"
 
-qs@^6.5.0, qs@^6.6.0, qs@^6.9.4:
+qs@^6.5.0, qs@^6.9.4:
   version "6.10.3"
   resolved "https://registry.npmjs.org/qs/-/qs-6.10.3.tgz"
   integrity sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==
@@ -6859,14 +6799,6 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-stripe@^8.174.0:
-  version "8.202.0"
-  resolved "https://registry.npmjs.org/stripe/-/stripe-8.202.0.tgz"
-  integrity sha512-3YGHVnUatEn/At5+aRy+REdB2IyVa96/zls2xvQrKFTgaJzRu1MsJcK0GKg0p2B0y0VqlZo9gmdDEqphSHHvtA==
-  dependencies:
-    "@types/node" ">=8.1.0"
-    qs "^6.6.0"
-
 striptags@^4.0.0-alpha.2:
   version "4.0.0-alpha.2"
   resolved "https://registry.npmjs.org/striptags/-/striptags-4.0.0-alpha.2.tgz"
@@ -7597,8 +7529,3 @@ yup@^0.32.9:
     nanoclone "^0.2.1"
     property-expr "^2.0.4"
     toposort "^2.0.2"
-
-zalgo-promise@^1.0.11, zalgo-promise@^1.0.28:
-  version "1.0.48"
-  resolved "https://registry.npmjs.org/zalgo-promise/-/zalgo-promise-1.0.48.tgz"
-  integrity sha512-LLHANmdm53+MucY9aOFIggzYtUdkSBFxUsy4glTTQYNyK6B3uCPWTbfiGvSrEvLojw0mSzyFJ1/RRLv+QMNdzQ==
