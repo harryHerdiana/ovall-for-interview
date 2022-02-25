@@ -26,7 +26,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         backgroundColor={productInfoBannerSection.backgroundColor}
         buttonText={productInfoBannerSection.buttonText}
         image={productInfoBannerSection.image}
-        contentPlacement="right"
+        contentPlacement="left"
         dropDownText={productInfoBannerSection.dropDownText}
       />
     </Layout>
