@@ -60,12 +60,14 @@ const ProductStage: React.FC<IProductStageProps> = ({
           </div>
         </div>
         <VariantSelect
+          addToCartLabel={addToCartLabel}
+          variant={variant}
           colorCaption={colorCaption}
           setVariantSku={setVariantSku}
           variants={product.variants}
           quantityCaption={quantityCaption}
         />
-        <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
+
         <div className="flex justify-between my-4">
           <p className="w-32 md:w-max text-left font-subTagFont text-sm">{deliveryTime}</p>
           <a className="font-subTagFont text-sm text-greenLink">{freeShippingCaption}</a>
