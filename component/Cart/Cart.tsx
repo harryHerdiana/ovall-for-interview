@@ -5,7 +5,7 @@ import { IShopifyLineItem } from '@modules/shopify/types'
 import ShopContext from '@context/StoreContext'
 import LineItem from './LineItem'
 
-interface ICart { }
+interface ICart {}
 
 // TODO: add German text below into DatoCMS model with shop-wide stuff (navigation, footer, etc.)
 
@@ -15,7 +15,7 @@ const Cart: React.FC<ICart> = () => {
 
   if (checkout.lineItems.length === 0) {
     return (
-      <div className="text-center text-gray-300 font-bold text-lg">
+      <div className="text-center text-gray-300 font-bold text-base">
         <span className="block px-16 py-20">Noch keine Produkte im Warenkorb</span>
       </div>
     )

@@ -40,7 +40,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     <>
       <div className="flex flex-row gap-2 mb-4 justify-between">
         <div className="flex flex-col justify-center">
-          <h6 className="text-sm items-center my-2 text-left font-tagFont">
+          <h6 className="text-tiny items-center my-2 text-left font-tagFont">
             {colorCaption.toUpperCase()}
           </h6>
           <div className="flex flex-row gap-2">
@@ -57,7 +57,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
         <div className="flex flex-col">
-          <h6 className="text-sm items-center my-2 text-left md:text-right font-tagFont">
+          <h6 className="text-tiny items-center my-2 text-left md:text-right font-tagFont">
             {quantityCaption.toUpperCase()}
           </h6>
           <div className="block md:hidden">
@@ -74,7 +74,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>
 
-            <div className="w-10 text-center font-bold text-lg">{options}</div>
+            <div className="w-10 text-center font-bold text-base">{options}</div>
             <button type="button" onClick={increase}>
               <Icon src="/images/plus.svg" className="h-7 w-7" />
             </button>
