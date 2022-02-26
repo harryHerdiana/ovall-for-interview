@@ -95,5 +95,4 @@ export const ProductInfoBannerFragment = `
       }
     }
   }
-
 `

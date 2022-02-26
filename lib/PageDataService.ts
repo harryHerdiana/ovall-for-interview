@@ -1,13 +1,13 @@
 import datoCMSAPI from '@modules/datocms/api/client'
-import HOMEPAGE_QUERY from '@modules/datocms/api/queries/homepage'
-import PRODUCT_QUERY from '@modules/datocms/api/queries/product'
 import shopifyStoreFrontAPI from '@modules/shopify/api/storefront/client'
 import { GET_PRODUCT } from '@modules/shopify/api/storefront/queries'
 import parseProductResponse from '@modules/shopify/api/storefront/parser'
 import { IShopifyProduct } from '@modules/shopify/types'
+import { FOOTER_QUERY, PRODUCT_PAGE_QUERY, HOMEPAGE_QUERY } from '@modules/datocms/api/queries'
 import { Context, IHomePage, IProductPage } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
+import mapFooter from './mapper/footer'
 
 export default class PageDataService {
   context: Context
@@ -44,14 +44,25 @@ export default class PageDataService {
     return parseProductResponse(response)
   }
 
-  private async getMenu(): Promise<any> {
-    return [
+  private async getFooter(): Promise<any> {
+    const response = await this.requestDatoCMS(FOOTER_QUERY)
+    return mapFooter(response.footer)
+  }
+
+  private async getMenus(): Promise<any> {
+    const footer = await this.getFooter()
+    const menu = [
       {
         id: '1',
         label: 'Product',
         path: '/products/ovall'
       }
     ]
+
+    return {
+      menu,
+      footer
+    }
   }
 
   /**
@@ -60,7 +71,7 @@ export default class PageDataService {
    * @returns IPageProps
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?) {
-    const [menu, product] = await Promise.all([this.getMenu(), this.getProductData()])
+    const [menus, product] = await Promise.all([this.getMenus(), this.getProductData()])
     const datoCMSResponse = await this.requestDatoCMS(query)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
@@ -69,8 +80,9 @@ export default class PageDataService {
       console.warn('Page Data does not contain SeoTags')
     }
     return {
+      menu: menus.menu,
+      footer: menus.footer,
       seoTags: content.seoTags,
-      menu,
       product,
       ...mappedContent
     }
@@ -81,6 +93,6 @@ export default class PageDataService {
   }
 
   public async product(): Promise<IProductPage> {
-    return this.requestDatoCMSWithBaseData(PRODUCT_QUERY, 'product', mapProductPageData)
+    return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
   }
 }

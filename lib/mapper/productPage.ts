@@ -25,7 +25,8 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
     faqSection: {
       faqButtonText: d.faqButtonText,
       faqSubtitle: d.faqSubtitle,
-      faqTitle: d.faqTitle
+      faqTitle: d.faqTitle,
+      items: d.faqItems.items
     },
     productInfoBannerSection: {
       backgroundColor: utils.findByApiKey(
@@ -54,6 +55,10 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         'section_call_to_action',
         'dropdownText'
       )
+    },
+    productInfoAccordionSection: {
+      buttonText: d.productInfoAccordionSection.buttonText,
+      items: d.productInfoAccordionSection.items
     },
     newsletterSection: {
       ...d.newsletterSection,

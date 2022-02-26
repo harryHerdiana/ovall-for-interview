@@ -8,6 +8,7 @@ import { IDefaultProps, IProductPage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
+  console.log('PROPS', props)
   const { seoTags, menu, product, productInfoBannerSection } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)

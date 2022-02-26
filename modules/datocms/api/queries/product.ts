@@ -6,7 +6,7 @@ import {
   ResponsiveImageFragment
 } from '@modules/datocms/api/fragments'
 
-export default `
+export const PRODUCT_PAGE_QUERY = `
   query getProduct($locale: SiteLocale!) {
     product(locale: $locale) {
       variantImages {
@@ -23,15 +23,21 @@ export default `
       }
       title
       slug
-      faqTitle
-      faqSubtitle
       freeShippingCaption
       deliveryTime
-      faqButtonText
       colorCaption
       deliveryTime
       quantityCaption
       addToCartLabel
+      faqTitle
+      faqSubtitle
+      faqButtonText
+      faqItems {
+        items {
+          text
+          body
+        }
+      }
       seoTags {
         description
         title
@@ -60,6 +66,13 @@ export default `
       }
       productInfoBannerMiniSpa {
         ...ProductInfoBannerFragment
+      }
+      productInfoAccordionSection {
+        buttonText
+        items {
+          text
+          body
+        }
       }
       moodSlideshowSection {
         ...MoodSlideshowRecordFragment

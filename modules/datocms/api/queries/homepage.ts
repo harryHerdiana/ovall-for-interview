@@ -5,7 +5,7 @@ import {
   ResponsiveImageFragment
 } from '@modules/datocms/api/fragments'
 
-const HOMEPAGE_QUERY = ` 
+export const HOMEPAGE_QUERY = ` 
   query getHomePage($locale: SiteLocale!) {
     homepage(locale: $locale) {
       accordionSection {
@@ -183,5 +183,3 @@ const HOMEPAGE_QUERY = `
   ${MoodSlideShowFragment}
   
 `
-
-export default HOMEPAGE_QUERY

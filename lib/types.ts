@@ -1,4 +1,4 @@
-import { DatoCMSResponsiveImage } from '@modules/datocms/types'
+import { DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { StructuredTextDocument } from 'react-datocms'
 import { Languages } from './enums'
@@ -25,10 +25,30 @@ export type MenuItem = {
 
 export type IMenu = MenuItem[]
 
+export type IFooter = {
+  leftColumn: {
+    title: string
+    items: MenuItem[]
+  }
+  middleColumn: {
+    title: string
+    items: MenuItem[]
+  }
+  rightColumn: {
+    title: string
+    text: string
+    facebook: string
+    instagram: string
+    pinterest: string
+    youtube: string
+  }
+}
+
 export interface IDefaultProps {
   product: IShopifyProduct
   seoTags: SeoTags
   menu: IMenu
+  footer: IFooter
 }
 
 /** ***** PAGES ************** */
@@ -66,6 +86,7 @@ export interface IProductPage {
     faqButtonText: string
     faqSubtitle: string
     faqTitle: string
+    items: IDatoAccordionItem[]
   }
   descriptionSection: {
     title: string
@@ -79,6 +100,10 @@ export interface IProductPage {
     body: string
     buttonText: string
     dropDownText: StructuredTextDocument // see https://www.datocms.com/docs/react/structured-text-fields
+  }
+  productInfoAccordionSection: {
+    buttonText: string
+    items: IDatoAccordionItem[]
   }
   newsletterSection: {
     placeholder: string

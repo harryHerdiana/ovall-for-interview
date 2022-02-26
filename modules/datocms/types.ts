@@ -68,6 +68,11 @@ export interface IDatoNewsletterSection {
   buttonText: string
 }
 
+export interface IDatoAccordionItem {
+  text: string
+  body: string
+}
+
 export interface IDatoProductPage {
   seoTags: SeoTags
   quantityCaption: string
@@ -78,6 +83,9 @@ export interface IDatoProductPage {
   faqButtonText: string
   faqSubtitle: string
   faqTitle: string
+  faqItems: {
+    items: IDatoAccordionItem[]
+  }
   slug: string // check: do we need this?
   variantImages: DatoProductVariantImage[]
   productClaims: {
@@ -94,5 +102,34 @@ export interface IDatoProductPage {
   moodSlideshowSection: any // TODO add type
   productInfoBannerFeatures: IDatoProductBannerSection
   productInfoBannerMiniSpa: IDatoProductBannerSection
+  productInfoAccordionSection: {
+    buttonText: string
+    items: IDatoAccordionItem[]
+  }
   newsletterSection: IDatoNewsletterSection
+}
+
+export interface IColumnNavItem {
+  id: string
+  _modelApiKey: 'navigation_link'
+  label: string
+  internalLink: {
+    slug: string
+  }
+}
+
+export interface IColumnTitle {
+  id: string
+  _modelApiKey: 'section_headline'
+  text: string
+}
+export interface IDatoFooter {
+  facebook: string
+  pinterest: string
+  instagram: string
+  youtube: string
+  followUsText: string
+  followUsTitle: string
+  leftColumn: Array<IColumnNavItem | IColumnTitle>
+  middleColumn: Array<IColumnNavItem | IColumnTitle>
 }
