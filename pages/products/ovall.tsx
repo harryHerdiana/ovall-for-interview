@@ -6,10 +6,10 @@ import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
+import Newsletter from '@component/Newsletter'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
-  console.log('PROPS', props)
-  const { seoTags, menu, product, productInfoBannerSection } = props
+  const { seoTags, menu, product, productInfoBannerSection, newsletterSection } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
   return (
@@ -30,6 +30,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         contentPlacement="left"
         dropDownText={productInfoBannerSection.dropDownText}
       />
+      <Newsletter {...newsletterSection} />
     </Layout>
   )
 }

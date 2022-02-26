@@ -26,41 +26,47 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
 }) => {
   console.log(buttonText)
   return (
-    <div className="flex h-80 flex-col md:flex-row">
+    <section className="flex md:h-80 flex-col md:flex-row ">
       <div
         className={`${backgroundColor}_solid_left ${contentPlacement === 'left' ? ' hidden md:flex' : 'hidden'
-          } w-1/2 flex-col items-end justify-center`}>
+          } w-full flex-col items-end justify-center`}>
         <div className="flex flex-col w-3/4 ">
           <h3 className="font-bold text-lg font-titleFont">{title}</h3>
           <p className="font-textFont text-xs my-4">{body}</p>
-          <Button buttonType="secondary">{buttonText}</Button>
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
           {/* <StructuredText data={dropDownText} /> */}
         </div>
       </div>
       <GradientRectangle
         image={`${image}`}
         variantGradient={backgroundColor}
-        className="w-full md:w-1/2"
+        className="w-full md:w-full"
       />
       <div
         className={`${backgroundColor}_solid_right ${contentPlacement === 'right' ? ' hidden md:flex' : 'hidden'
-          } w-1/2 flex-col items-start justify-center`}>
+          } w-full flex-col items-start justify-center`}>
         <div className="flex flex-col w-3/4 ">
           <h3 className="font-bold text-lg font-titleFont">{title}</h3>
           <p className="font-textFont text-xs my-4">{body}</p>
-          <Button buttonType="secondary">{buttonText}</Button>
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
           {/* <StructuredText data={dropDownText} /> */}
         </div>
       </div>
-      <div className="md:hidden  flex-col items-start justify-center w-full p-5">
+      <div className="md:hidden flex-col items-start h-max justify-center w-full p-5">
         <div className="flex flex-col ">
           <h3 className="font-bold text-lg font-titleFont">{title}</h3>
           <p className="font-textFont text-xs my-4">{body}</p>
-          <Button buttonType="secondary">{buttonText}</Button>
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
           {/* <StructuredText data={dropDownText} /> */}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 export default GradientBanner

@@ -5,6 +5,7 @@ interface IButton {
   onClick?: () => void
   ariaLabel?: string
   buttonType: string
+  type: 'submit' | 'button' | 'reset'
 }
 
 const Button: React.FC<IButton> = ({
@@ -12,7 +13,8 @@ const Button: React.FC<IButton> = ({
   disabled = false,
   onClick,
   ariaLabel,
-  buttonType
+  buttonType,
+  type
 }) => {
   const arrowSmall = (
     <svg
@@ -34,13 +36,13 @@ const Button: React.FC<IButton> = ({
     <button
       className={` flex gap-3 ${
         buttonType === 'primary'
-          ? ' hover:bg-white hover:text-black hover:border-black bg-black text-white border-2 font-titleFont justify-center text-lg '
+          ? ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-subtitleFont justify-center '
           : '  hover:text-greenLink hover:border-black bg-transparent text-black  font-subtitleFont text-md justify-start'
       }
-         mt-8 md:mt-0 px-5 pt-4 pb-3  text-sm-button fullhd:text-tiny-button uppercase tracking-wider rounded-sm items-center`}
+           w-full text-md h-11 min-h-11  md:text-lg fullhd:text-tiny uppercase tracking-wider rounded-sm items-center`}
       disabled={disabled}
       onClick={onClick}
-      type="button"
+      type={type}
       aria-label={ariaLabel}>
       {children}
       {arrowSmall}
