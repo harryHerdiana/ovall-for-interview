@@ -1,10 +1,10 @@
 @layer components {
   .menu-level-one-link  {
-    @apply block pt-1 pb-0.5 uppercase text-sm font-textFont font-bold tracking-wide md:p-2 md:text-xs lg:px-4 lg:text-tiny xl:px-6
+    @apply block pt-1 pb-0.5 uppercase text-tiny font-textFont font-bold tracking-wide md:p-2 md:text-tiny lg:px-4 lg:text-tiny xl:px-6
   }
 
   .section-headline {
-    @apply uppercase font-bold tracking-wide text-base md:text-base xxl:text-xl
+    @apply uppercase font-bold tracking-wide text-base md:text-base xxl:text-2xl
   }
 
   .section-spacing {
@@ -16,7 +16,7 @@
   }
 
   .link-style {
-    @apply uppercase font-bold tracking-wide text-sm
+    @apply uppercase font-bold tracking-wide text-tiny
   }
 
   .slider-nav-item {

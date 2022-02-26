@@ -62,7 +62,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                 <MinusIcon className="h-5 w-5" />
               </button>
 
-              <p className="text-center w-24 md:w-32 text-sm" aria-label="Menge">
+              <p className="text-center w-24 md:w-32 text-tiny" aria-label="Menge">
                 {lineItem.quantity}
               </p>
               <button
@@ -86,7 +86,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
         </div>
       </div>
 
-      <div className="font-medium text-sm md:text-base text-right pr-4">
+      <div className="font-medium text-tiny md:text-base text-right pr-4">
         {toEuro(parseFloat(lineItem.variant.priceV2.amount))}
       </div>
     </div>
