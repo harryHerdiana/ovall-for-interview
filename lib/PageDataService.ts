@@ -30,18 +30,25 @@ export default class PageDataService {
   }
 
   private async getProductData(): Promise<IShopifyProduct> {
-    const response = await this.shopifyClient.query({
-      data: {
-        query: GET_PRODUCT,
-        variables: { handle: 'ovall™-2' }
+    try {
+      const response = await this.shopifyClient.query({
+        data: {
+          query: GET_PRODUCT,
+          variables: { handle: 'ovall™-2' }
+        }
+      })
+
+      if (!response) {
+        throw new Error('Shopify Client: no product found')
       }
-    })
 
-    if (!response) {
-      throw new Error('Shopify Client: no product found')
+      return parseProductResponse(response)
+    } catch (e) {
+      console.log('THIS.client', this.shopifyClient)
+      console.log('error call shopify api', e.message)
+      console.log('error call shopify api II', e.stack)
+      throw e
     }
-
-    return parseProductResponse(response)
   }
 
   private async getFooter(): Promise<any> {

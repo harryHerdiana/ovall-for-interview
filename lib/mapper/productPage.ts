@@ -22,6 +22,16 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       text: utils.findByApiKey(d.productDescriptionSection, 'section_text', 'text'),
       videoUrl: utils.findByApiKey(d.productDescriptionSection, 'video_url_record', 'url')
     },
+    skinTypeInfoSection: {
+      backgroundColor: utils.findByApiKey(
+        d.skinTypeInfoSection,
+        'section_with_gradient_background',
+        'backgroundColor'
+      ),
+      image: utils.findByApiKey(d.skinTypeInfoSection, 'section_with_gradient_background', 'image'),
+      title: utils.findByApiKey(d.skinTypeInfoSection, 'section_with_gradient_background', 'title'),
+      body: utils.findByApiKey(d.skinTypeInfoSection, 'section_text', 'text')
+    },
     faqSection: {
       faqButtonText: d.faqButtonText,
       faqSubtitle: d.faqSubtitle,

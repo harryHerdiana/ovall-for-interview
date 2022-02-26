@@ -98,6 +98,7 @@ export interface IDatoProductPage {
     _modelApiKey: string
     text: string
   }[]
+  skinTypeInfoSection: Array<SectionWithGradientBackground | SectionText>
   productInfoBannerSection: IDatoProductBannerSection
   moodSlideshowSection: any // TODO add type
   productInfoBannerFeatures: IDatoProductBannerSection

@@ -93,6 +93,12 @@ export interface IProductPage {
     text: string
     videoUrl: string
   }
+  skinTypeInfoSection: {
+    backgroundColor: string
+    image
+    title: string
+    body: string
+  }
   productInfoBannerSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage

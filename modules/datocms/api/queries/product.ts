@@ -61,6 +61,27 @@ export const PRODUCT_PAGE_QUERY = `
           url
         }
       }
+      skinTypeInfoSection {
+        ... on SectionWithGradientBackgroundRecord {
+          id
+          title
+          image {
+            responsiveImage {
+              ...ResponsiveImageFragment
+            }
+          }
+          backgroundColor
+          _modelApiKey
+        }
+        ... on SectionTextRecord {
+          id
+          text
+          _modelApiKey
+        }
+      }
+      moodSlideshowSection {
+        ...MoodSlideshowRecordFragment
+      }
       productInfoBannerSection {
         ...ProductInfoBannerFragment
       }
@@ -74,9 +95,7 @@ export const PRODUCT_PAGE_QUERY = `
           body
         }
       }
-      moodSlideshowSection {
-        ...MoodSlideshowRecordFragment
-      }
+
       productInfoBannerFeatures {
         ...ProductInfoBannerFragment
       }
