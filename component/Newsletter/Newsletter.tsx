@@ -29,9 +29,9 @@ const Newsletter: React.FC<INewsletterProps> = ({
     setInput(e.target.value)
   }
   return (
-    <section className="m-auto flex flex-col max-w-site md:w-3/4 lg:w-1/2 h-auto p-5 md:text-center">
+    <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-5 md:text-center">
       <div className="font-subtitleFont">{title.toUpperCase()}</div>
-      <div className="font-titleFont text-xl mb-2">{subheader}</div>
+      <div className="font-titleFont text-2xl mb-2">{subheader}</div>
       <div className="font-textFont">
         <StructuredText data={description} />
       </div>
@@ -42,7 +42,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
           onChange={handleChange}
           type="email"
           placeholder={placeholder.toUpperCase()}
-          className="w-full md:w-1/2 s"
+          className="w-full md:w-1/2"
         />
         <div className="mb md:w-1/2 h-max">
           <Button type="submit" buttonType="primary">
@@ -50,7 +50,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
           </Button>
         </div>
       </form>
-      <div className="font-textFont text-xs font-bold md:w-1/2 m-auto">
+      <div className="font-textFont text-tiny  md:w-1/2 m-auto">
         <StructuredText data={disclaimer} />
       </div>
     </section>

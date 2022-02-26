@@ -57,7 +57,7 @@ const SlideOver: React.FC = () => {
                         </button>
                       </div>
 
-                      <Dialog.Title className="flex-grow-1 text-base md:text-xl font-extrabold text-gray-900">
+                      <Dialog.Title className="flex-grow-1 text-base md:text-2xl font-extrabold text-gray-900">
                         Warenkorb
                       </Dialog.Title>
 
@@ -75,7 +75,7 @@ const SlideOver: React.FC = () => {
                           <div className="rounded px-2 font-bold text-base">
                             {checkout.totalPrice}
                           </div>
-                          <p className="w-full text-sm text-gray-400 text-center md:text-left pt-2 pb-4 sm:pb-0 px-4">
+                          <p className="w-full text-tiny text-gray-400 text-center md:text-left pt-2 pb-4 sm:pb-0 px-4">
                             Preisangaben inkl. gesetzl. MwSt., versandkostenfrei
                           </p>
                         </div>
