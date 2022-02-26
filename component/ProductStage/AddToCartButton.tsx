@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const AddToCartButton: React.FC<IProps> = ({ onClick, children }) => (
-  <Button buttonType="primary" onClick={onClick}>
+  <Button type="button" buttonType="primary" onClick={onClick}>
     {children}
   </Button>
 )

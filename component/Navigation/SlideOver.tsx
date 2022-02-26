@@ -82,6 +82,7 @@ const SlideOver: React.FC = () => {
 
                         <div className="w-full sm:w-1/2 flex justify-center sm:justify-end sm:pr-4">
                           <Button
+                            type="button"
                             buttonType="primary"
                             disabled={checkout.lineItems.length === 0}
                             onClick={handleCheckout}>
