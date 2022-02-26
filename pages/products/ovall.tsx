@@ -8,9 +8,19 @@ import { IDefaultProps, IProductPage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import FaqSection from '@component/FaqSection'
+// import ProductDescription from '@component/ProductDescription'
+import ProductInfoAccordion from '@component/ProductInfoAccordion'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
-  const { seoTags, menu, product, productInfoBannerSection, newsletterSection, faqSection } = props
+  const {
+    seoTags,
+    menu,
+    product,
+    productInfoBannerSection,
+    newsletterSection,
+    faqSection,
+    productInfoAccordionSection
+  } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
   return (
@@ -31,6 +41,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         contentPlacement="left"
         dropDownText={productInfoBannerSection.dropDownText}
       />
+      <ProductInfoAccordion {...productInfoAccordionSection} />
       <FaqSection {...faqSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

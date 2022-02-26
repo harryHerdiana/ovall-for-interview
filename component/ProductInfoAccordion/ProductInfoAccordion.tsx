@@ -4,19 +4,12 @@ import Button from '@component/Button'
 import { IDatoAccordionItem } from '@modules/datocms/types'
 import { Disclosure } from '@headlessui/react'
 
-type IFaqSectionProps = {
-  faqButtonText: string
-  faqSubtitle: string
-  faqTitle: string
+type IProductInfoAccordionProps = {
+  buttonText: string
   items: IDatoAccordionItem[]
 }
 
-const FaqSection: React.FC<IFaqSectionProps> = ({
-  faqButtonText,
-  faqSubtitle,
-  faqTitle,
-  items
-}) => {
+const ProductInfoAccordion: React.FC<IProductInfoAccordionProps> = ({ buttonText, items }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -25,8 +18,6 @@ const FaqSection: React.FC<IFaqSectionProps> = ({
   }
   return (
     <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center my-10">
-      <div className="font-subtitleFont text-base px-5 md:px-0">{faqTitle}</div>
-      <div className="font-titleFont text-2xl  px-5 md:px-0">{faqSubtitle}</div>
       <div className="my-10">
         {items.map((item) => (
           <Disclosure key={item.text}>
@@ -52,11 +43,11 @@ const FaqSection: React.FC<IFaqSectionProps> = ({
       </div>
       <div className="w-full md:w-1/2 m-auto  px-5 md:px-0">
         <Button onClick={scrollToTop} buttonType="primary" type="button">
-          {faqButtonText}
+          {buttonText}
         </Button>
       </div>
     </section>
   )
 }
 
-export default FaqSection
+export default ProductInfoAccordion
