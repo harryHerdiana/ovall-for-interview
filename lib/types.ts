@@ -95,7 +95,7 @@ export interface IProductPage {
   }
   skinTypeInfoSection: {
     backgroundColor: string
-    image
+    image: DatoCMSResponsiveImage
     title: string
     body: string
   }
