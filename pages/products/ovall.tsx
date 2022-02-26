@@ -30,14 +30,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         contentPlacement="left"
         dropDownText={productInfoBannerSection.dropDownText}
       />
-      <Newsletter
-        placeholder={newsletterSection.placeholder}
-        subheader={newsletterSection.subheader}
-        title={newsletterSection.title}
-        disclaimer={newsletterSection.disclaimer}
-        description={newsletterSection.description}
-        buttonText={newsletterSection.buttonText}
-      />
+      <Newsletter {...newsletterSection} />
     </Layout>
   )
 }

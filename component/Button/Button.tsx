@@ -36,10 +36,10 @@ const Button: React.FC<IButton> = ({
     <button
       className={` flex gap-3 ${
         buttonType === 'primary'
-          ? ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-titleFont justify-center '
+          ? ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-subtitleFont justify-center '
           : '  hover:text-greenLink hover:border-black bg-transparent text-black  font-subtitleFont text-md justify-start'
       }
-           w-full h-max text-md h-full md:text-lg fullhd:text-tiny uppercase tracking-wider rounded-sm items-center`}
+           w-full text-md h-11 min-h-11  md:text-lg fullhd:text-tiny uppercase tracking-wider rounded-sm items-center`}
       disabled={disabled}
       onClick={onClick}
       type={type}
