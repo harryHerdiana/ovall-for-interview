@@ -39,7 +39,7 @@ const Button: React.FC<IButton> = ({
           ? ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-subtitleFont justify-center '
           : '  hover:text-greenLink hover:border-black bg-transparent text-black  font-subtitleFont text-tiny justify-start'
       }
-           w-full text-tiny h-11 min-h-11  md:text-base fullhd:text-tiny uppercase tracking-wider items-center`}
+           w-full text-tiny h-11 min-h-11  md:text-tiny fullhd:text-tiny uppercase tracking-wider items-center`}
       disabled={disabled}
       onClick={onClick}
       type={type}

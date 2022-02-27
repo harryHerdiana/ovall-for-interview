@@ -43,11 +43,11 @@ const ProductStage: React.FC<IProductStageProps> = ({
         </div>
       </div>
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-col flex-wrap self-center">
-        <h2 className="w-full font-titleFont text-left  text-2xl md:text-4xl lg:text-4xl leading-headline mb-1">
+        <h2 className="w-full font-titleFont font-bold text-left text-2xl leading-headline mb-1">
           {product.title}
         </h2>
         <div className="text-left flex flex-row ">
-          <h3 className=" self-center font-subtitleFont text-base">
+          <h3 className=" self-center font-subtitleFont text-2xl ">
             {toEuro(variant.priceV2.amount)}
           </h3>
           <div className="text-tiny ml-8 md:ml-10">
