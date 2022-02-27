@@ -51,10 +51,10 @@ const ProductStage: React.FC<IProductStageProps> = ({
             {toEuro(variant.priceV2.amount)}
           </h3>
           <div className="text-tiny ml-8 md:ml-10">
-            <div className="text-greenLink text-tiny md:text-tiny font-subtitleFont">
+            <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
               Spare 20%{' '}
             </div>
-            <h6 className="line-through titleFont text-2xl">
+            <h6 className="line-through font-bold font-subtitleFont">
               {toEuro(variant.compareAtPriceV2.amount)}
             </h6>
           </div>
@@ -69,8 +69,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
         />
 
         <div className="flex justify-between my-4">
-          <p className="w-32 md:w-max text-left font-subTagFont text-tiny">{deliveryTime}</p>
-          <a className="font-subTagFont text-tiny text-greenLink">{freeShippingCaption}</a>
+          <p className="w-32 md:w-max text-left font-textFont text-tiny">{deliveryTime}</p>
+          <a className="font-textFont text-tiny text-greenLink">{freeShippingCaption}</a>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
       </div>
