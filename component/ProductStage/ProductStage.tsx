@@ -47,14 +47,14 @@ const ProductStage: React.FC<IProductStageProps> = ({
           {product.title}
         </h2>
         <div className="text-left flex flex-row ">
-          <h3 className=" self-center font-subtitleFont text-2xl ">
+          <h3 className=" self-center font-titleFont text-2xl ">
             {toEuro(variant.priceV2.amount)}
           </h3>
           <div className="text-tiny ml-8 md:ml-10">
-            <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
+            <div className="text-greenLink text-tiny md:text-tiny font-subtitleFont">
               Spare 20%{' '}
             </div>
-            <h6 className="line-through font-bold font-subtitleFont">
+            <h6 className="line-through titleFont text-2xl">
               {toEuro(variant.compareAtPriceV2.amount)}
             </h6>
           </div>
