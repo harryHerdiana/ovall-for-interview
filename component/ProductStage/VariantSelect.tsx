@@ -49,9 +49,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   })
   return (
     <>
-      <div className="flex flex-row gap-2 mb-4 justify-between">
-        <div className="flex flex-col justify-center">
-          <h6 className="text-tiny items-center my-2 text-left font-tagFont">
+      <div className="flex flex-row gap-2 my-4 justify-between h-16">
+        <div className="flex flex-col justify-between h-max">
+          <h6 className="text-tiny justify-self-start text-left font-tagFont">
             {colorCaption.toUpperCase()}
           </h6>
           <div className="flex flex-row gap-5">
@@ -105,8 +105,8 @@ const VariantSelect: React.FC<IVariantSelect> = ({
             />
           </div>
         </div>
-        <div className="flex flex-col">
-          <h6 className="text-tiny items-center my-2 text-left md:text-right font-tagFont">
+        <div className="flex flex-col justify-between">
+          <h6 className="text-tiny items-center text-left md:text-right font-tagFont">
             {quantityCaption.toUpperCase()}
           </h6>
           <div className="block md:hidden">
