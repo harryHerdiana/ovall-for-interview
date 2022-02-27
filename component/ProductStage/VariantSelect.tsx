@@ -14,6 +14,12 @@ interface IVariantSelect {
   addToCartLabel: string
 }
 
+interface IActiveButton {
+  button1Activated: 'activated' | 'deactivated'
+  button2Activated: 'activated' | 'deactivated'
+  button3Activated: 'activated' | 'deactivated'
+}
+
 const VariantSelect: React.FC<IVariantSelect> = ({
   setVariantSku,
   variant,
@@ -36,10 +42,11 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     shopContext.addVariantToCart(variant, options)
     shopContext.setShowCart(true)
   }
-  const [clicked, setClicked] = useState<boolean>(false)
-  if (clicked === false) {
-    setVariantSku(variants[0].sku)
-  }
+  const [activebutton, setActiveButton] = useState<IActiveButton>({
+    button1Activated: 'activated',
+    button2Activated: 'deactivated',
+    button3Activated: 'deactivated'
+  })
   return (
     <>
       <div className="flex flex-row gap-2 mb-4 justify-between">
@@ -50,35 +57,49 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           <div className="flex flex-row gap-5">
             <button
               className={`${
-                clicked
-                  ? 'focus:ring-1 focus:ring-offset-4 focus:ring-black'
-                  : 'ring-1 ring-offset-4 ring-black'
+                activebutton.button1Activated === 'activated' && 'ring-1 ring-offset-4 ring-black'
               } md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[0].sku}-500`}
               type="button"
               value={variants[0].sku}
               onClick={() => {
                 setVariantSku(variants[0].sku)
-                setClicked(true)
+                setActiveButton({
+                  button1Activated: 'activated',
+                  button2Activated: 'deactivated',
+                  button3Activated: 'deactivated'
+                })
               }}
               aria-hidden="true"
             />
             <button
-              className={`focus:ring-1 focus:ring-offset-4 focus:ring-black md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[2].sku}-500`}
+              className={`${
+                activebutton.button2Activated === 'activated' && 'ring-1 ring-offset-4 ring-black'
+              } md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[2].sku}-500`}
               type="button"
               value={variants[1].sku}
               onClick={() => {
                 setVariantSku(variants[1].sku)
-                setClicked(true)
+                setActiveButton({
+                  button1Activated: 'deactivated',
+                  button2Activated: 'activated',
+                  button3Activated: 'deactivated'
+                })
               }}
               aria-hidden="true"
             />
             <button
-              className={`focus:ring-1 focus:ring-offset-4 focus:ring-black md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[1].sku}-500`}
+              className={`${
+                activebutton.button3Activated === 'activated' && 'ring-1 ring-offset-4 ring-black'
+              } md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[1].sku}-500`}
               type="button"
               value={variants[2].sku}
               onClick={() => {
                 setVariantSku(variants[2].sku)
-                setClicked(true)
+                setActiveButton({
+                  button1Activated: 'deactivated',
+                  button2Activated: 'deactivated',
+                  button3Activated: 'activated'
+                })
               }}
               aria-hidden="true"
             />
