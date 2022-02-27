@@ -49,12 +49,12 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   })
   return (
     <>
-      <div className="flex flex-row gap-2 my-4 justify-between h-16">
+      <div className="flex flex-row gap-2 my-4 justify-between h-17">
         <div className="flex flex-col justify-between h-max">
           <h6 className="text-base justify-self-start text-left font-subtitleFont">
             {colorCaption.toUpperCase()}
           </h6>
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-row gap-5 ml-1">
             <button
               className={`${
                 activebutton.button1Activated === 'activated' && 'ring-1 ring-offset-4 ring-black'
