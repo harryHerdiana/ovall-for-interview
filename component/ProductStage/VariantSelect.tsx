@@ -36,6 +36,10 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     shopContext.addVariantToCart(variant, options)
     shopContext.setShowCart(true)
   }
+  const [clicked, setClicked] = useState<boolean>(false)
+  if (clicked === false) {
+    setVariantSku(variants[0].sku)
+  }
   return (
     <>
       <div className="flex flex-row gap-2 mb-4 justify-between">
@@ -43,17 +47,41 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           <h6 className="text-tiny items-center my-2 text-left font-tagFont">
             {colorCaption.toUpperCase()}
           </h6>
-          <div className="flex flex-row gap-2">
-            {variants.map((variant) => (
-              <button
-                className={`focus:ring-1 focus:ring-offset-2 focus:ring-black w-4 h-4 rounded-full bg-${variant.sku}-500`}
-                type="button"
-                key={variant.id}
-                value={variant.sku}
-                onClick={() => setVariantSku(variant.sku)}
-                aria-hidden="true"
-              />
-            ))}
+          <div className="flex flex-row gap-5">
+            <button
+              className={`${
+                clicked
+                  ? 'focus:ring-1 focus:ring-offset-4 focus:ring-black'
+                  : 'ring-1 ring-offset-4 ring-black'
+              } md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[0].sku}-500`}
+              type="button"
+              value={variants[0].sku}
+              onClick={() => {
+                setVariantSku(variants[0].sku)
+                setClicked(true)
+              }}
+              aria-hidden="true"
+            />
+            <button
+              className={`focus:ring-1 focus:ring-offset-4 focus:ring-black md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[2].sku}-500`}
+              type="button"
+              value={variants[1].sku}
+              onClick={() => {
+                setVariantSku(variants[1].sku)
+                setClicked(true)
+              }}
+              aria-hidden="true"
+            />
+            <button
+              className={`focus:ring-1 focus:ring-offset-4 focus:ring-black md:w-6 md:h-6 w-5 h-5 rounded-full bg-${variants[1].sku}-500`}
+              type="button"
+              value={variants[2].sku}
+              onClick={() => {
+                setVariantSku(variants[2].sku)
+                setClicked(true)
+              }}
+              aria-hidden="true"
+            />
           </div>
         </div>
         <div className="flex flex-col">
@@ -69,7 +97,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
               ))}
             </select>
           </div>
-          <div className="hidden md:flex border-2 border-black">
+          <div className="hidden md:flex border border-black">
             <button disabled={options === 1} type="button" onClick={decrease}>
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>

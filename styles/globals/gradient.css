@@ -1,6 +1,13 @@
+/* people === violet */
+
 .people_solid_left{
     background-color: #b6d8fc;
 }
+
+.violet_solid_left{
+    background-color: #b6d8fc;
+}
+
 
 .blue_solid_left{
     background-color: #fff6ee;
@@ -14,10 +21,15 @@
 }
 
 
-
+/* people === violet */
 .people_solid_right{
     background-color: #b8c8f1;
 }
+
+.violet_solid_right{
+    background-color: #b8c8f1;
+}
+
 
 .blue_solid_right{
     background-color: #ffefe7;
@@ -30,10 +42,15 @@
     background-color: #e4dbf9;
 }
 
-
+/* people === violet */
 .people_gradient_rectangle{
     background: conic-gradient(from 243deg at 50% 50%, #b6dcff, #b9b7e5);
 }
+
+.violet_gradient_rectangle{
+    background: conic-gradient(from 243deg at 50% 50%, #b6dcff, #b9b7e5);
+}
+
 
 .blue_gradient_rectangle{
     background: conic-gradient(from 243deg at 50% 50%, #fff7ef, #fee8e0);

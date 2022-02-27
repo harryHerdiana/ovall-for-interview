@@ -28,12 +28,14 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
       className={`${backgroundColor}_solid_left ${
         contentPlacement === 'left' ? ' hidden md:flex' : 'hidden'
       } w-full flex-col items-end justify-center`}>
-      <div className="flex flex-col pl-5 xl:p-0 w-full xl:w-1/2 my-5">
+      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
         <h3 className="font-bold text-base font-titleFont">{title}</h3>
         <p className="font-textFont text-tiny my-4">{body}</p>
+
         <Button type="button" buttonType="secondary">
           {buttonText}
         </Button>
+
         {/* <StructuredText data={dropDownText} /> */}
       </div>
     </div>
@@ -46,7 +48,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
       className={`${backgroundColor}_solid_right ${
         contentPlacement === 'right' ? ' hidden md:flex' : 'hidden'
       } w-full flex-col items-start justify-center`}>
-      <div className="flex flex-col pl-5 xl:p-0 w-full xl:w-1/2 my-5">
+      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
         <h3 className="font-bold text-base font-titleFont">{title}</h3>
         <p className="font-textFont text-tiny my-4">{body}</p>
 
