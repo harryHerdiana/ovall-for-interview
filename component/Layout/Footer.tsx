@@ -35,8 +35,9 @@ const Footer: React.FC<IFooterProps> = ({ leftColumn, middleColumn, rightColumn 
             <div className="text-base font-subtitleFont uppercase mb-5">{leftColumn.title}</div>
             {leftColumn.items.map((item) => (
               <div
+                key={item.id}
                 id={item.id}
-                className="text-tiny underline font-textFontBold text-greenLink hover:text-black hover:cursor-pointer">
+                className="text-tiny font-textFont hover:text-greenLink  hover:cursor-pointer">
                 <Link href={item.path}>{item.label}</Link>
               </div>
             ))}
@@ -45,8 +46,9 @@ const Footer: React.FC<IFooterProps> = ({ leftColumn, middleColumn, rightColumn 
             <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
             {middleColumn.items.map((item) => (
               <div
+                key={item.id}
                 id={item.id}
-                className="text-tiny underline font-textFontBold text-greenLink hover:text-black hover:cursor-pointer">
+                className="text-tiny font-textFont hover:text-greenLink  hover:cursor-pointer">
                 <Link href={item.path}>{item.label}</Link>
               </div>
             ))}
