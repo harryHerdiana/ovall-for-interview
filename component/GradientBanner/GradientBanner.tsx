@@ -29,7 +29,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         contentPlacement === 'left' ? ' hidden md:flex' : 'hidden'
       } w-full flex-col items-end justify-center`}>
       <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h1 className="font-bold ">{title}</h1>
+        <h1>{title}</h1>
         <p className="my-4">{body}</p>
 
         <Button type="button" buttonType="secondary">

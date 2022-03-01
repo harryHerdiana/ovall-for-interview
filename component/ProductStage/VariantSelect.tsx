@@ -83,7 +83,6 @@ const VariantSelect: React.FC<IVariantSelect> = ({
             <button disabled={options === 1} type="button" onClick={decrease}>
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>
-
             <h4 className="w-10 text-center">{options}</h4>
             <button type="button" onClick={increase}>
               <Icon src="/images/plus.svg" className="h-7 w-7" />
