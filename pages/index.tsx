@@ -6,7 +6,7 @@ import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IHomePage } from '@lib/types'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => (
-  <Layout seoTags={props.seoTags} menu={props.menu}>
+  <Layout footer={props.footer} seoTags={props.seoTags} menu={props.menu}>
     <h1>Ovall HomePage</h1>
     <div>{JSON.stringify(props.heroSection)}</div>
     <div>{JSON.stringify(props.infoSection)}</div>

@@ -32,6 +32,24 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       title: utils.findByApiKey(d.skinTypeInfoSection, 'section_with_gradient_background', 'title'),
       body: utils.findByApiKey(d.skinTypeInfoSection, 'section_text', 'text')
     },
+    productInfoBannerTechnology: {
+      backgroundColor: utils.findByApiKey(
+        d.productInfoBannerMiniSpa.content,
+        'section_with_gradient_background',
+        'backgroundColor'
+      ),
+      image: utils.findByApiKey(
+        d.productInfoBannerMiniSpa.content,
+        'section_with_gradient_background',
+        'image'
+      ),
+      title: utils.findByApiKey(
+        d.productInfoBannerMiniSpa.content,
+        'section_with_gradient_background',
+        'title'
+      ),
+      body: utils.findByApiKey(d.productInfoBannerMiniSpa.content, 'section_text', 'text')
+    },
     faqSection: {
       faqButtonText: d.faqButtonText,
       faqSubtitle: d.faqSubtitle,
