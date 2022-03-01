@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { Image } from 'react-datocms'
+import ResponsiveImage from '@component/ResponsiveImage'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 
 interface IGradientRectangle {
@@ -21,9 +21,7 @@ const GradientRectangle: React.FC<IGradientRectangle> = ({ variantGradient, clas
 
   return (
     <div className={`${gradient} ${className} flex justify-center`}>
-      <Image data={image} />
-      {/* <img src={`${image}`} alt={image} className="h-72 w-max self-end" /> */}
-      <img src="/images/girl_placeholder.png" alt="placeholder" className="h-72 w-max self-end" />
+      <ResponsiveImage image={image} />
     </div>
   )
 }
