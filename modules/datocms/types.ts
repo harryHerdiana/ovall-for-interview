@@ -12,8 +12,9 @@ export type DatoCMSResponsiveImage = {
   sizes: string
   src: string
   srcSet: string
-  with: number
+  width: number
   height: number
+  aspectRatio: number
 }
 
 export type DatoProductVariantImage = {

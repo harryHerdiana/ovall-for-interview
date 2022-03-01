@@ -21,6 +21,8 @@ export const ResponsiveImageFragment = `
     sizes
     base64
     alt
+    aspectRatio
+    webpSrcSet
   }
 `
 

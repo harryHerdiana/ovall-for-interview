@@ -30,6 +30,9 @@
 
 
 @layer base{
+  body{
+    font-size:17px
+  }
   h1,h2{
     line-height:1.154;
     font-size:1.5294em;
@@ -38,26 +41,30 @@
   },
   h3{
     line-height:1.154;
-    @apply text-base font-subtitleFont font-normal uppercase
+    font-size:1.125em;
+    @apply font-subtitleFont font-normal uppercase
   },
   h4{
     line-height:1.353;
-    @apply text-tiny font-subTagFont font-medium
+    font-size:1em;
+    @apply font-subTagFont font-medium
   },
   h5,h6{
     line-height:1.353;
-    @apply text-tiny font-subTagFont font-normal
+    font-size:1em;
+    @apply font-subTagFont font-normal
   },
   p{
     line-height:1.353;
-    @apply text-tiny font-textFont font-light
+    font-size:1em;
+    @apply font-textFont font-light
   },
-  /* a{
+  a{
     @apply text-tiny font-subTagFont font-semibold underline text-greenLink
   },
   a:hover,a:focus,a:active{
     @apply text-tiny font-subTagFont font-semibold text-greenLink
-  } */
+  }
 .kicker{
   line-height:1;
   letter-spacing:-0.015em;

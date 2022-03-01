@@ -1,7 +1,7 @@
 import React from 'react'
 import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import { StructuredTextDocument, StructuredText } from 'react-datocms'
+import { StructuredTextDocument } from 'react-datocms'
 import Button from '@component/Button'
 
 type IGradientBannerProps = {
@@ -9,8 +9,8 @@ type IGradientBannerProps = {
   image: DatoCMSResponsiveImage
   title: string
   body: string
-  buttonText: string
-  dropDownText: StructuredTextDocument
+  buttonText: string | false
+  dropDownText: StructuredTextDocument | false
 
   contentPlacement: 'left' | 'right'
 }
@@ -32,15 +32,16 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <h1>{title}</h1>
         <p className="my-4">{body}</p>
 
-        <Button type="button" buttonType="secondary">
-          {buttonText}
-        </Button>
-
+        {!buttonText === false && (
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
+        )}
         {/* <StructuredText data={dropDownText} /> */}
       </div>
     </div>
     <GradientRectangle
-      image={`${image}`}
+      image={image}
       variantGradient={backgroundColor}
       className="w-full md:w-full"
     />
@@ -52,9 +53,11 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <h1>{title}</h1>
         <p className="my-4">{body}</p>
 
-        <Button type="button" buttonType="secondary">
-          {buttonText}
-        </Button>
+        {!buttonText === false && (
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
+        )}
         {/* <StructuredText data={dropDownText} /> */}
       </div>
     </div>

@@ -13,61 +13,63 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{leftColumn.title}</div>
           {leftColumn.items.map((item) => (
-            <div
-              key={item.id}
-              id={item.id}
-              className=" text-tiny font-textFont hover:text-greenLink">
-              <Link href={item.path}>{item.label}</Link>
-            </div>
+            <Link key={item.id} href={`${item.path}`}>
+              <div
+                id={item.id}
+                className=" text-tiny font-textFont hover:text-greenLink cursor-pointer">
+                {item.label}
+              </div>
+            </Link>
           ))}
         </div>
         <div className="hidden md:flex md:flex-col">
           <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
           {middleColumn.items.map((item) => (
-            <div
-              key={item.id}
-              id={item.id}
-              className="text-tiny font-textFont hover:text-greenLink  hover:cursor-pointer">
-              <Link href={item.path}>{item.label}</Link>
-            </div>
+            <Link key={item.id} href={`${item.path}`}>
+              <div
+                id={item.id}
+                className=" text-tiny font-textFont hover:text-greenLink cursor-pointer">
+                {item.label}
+              </div>
+            </Link>
           ))}
         </div>
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{rightColumn.title}</div>
           <p>{rightColumn.text}</p>
           <div className="flex gap-2 mt-5 justify-center md:justify-start">
-            <div className="hover:cursor-pointer">
-              <Link href={rightColumn.facebook}>
+            <Link href={rightColumn.facebook}>
+              <div className="hover:cursor-pointer">
                 <Icon src="/images/facebook.svg" className="h-12" />
-              </Link>
-            </div>
-            <div>
-              <Link href={rightColumn.instagram}>
+              </div>
+            </Link>
+            <Link href={rightColumn.instagram}>
+              <div>
                 <Icon src="/images/instagram.svg" className="h-12" />
-              </Link>
-            </div>
-            <div>
-              <Link href={rightColumn.pinterest}>
+              </div>
+            </Link>
+            <Link href={rightColumn.pinterest}>
+              <div>
                 <Icon src="/images/pinterest.svg" className="h-12" />
-              </Link>
-            </div>
-            <div>
-              <Link href={rightColumn.youtube}>
+              </div>
+            </Link>
+            <Link href={rightColumn.youtube}>
+              <div>
                 <Icon src="/images/youtube.svg" className="h-12" />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="md:hidden mb-8">
           <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
-          {middleColumn.items.map((item) => (
+          {/* {middleColumn.items.map((item) => (
             <div
               key={item.id}
               id={item.id}
               className="text-tiny font-textFont hover:text-greenLink  hover:cursor-pointer">
               <Link href={item.path}>{item.label}</Link>
             </div>
-          ))}
+          ))} */}
         </div>
         <div className="md:grid md:grid-rows-3 md:grid-flow-col md:gap-4 flex justify-between">
           <div>

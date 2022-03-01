@@ -32,9 +32,9 @@ const Newsletter: React.FC<INewsletterProps> = ({
     <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-5 md:text-center">
       <h3>{title}</h3>
       <h1 className="mb-2">{subheader}</h1>
-      <p>
+      <div>
         <StructuredText data={description} />
-      </p>
+      </div>
       <form
         onSubmit={() => console.log('welcome ', input)}
         className="w-full flex flex-col md:flex-row my-5 gap-5 h-fit">
@@ -50,9 +50,9 @@ const Newsletter: React.FC<INewsletterProps> = ({
           </Button>
         </div>
       </form>
-      <p className="md:w-1/2 m-auto">
+      <div className="md:w-1/2 m-auto">
         <StructuredText data={disclaimer} />
-      </p>
+      </div>
     </section>
   )
 }

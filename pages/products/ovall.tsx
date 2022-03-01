@@ -10,7 +10,6 @@ import Newsletter from '@component/Newsletter'
 import FaqSection from '@component/FaqSection'
 // import ProductDescription from '@component/ProductDescription'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
-import SkinTypeInfo from '@component/SkinTypeInfo'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   const {
@@ -22,7 +21,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     faqSection,
     productInfoAccordionSection,
     skinTypeInfoSection,
-    footer
+    footer,
+    productInfoBannerTechnology
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -37,7 +37,18 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       />
       <GradientBanner {...productInfoBannerSection} contentPlacement="left" />
       <ProductInfoAccordion {...productInfoAccordionSection} />
-      <SkinTypeInfo {...skinTypeInfoSection} contentPlacement="right" />
+      <GradientBanner
+        {...skinTypeInfoSection}
+        buttonText={false}
+        dropDownText={false}
+        contentPlacement="right"
+      />
+      <GradientBanner
+        {...productInfoBannerTechnology}
+        buttonText={false}
+        dropDownText={false}
+        contentPlacement="left"
+      />
       <FaqSection {...faqSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
