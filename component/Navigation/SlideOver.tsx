@@ -75,7 +75,7 @@ const SlideOver: React.FC = () => {
                           <div className="rounded px-2 font-bold text-base">
                             {checkout.totalPrice}
                           </div>
-                          <p className="w-full text-tiny text-gray-400 text-center md:text-left pt-2 pb-4 sm:pb-0 px-4">
+                          <p className="text-center md:text-left pt-2 pb-4 sm:pb-0 px-4">
                             Preisangaben inkl. gesetzl. MwSt., versandkostenfrei
                           </p>
                         </div>

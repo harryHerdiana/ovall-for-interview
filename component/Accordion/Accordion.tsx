@@ -23,9 +23,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
           {({ open }) => (
             <>
               <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
-                <span className="font-subtitleFont uppercase text-base w-full md:w-3/4">
-                  {items[0].text}
-                </span>
+                <h3 className="w-full md:w-3/4">{items[0].text}</h3>
                 <Icon
                   src="/images/arrow-big.svg"
                   className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
@@ -43,9 +41,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
               <>
                 <hr />
                 <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
-                  <span className="font-subtitleFont uppercase text-base w-full md:w-3/4">
-                    {item.text}
-                  </span>
+                  <h3 className="w-full md:w-3/4">{item.text}</h3>
                   <Icon
                     src="/images/arrow-big.svg"
                     className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}

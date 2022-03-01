@@ -19,12 +19,12 @@ module.exports = {
       // body: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
       // hydeep: ['Montserrat', 'Helvetica', 'system-ui'],
       // main: ['ReferenzGrotesk', 'Helvetica', 'Arial', 'Verdana', 'system-ui']
-      subtitleFont: ['SourceCodeProRegular', 'Helvetica', 'system-ui'],
-      titleFont: ['SourceCodeProSemibold'],
-      tagFont: ['WorkSansMedium'],
-      subTagFont: ['WorkSansRegular'],
-      textFont: ['WorkSansLight'],
-      textFontBold: ['WorkSansSemiBold']
+      subtitleFont: ['SourceCodeProRegular', 'Courier New', 'Tahoma', 'monospace'],
+      titleFont: ['SourceCodeProSemibold', 'Courier New', 'Tahoma', 'monospace'],
+      tagFont: ['WorkSansMedium', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
+      subTagFont: ['WorkSansRegular', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
+      textFont: ['WorkSansLight', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
+      textFontBold: ['WorkSansSemiBold', 'Helvetica Neue', 'Helvetica', ' sans-serif']
       // hand: ['Helvetica', 'system-ui'],
       // body: ['Helvetica', 'system-ui'],
       // hydeep: ['Helvetica', 'system-ui'],
@@ -36,7 +36,7 @@ module.exports = {
       '2xs': '.813rem', // 13px for mobile countdown title
       sm: '.875rem', // 14px for tiny text on mobile + nav on desktop
       'sm-button': '.875rem',
-      tiny: '1.063rem', // 17px for buttons and lists
+      tiny: '1rem', // 16px for buttons and lists
       'tiny-button': '1rem', // 16px for buttons and lists
       base: '1.125rem', // 18px paragraphs
       lg: '1.25rem', //

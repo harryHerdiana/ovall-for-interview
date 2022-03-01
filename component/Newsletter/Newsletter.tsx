@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Icon from '@component/Icon'
 import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import { StructuredTextDocument } from 'react-datocms'
-import { StructuredText } from 'react-datocms'
+import { StructuredTextDocument, StructuredText } from 'react-datocms'
+
 import Button from '@component/Button'
 
 type INewsletterProps = {
@@ -30,11 +30,11 @@ const Newsletter: React.FC<INewsletterProps> = ({
   }
   return (
     <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-5 md:text-center">
-      <div className="font-subtitleFont">{title.toUpperCase()}</div>
-      <div className="font-titleFont text-2xl mb-2">{subheader}</div>
-      <div className="font-textFont">
+      <h3>{title}</h3>
+      <h1 className="mb-2">{subheader}</h1>
+      <p>
         <StructuredText data={description} />
-      </div>
+      </p>
       <form
         onSubmit={() => console.log('welcome ', input)}
         className="w-full flex flex-col md:flex-row my-5 gap-5 h-fit">
@@ -50,9 +50,9 @@ const Newsletter: React.FC<INewsletterProps> = ({
           </Button>
         </div>
       </form>
-      <div className="font-textFont text-tiny  md:w-1/2 m-auto">
+      <p className="md:w-1/2 m-auto">
         <StructuredText data={disclaimer} />
-      </div>
+      </p>
     </section>
   )
 }

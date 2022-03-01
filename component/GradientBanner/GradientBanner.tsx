@@ -29,8 +29,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         contentPlacement === 'left' ? ' hidden md:flex' : 'hidden'
       } w-full flex-col items-end justify-center`}>
       <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h3 className="font-bold text-2xl font-titleFont">{title}</h3>
-        <p className="font-textFont text-tiny my-4">{body}</p>
+        <h1 className="font-bold ">{title}</h1>
+        <p className="my-4">{body}</p>
 
         <Button type="button" buttonType="secondary">
           {buttonText}
@@ -49,8 +49,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         contentPlacement === 'right' ? ' hidden md:flex' : 'hidden'
       } w-full flex-col items-start justify-center`}>
       <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h3 className="font-bold text-2xl font-titleFont">{title}</h3>
-        <p className="font-textFont text-tiny my-4">{body}</p>
+        <h1>{title}</h1>
+        <p className="my-4">{body}</p>
 
         <Button type="button" buttonType="secondary">
           {buttonText}
@@ -60,8 +60,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
     </div>
     <div className="md:hidden flex-col items-start h-max justify-center w-full p-5">
       <div className="flex flex-col">
-        <h3 className="font-bold text-2xl font-titleFont">{title}</h3>
-        <p className="font-textFont text-tiny my-4">{body}</p>
+        <h1>{title}</h1>
+        <p className="my-4">{body}</p>
         <Button type="button" buttonType="secondary">
           {buttonText}
         </Button>
