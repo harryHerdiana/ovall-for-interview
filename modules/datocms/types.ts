@@ -99,10 +99,10 @@ export interface IDatoProductPage {
     text: string
   }[]
   skinTypeInfoSection: Array<SectionWithGradientBackground | SectionText>
+  productInfoBannerMiniSpa: IDatoProductBannerSection
   productInfoBannerSection: IDatoProductBannerSection
   moodSlideshowSection: any // TODO add type
   productInfoBannerFeatures: IDatoProductBannerSection
-  productInfoBannerMiniSpa: IDatoProductBannerSection
   productInfoAccordionSection: {
     buttonText: string
     items: IDatoAccordionItem[]

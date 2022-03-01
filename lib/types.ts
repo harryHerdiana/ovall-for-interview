@@ -107,6 +107,12 @@ export interface IProductPage {
     buttonText: string
     dropDownText: StructuredTextDocument // see https://www.datocms.com/docs/react/structured-text-fields
   }
+  productInfoBannerTechnology: {
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    title: string
+    body: string
+  }
   productInfoAccordionSection: {
     buttonText: string
     items: IDatoAccordionItem[]
@@ -122,7 +128,6 @@ export interface IProductPage {
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type
-  // productInfoBannerMiniSpa: any // TODO add type
 }
 /** ************************* */
 
