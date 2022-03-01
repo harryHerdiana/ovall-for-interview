@@ -16,7 +16,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
             <div
               key={item.id}
               id={item.id}
-              className="text-tiny font-textFont hover:text-greenLink  hover:cursor-pointer">
+              className=" text-tiny font-textFont hover:text-greenLink">
               <Link href={item.path}>{item.label}</Link>
             </div>
           ))}
@@ -34,7 +34,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
         </div>
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{rightColumn.title}</div>
-          <div className="text-tiny font-textFont">{rightColumn.text}</div>
+          <p>{rightColumn.text}</p>
           <div className="flex gap-2 mt-5 justify-center md:justify-start">
             <div className="hover:cursor-pointer">
               <Link href={rightColumn.facebook}>

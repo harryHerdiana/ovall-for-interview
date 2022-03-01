@@ -10,6 +10,7 @@
 @import "tailwindcss/base";
 @import "./base/_index.css";
 
+
 /* components layer for any more complicated classes (like card, btn, badge) */
 @import "tailwindcss/components";
 @import "./components/custom-components.css";

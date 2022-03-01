@@ -19,18 +19,32 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
   return (
     <>
       <div className="my-10">
-        {items.map((item) => (
+        <Disclosure defaultOpen>
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
+                <h3 className="w-full md:w-3/4">{items[0].text}</h3>
+                <Icon
+                  src="/images/arrow-big.svg"
+                  className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="px-5 pt-4 pb-2 text-tiny font-textFont text-left">
+                {items[0].body}
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+        {items.slice(1).map((item) => (
           <Disclosure key={item.text}>
             {({ open }) => (
               <>
                 <hr />
-                <Disclosure.Button className="flex justify-between items-center w-full px-5 py-2 text-tiny font-medium text-left rounded-lg  ">
-                  <span className="font-subtitleFont uppercase text-base w-full md:w-3/4">
-                    {item.text}
-                  </span>
+                <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
+                  <h3 className="w-full md:w-3/4">{item.text}</h3>
                   <Icon
                     src="/images/arrow-big.svg"
-                    className={`${open ? 'transform rotate-180' : ''}  w-8 h-8 `}
+                    className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-5 pt-4 pb-2 text-tiny font-textFont text-left">

@@ -27,3 +27,40 @@
     @apply bg-gray-600
   }
 }
+
+
+@layer base{
+  h1,h2{
+    line-height:1.154;
+    font-size:1.5294em;
+    letter-spacing:-0.015em;
+    @apply font-subtitleFont font-semibold 
+  },
+  h3{
+    line-height:1.154;
+    @apply text-base font-subtitleFont font-normal uppercase
+  },
+  h4{
+    line-height:1.353;
+    @apply text-tiny font-subTagFont font-medium
+  },
+  h5,h6{
+    line-height:1.353;
+    @apply text-tiny font-subTagFont font-normal
+  },
+  p{
+    line-height:1.353;
+    @apply text-tiny font-textFont font-light
+  },
+  /* a{
+    @apply text-tiny font-subTagFont font-semibold underline text-greenLink
+  },
+  a:hover,a:focus,a:active{
+    @apply text-tiny font-subTagFont font-semibold text-greenLink
+  } */
+.kicker{
+  line-height:1;
+  letter-spacing:-0.015em;
+  @apply text-base font-normal font-subtitleFont uppercase
+}
+}
