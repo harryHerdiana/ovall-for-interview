@@ -10,11 +10,14 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       colorCaption: d.colorCaption,
       freeShippingCaption: d.freeShippingCaption,
       deliveryTime: d.deliveryTime,
-      productClaims: d.productClaims,
+      productClaims: d.productClaims.map((claim) => ({
+        ...claim,
+        image: claim.image?.responsiveImage || null
+      })),
       variantImages: d.variantImages.map((variantImage) => ({
         color: variantImage.color,
         background: variantImage.image[0].gradientBackground,
-        image: variantImage.image[0].image
+        image: variantImage.image[0].image?.responsiveImage || null
       }))
     },
     descriptionSection: {
@@ -38,11 +41,12 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         'section_with_gradient_background',
         'backgroundColor'
       ),
-      image: utils.findByApiKey(
-        d.productInfoBannerMiniSpa.content,
-        'section_with_gradient_background',
-        'image'
-      ),
+      image:
+        utils.findByApiKey(
+          d.productInfoBannerMiniSpa.content,
+          'section_with_gradient_background',
+          'image'
+        )?.responsiveImage || null,
       title: utils.findByApiKey(
         d.productInfoBannerMiniSpa.content,
         'section_with_gradient_background',
@@ -67,11 +71,12 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         'section_with_gradient_background',
         'title'
       ),
-      image: utils.findByApiKey(
-        d.productInfoBannerSection.content,
-        'section_with_gradient_background',
-        'image'
-      ),
+      image:
+        utils.findByApiKey(
+          d.productInfoBannerSection.content,
+          'section_with_gradient_background',
+          'image'
+        )?.responsiveImage || null,
       body: utils.findByApiKey(d.productInfoBannerSection.content, 'section_text', 'text'),
       buttonText: utils.findByApiKey(
         d.productInfoBannerSection.content,

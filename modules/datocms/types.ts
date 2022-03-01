@@ -21,7 +21,9 @@ export type DatoProductVariantImage = {
   color: 'blue' | 'rose' | 'green'
   image: {
     gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people'
-    image: DatoCMSResponsiveImage
+    image: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
   }[]
 }
 
@@ -42,7 +44,9 @@ export type SectionWithGradientBackground = {
   _modelApiKey: 'section_with_gradient_background'
   backgroundColor: string
   title: string
-  image: DatoCMSResponsiveImage
+  image: {
+    responsiveImage: DatoCMSResponsiveImage
+  }
 }
 
 export type SectionText = {
@@ -93,7 +97,9 @@ export interface IDatoProductPage {
     id: string
     text: string
     title: string
-    image?: DatoCMSResponsiveImage
+    image?: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
   }[]
   productDescriptionSection: {
     _modelApiKey: string
