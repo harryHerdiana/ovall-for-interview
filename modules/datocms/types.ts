@@ -78,6 +78,19 @@ export interface IDatoAccordionItem {
   body: string
 }
 
+export interface IDatoHowToUseSection {
+  header: string
+  items: {
+    id: string
+    header: string
+    description: string
+    image: {
+      image: {
+        responsiveImage: DatoCMSResponsiveImage
+      }
+    }[]
+  }[]
+}
 export interface IDatoProductPage {
   seoTags: SeoTags
   quantityCaption: string
@@ -105,6 +118,7 @@ export interface IDatoProductPage {
     _modelApiKey: string
     text: string
   }[]
+  howToUseSection: IDatoHowToUseSection
   skinTypeInfoSection: Array<SectionWithGradientBackground | SectionText>
   productInfoBannerMiniSpa: IDatoProductBannerSection
   productInfoBannerSection: IDatoProductBannerSection

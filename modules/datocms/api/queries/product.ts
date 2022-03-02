@@ -1,4 +1,5 @@
 import {
+  HowToUseSectionFragment,
   MoodSlideShowFragment,
   NewsletterRecordFragment,
   ProductInfoBannerFragment,
@@ -95,12 +96,14 @@ export const PRODUCT_PAGE_QUERY = `
           body
         }
       }
-
       productInfoBannerFeatures {
         ...ProductInfoBannerFragment
       }
       newsletterSection {
         ...NewsletterRecordFragment
+      }
+      howToUseSection {
+        ...HowToUseSectionFragment
       }
     }
   }
@@ -109,4 +112,5 @@ export const PRODUCT_PAGE_QUERY = `
   ${ResponsiveImageFragment}
   ${NewsletterRecordFragment}
   ${MoodSlideShowFragment}
+  ${HowToUseSectionFragment}
 `

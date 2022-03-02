@@ -98,3 +98,22 @@ export const ProductInfoBannerFragment = `
     }
   }
 `
+
+export const HowToUseSectionFragment = `
+  fragment HowToUseSectionFragment on HowToUseRecord {  
+    header
+    items {
+      id
+      header
+      description
+      image {
+        gradientBackground
+        image {
+          responsiveImage {
+            ...ResponsiveImageFragment
+          }
+        }
+      }
+    }
+  }
+`

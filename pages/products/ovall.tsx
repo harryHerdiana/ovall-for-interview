@@ -12,6 +12,7 @@ import FaqSection from '@component/FaqSection'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
+  console.log('PRPOSE', props)
   const {
     seoTags,
     menu,
