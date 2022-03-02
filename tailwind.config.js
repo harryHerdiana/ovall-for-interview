@@ -31,7 +31,7 @@ module.exports = {
       // main: ['Helvetica', 'Arial', 'Verdana', 'system-ui']
     },
     fontSize: {
-      xxs: '.625rem', // 10px for mobile subtext
+      xxs: '.5rem', // 8px for mobile subtext
       xs: '.75rem', // 12px for button subtext
       '2xs': '.813rem', // 13px for mobile countdown title
       sm: '.875rem', // 14px for tiny text on mobile + nav on desktop

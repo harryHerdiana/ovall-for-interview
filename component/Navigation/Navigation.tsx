@@ -14,7 +14,6 @@ interface INavigation {
 const Navigation: React.FC<INavigation> = ({ menu }) => {
   const shopContext = React.useContext(ShopContext)
   const isCartHasItems: boolean = shopContext.checkout.lineItems.length > 0
-
   const toggleMenu = () => {
     document.body.classList.toggle('menu-is-open')
   }
@@ -25,7 +24,9 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
   const handleScroll = () => {
     setIsScrollDown(window.scrollY >= 20)
   }
-
+  const itemsQuantity = shopContext.checkout.lineItems
+    .map((lineItem) => lineItem.quantity)
+    .reduce((a, b) => a + b, 0)
   React.useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
 
@@ -68,7 +69,9 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
           <Icon src="/images/cart.svg" className="h-8 w-8" />
 
           {isCartHasItems && (
-            <div className="absolute bottom-0 right-0 block h-4 w-4 rounded-full bg-green-600 mb-0.5 mr-0.5 border-2 border-white" />
+            <div className="absolute top-1 right-0 block h-4 w-4 rounded-full bg-greenLink mb-0.5 mr-0.5 border-2 border-white">
+              <div className="text-xxs">{itemsQuantity}</div>
+            </div>
           )}
         </button>
       </div>
