@@ -91,9 +91,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
         </div>
       </div>
 
-      <div className="sm:self-center w-full md:w-72 lg:min-w-full">
-        <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
-      </div>
+      <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
     </>
   )
 }
