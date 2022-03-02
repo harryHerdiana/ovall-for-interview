@@ -30,7 +30,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <div className="flex flex-col">
           <h1>{title}</h1>
           <p className="my-4">{body}</p>
-          {!buttonText === false && (
+          {buttonText && (
             <Button type="button" buttonType="secondary">
               {buttonText}
             </Button>
@@ -47,7 +47,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <h1>{title}</h1>
         <p className="my-4">{body}</p>
 
-        {!buttonText === false && (
+        {buttonText && (
           <Button type="button" buttonType="secondary">
             {buttonText}
           </Button>
@@ -68,7 +68,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <h1>{title}</h1>
         <p className="my-4">{body}</p>
 
-        {!buttonText === false && (
+        {buttonText && (
           <Button type="button" buttonType="secondary">
             {buttonText}
           </Button>
