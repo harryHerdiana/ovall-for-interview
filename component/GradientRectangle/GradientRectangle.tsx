@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react'
 import ResponsiveImage from '@component/ResponsiveImage'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'

@@ -36,7 +36,7 @@ module.exports = {
       '2xs': '.813rem', // 13px for mobile countdown title
       sm: '.875rem', // 14px for tiny text on mobile + nav on desktop
       'sm-button': '.875rem',
-      tiny: '1rem', // 16px for buttons and lists
+      tiny: '1em', // 16px for buttons and lists
       'tiny-button': '1rem', // 16px for buttons and lists
       base: '1.125rem', // 18px for H3, headlines etc
       lg: '1.25rem', //

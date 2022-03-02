@@ -35,16 +35,22 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <GradientBanner {...productInfoBannerSection} contentPlacement="left" />
+      <GradientBanner
+        {...productInfoBannerSection}
+        mobileContentPlacement="bottom"
+        contentPlacement="left"
+      />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <GradientBanner
         {...skinTypeInfoSection}
+        mobileContentPlacement="bottom"
         buttonText={false}
         dropDownText={false}
         contentPlacement="right"
       />
       <GradientBanner
         {...productInfoBannerTechnology}
+        mobileContentPlacement="top"
         buttonText={false}
         dropDownText={false}
         contentPlacement="left"
