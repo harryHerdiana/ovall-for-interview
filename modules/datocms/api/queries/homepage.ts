@@ -94,7 +94,7 @@ export const HOMEPAGE_QUERY = `
             backgroundColor
             _modelApiKey
             image {
-              responsiveImage {
+              responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
                 ...ResponsiveImageFragment
               }
             }
