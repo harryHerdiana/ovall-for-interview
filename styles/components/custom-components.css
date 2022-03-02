@@ -1,73 +1,82 @@
 @layer components {
-  .menu-level-one-link  {
-    @apply block pt-1 pb-0.5 uppercase text-tiny font-textFont font-bold tracking-wide md:p-2 md:text-tiny lg:px-4 lg:text-tiny xl:px-6
+  .menu-level-one-link {
+    @apply block pt-1 pb-0.5 uppercase text-tiny font-textFont font-bold tracking-wide md:p-2 md:text-tiny lg:px-4 lg:text-tiny xl:px-6;
   }
 
   .section-headline {
-    @apply uppercase font-bold tracking-wide text-base md:text-base xxl:text-2xl
+    @apply uppercase font-bold tracking-wide text-base md:text-base xxl:text-2xl;
   }
 
   .section-spacing {
-    @apply py-12 sm:py-8 md:py-20
+    @apply py-12 sm:py-8 md:py-20;
   }
 
   .section-content-width {
-    @apply max-w-content-xl m-auto px-4 lg:px-6
+    @apply max-w-content-xl m-auto px-4 lg:px-6;
   }
 
   .link-style {
-    @apply uppercase font-bold tracking-wide text-tiny
+    @apply uppercase font-bold tracking-wide text-tiny;
   }
 
   .slider-nav-item {
-    @apply inline-flex w-2.5 h-2.5 bg-gray-200 rounded-full relative m-2
+    @apply inline-flex w-2.5 h-2.5 bg-gray-200 rounded-full relative m-2;
   }
 
   .slider-nav-item__active {
-    @apply bg-gray-600
+    @apply bg-gray-600;
   }
 }
 
-
-@layer base{
-  body{
-    font-size:17px
+@layer base {
+  body {
+    font-size: 17px;
   }
-  h1,h2{
-    line-height:1.154;
-    font-size:1.5294em;
-    letter-spacing:-0.015em;
-    @apply font-subtitleFont font-semibold 
-  },
-  h3{
-    line-height:1.154;
-    font-size:1.125em;
-    @apply font-subtitleFont font-normal uppercase
-  },
-  h4{
-    line-height:1.353;
-    font-size:1em;
-    @apply font-subTagFont font-medium
-  },
-  h5,h6{
-    line-height:1.353;
-    font-size:1em;
-    @apply font-subTagFont font-normal
-  },
-  p{
-    line-height:1.353;
-    font-size:1em;
-    @apply font-textFont font-light
-  },
-  a{
-    @apply text-tiny font-subTagFont font-semibold underline text-greenLink
-  },
-  a:hover,a:focus,a:active{
-    @apply text-tiny font-subTagFont font-semibold text-greenLink
+  h1,
+  h2 {
+    line-height: 1.154;
+    font-size: 1.5294em;
+    letter-spacing: -0.015em;
+    @apply font-subtitleFont font-semibold;
   }
-.kicker{
-  line-height:1;
-  letter-spacing:-0.015em;
-  @apply text-base font-normal font-subtitleFont uppercase
-}
+  ,
+  h3 {
+    line-height: 1.154;
+    font-size: 1.0588em;
+    @apply font-subtitleFont font-normal uppercase;
+  }
+  ,
+  h4 {
+    line-height: 1.353;
+    font-size: 1em;
+    @apply font-subTagFont font-medium;
+  }
+  ,
+  h5,
+  h6 {
+    line-height: 1.353;
+    font-size: 1em;
+    @apply font-subTagFont font-normal;
+  }
+  ,
+  p {
+    line-height: 1.353;
+    font-size: 1em;
+    @apply font-textFont font-light;
+  }
+  ,
+  a {
+    @apply text-tiny font-subTagFont font-semibold underline text-greenLink;
+  }
+  ,
+  a:hover,
+  a:focus,
+  a:active {
+    @apply text-tiny font-subTagFont font-semibold text-greenLink;
+  }
+  .kicker {
+    line-height: 1;
+    letter-spacing: -0.015em;
+    @apply text-base font-normal font-subtitleFont uppercase;
+  }
 }

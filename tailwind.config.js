@@ -261,12 +261,7 @@ module.exports = {
         //   light: '#83886F',
         //   DEFAULT: 'rgba(79, 93, 51)'
         // }
-      },
-      backgroundImage: () => ({
-        herbs: "url('/images/bg-benefits-herbs.jpg')",
-        'stage-powergreens-desktop': "url('/images/stage-powergreens-xl.jpg')",
-        'stage-powergreens': "url('/images/stage-powergreens.jpg')"
-      })
+      }
     }
   }, // eslint-disable-next-line global-require
   plugins: [require('@tailwindcss/forms')]
