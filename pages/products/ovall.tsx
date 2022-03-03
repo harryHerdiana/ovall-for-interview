@@ -42,7 +42,6 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="bottom"
         contentPlacement="left"
       />
-      <ProductInfoAccordion {...productInfoAccordionSection} />
       <GradientBanner
         {...skinTypeInfoSection}
         mobileContentPlacement="bottom"
@@ -53,11 +52,12 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="top"
         contentPlacement="left"
       />
+      <ProductInfoAccordion {...productInfoAccordionSection} />
       <GradientBanner
         {...productInfoBannerFeatures}
         items={productInfoBannerFeatures.items}
         mobileContentPlacement="bottom"
-        contentPlacement="right"
+        contentPlacement="left"
       />
       <FaqSection {...faqSection} />
       <Newsletter {...newsletterSection} />
