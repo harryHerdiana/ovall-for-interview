@@ -1,4 +1,5 @@
 import {
+  HowToUseSectionFragment,
   MoodSlideShowFragment,
   NewsletterRecordFragment,
   ProductInfoAccordionRecordFragment,
@@ -38,21 +39,7 @@ export const HOMEPAGE_QUERY = `
         }
       }
       howToUseSection {
-        _modelApiKey
-        header
-        items {
-          id
-          header
-          description
-          image {
-            gradientBackground
-            image {
-              responsiveImage {
-                ...ResponsiveImageFragment
-              }
-            }
-          }
-        }
+        ...HowToUseSectionFragment
       }
       infoSection {
         content {
@@ -181,5 +168,6 @@ export const HOMEPAGE_QUERY = `
   ${ProductInfoAccordionRecordFragment}
   ${NewsletterRecordFragment}
   ${MoodSlideShowFragment}
+  ${HowToUseSectionFragment}
   
 `

@@ -67,6 +67,14 @@ export interface IProductVariantImage {
   image: DatoCMSResponsiveImage
 }
 
+export interface IBaseGradientSection {
+  backgroundColor: string
+  image: DatoCMSResponsiveImage
+  title: string
+  body: string
+  buttonTetx?: string
+}
+
 export interface IProductPage {
   stageSection: {
     quantityCaption: string
@@ -96,6 +104,7 @@ export interface IProductPage {
   howToUseSection: {
     title: string
     items: {
+      id: string
       title: string
       image: DatoCMSResponsiveImage
       description: string
@@ -120,6 +129,17 @@ export interface IProductPage {
     image: DatoCMSResponsiveImage
     title: string
     body: string
+  }
+  productInfoBannerFeatures: {
+    title: string
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    items: {
+      id: string
+      icon: string
+      title: string
+      text: string
+    }[]
   }
   productInfoAccordionSection: {
     buttonText: string

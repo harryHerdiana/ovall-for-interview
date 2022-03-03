@@ -63,12 +63,7 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       ),
       body: utils.findByApiKey(d.productInfoBannerMiniSpa.content, 'section_text', 'text')
     },
-    faqSection: {
-      faqButtonText: d.faqButtonText,
-      faqSubtitle: d.faqSubtitle,
-      faqTitle: d.faqTitle,
-      items: d.faqItems.items
-    },
+
     productInfoBannerSection: {
       backgroundColor: utils.findByApiKey(
         d.productInfoBannerSection.content,
@@ -101,6 +96,16 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
     productInfoAccordionSection: {
       buttonText: d.productInfoAccordionSection.buttonText,
       items: d.productInfoAccordionSection.items
+    },
+    productInfoBannerFeatures: {
+      ...utils.parseInfoBannerSection(d.productInfoBannerFeatures.content),
+      items: utils.findByApiKey(d.productInfoBannerFeatures.content, 'icon_list', 'items')
+    },
+    faqSection: {
+      faqButtonText: d.faqButtonText,
+      faqSubtitle: d.faqSubtitle,
+      faqTitle: d.faqTitle,
+      items: d.faqItems.items
     },
     newsletterSection: {
       ...d.newsletterSection,

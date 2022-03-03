@@ -95,6 +95,17 @@ export const ProductInfoBannerFragment = `
           value
         }
       }
+      ... on IconListRecord {
+        _modelApiKey
+        items {
+          title
+          text {
+            value
+          }
+          icon
+          id
+        }
+      }
     }
   }
 `
