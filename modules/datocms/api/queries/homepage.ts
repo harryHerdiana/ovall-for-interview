@@ -32,7 +32,7 @@ export const HOMEPAGE_QUERY = `
             url
             height
             width
-            responsiveImage {
+            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
               ...ResponsiveImageFragment
             }
           }
@@ -48,7 +48,7 @@ export const HOMEPAGE_QUERY = `
             _modelApiKey
             title
             image {
-              responsiveImage {
+              responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
                 ...ResponsiveImageFragment
               }
             }
@@ -136,7 +136,7 @@ export const HOMEPAGE_QUERY = `
             _modelApiKey
             title
             image {
-              responsiveImage {
+              responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
                 ...ResponsiveImageFragment
               }
             }
