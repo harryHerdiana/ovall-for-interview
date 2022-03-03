@@ -40,7 +40,8 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         'section_with_gradient_background',
         'backgroundColor'
       ),
-      image: utils.findByApiKey(d.skinTypeInfoSection, 'section_with_gradient_background', 'image'),
+      image: utils.findByApiKey(d.skinTypeInfoSection, 'section_with_gradient_background', 'image')
+        ?.responsiveImage,
       title: utils.findByApiKey(d.skinTypeInfoSection, 'section_with_gradient_background', 'title'),
       body: utils.findByApiKey(d.skinTypeInfoSection, 'section_text', 'text')
     },
