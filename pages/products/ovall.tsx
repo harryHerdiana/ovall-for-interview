@@ -23,7 +23,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     productInfoAccordionSection,
     skinTypeInfoSection,
     footer,
-    productInfoBannerTechnology
+    productInfoBannerTechnology,
+    productInfoBannerFeatures
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -45,16 +46,18 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       <GradientBanner
         {...skinTypeInfoSection}
         mobileContentPlacement="bottom"
-        buttonText={false}
-        dropDownText={false}
         contentPlacement="right"
       />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
-        buttonText={false}
-        dropDownText={false}
         contentPlacement="left"
+      />
+      <GradientBanner
+        {...productInfoBannerFeatures}
+        items={productInfoBannerFeatures.items}
+        mobileContentPlacement="bottom"
+        contentPlacement="right"
       />
       <FaqSection {...faqSection} />
       <Newsletter {...newsletterSection} />

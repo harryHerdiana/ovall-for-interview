@@ -17,7 +17,7 @@ const FaqSection: React.FC<IFaqSectionProps> = ({
 }) => (
   <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center my-10">
     <h3 className=" px-5 md:px-0">{faqTitle}</h3>
-    <h1 className="px-5 md:px-0">{faqSubtitle}</h1>
+    <h2 className="px-5 md:px-0">{faqSubtitle}</h2>
     <Accordion items={items} buttonText={faqButtonText} />
   </section>
 )

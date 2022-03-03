@@ -23,7 +23,9 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
           {({ open }) => (
             <>
               <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
-                <h3 className="w-full md:w-3/4">{items[0].text}</h3>
+                <div className="w-full md:w-3/4 text-base font-subtitleFont uppercase">
+                  {items[0].text}
+                </div>
                 <Icon
                   src="/images/arrow-big.svg"
                   className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
