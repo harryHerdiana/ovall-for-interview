@@ -19,26 +19,8 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
   return (
     <>
       <div className="my-10">
-        <Disclosure defaultOpen>
-          {({ open }) => (
-            <>
-              <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
-                <div className="w-full md:w-3/4 text-base font-subtitleFont uppercase">
-                  {items[0].text}
-                </div>
-                <Icon
-                  src="/images/arrow-big.svg"
-                  className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
-                />
-              </Disclosure.Button>
-              <Disclosure.Panel className="px-5 pt-4 pb-2 text-tiny font-textFont text-left">
-                {items[0].body}
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
-        {items.slice(1).map((item) => (
-          <Disclosure key={item.text}>
+        {items.map((item, index) => (
+          <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (
               <>
                 <hr />
