@@ -39,7 +39,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
           <div className="flex flex-col">
             <h2>{title}</h2>
-            <p className="my-4">{body}</p>
+            <div className="text=tiny">
+              <p className="my-4">{body}</p>
+            </div>
             {items && <BannerFeatures items={items} />}
             {buttonText && (
               <Button type="button" buttonType="secondary">
@@ -56,7 +58,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         } w-full flex-col items-end justify-center`}>
         <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
           <h2>{title}</h2>
-          <p className="my-4">{body}</p>
+          <div className="text=tiny">
+            <p className="my-4">{body}</p>
+          </div>
           {items && <BannerFeatures items={items} />}
           {buttonText && (
             <Button type="button" buttonType="secondary">
@@ -77,7 +81,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         } w-full flex-col items-start justify-center`}>
         <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
           <h2>{title}</h2>
-          <p className="my-4">{body}</p>
+          <div className="text=tiny">
+            <p className="my-4">{body}</p>
+          </div>
           {items && <BannerFeatures items={items} />}
           {buttonText && (
             <Button type="button" buttonType="secondary">
@@ -91,7 +97,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
           <div className="flex flex-col">
             <h2>{title}</h2>
-            <p className="my-4">{body}</p>
+            <div className="text=tiny">
+              <p className="my-4">{body}</p>
+            </div>
             {items && <BannerFeatures items={items} />}
             {!buttonText === false && (
               <Button type="button" buttonType="secondary">

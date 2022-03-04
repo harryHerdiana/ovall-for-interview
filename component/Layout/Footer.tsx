@@ -36,7 +36,9 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
         </div>
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{rightColumn.title}</div>
-          <p>{rightColumn.text}</p>
+          <div className="text-tiny">
+            <p>{rightColumn.text}</p>
+          </div>
           <div className="flex gap-2 mt-5 justify-center md:justify-start">
             <Link href={rightColumn.facebook}>
               <div className="hover:cursor-pointer">

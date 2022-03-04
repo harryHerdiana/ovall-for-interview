@@ -26,7 +26,7 @@ const HowToUse: React.FC<IHowToUseProps> = ({ title, items }) => {
               <ResponsiveImage image={item.image} />
             </div>
             <div className="my-4 px-4">
-              <div className="text-base uppercase">{item.title}</div>
+              <div className="text-base uppercase font-subtitleFont">{item.title}</div>
               <div className="text-tiny font-textFont">{item.description}</div>
             </div>
           </div>
