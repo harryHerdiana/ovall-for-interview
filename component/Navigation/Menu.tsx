@@ -7,7 +7,7 @@ const Menu: React.FC<{ items: IMenu }> = ({ items }) => (
     {items.map((menuItem) => (
       <li
         key={menuItem.id}
-        className="whitespace-nowrap md:first:flex-grow md:last:flex-grow md:first:text-right md:last:text-left">
+        className="whitespace-nowrap md:first:flex-grow md:last:flex-grow md:first:text-right md:last:text-left cursor-pointer">
         <Link href={menuItem.path} prefetch={false}>
           <span>{menuItem.label}</span>
         </Link>

@@ -43,12 +43,12 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="bottom"
         contentPlacement="left"
       />
+      <HowToUse {...howToUseSection} />
       <GradientBanner
         {...skinTypeInfoSection}
         mobileContentPlacement="bottom"
         contentPlacement="right"
       />
-      <HowToUse {...howToUseSection} />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
