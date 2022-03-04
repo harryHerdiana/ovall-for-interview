@@ -72,7 +72,7 @@ export const ProductInfoBannerFragment = `
         backgroundColor
         title
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: clip, w: 600, h: 384 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: clip, w: 500, h: 400 }) {
             ...ResponsiveImageFragment
           }
         }
@@ -120,7 +120,7 @@ export const HowToUseSectionFragment = `
       image {
         gradientBackground
         image {
-          responsiveImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 850, h: 350 }) {
             ...ResponsiveImageFragment
           }
         }

@@ -61,10 +61,11 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                 aria-label="reduzieren">
                 <MinusIcon className="h-5 w-5" />
               </button>
-
-              <p className="text-center w-24 md:w-32 text-tiny" aria-label="Menge">
-                {lineItem.quantity}
-              </p>
+              <div className="text-tiny">
+                <p className="text-center w-24 md:w-32" aria-label="Menge">
+                  {lineItem.quantity}
+                </p>
+              </div>
               <button
                 className="focus:outline-none hover:bg-gray-900 rounded-full md:p-2 hover:text-white"
                 onClick={doIncrement}

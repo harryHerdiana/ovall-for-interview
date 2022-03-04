@@ -17,7 +17,9 @@ const ProductClaimsSection: React.FC<IProps> = ({ productClaims }) => (
         <Icon src="/images/check.svg" className="h-10 w-10" />
         <div className=" flex flex-col items-start justify-start text-left">
           <h3 className="mt-2">{productClaim.title}</h3>
-          <p>{productClaim.text}</p>
+          <div className="text-tiny">
+            <p>{productClaim.text}</p>
+          </div>
         </div>
       </div>
     ))}

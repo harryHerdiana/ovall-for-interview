@@ -61,7 +61,7 @@
   ,
   p {
     line-height: 1.353;
-    font-size: 1rem;
+    font-size: 1em;
     @apply font-textFont font-light;
   }
   ,

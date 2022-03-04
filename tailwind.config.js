@@ -38,7 +38,7 @@ module.exports = {
       'sm-button': '.875rem',
       tiny: '1rem', // 16px for buttons and lists
       'tiny-button': '1rem', // 16px for buttons and lists
-      base: '1rem', // 18px for H3, headlines etc
+      base: '1.05882rem', // 18px for H3, headlines etc
       lg: '1.2rem', //
       xl: '1.222rem', // 22px desktop teaser text
       '2xl': '1.52941rem', // 26px for H1/H2 on mobile and tablet
