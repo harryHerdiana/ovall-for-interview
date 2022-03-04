@@ -31,17 +31,17 @@ module.exports = {
       // main: ['Helvetica', 'Arial', 'Verdana', 'system-ui']
     },
     fontSize: {
-      xxs: '.5rem', // 8px for mobile subtext
-      xs: '.75rem', // 12px for button subtext
-      '2xs': '.813rem', // 13px for mobile countdown title
-      sm: '.875rem', // 14px for tiny text on mobile + nav on desktop
+      xxs: '.4705rem', // 8px for mobile subtext
+      xs: '.7058rem', // 12px for button subtext
+      '2xs': '13px', // 13px for mobile countdown title
+      sm: '15px', // 14px for tiny text on mobile + nav on desktop
       'sm-button': '.875rem',
-      tiny: '1em', // 16px for buttons and lists
+      tiny: '1rem', // 16px for buttons and lists
       'tiny-button': '1rem', // 16px for buttons and lists
-      base: '1.125rem', // 18px for H3, headlines etc
-      lg: '1.25rem', //
-      xl: '1.375rem', // 22px desktop teaser text
-      '2xl': '1.625rem', // 26px for H1/H2 on mobile and tablet
+      base: '1rem', // 18px for H3, headlines etc
+      lg: '1.2rem', //
+      xl: '1.222rem', // 22px desktop teaser text
+      '2xl': '1.52941rem', // 26px for H1/H2 on mobile and tablet
       '3xl': '1.75rem', // 28px for H1 on mobile
       '4xl': '2rem', // 32px for H2 on desktop and H1 on tablet
       '5xl': '2.6rem', // 38px for H1 on desktop

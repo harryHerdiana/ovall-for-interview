@@ -31,7 +31,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
   return (
     <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-5 md:text-center">
       <h3>{title}</h3>
-      <h1 className="mb-2">{subheader}</h1>
+      <h2 className="mb-2">{subheader}</h2>
       <div>
         <StructuredText data={description} />
       </div>
@@ -50,7 +50,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
           </Button>
         </div>
       </form>
-      <div className="md:w-1/2 m-auto">
+      <div className="md:w-1/2 m-auto text-2xs">
         <StructuredText data={disclaimer} />
       </div>
     </section>

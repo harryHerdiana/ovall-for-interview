@@ -16,6 +16,11 @@
     background-color: #e9f4ff;
 }
 
+.lotus-pink_solid_left{
+    background-color: #e9f4ff;
+}
+
+
 .green_solid_left{
     background-color: #d3d6f2;
 }
@@ -35,6 +40,9 @@
     background-color: #ffefe7;
 }
 .pink_solid_right{
+    background-color: #eaeefa;
+}
+.lotus-pink_solid_right{
     background-color: #eaeefa;
 }
 
@@ -59,6 +67,7 @@
 .pink_gradient_rectangle{
     background: conic-gradient(from 243deg at 50% 50%, #e9f4ff, #eae9f7);
 }
+
 
 .green_gradient_rectangle{
     background: conic-gradient(from 243deg at 50% 50%, #d2d6f2, #f2e0ff);

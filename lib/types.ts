@@ -138,7 +138,7 @@ export interface IProductPage {
       id: string
       icon: string
       title: string
-      text: string
+      text: StructuredTextDocument
     }[]
   }
   productInfoAccordionSection: {

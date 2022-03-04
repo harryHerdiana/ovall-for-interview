@@ -29,39 +29,39 @@
 }
 
 @layer base {
-  body {
+  html {
     font-size: 17px;
   }
   h1,
   h2 {
     line-height: 1.154;
-    font-size: 1.5294em;
+    font-size: 1.529411rem;
     letter-spacing: -0.015em;
     @apply font-subtitleFont font-semibold;
   }
   ,
   h3 {
     line-height: 1.154;
-    font-size: 1.0588em;
+    font-size: 1.0588rem;
     @apply font-subtitleFont font-normal uppercase;
   }
   ,
   h4 {
     line-height: 1.353;
-    font-size: 1em;
+    font-size: 1rem;
     @apply font-subTagFont font-medium;
   }
   ,
   h5,
   h6 {
     line-height: 1.353;
-    font-size: 1em;
+    font-size: 1rem;
     @apply font-subTagFont font-normal;
   }
   ,
   p {
     line-height: 1.353;
-    font-size: 1em;
+    font-size: 1rem;
     @apply font-textFont font-light;
   }
   ,
