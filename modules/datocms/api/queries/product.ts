@@ -16,7 +16,7 @@ export const PRODUCT_PAGE_QUERY = `
         image {
           gradientBackground
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: fill, w: 600, h: 384 }) {
               ...ResponsiveImageFragment
             }
           }

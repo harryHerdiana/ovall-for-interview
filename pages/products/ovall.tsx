@@ -10,6 +10,7 @@ import Newsletter from '@component/Newsletter'
 import FaqSection from '@component/FaqSection'
 // import ProductDescription from '@component/ProductDescription'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
+import HowToUse from '@component/HowToUse'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   const {
@@ -23,7 +24,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     skinTypeInfoSection,
     footer,
     productInfoBannerTechnology,
-    productInfoBannerFeatures
+    productInfoBannerFeatures,
+    howToUseSection
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -46,6 +48,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="bottom"
         contentPlacement="right"
       />
+      <HowToUse {...howToUseSection} />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"

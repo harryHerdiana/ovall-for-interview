@@ -120,7 +120,7 @@ export const HowToUseSectionFragment = `
       image {
         gradientBackground
         image {
-          responsiveImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 390, h: 250 }) {
             ...ResponsiveImageFragment
           }
         }
