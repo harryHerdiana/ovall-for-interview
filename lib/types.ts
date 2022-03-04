@@ -75,6 +75,12 @@ export interface IBaseGradientSection {
   buttonTetx?: string
 }
 
+export interface IProductSlideshowImage {
+  id: string
+  background?: string
+  image: DatoCMSResponsiveImage
+}
+
 export interface IProductPage {
   stageSection: {
     quantityCaption: string
@@ -89,6 +95,7 @@ export interface IProductPage {
       image?: DatoCMSResponsiveImage
     }[]
     variantImages: IProductVariantImage[]
+    slideshowImages: IProductSlideshowImage[]
   }
   faqSection: {
     faqButtonText: string

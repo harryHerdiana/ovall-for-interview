@@ -1,9 +1,32 @@
 import React from 'react'
+import Slickslider from 'react-slick'
 
-interface ISlider {
-  items: any[] // TODO: add types
+const defaultSettings = {
+  dots: true,
+  autoplaySpeed: 6500,
+  autoplay: false,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true
+  // nextArrow: <NextArrow />,
+  // prevArrow: <PrevArrow />
 }
 
-const Slider: React.FC<ISlider> = () => <div>Placeholder for Slideshow</div>
+interface ISlider {
+  children: React.ReactElement[]
+  settings?: Record<string, unknown>
+  className: string
+}
+
+const Slider: React.FC<ISlider> = ({ children, settings = {}, ...extraProps }) => {
+  const mergedSettings = { ...defaultSettings, ...settings }
+  return (
+    <Slickslider {...mergedSettings} {...extraProps}>
+      {children}
+    </Slickslider>
+  )
+}
 
 export default Slider

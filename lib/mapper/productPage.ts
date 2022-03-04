@@ -18,6 +18,11 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         color: variantImage.color,
         background: variantImage.image[0].gradientBackground,
         image: variantImage.image[0].image?.responsiveImage || null
+      })),
+      slideshowImages: d.slideshowItems.map((item) => ({
+        id: item.id,
+        background: item.gradientBackground,
+        image: item.image.responsiveImage
       }))
     },
     descriptionSection: {

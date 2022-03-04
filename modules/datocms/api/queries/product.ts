@@ -22,6 +22,15 @@ export const PRODUCT_PAGE_QUERY = `
           }
         }
       }
+      slideshowItems {
+        gradientBackground
+        image {
+          responsiveImage {
+            ...ResponsiveImageFragment
+          }
+        }
+        id
+      }
       title
       slug
       freeShippingCaption

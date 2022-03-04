@@ -7,6 +7,7 @@ import { toEuro } from '@lib/utils'
 import VariantSelect from './VariantSelect'
 import AddToCartButton from './AddToCartButton'
 import ProductClaimsSection from './ProductClaims'
+import ProductSlideshow from './ProductSlideshow'
 
 interface IProductStageProps extends IProductPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
@@ -26,7 +27,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
     productClaims,
     colorCaption,
     deliveryTime,
-    freeShippingCaption
+    freeShippingCaption,
+    slideshowImages
   }
 }) => {
   const shopContext = React.useContext(ShopContext)
@@ -39,7 +41,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
     <section className="gap-8 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
       <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
         <div className="relative w-full px-4">
-          <Slider items={[]} />
+          <ProductSlideshow items={slideshowImages} />
         </div>
       </div>
       <div className="text-center lg:text-left text-black p-4 lg:pl-8 lg:pr-0 xl:pl-24 flex flex-col flex-wrap ">

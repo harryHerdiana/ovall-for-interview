@@ -44,7 +44,6 @@ export default class PageDataService {
 
       return parseProductResponse(response)
     } catch (e) {
-      console.log('THIS.client', this.shopifyClient)
       console.log('error call shopify api', e.message)
       console.log('error call shopify api II', e.stack)
       throw e

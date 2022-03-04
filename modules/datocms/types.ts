@@ -106,6 +106,13 @@ export interface IDatoProductPage {
   }
   slug: string // check: do we need this?
   variantImages: DatoProductVariantImage[]
+  slideshowItems: {
+    id: string
+    gradientBackground: string
+    image: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
+  }[]
   productClaims: {
     id: string
     text: string
