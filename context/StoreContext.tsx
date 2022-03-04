@@ -4,6 +4,7 @@ import { getShopifyClient } from '@modules/shopify/api/buy/client'
 import { Language } from '@lib/types'
 import * as utils from '@lib/utils'
 import { LOCALSTORAGE_CHECKOUT_KEY } from '@lib/constants'
+import { trackAddToCartEvent } from '@modules/tracking/events'
 import fetchNewOrExistingCheckout from './fetchNewOrExistingCheckout'
 
 /* eslint-disable */
@@ -65,7 +66,13 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
     return getShopifyClient(locale as Language)
       .checkout.addLineItems(checkoutID, lineItemsToUpdate)
       .then((response) => {
-        // TODO: dispatch tracking event, t.b.d
+        trackAddToCartEvent({
+          brand: 'ovall',
+          itemId: variant.id,
+          quantity,
+          price: variant.priceV2.amount,
+          itemName: variant.title
+        })
         setCheckout(response)
         setLoading(false)
       })
