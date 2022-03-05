@@ -15,6 +15,7 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         image: claim.image?.responsiveImage || null
       })),
       variantImages: d.variantImages.map((variantImage) => ({
+        id: variantImage.color,
         color: variantImage.color,
         background: variantImage.image[0].gradientBackground,
         image: variantImage.image[0].image?.responsiveImage || null

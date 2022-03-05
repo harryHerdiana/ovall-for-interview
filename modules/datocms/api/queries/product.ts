@@ -11,6 +11,7 @@ export const PRODUCT_PAGE_QUERY = `
   query getProduct($locale: SiteLocale!) {
     product(locale: $locale) {
       variantImages {
+        id
         color
         createdAt
         image {
@@ -25,7 +26,7 @@ export const PRODUCT_PAGE_QUERY = `
       slideshowItems {
         gradientBackground
         image {
-          responsiveImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
             ...ResponsiveImageFragment
           }
         }

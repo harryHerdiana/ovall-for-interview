@@ -62,6 +62,7 @@ export interface IHomePage {
 }
 
 export interface IProductVariantImage {
+  id: string
   color: string
   background: string
   image: DatoCMSResponsiveImage
