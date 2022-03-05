@@ -15,9 +15,15 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         image: claim.image?.responsiveImage || null
       })),
       variantImages: d.variantImages.map((variantImage) => ({
+        id: variantImage.color,
         color: variantImage.color,
         background: variantImage.image[0].gradientBackground,
         image: variantImage.image[0].image?.responsiveImage || null
+      })),
+      slideshowImages: d.slideshowItems.map((item) => ({
+        id: item.id,
+        background: item.gradientBackground,
+        image: item.image.responsiveImage
       }))
     },
     descriptionSection: {
@@ -32,6 +38,17 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         title: item.header,
         description: item.description,
         image: item.image[0]?.image.responsiveImage
+      }))
+    },
+    moodSlideshowSection: {
+      kicker: d.moodSlideshowSection.header,
+      title: d.moodSlideshowSection.subheader,
+      items: d.moodSlideshowSection.images.map((item) => ({
+        id: item.id,
+        title: item.captionHeader,
+        text: item.captionText,
+        image: item.imageWithGradient[0].image.responsiveImage,
+        background: item.imageWithGradient[0].gradientBackground || null
       }))
     },
     skinTypeInfoSection: {

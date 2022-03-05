@@ -85,6 +85,7 @@ export interface IHomePage {
 }
 
 export interface IProductVariantImage {
+  id: string
   color: string
   background: string
   image: DatoCMSResponsiveImage
@@ -96,6 +97,25 @@ export interface IBaseGradientSection {
   title: string
   body: string
   buttonTetx?: string
+}
+
+export interface IProductSlideshowImage {
+  id: string
+  background?: string
+  image: DatoCMSResponsiveImage
+}
+
+export interface IMoodSlideshowItem {
+  id: string
+  title: string
+  text: string
+  background?: string
+  image: DatoCMSResponsiveImage
+}
+export interface IMoodSlideshow {
+  kicker: string
+  title: string
+  items: IMoodSlideshowItem[]
 }
 
 export interface IProductPage {
@@ -112,6 +132,7 @@ export interface IProductPage {
       image?: DatoCMSResponsiveImage
     }[]
     variantImages: IProductVariantImage[]
+    slideshowImages: IProductSlideshowImage[]
   }
   faqSection: {
     faqButtonText: string
@@ -124,7 +145,20 @@ export interface IProductPage {
     text: string
     videoUrl: string
   }
+<<<<<<< HEAD
   howToUseSection: IHowToUseSection
+=======
+  moodSlideshowSection: IMoodSlideshow
+  howToUseSection: {
+    title: string
+    items: {
+      id: string
+      title: string
+      image: DatoCMSResponsiveImage
+      description: string
+    }[]
+  }
+>>>>>>> feat/Slider
   skinTypeInfoSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage

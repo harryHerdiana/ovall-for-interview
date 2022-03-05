@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import { AppProps } from 'next/app'
 import smoothscroll from 'smoothscroll-polyfill'
 import '@styles/globals.css'
-// import "slick-carousel/slick/slick.css";
-// import "../styles/globals/slick.css";
+import 'slick-carousel/slick/slick.css'
+import '../styles/globals/slick.css'
 import { StoreProvider } from '@context/StoreContext'
 import { addPageviewAndOptimizeEvent, setOriginalPageLocation } from '@modules/tracking/events'
 

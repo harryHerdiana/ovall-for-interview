@@ -13,6 +13,7 @@ import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
+  console.log('PROPS', props)
   const {
     seoTags,
     menu,

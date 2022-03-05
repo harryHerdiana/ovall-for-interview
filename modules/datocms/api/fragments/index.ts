@@ -49,9 +49,9 @@ export const MoodSlideShowFragment = `
     name
     subheader
     images {
+      id
       captionHeader
       captionText
-      id
       imageWithGradient {
         gradientBackground
         image {
@@ -63,6 +63,7 @@ export const MoodSlideShowFragment = `
     }
   }
 `
+
 export const ProductInfoBannerFragment = `
   fragment ProductInfoBannerFragment on ProductInfoBannerRecord {
     _modelApiKey
