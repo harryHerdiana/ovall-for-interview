@@ -7,6 +7,7 @@ import { FOOTER_QUERY, PRODUCT_PAGE_QUERY, HOMEPAGE_QUERY } from '@modules/datoc
 import { Context, IHomePage, IProductPage } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
+import mapHomepageData from './mapper/homepage'
 import mapFooter from './mapper/footer'
 
 export default class PageDataService {
@@ -95,7 +96,7 @@ export default class PageDataService {
   }
 
   public async homepage(): Promise<IHomePage> {
-    return this.requestDatoCMSWithBaseData(HOMEPAGE_QUERY, 'homepage')
+    return this.requestDatoCMSWithBaseData(HOMEPAGE_QUERY, 'homepage', mapHomepageData)
   }
 
   public async product(): Promise<IProductPage> {

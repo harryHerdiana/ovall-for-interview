@@ -51,39 +51,6 @@ export interface IDefaultProps {
   footer: IFooter
 }
 
-/** * SECTIONS */
-
-export interface IHowToUseSection {
-  title: string
-  items: {
-    id: string
-    title: string
-    image: DatoCMSResponsiveImage
-    description: string
-  }[]
-}
-
-export interface INewsletterSection {
-  placeholder: string
-  subheader: string
-  title: string
-  disclaimer: StructuredTextDocument
-  description: StructuredTextDocument
-  buttonText: string
-}
-
-/** ***** PAGES ************** */
-
-export interface IHomePage {
-  heroSection: any // TODO add type
-  howToUseSection: IHowToUseSection
-  newsletterSection: INewsletterSection
-  // infoSection: any // TODO add type
-  // slideshowSection: any // TODO add type
-  // testimonialSection: any // TODO add type
-  // productInfoSection: any // TODO add type
-}
-
 export interface IProductVariantImage {
   id: string
   color: string
@@ -118,6 +85,63 @@ export interface IMoodSlideshow {
   items: IMoodSlideshowItem[]
 }
 
+/** * SECTIONS */
+
+export interface IHowToUseSection {
+  title: string
+  items: {
+    id: string
+    title: string
+    image: DatoCMSResponsiveImage
+    description: string
+  }[]
+}
+
+export interface INewsletterSection {
+  placeholder: string
+  subheader: string
+  title: string
+  disclaimer: StructuredTextDocument
+  description: StructuredTextDocument
+  buttonText: string
+}
+
+export interface IProductInfoTechnologySection {
+  backgroundColor: string
+  image: DatoCMSResponsiveImage
+  title: string
+  body: string
+}
+
+export interface IProductTeaserSection {
+  title: string
+  buttonText: string
+  image: DatoCMSResponsiveImage
+  backgroundColor: string
+}
+
+/** ***** PAGES ************** */
+
+export interface IHomePage {
+  heroSection: {
+    buttonText: string
+    title: string
+    body: string
+    image: DatoCMSResponsiveImage
+    backgroundColor: string
+  }
+  moodSlideshowSection: IMoodSlideshow
+  productInfoBannerTechnology: IProductInfoTechnologySection
+  productInfoAccordionSection: {
+    buttonText: string
+    items: IDatoAccordionItem[]
+  }
+  howToUseSection: IHowToUseSection
+  newsletterSection: INewsletterSection
+  infoSection: any // TODO add type
+  productTeaserSection: IProductTeaserSection
+}
+
 export interface IProductPage {
   stageSection: {
     quantityCaption: string
@@ -145,20 +169,8 @@ export interface IProductPage {
     text: string
     videoUrl: string
   }
-<<<<<<< HEAD
   howToUseSection: IHowToUseSection
-=======
   moodSlideshowSection: IMoodSlideshow
-  howToUseSection: {
-    title: string
-    items: {
-      id: string
-      title: string
-      image: DatoCMSResponsiveImage
-      description: string
-    }[]
-  }
->>>>>>> feat/Slider
   skinTypeInfoSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage
@@ -173,12 +185,7 @@ export interface IProductPage {
     buttonText: string
     dropDownText: StructuredTextDocument // see https://www.datocms.com/docs/react/structured-text-fields
   }
-  productInfoBannerTechnology: {
-    backgroundColor: string
-    image: DatoCMSResponsiveImage
-    title: string
-    body: string
-  }
+  productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoBannerFeatures: {
     title: string
     backgroundColor: string

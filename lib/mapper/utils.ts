@@ -28,3 +28,29 @@ export const parseInfoBannerSection = (content: IDatoProductBannerSection['conte
   body: findByApiKey(content, 'section_text', 'text'),
   buttonText: findByApiKey(content, 'section_call_to_action', 'text')
 })
+
+export const parseProductInfoBannerTech = (section: any) => ({
+  backgroundColor: findByApiKey(
+    section.content,
+    'section_with_gradient_background',
+    'backgroundColor'
+  ),
+  image:
+    findByApiKey(section.content, 'section_with_gradient_background', 'image')?.responsiveImage ||
+    null,
+  title: findByApiKey(section.content, 'section_with_gradient_background', 'title'),
+  body: findByApiKey(section.content, 'section_text', 'text')
+})
+
+export const parseProductTeaser = (section: any) => ({
+  title: findByApiKey(section.content, 'section_with_gradient_background', 'title'),
+  backgroundColor: findByApiKey(
+    section.content,
+    'section_with_gradient_background',
+    'backgroundColor'
+  ),
+  image:
+    findByApiKey(section.content, 'section_with_gradient_background', 'image')?.responsiveImage ||
+    null,
+  buttonText: findByApiKey(section.content, 'section_call_to_action', 'text')
+})

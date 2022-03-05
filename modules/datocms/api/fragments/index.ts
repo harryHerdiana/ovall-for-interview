@@ -129,3 +129,29 @@ export const HowToUseSectionFragment = `
     }
   }
 `
+
+export const ProductTeaserFragment = ` 
+  fragment ProductTeaserFragment on ProductTeaserRecord {
+    content {
+      ... on SectionCallToActionRecord {
+        openInNewTab
+        text
+        elementType
+        _modelApiKey
+      }
+      ... on SectionWithGradientBackgroundRecord {
+        id
+        backgroundColor
+        _modelApiKey
+        title
+        image {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+      }
+    }
+    name
+  }
+
+`

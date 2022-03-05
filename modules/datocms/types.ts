@@ -139,6 +139,7 @@ export interface IDatoProductPage {
 }
 
 export interface IDatoHomepage {
+  moodSlideshowSection: any // TODO add type
   howToUseSection: IDatoHowToUseSection
   newsletterSection: IDatoNewsletterSection
 }

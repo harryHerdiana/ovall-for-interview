@@ -3,17 +3,17 @@ import {
   MoodSlideShowFragment,
   NewsletterRecordFragment,
   ProductInfoAccordionRecordFragment,
+  ProductInfoBannerFragment,
+  ProductTeaserFragment,
   ResponsiveImageFragment
 } from '@modules/datocms/api/fragments'
 
 export const HOMEPAGE_QUERY = ` 
   query getHomePage($locale: SiteLocale!) {
     homepage(locale: $locale) {
-      accordionSection {
-        ...ProductInfoAccordionRecordFragment
-      }
       heroSection {
         ... on SectionCallToActionRecord {
+          _modelApiKey
           id
           elementType
           openInNewTab
@@ -25,124 +25,34 @@ export const HOMEPAGE_QUERY = `
           _modelApiKey
         }
         ... on SectionWithGradientBackgroundRecord {
+          _modelApiKey
           id
           title
-          _modelApiKey
+          backgroundColor
           image {
-            url
-            height
-            width
             responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
               ...ResponsiveImageFragment
             }
           }
         }
       }
+      slideshowSection {
+        ...MoodSlideshowRecordFragment
+      }
+      accordionSection {
+        ...ProductInfoAccordionRecordFragment
+      }
       howToUseSection {
         ...HowToUseSectionFragment
       }
       infoSection {
-        content {
-          ... on SectionWithGradientBackgroundRecord {
-            id
-            _modelApiKey
-            title
-            image {
-              responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
-                ...ResponsiveImageFragment
-              }
-            }
-          }
-          ... on SectionTextRecord {
-            id
-            text
-          }
-          ... on SectionHeadlineRecord {
-            id
-            text
-          }
-          ... on SectionCallToActionRecord {
-            id
-            openInNewTab
-            text
-            elementType
-          }
-        }
-        name
-      }
-      newsletterSection {
-        ...NewsletterRecordFragment
+        ...ProductInfoBannerFragment
       }
       productInfoSection {
-        content {
-          ... on SectionWithGradientBackgroundRecord {
-            id
-            title
-            backgroundColor
-            _modelApiKey
-            image {
-              responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
-                ...ResponsiveImageFragment
-              }
-            }
-          }
-          ... on SectionTextRecord {
-            id
-            text
-            _modelApiKey
-          }
-          ... on SectionHeadlineRecord {
-            id
-            _modelApiKey
-            text
-          }
-          ... on SectionCallToActionRecord {
-            id
-            elementType
-            dropdownText {
-              value
-            }
-            text
-            openInNewTab
-            _modelApiKey
-          }
-          ... on IconListRecord {
-            id
-            items {
-              icon
-              id
-              text {
-                value
-              }
-              title
-              _modelApiKey
-            }
-          }
-        }
-        name
-        _modelApiKey
+        ...ProductInfoBannerFragment
       }
       productTeaser {
-        content {
-          ... on SectionCallToActionRecord {
-            openInNewTab
-            text
-            elementType
-            _modelApiKey
-          }
-          ... on SectionWithGradientBackgroundRecord {
-            id
-            backgroundColor
-            _modelApiKey
-            title
-            image {
-              responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
-                ...ResponsiveImageFragment
-              }
-            }
-          }
-        }
-        name
+        ...ProductTeaserFragment
       }
       seoTags {
         description
@@ -161,6 +71,9 @@ export const HOMEPAGE_QUERY = `
         title
         subtitle
       }
+      newsletterSection {
+        ...NewsletterRecordFragment
+      }
     }
   }
 
@@ -169,5 +82,7 @@ export const HOMEPAGE_QUERY = `
   ${NewsletterRecordFragment}
   ${MoodSlideShowFragment}
   ${HowToUseSectionFragment}
+  ${ProductInfoBannerFragment}
+  ${ProductTeaserFragment}
   
 `
