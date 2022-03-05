@@ -131,6 +131,11 @@ export interface IDatoProductPage {
   newsletterSection: IDatoNewsletterSection
 }
 
+export interface IDatoHomepage {
+  howToUseSection: IDatoHowToUseSection
+  newsletterSection: IDatoNewsletterSection
+}
+
 export interface IColumnNavItem {
   id: string
   _modelApiKey: 'navigation_link'

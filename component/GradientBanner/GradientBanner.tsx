@@ -31,61 +31,73 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   contentPlacement,
   mobileContentPlacement,
   items
-}) => {
-  console.log(items)
-  return (
-    <section className="flex  lg:h-max flex-col lg:flex-row ">
-      {mobileContentPlacement === 'top' && (
-        <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
-          <div className="flex flex-col">
-            <h2>{title}</h2>
-            <div className="text=tiny">
-              <p className="my-4">{body}</p>
-            </div>
-            {items && <BannerFeatures items={items} />}
-            {buttonText && (
-              <Button type="button" buttonType="secondary">
-                {buttonText}
-              </Button>
-            )}
-            {/* <StructuredText data={dropDownText} /> */}
+}) => (
+  <section className="flex  lg:h-max flex-col lg:flex-row ">
+    {mobileContentPlacement === 'top' && (
+      <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
+        <div className="flex flex-col">
+          <h2>{title}</h2>
+          <div className="text=tiny">
+            <p className="my-4">{body}</p>
           </div>
+          {items && <BannerFeatures items={items} />}
+          {buttonText && (
+            <Button type="button" buttonType="secondary">
+              {buttonText}
+            </Button>
+          )}
+          {/* <StructuredText data={dropDownText} /> */}
         </div>
-      )}
-      <div
-        className={`${backgroundColor}_solid_left ${
-          contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
+      </div>
+    )}
+    <div
+      className={`${backgroundColor}_solid_left ${contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
         } w-full flex-col items-end justify-center`}>
-        <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-          <h2>{title}</h2>
-          <div className="text=tiny">
-            <p className="my-4">{body}</p>
-          </div>
-          {items && <BannerFeatures items={items} />}
-          {buttonText && (
-            <Button type="button" buttonType="secondary">
-              {buttonText}
-            </Button>
-          )}
-          {/* <StructuredText data={dropDownText} /> */}
+      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
+        <h2>{title}</h2>
+        <div className="text=tiny">
+          <p className="my-4">{body}</p>
         </div>
+        {items && <BannerFeatures items={items} />}
+        {buttonText && (
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
+        )}
+        {/* <StructuredText data={dropDownText} /> */}
       </div>
-      <GradientRectangle
-        image={image}
-        variantGradient={backgroundColor}
-        className="w-full md:w-full"
-      />
-      <div
-        className={`${backgroundColor}_solid_right ${
-          contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
+    </div>
+    <GradientRectangle
+      image={image}
+      variantGradient={backgroundColor}
+      className="w-full md:w-full"
+    />
+    <div
+      className={`${backgroundColor}_solid_right ${contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
         } w-full flex-col items-start justify-center`}>
-        <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
+      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
+        <h2>{title}</h2>
+        <div className="text=tiny">
+          <p className="my-4">{body}</p>
+        </div>
+        {items && <BannerFeatures items={items} />}
+        {buttonText && (
+          <Button type="button" buttonType="secondary">
+            {buttonText}
+          </Button>
+        )}
+        {/* <StructuredText data={dropDownText} /> */}
+      </div>
+    </div>
+    {mobileContentPlacement === 'bottom' && (
+      <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
+        <div className="flex flex-col">
           <h2>{title}</h2>
           <div className="text=tiny">
             <p className="my-4">{body}</p>
           </div>
           {items && <BannerFeatures items={items} />}
-          {buttonText && (
+          {!buttonText === false && (
             <Button type="button" buttonType="secondary">
               {buttonText}
             </Button>
@@ -93,24 +105,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
           {/* <StructuredText data={dropDownText} /> */}
         </div>
       </div>
-      {mobileContentPlacement === 'bottom' && (
-        <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
-          <div className="flex flex-col">
-            <h2>{title}</h2>
-            <div className="text=tiny">
-              <p className="my-4">{body}</p>
-            </div>
-            {items && <BannerFeatures items={items} />}
-            {!buttonText === false && (
-              <Button type="button" buttonType="secondary">
-                {buttonText}
-              </Button>
-            )}
-            {/* <StructuredText data={dropDownText} /> */}
-          </div>
-        </div>
-      )}
-    </section>
-  )
-}
+    )}
+  </section>
+)
 export default GradientBanner

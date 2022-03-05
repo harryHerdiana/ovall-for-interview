@@ -51,14 +51,37 @@ export interface IDefaultProps {
   footer: IFooter
 }
 
+/** * SECTIONS */
+
+export interface IHowToUseSection {
+  title: string
+  items: {
+    id: string
+    title: string
+    image: DatoCMSResponsiveImage
+    description: string
+  }[]
+}
+
+export interface INewsletterSection {
+  placeholder: string
+  subheader: string
+  title: string
+  disclaimer: StructuredTextDocument
+  description: StructuredTextDocument
+  buttonText: string
+}
+
 /** ***** PAGES ************** */
 
 export interface IHomePage {
   heroSection: any // TODO add type
-  infoSection: any // TODO add type
-  slideshowSection: any // TODO add type
-  testimonialSection: any // TODO add type
-  productInfoSection: any // TODO add type
+  howToUseSection: IHowToUseSection
+  newsletterSection: INewsletterSection
+  // infoSection: any // TODO add type
+  // slideshowSection: any // TODO add type
+  // testimonialSection: any // TODO add type
+  // productInfoSection: any // TODO add type
 }
 
 export interface IProductVariantImage {
@@ -101,15 +124,7 @@ export interface IProductPage {
     text: string
     videoUrl: string
   }
-  howToUseSection: {
-    title: string
-    items: {
-      id: string
-      title: string
-      image: DatoCMSResponsiveImage
-      description: string
-    }[]
-  }
+  howToUseSection: IHowToUseSection
   skinTypeInfoSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage
@@ -145,14 +160,7 @@ export interface IProductPage {
     buttonText: string
     items: IDatoAccordionItem[]
   }
-  newsletterSection: {
-    placeholder: string
-    subheader: string
-    title: string
-    disclaimer: StructuredTextDocument
-    description: StructuredTextDocument
-    buttonText: string
-  }
+  newsletterSection: INewsletterSection
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type
