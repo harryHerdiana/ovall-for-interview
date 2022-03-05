@@ -9,7 +9,7 @@ const defaultSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: true,
-  fade: true
+  fade: false
   // nextArrow: <NextArrow />,
   // prevArrow: <PrevArrow />
 }

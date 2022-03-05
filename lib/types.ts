@@ -81,6 +81,19 @@ export interface IProductSlideshowImage {
   image: DatoCMSResponsiveImage
 }
 
+export interface IMoodSlideshowItem {
+  id: string
+  title: string
+  text: string
+  background?: string
+  image: DatoCMSResponsiveImage
+}
+export interface IMoodSlideshow {
+  kicker: string
+  title: string
+  items: IMoodSlideshowItem[]
+}
+
 export interface IProductPage {
   stageSection: {
     quantityCaption: string
@@ -108,6 +121,7 @@ export interface IProductPage {
     text: string
     videoUrl: string
   }
+  moodSlideshowSection: IMoodSlideshow
   howToUseSection: {
     title: string
     items: {

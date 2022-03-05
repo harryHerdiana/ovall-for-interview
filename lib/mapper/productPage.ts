@@ -39,6 +39,17 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         image: item.image[0]?.image.responsiveImage
       }))
     },
+    moodSlideshowSection: {
+      kicker: d.moodSlideshowSection.header,
+      title: d.moodSlideshowSection.subheader,
+      items: d.moodSlideshowSection.images.map((item) => ({
+        id: item.id,
+        title: item.captionHeader,
+        text: item.captionText,
+        image: item.imageWithGradient[0].image.responsiveImage,
+        background: item.imageWithGradient[0].gradientBackground || null
+      }))
+    },
     skinTypeInfoSection: {
       backgroundColor: utils.findByApiKey(
         d.skinTypeInfoSection,
