@@ -38,9 +38,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
     shopContext.setShowCart(true)
   }
   const skuColorMap = {
-    'Ovall-Blue': 'blue',
+    'Ovall-Blue': 'green',
     'Ovall-Pink': 'rose',
-    'Ovall-Turquoise': 'green'
+    'Ovall-Turquoise': 'blue'
   }
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
@@ -48,12 +48,12 @@ const ProductStage: React.FC<IProductStageProps> = ({
 
   return (
     <section className="gap-8 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
-      <div className="text-center md:text-left text-black p-4 md:pl-8 md:pr-0 xl:pl-24 flex flex-wrap self-center">
-        <div className="relative w-full px-4">
+      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center w-4/5">
+        <div className="relative w-full ">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
         </div>
       </div>
-      <div className="text-center lg:text-left text-black p-4 lg:pl-8 lg:pr-0 xl:pl-24 flex flex-col flex-wrap ">
+      <div className="text-center lg:text-left text-black p-4  flex flex-col flex-wrap mx-auto">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
         <div className="text-left flex flex-row ">
           <span className=" self-center font-subtitleFont font-semibold text-2xl">
