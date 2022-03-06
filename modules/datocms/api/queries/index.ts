@@ -1,3 +1,3 @@
 export * from './homepage'
 export * from './product'
-export * from './footer'
+export * from './app'

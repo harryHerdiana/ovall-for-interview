@@ -16,14 +16,13 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   console.log('PROPS', props)
   const {
     seoTags,
-    menu,
+    appProps,
     product,
     productInfoBannerSection,
     newsletterSection,
     faqSection,
     productInfoAccordionSection,
     skinTypeInfoSection,
-    footer,
     productInfoBannerTechnology,
     productInfoBannerFeatures,
     howToUseSection
@@ -31,7 +30,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
   return (
-    <Layout footer={footer} seoTags={seoTags} menu={menu}>
+    <Layout {...appProps} seoTags={seoTags}>
       <ProductStage
         {...props}
         product={product}

@@ -17,7 +17,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   } = props
   console.log('homepage.props', props)
   return (
-    <Layout footer={props.footer} seoTags={props.seoTags} menu={props.menu}>
+    <Layout seoTags={props.seoTags} {...props.appProps}>
       <h1>Ovall HomePage</h1>
       <div>{JSON.stringify(props.heroSection)}</div>
       <GradientBanner {...infoSection} mobileContentPlacement="top" contentPlacement="left" />

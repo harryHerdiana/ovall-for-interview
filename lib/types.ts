@@ -1,6 +1,8 @@
 import { DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
+import { StructuredText } from 'datocms-structured-text-utils'
 import { StructuredTextDocument } from 'react-datocms'
+import { UrlWithStringQuery } from 'url'
 import { Languages } from './enums'
 
 export type Language = Languages.English | Languages.German
@@ -44,11 +46,26 @@ export type IFooter = {
   }
 }
 
-export interface IDefaultProps {
-  product: IShopifyProduct
-  seoTags: SeoTags
-  menu: IMenu
+export interface ICookieNotice {
+  acceptText: string
+  denyText: string
+  text: StructuredText
+  title: UrlWithStringQuery
+}
+
+export interface IAppContent {
   footer: IFooter
+  cookieNotice: ICookieNotice
+}
+
+export interface IDefaultProps {
+  appProps: {
+    menu: IMenu
+    cookieNotice: ICookieNotice
+    footer: IFooter
+  }
+  seoTags: SeoTags
+  product: IShopifyProduct
 }
 
 export interface IProductVariantImage {
