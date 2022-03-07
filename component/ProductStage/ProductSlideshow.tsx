@@ -5,10 +5,57 @@ import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import React, { useEffect, useState } from 'react'
 import GradientSquare from '@component/GradientSquare'
+import Icon from '@component/Icon'
 
 interface IProductSlideshow {
   variantItem: any
   items: any[]
+}
+
+const NextArrow = (props) => {
+  const { onClick, className, style } = props
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        display: 'flex',
+        transform: 'translateX(70px) translateY(-10px) ',
+        width: 'max-content'
+      }}>
+      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+    </div>
+  )
+}
+
+const PrevArrow = (props) => {
+  const { onClick, className, style } = props
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        display: 'flex',
+        width: 'max-content',
+
+        transform: 'translateY(12px) translateX(-70px) rotate(180deg)'
+      }}>
+      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+    </div>
+  )
+}
+
+const setting = {
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />
+
+  // customPaging: () => (
+  //   <div className="mt-2 rounded-full w-3 h-3 bg-white border-2 border-black focus:bg-black" />
+  // ),
+  // dots: true,
+  // appendDots: (dots) => <ul>{dots}</ul>
 }
 
 interface ISliderItem {
@@ -23,13 +70,12 @@ const SliderItem: React.FC<ISliderItem> = ({ image }) => (
 
 const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) => {
   const [allItems, setAllItems] = useState([])
-  console.log(variantItem.background)
   useEffect(() => {
     setAllItems([variantItem].concat(items))
   }, [variantItem])
   return (
-    <GradientSquare variantGradient={variantItem.background} className="mx-auto">
-      <Slider className="w-full items-center">
+    <GradientSquare variantGradient={variantItem.background} className="m-auto px-12">
+      <Slider settings={setting} className="w-full items-center py-16">
         {allItems.map((item) => (
           <SliderItem image={item.image} key={item.id} />
         ))}

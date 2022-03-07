@@ -32,11 +32,11 @@ const ProductStage: React.FC<IProductStageProps> = ({
     variantImages
   }
 }) => {
-  const shopContext = React.useContext(ShopContext)
-  const handleAddToCartClick = () => {
-    shopContext.addVariantToCart(variant, 1)
-    shopContext.setShowCart(true)
-  }
+  // const shopContext = React.useContext(ShopContext)
+  // const handleAddToCartClick = () => {
+  //   shopContext.addVariantToCart(variant, 1)
+  //   shopContext.setShowCart(true)
+  // }
   const skuColorMap = {
     'Ovall-Blue': 'green',
     'Ovall-Pink': 'rose',
@@ -47,9 +47,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
   }
 
   return (
-    <section className="gap-8 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
+    <section className="gap-4 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto mb-12">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center w-full lg:w-4/5">
-        <div className="relative w-full ">
+        <div className="relative w-full">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
         </div>
       </div>
@@ -61,7 +61,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           </span>
           <div className="ml-8 md:ml-10">
             <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
-              Spare 20%{' '}
+              Spare 20%
             </div>
             <span className="line-through font-bold text-sm font-subtitleFont">
               {toEuro(variant.compareAtPriceV2.amount)}

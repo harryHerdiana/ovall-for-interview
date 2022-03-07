@@ -73,7 +73,7 @@ export const ProductInfoBannerFragment = `
         backgroundColor
         title
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: clip, w: 500, h: 400 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: clip, w: 500, h: 500 }) {
             ...ResponsiveImageFragment
           }
         }
