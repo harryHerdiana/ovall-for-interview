@@ -47,8 +47,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
   }
 
   return (
-    <section className="gap-4 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto mb-12">
-      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center w-full lg:w-4/5">
+    <section className="gap-28 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto mb-12">
+      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center w-full ">
         <div className="relative w-full">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
         </div>

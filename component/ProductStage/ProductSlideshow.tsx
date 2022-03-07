@@ -50,7 +50,6 @@ const PrevArrow = (props) => {
 const setting = {
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />
-
   // customPaging: () => (
   //   <div className="mt-2 rounded-full w-3 h-3 bg-white border-2 border-black focus:bg-black" />
   // ),
@@ -75,7 +74,7 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) =
   }, [variantItem])
   return (
     <GradientSquare variantGradient={variantItem.background} className="m-auto px-12">
-      <Slider settings={setting} className="w-full items-center py-16">
+      <Slider settings={setting} className="w-full items-center py-12 lg:py-16 h-max">
         {allItems.map((item) => (
           <SliderItem image={item.image} key={item.id} />
         ))}
