@@ -55,6 +55,42 @@ const PrevArrow = (props) => {
   )
 }
 
+const NextArrowDesktop = (props) => {
+  const { onClick, className, style } = props
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        display: 'flex',
+        width: 'max-content',
+        top: '40%',
+        transform: 'translateX(20px)'
+      }}>
+      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+    </div>
+  )
+}
+
+const PrevArrowDesktop = (props) => {
+  const { onClick, className, style } = props
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        display: 'flex',
+        width: 'max-content',
+        top: '40%',
+        transform: 'translateY(22px) translateX(-20px) rotate(180deg)'
+      }}>
+      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+    </div>
+  )
+}
+
 const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => {
   const x = 2
   return (
@@ -88,13 +124,16 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
   const [width, height] = useWindowSize()
   const [setting, setSetting] = useState({})
   useEffect(() => {
-    if (width <= 767) {
+    if (width <= 640) {
       setSetting({
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
       })
     } else {
-      setSetting({})
+      setSetting({
+        nextArrow: <NextArrowDesktop />,
+        prevArrow: <PrevArrowDesktop />
+      })
     }
   }, [width])
   return (
