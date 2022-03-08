@@ -63,7 +63,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
             <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
               Spare 20%{' '}
             </div>
-            <span className="line-through font-bold text-sm font-subtitleFont">
+            <span className="line-through font-bold  font-subtitleFont">
               {toEuro(variant.compareAtPriceV2.amount)}
             </span>
           </div>

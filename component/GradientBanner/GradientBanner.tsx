@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import { StructuredText, StructuredTextDocument } from 'react-datocms'
-import Button from '@component/Button'
-import BannerFeatures from './BannerFeatures'
+import { StructuredTextDocument } from 'react-datocms'
+import { DesktopGradient, MobileGradient } from './GradientElements'
+import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 
-type IGradientBannerProps = {
+export type IGradientBannerProps = {
   backgroundColor: string
   image: DatoCMSResponsiveImage
   title: string
@@ -17,9 +17,14 @@ type IGradientBannerProps = {
     text: StructuredTextDocument
   }[]
   buttonText?: string
+  buttonType?: 'primary' | 'secondary'
   dropDownText?: StructuredTextDocument
   mobileContentPlacement: 'top' | 'bottom'
   contentPlacement: 'left' | 'right'
+  onClickButton?: () => void
+  useDots?: boolean
+  product?: IShopifyProduct
+  selfTitle?: string
 }
 
 const GradientBanner: React.FC<IGradientBannerProps> = ({
@@ -30,42 +35,42 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   buttonText,
   contentPlacement,
   mobileContentPlacement,
-  items
+  items,
+  buttonType,
+  onClickButton,
+  useDots,
+  product,
+  selfTitle
 }) => (
   <section className="flex  lg:h-max flex-col lg:flex-row ">
     {mobileContentPlacement === 'top' && (
-      <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
-        <div className="flex flex-col">
-          <h2>{title}</h2>
-          <div className="text=tiny">
-            <p className="my-4">{body}</p>
-          </div>
-          {items && <BannerFeatures items={items} />}
-          {buttonText && (
-            <Button type="button" buttonType="secondary">
-              {buttonText}
-            </Button>
-          )}
-          {/* <StructuredText data={dropDownText} /> */}
-        </div>
-      </div>
+      <MobileGradient
+        title={title}
+        body={body}
+        items={items}
+        buttonText={buttonText}
+        buttonType={buttonType}
+        onClickButton={onClickButton}
+        useDots={useDots}
+        product={product}
+        selfTitle={selfTitle}
+      />
     )}
     <div
-      className={`${backgroundColor}_solid_left ${contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
-        } w-full flex-col items-end justify-center`}>
-      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h2>{title}</h2>
-        <div className="text=tiny">
-          <p className="my-4">{body}</p>
-        </div>
-        {items && <BannerFeatures items={items} />}
-        {buttonText && (
-          <Button type="button" buttonType="secondary">
-            {buttonText}
-          </Button>
-        )}
-        {/* <StructuredText data={dropDownText} /> */}
-      </div>
+      className={`${backgroundColor}_solid_left ${
+        contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
+      } w-full flex-col items-end justify-center`}>
+      <DesktopGradient
+        title={title}
+        body={body}
+        items={items}
+        buttonText={buttonText}
+        buttonType={buttonType}
+        onClickButton={onClickButton}
+        useDots={useDots}
+        product={product}
+        selfTitle={selfTitle}
+      />
     </div>
     <GradientRectangle
       image={image}
@@ -73,38 +78,33 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
       className="w-full md:w-full"
     />
     <div
-      className={`${backgroundColor}_solid_right ${contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
-        } w-full flex-col items-start justify-center`}>
-      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h2>{title}</h2>
-        <div className="text=tiny">
-          <p className="my-4">{body}</p>
-        </div>
-        {items && <BannerFeatures items={items} />}
-        {buttonText && (
-          <Button type="button" buttonType="secondary">
-            {buttonText}
-          </Button>
-        )}
-        {/* <StructuredText data={dropDownText} /> */}
-      </div>
+      className={`${backgroundColor}_solid_right ${
+        contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
+      } w-full flex-col items-start justify-center`}>
+      <DesktopGradient
+        title={title}
+        body={body}
+        items={items}
+        buttonText={buttonText}
+        buttonType={buttonType}
+        onClickButton={onClickButton}
+        useDots={useDots}
+        product={product}
+        selfTitle={selfTitle}
+      />
     </div>
     {mobileContentPlacement === 'bottom' && (
-      <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
-        <div className="flex flex-col">
-          <h2>{title}</h2>
-          <div className="text=tiny">
-            <p className="my-4">{body}</p>
-          </div>
-          {items && <BannerFeatures items={items} />}
-          {!buttonText === false && (
-            <Button type="button" buttonType="secondary">
-              {buttonText}
-            </Button>
-          )}
-          {/* <StructuredText data={dropDownText} /> */}
-        </div>
-      </div>
+      <MobileGradient
+        title={title}
+        body={body}
+        items={items}
+        buttonText={buttonText}
+        buttonType={buttonType}
+        onClickButton={onClickButton}
+        useDots={useDots}
+        product={product}
+        selfTitle={selfTitle}
+      />
     )}
   </section>
 )
