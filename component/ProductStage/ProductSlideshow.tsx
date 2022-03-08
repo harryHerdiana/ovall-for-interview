@@ -3,7 +3,7 @@
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useLayoutEffect } from 'react'
 import GradientSquare from '@component/GradientSquare'
 import Icon from '@component/Icon'
 
@@ -21,7 +21,24 @@ const NextArrow = (props) => {
       style={{
         ...style,
         display: 'flex',
-        transform: 'translateX(70px) translateY(-10px) ',
+        transform: 'translateX(100px) translateY(-10px) ',
+        width: 'max-content'
+      }}>
+      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+    </div>
+  )
+}
+
+const NextArrowMob = (props) => {
+  const { onClick, className, style } = props
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        display: 'flex',
+        transform: 'translateX(60px) translateY(-10px) ',
         width: 'max-content'
       }}>
       <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
@@ -40,21 +57,28 @@ const PrevArrow = (props) => {
         display: 'flex',
         width: 'max-content',
 
-        transform: 'translateY(12px) translateX(-70px) rotate(180deg)'
+        transform: 'translateY(12px) translateX(-100px) rotate(180deg)'
       }}>
       <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
     </div>
   )
 }
+const PrevArrowMob = (props) => {
+  const { onClick, className, style } = props
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        ...style,
+        display: 'flex',
+        width: 'max-content',
 
-const setting = {
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />
-  // customPaging: () => (
-  //   <div className="mt-2 rounded-full w-3 h-3 bg-white border-2 border-black focus:bg-black" />
-  // ),
-  // dots: true,
-  // appendDots: (dots) => <ul>{dots}</ul>
+        transform: 'translateY(12px) translateX(-60px) rotate(180deg)'
+      }}>
+      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+    </div>
+  )
 }
 
 interface ISliderItem {
@@ -72,9 +96,37 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) =
   useEffect(() => {
     setAllItems([variantItem].concat(items))
   }, [variantItem])
+
+  function useWindowSize() {
+    const [size, setSize] = useState([0, 0])
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight])
+      }
+      window.addEventListener('resize', updateSize)
+      updateSize()
+      return () => window.removeEventListener('resize', updateSize)
+    }, [])
+    return size
+  }
+  const [width, height] = useWindowSize()
+  const [setting, setSetting] = useState({})
+  useEffect(() => {
+    if (width <= 767) {
+      setSetting({
+        nextArrow: <NextArrowMob />,
+        prevArrow: <PrevArrowMob />
+      })
+    } else {
+      setSetting({
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />
+      })
+    }
+  }, [width])
   return (
-    <GradientSquare variantGradient={variantItem.background} className="m-auto px-12">
-      <Slider settings={setting} className="w-full items-center py-12 lg:py-16 h-max">
+    <GradientSquare variantGradient={variantItem.background} className="m-auto px-10 md:px-20">
+      <Slider settings={setting} className="w-full items-center py-12 lg:py-10 h-max">
         {allItems.map((item) => (
           <SliderItem image={item.image} key={item.id} />
         ))}
