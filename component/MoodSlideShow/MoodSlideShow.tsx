@@ -29,8 +29,8 @@ const NextArrow = (props) => {
         ...style,
         display: 'flex',
         width: 'max-content',
-        top: '25%',
-        transform: 'translateX(10px)'
+        top: '15%',
+        transform: 'translateX(22px)'
       }}>
       <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
     </div>
@@ -47,8 +47,8 @@ const PrevArrow = (props) => {
         ...style,
         display: 'flex',
         width: 'max-content',
-        top: '25%',
-        transform: 'translateY(20px) translateX(-10px) rotate(180deg)'
+        top: '15%',
+        transform: 'translateY(20px) translateX(-25px) rotate(180deg)'
       }}>
       <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
     </div>
@@ -58,13 +58,15 @@ const PrevArrow = (props) => {
 const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => {
   const x = 2
   return (
-    <div className="mx-auto w-3/5 md:w-4/5 lg:w-full flex flex-wrap justify-center">
+    <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center">
       <div className="lg:px-24 ">
         <ResponsiveImage image={image} />
       </div>
       <div className="lg:w-4/5 my-3">
-        <span className="font-subtitleFont text-base uppercase">{title}</span>
-        <p className="mt-2">{text}</p>
+        <div className="text-left md:text-center">
+          <span className="font-subtitleFont text-base uppercase">{title}</span>
+        </div>
+        <p className="mt-2 text-left md:text-center">{text}</p>
       </div>
     </div>
   )
