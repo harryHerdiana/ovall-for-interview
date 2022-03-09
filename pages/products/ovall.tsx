@@ -11,6 +11,7 @@ import FaqSection from '@component/FaqSection'
 // import ProductDescription from '@component/ProductDescription'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
+import MoodSlideShow from '@component/MoodSlideShow'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   // console.log('PROPS', props)
@@ -25,7 +26,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     skinTypeInfoSection,
     productInfoBannerTechnology,
     productInfoBannerFeatures,
-    howToUseSection
+    howToUseSection,
+    moodSlideshowSection
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -43,6 +45,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="bottom"
         contentPlacement="left"
       />
+      <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
       <GradientBanner
         {...skinTypeInfoSection}

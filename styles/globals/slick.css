@@ -148,8 +148,6 @@
   color: black;
 }
 
-
-
 .mood_prev{
 
   display:flex;
@@ -181,6 +179,7 @@
     transform: translateX(25px);
 
   }
+
 }
   /*  */
 
@@ -214,4 +213,5 @@
 
   }
 }
+
 

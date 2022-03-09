@@ -3,14 +3,17 @@
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
+
 import React, { useEffect, useState, useLayoutEffect } from 'react'
 import GradientSquare from '@component/GradientSquare'
 import Icon from '@component/Icon'
+
 
 interface IProductSlideshow {
   variantItem: any
   items: any[]
 }
+
 
 const NextArrow: React.FC<any> = (props) => {
   const { onClick, className, style } = props
@@ -45,13 +48,16 @@ interface ISliderItem {
 }
 
 const SliderItem: React.FC<ISliderItem> = ({ image }) => (
+
   <div className="overflow-hidden flex flex-wrap justify-center h-max w-max">
+
     <ResponsiveImage image={image} />
   </div>
 )
 
 const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) => {
   const [allItems, setAllItems] = useState([])
+  console.log(variantItem.background)
   useEffect(() => {
     setAllItems([variantItem].concat(items))
   }, [variantItem])
@@ -68,6 +74,7 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) =
         </GradientSquare>
       ))}
     </Slider>
+
   )
 }
 
