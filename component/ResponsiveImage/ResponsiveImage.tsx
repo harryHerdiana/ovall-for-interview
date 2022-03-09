@@ -11,7 +11,7 @@ const ResponsiveImage: React.FC<IResponsiveImageProps> = ({ image }) => {
     return null
   }
   return (
-    <div className="h-max w-full">
+    <div className="h-max">
       <Image data={image} />
     </div>
   )
