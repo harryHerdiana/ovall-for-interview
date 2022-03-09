@@ -63,7 +63,7 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) =
   return (
     <Slider settings={setting} className="w-full items-center h-max">
       {allItems.map((item) => (
-        <GradientSquare variantGradient={item.background} className="m-auto ">
+        <GradientSquare key={item.id} variantGradient={item.background} className="m-auto ">
           <SliderItem image={item.image} key={item.id} />
         </GradientSquare>
       ))}

@@ -45,17 +45,17 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-
+  console.log(productClaims)
   return (
     <section className="gap-12 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto mb-12">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center w-full ">
-        <div className="relative w-full lg:w-5/6">
+        <div className="relative w-full h-full lg:w-5/6">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
         </div>
       </div>
       <div className="text-center lg:text-left text-black p-4  flex flex-col flex-wrap mx-auto">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
-        <div className="text-left flex flex-row ">
+        <div className="text-left flex flex-row mb-3 mt-8">
           <span className=" self-center font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>
