@@ -3,9 +3,8 @@
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import Icon from '@component/Icon'
-
 import React, { useEffect, useState } from 'react'
+import GradientSquare from '@component/GradientSquare'
 
 interface IProductSlideshow {
   variantItem: any
@@ -14,52 +13,28 @@ interface IProductSlideshow {
 
 interface ISliderItem {
   image: DatoCMSResponsiveImage
-  backgroundColor: string
 }
 
-const SliderItem: React.FC<ISliderItem> = ({ image, backgroundColor }) => (
-  <div className="overflow-hidden flex flex-wrap">
+const SliderItem: React.FC<ISliderItem> = ({ image }) => (
+  <div className="overflow-hidden flex flex-wrap justify-center">
     <ResponsiveImage image={image} />
   </div>
 )
 
-const NextArrow = (props) => {
-  const { onClick, className } = props
-  return (
-    <div onClick={onClick} className={className}>
-      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
-    </div>
-  )
-}
-
-const PrevArrow = (props) => {
-  const { onClick, className, style } = props
-  return (
-    <div
-      onClick={onClick}
-      className={className}
-      style={{ ...style, transform: 'rotate(180deg)', display: 'block' }}>
-      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
-    </div>
-  )
-}
-
-const setting = {
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />
-}
-
 const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) => {
   const [allItems, setAllItems] = useState([])
+  console.log(variantItem.background)
   useEffect(() => {
     setAllItems([variantItem].concat(items))
   }, [variantItem])
   return (
-    <Slider settings={setting} className="w-full">
-      {allItems.map((item) => (
-        <SliderItem image={item.image} key={item.id} backgroundColor={item.background} />
-      ))}
-    </Slider>
+    <GradientSquare variantGradient={variantItem.background} className="mx-auto">
+      <Slider className="w-full items-center">
+        {allItems.map((item) => (
+          <SliderItem image={item.image} key={item.id} />
+        ))}
+      </Slider>
+    </GradientSquare>
   )
 }
 

@@ -47,47 +47,8 @@
   outline: none;
   background: transparent;
 }
-.slick-prev:hover:before,
-.slick-prev:focus:before,
-.slick-next:hover:before,
-.slick-next:focus:before {
-  opacity: 1;
-}
-.slick-prev.slick-disabled:before,
-.slick-next.slick-disabled:before {
-  opacity: 0.25;
-}
 
-.slick-prev:before,
-.slick-next:before {
-  font-family: 'slick';
-  font-size: 20px;
-  line-height: 1;
 
-  opacity: 0.75;
-  color: white;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.slick-prev {
-  left: -25px;
-}
-[dir='rtl'] .slick-prev {
-  right: -25px;
-  left: auto;
-}
-.slick-prev:before {
-  content: '←';
-}
-[dir='rtl'] .slick-prev:before {
-  content: '→';
-}
-
-.slick-next {
-  right: -25px;
-}
 [dir='rtl'] .slick-next {
   right: auto;
   left: -25px;
@@ -123,11 +84,13 @@
 
   display: inline-block;
 
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 0 5px;
   padding: 0;
 
+  border:1px solid ;
+  border-radius: 100%;
   cursor: pointer;
 }
 .slick-dots li button {
@@ -136,24 +99,26 @@
 
   display: block;
 
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   padding: 5px;
 
   cursor: pointer;
 
   color: transparent;
   border: 0;
-  outline: none;
+  outline: 0;
   background: transparent;
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus {
-  outline: none;
+  outline: 0;
 }
 .slick-dots li button:hover:before,
 .slick-dots li button:focus:before {
   opacity: 1;
+  outline: 0;
+  border-radius: 100%;
 }
 .slick-dots li button:before {
   font-family: 'slick';
@@ -164,19 +129,56 @@
   top: 0;
   left: 0;
 
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
 
-  content: '•';
+  content: '';
   text-align: center;
 
   opacity: 0.25;
   color: black;
-
+  border-radius: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before {
-  opacity: 0.75;
+  transform: translateY(-1px) translateX(-1px);
+  opacity: 1;
+  background-color: black;
   color: black;
+}
+
+
+.mood_prev{
+
+  display:flex;
+  width: max-content;
+  top: 40%;
+  transform: translateY(22px) translateX(-20px) rotate(180deg);
+}
+
+.mood_next{
+  display:flex;
+  width: max-content;
+  top: 40%;
+  transform: translateX(25px);
+}
+
+
+
+@media screen and (max-width:640px){
+  .mood_prev{
+    display:flex;
+    width: max-content;
+    top: 15%;
+    transform: translateY(20px) translateX(-25px) rotate(180deg);
+  }
+  .mood_next{
+    display:flex;
+    width: max-content;
+    top: 15%;
+    transform: translateX(25px);
+
+  }
+  
 }
