@@ -7,6 +7,7 @@ import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import { useRouter } from 'next/router'
+import PriceDots from '@component/GradientBanner/PriceDots'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const {
@@ -30,12 +31,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentPlacement="bottom"
         contentPlacement="right"
         buttonType="primary"
-        useDots
-        product={product}
         title=""
-        selfTitle={productTeaserSection.title}
-        onClickButton={() => router.push(linkToProduct)}
-      />
+        onClickButton={() => router.push(linkToProduct)}>
+        <PriceDots product={product} selfTitle={productTeaserSection.title} />
+      </GradientBanner>
+
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"

@@ -3,7 +3,6 @@ import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import { StructuredTextDocument } from 'react-datocms'
 import { DesktopGradient, MobileGradient } from './GradientElements'
-import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 
 export type IGradientBannerProps = {
   backgroundColor: string
@@ -22,9 +21,7 @@ export type IGradientBannerProps = {
   mobileContentPlacement: 'top' | 'bottom'
   contentPlacement: 'left' | 'right'
   onClickButton?: () => void
-  useDots?: boolean
-  product?: IShopifyProduct
-  selfTitle?: string
+  children?: React.ReactElement
 }
 
 const GradientBanner: React.FC<IGradientBannerProps> = ({
@@ -38,74 +35,49 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   items,
   buttonType,
   onClickButton,
-  useDots,
-  product,
-  selfTitle
-}) => (
-  <section className="flex  lg:h-max flex-col lg:flex-row ">
-    {mobileContentPlacement === 'top' && (
-      <MobileGradient
-        title={title}
-        body={body}
-        items={items}
-        buttonText={buttonText}
-        buttonType={buttonType}
-        onClickButton={onClickButton}
-        useDots={useDots}
-        product={product}
-        selfTitle={selfTitle}
-      />
-    )}
-    <div
-      className={`${backgroundColor}_solid_left ${
-        contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
-      } w-full flex-col items-end justify-center`}>
-      <DesktopGradient
-        title={title}
-        body={body}
-        items={items}
-        buttonText={buttonText}
-        buttonType={buttonType}
-        onClickButton={onClickButton}
-        useDots={useDots}
-        product={product}
-        selfTitle={selfTitle}
-      />
-    </div>
-    <GradientRectangle
-      image={image}
-      variantGradient={backgroundColor}
-      className="w-full md:w-full"
-    />
-    <div
-      className={`${backgroundColor}_solid_right ${
-        contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
-      } w-full flex-col items-start justify-center`}>
-      <DesktopGradient
-        title={title}
-        body={body}
-        items={items}
-        buttonText={buttonText}
-        buttonType={buttonType}
-        onClickButton={onClickButton}
-        useDots={useDots}
-        product={product}
-        selfTitle={selfTitle}
-      />
-    </div>
-    {mobileContentPlacement === 'bottom' && (
-      <MobileGradient
-        title={title}
-        body={body}
-        items={items}
-        buttonText={buttonText}
-        buttonType={buttonType}
-        onClickButton={onClickButton}
-        useDots={useDots}
-        product={product}
-        selfTitle={selfTitle}
-      />
-    )}
-  </section>
-)
+  children
+}) => {
+  const MobileGradientAll = () => (
+    <MobileGradient
+      title={title}
+      body={body}
+      items={items}
+      buttonText={buttonText}
+      buttonType={buttonType}
+      onClickButton={onClickButton}>
+      {children}
+    </MobileGradient>
+  )
+  const DesktopGradientAll = () => (
+    <DesktopGradient
+      title={title}
+      body={body}
+      items={items}
+      buttonText={buttonText}
+      buttonType={buttonType}
+      onClickButton={onClickButton}>
+      {children}
+    </DesktopGradient>
+  )
+
+  return (
+    <section className="flex lg:h-max flex-col lg:flex-row ">
+      {mobileContentPlacement === 'top' && <MobileGradientAll />}
+      <div
+        className={`${backgroundColor}_solid_left ${
+          contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
+        } w-full flex-col items-end justify-center`}>
+        <DesktopGradientAll />
+      </div>
+      <GradientRectangle image={image} variantGradient={backgroundColor} className="w-full " />
+      <div
+        className={`${backgroundColor}_solid_right ${
+          contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
+        } w-full flex-col items-start justify-center`}>
+        <DesktopGradientAll />
+      </div>
+      {mobileContentPlacement === 'bottom' && <MobileGradientAll />}
+    </section>
+  )
+}
 export default GradientBanner

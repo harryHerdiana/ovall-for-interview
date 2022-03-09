@@ -16,7 +16,6 @@ export const getCheapestVariantPrice = (product: IShopifyProduct) => {
 }
 
 const PriceDots: React.FC<IPriceDotsProps> = ({ product, selfTitle }) => {
-  const x = 12
   console.log(getCheapestVariantPrice(product))
   return (
     <div className=" flex flex-col ">
