@@ -16,7 +16,8 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     productInfoAccordionSection,
     newsletterSection,
     productTeaserSection,
-    product
+    product,
+    heroSection
   } = props
   console.log('homepage.props', props)
   const router = useRouter()
@@ -25,6 +26,13 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <h1>Ovall HomePage</h1>
       {/* <div>{JSON.stringify(props.heroSection)}</div> */}
+      <GradientBanner
+        {...heroSection}
+        mobileContentPlacement="bottom"
+        contentPlacement="right"
+        buttonType="primary"
+        mobileContentSolidColor
+      />
       <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
       <GradientBanner
         {...productTeaserSection}

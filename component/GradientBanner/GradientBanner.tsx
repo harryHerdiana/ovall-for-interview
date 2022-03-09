@@ -19,6 +19,7 @@ export type IGradientBannerProps = {
   buttonType?: 'primary' | 'secondary'
   dropDownText?: StructuredTextDocument
   mobileContentPlacement: 'top' | 'bottom'
+  mobileContentSolidColor?: boolean
   contentPlacement: 'left' | 'right'
   onClickButton?: () => void
   children?: React.ReactElement
@@ -35,7 +36,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   items,
   buttonType,
   onClickButton,
-  children
+  children,
+  mobileContentSolidColor
 }) => {
   const MobileGradientAll = () => (
     <MobileGradient
@@ -62,7 +64,11 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
 
   return (
     <section className="flex lg:h-max flex-col lg:flex-row ">
-      {mobileContentPlacement === 'top' && <MobileGradientAll />}
+      {mobileContentPlacement === 'top' && (
+        <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
+          <MobileGradientAll />
+        </div>
+      )}
       <div
         className={`${backgroundColor}_solid_left ${
           contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
@@ -76,7 +82,11 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         } w-full flex-col items-start justify-center`}>
         <DesktopGradientAll />
       </div>
-      {mobileContentPlacement === 'bottom' && <MobileGradientAll />}
+      {mobileContentPlacement === 'bottom' && (
+        <div className={`${mobileContentSolidColor && backgroundColor}_mobile_bottom`}>
+          <MobileGradientAll />
+        </div>
+      )}
     </section>
   )
 }
