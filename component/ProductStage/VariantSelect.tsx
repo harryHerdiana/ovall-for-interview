@@ -47,7 +47,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     <>
       <div className="flex flex-row gap-2 my-4 justify-between h-17">
         <div className="flex flex-col justify-between h-max">
-          <h3 className="justify-self-start text-left ">{colorCaption}</h3>
+          <h3 className="justify-self-start text-left mb-5 ">{colorCaption}</h3>
           <div className="flex flex-row gap-5 ml-1">
             {variants.map((vari, index) => (
               <button

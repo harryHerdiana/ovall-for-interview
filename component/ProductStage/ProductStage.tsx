@@ -32,11 +32,11 @@ const ProductStage: React.FC<IProductStageProps> = ({
     variantImages
   }
 }) => {
-  const shopContext = React.useContext(ShopContext)
-  const handleAddToCartClick = () => {
-    shopContext.addVariantToCart(variant, 1)
-    shopContext.setShowCart(true)
-  }
+  // const shopContext = React.useContext(ShopContext)
+  // const handleAddToCartClick = () => {
+  //   shopContext.addVariantToCart(variant, 1)
+  //   shopContext.setShowCart(true)
+  // }
   const skuColorMap = {
     'Ovall-Blue': 'green',
     'Ovall-Pink': 'rose',
@@ -45,23 +45,23 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-
+  console.log(productClaims)
   return (
-    <section className="gap-8 grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-6 max-w-site mx-auto">
-      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center w-4/5">
-        <div className="relative w-full ">
+    <section className="grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-12 max-w-site mx-auto mb-12">
+      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center  w-full ">
+        <div className="relative w-full h-full lg:w-5/6">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
         </div>
       </div>
-      <div className="text-center lg:text-left text-black p-4  flex flex-col flex-wrap mx-auto">
+      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto ">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
-        <div className="text-left flex flex-row ">
+        <div className="text-left flex flex-row mb-3 mt-8">
           <span className=" self-center font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>
           <div className="ml-8 md:ml-10">
             <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
-              Spare 20%{' '}
+              Spare 20%
             </div>
             <span className="line-through font-bold  font-subtitleFont">
               {toEuro(variant.compareAtPriceV2.amount)}

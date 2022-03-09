@@ -148,7 +148,6 @@
   color: black;
 }
 
-
 .mood_prev{
 
   display:flex;
@@ -180,5 +179,39 @@
     transform: translateX(25px);
 
   }
-  
+
 }
+  /*  */
+
+
+
+.slideshow_prev{
+
+  display:flex;
+  width: max-content;
+  transform: translateY(12px) translateX(-20px) rotate(180deg);
+}
+
+.slideshow_next{
+  display:flex;
+  width: max-content;
+  transform: translateX(20px) translateY(-10px);
+}
+
+
+
+@media screen and (max-width:640px){
+  .slideshow_prev{
+    display:flex;
+    width: max-content;
+    transform: translateY(12px) translateX(-20px) rotate(180deg);
+  }
+  .slideshow_next{
+    display:flex;
+    width: max-content;
+    transform: translateX(20px) translateY(-10px);
+
+  }
+}
+
+
