@@ -19,123 +19,44 @@ interface IMoodSliderItem {
   title: string
   text: string
 }
-const NextArrow = (props) => {
+
+const NextArrow: React.FC<any> = (props) => {
   const { onClick, className, style } = props
   return (
-    <div
-      onClick={onClick}
-      className={className}
-      style={{
-        ...style,
-        display: 'flex',
-        width: 'max-content',
-        top: '15%',
-        transform: 'translateX(22px)'
-      }}>
+    <div onClick={onClick} className={`${className} mood_next`} style={{ ...style }}>
       <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
     </div>
   )
 }
 
-const PrevArrow = (props) => {
+const PrevArrow: React.FC<any> = (props) => {
   const { onClick, className, style } = props
   return (
-    <div
-      onClick={onClick}
-      className={className}
-      style={{
-        ...style,
-        display: 'flex',
-        width: 'max-content',
-        top: '15%',
-        transform: 'translateY(20px) translateX(-25px) rotate(180deg)'
-      }}>
+    <div onClick={onClick} className={`${className} mood_prev`} style={{ ...style }}>
       <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
     </div>
   )
 }
 
-const NextArrowDesktop = (props) => {
-  const { onClick, className, style } = props
-  return (
-    <div
-      onClick={onClick}
-      className={className}
-      style={{
-        ...style,
-        display: 'flex',
-        width: 'max-content',
-        top: '40%',
-        transform: 'translateX(20px)'
-      }}>
-      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => (
+  <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center">
+    <div className="lg:px-24 ">
+      <ResponsiveImage image={image} />
     </div>
-  )
-}
-
-const PrevArrowDesktop = (props) => {
-  const { onClick, className, style } = props
-  return (
-    <div
-      onClick={onClick}
-      className={className}
-      style={{
-        ...style,
-        display: 'flex',
-        width: 'max-content',
-        top: '40%',
-        transform: 'translateY(22px) translateX(-20px) rotate(180deg)'
-      }}>
-      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
-    </div>
-  )
-}
-
-const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => {
-  const x = 2
-  return (
-    <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center">
-      <div className="lg:px-24 ">
-        <ResponsiveImage image={image} />
+    <div className="lg:w-4/5 my-3">
+      <div className="text-left md:text-center">
+        <span className="font-subtitleFont text-base uppercase">{title}</span>
       </div>
-      <div className="lg:w-4/5 my-3">
-        <div className="text-left md:text-center">
-          <span className="font-subtitleFont text-base uppercase">{title}</span>
-        </div>
-        <p className="mt-2 text-left md:text-center">{text}</p>
-      </div>
+      <p className="mt-2 text-left md:text-center">{text}</p>
     </div>
-  )
-}
+  </div>
+)
 
 const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) => {
-  function useWindowSize() {
-    const [size, setSize] = useState([0, 0])
-    useLayoutEffect(() => {
-      function updateSize() {
-        setSize([window.innerWidth, window.innerHeight])
-      }
-      window.addEventListener('resize', updateSize)
-      updateSize()
-      return () => window.removeEventListener('resize', updateSize)
-    }, [])
-    return size
+  const setting = {
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
   }
-  const [width, height] = useWindowSize()
-  const [setting, setSetting] = useState({})
-  useEffect(() => {
-    if (width <= 640) {
-      setSetting({
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
-      })
-    } else {
-      setSetting({
-        nextArrow: <NextArrowDesktop />,
-        prevArrow: <PrevArrowDesktop />
-      })
-    }
-  }, [width])
   return (
     <div className="lg:w-4/5 mx-auto text-center my-12">
       <span className="font-subtitleFont text-base uppercase">{title}</span>

@@ -147,3 +147,38 @@
   background-color: black;
   color: black;
 }
+
+
+.mood_prev{
+
+  display:flex;
+  width: max-content;
+  top: 40%;
+  transform: translateY(22px) translateX(-20px) rotate(180deg);
+}
+
+.mood_next{
+  display:flex;
+  width: max-content;
+  top: 40%;
+  transform: translateX(25px);
+}
+
+
+
+@media screen and (max-width:640px){
+  .mood_prev{
+    display:flex;
+    width: max-content;
+    top: 15%;
+    transform: translateY(20px) translateX(-25px) rotate(180deg);
+  }
+  .mood_next{
+    display:flex;
+    width: max-content;
+    top: 15%;
+    transform: translateX(25px);
+
+  }
+  
+}
