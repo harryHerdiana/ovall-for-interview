@@ -4,11 +4,11 @@ import { GET_PRODUCT } from '@modules/shopify/api/storefront/queries'
 import parseProductResponse from '@modules/shopify/api/storefront/parser'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { FOOTER_QUERY, PRODUCT_PAGE_QUERY, HOMEPAGE_QUERY } from '@modules/datocms/api/queries'
-import { Context, IHomePage, IProductPage } from './types'
+import { Context, IAppContent, IHomePage, IProductPage } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
 import mapHomepageData from './mapper/homepage'
-import mapFooter from './mapper/footer'
+import mapAppContent from './mapper/app'
 
 export default class PageDataService {
   context: Context
@@ -51,13 +51,14 @@ export default class PageDataService {
     }
   }
 
-  private async getFooter(): Promise<any> {
+  private async getAppContent(): Promise<IAppContent> {
     const response = await this.requestDatoCMS(FOOTER_QUERY)
-    return mapFooter(response.footer)
+    return mapAppContent(response)
   }
 
   private async getMenus(): Promise<any> {
-    const footer = await this.getFooter()
+    const { footer, cookieNotice } = await this.getAppContent()
+    console.log('cookieNotice', cookieNotice.text)
     const menu = [
       {
         id: '1',
@@ -68,6 +69,7 @@ export default class PageDataService {
 
     return {
       menu,
+      cookieNotice,
       footer
     }
   }
@@ -87,8 +89,11 @@ export default class PageDataService {
       console.warn('Page Data does not contain SeoTags')
     }
     return {
-      menu: menus.menu,
-      footer: menus.footer,
+      appProps: {
+        menu: menus.menu,
+        footer: menus.footer,
+        cookieNotice: menus.cookieNotice
+      },
       seoTags: content.seoTags,
       product,
       ...mappedContent

@@ -1,11 +1,10 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import { StructuredText, StructuredTextDocument } from 'react-datocms'
-import Button from '@component/Button'
-import BannerFeatures from './BannerFeatures'
+import { StructuredTextDocument } from 'react-datocms'
+import { DesktopGradient, MobileGradient } from './GradientElements'
 
-type IGradientBannerProps = {
+export type IGradientBannerProps = {
   backgroundColor: string
   image: DatoCMSResponsiveImage
   title: string
@@ -17,9 +16,12 @@ type IGradientBannerProps = {
     text: StructuredTextDocument
   }[]
   buttonText?: string
+  buttonType?: 'primary' | 'secondary'
   dropDownText?: StructuredTextDocument
   mobileContentPlacement: 'top' | 'bottom'
   contentPlacement: 'left' | 'right'
+  onClickButton?: () => void
+  children?: React.ReactElement
 }
 
 const GradientBanner: React.FC<IGradientBannerProps> = ({
@@ -30,82 +32,52 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   buttonText,
   contentPlacement,
   mobileContentPlacement,
-  items
-}) => (
-  <section className="flex  lg:h-max flex-col lg:flex-row ">
-    {mobileContentPlacement === 'top' && (
-      <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
-        <div className="flex flex-col">
-          <h2>{title}</h2>
-          <div className="text=tiny">
-            <p className="my-4">{body}</p>
-          </div>
-          {items && <BannerFeatures items={items} />}
-          {buttonText && (
-            <Button type="button" buttonType="secondary">
-              {buttonText}
-            </Button>
-          )}
-          {/* <StructuredText data={dropDownText} /> */}
-        </div>
-      </div>
-    )}
-    <div
-      className={`${backgroundColor}_solid_left ${contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
+  items,
+  buttonType,
+  onClickButton,
+  children
+}) => {
+  const MobileGradientAll = () => (
+    <MobileGradient
+      title={title}
+      body={body}
+      items={items}
+      buttonText={buttonText}
+      buttonType={buttonType}
+      onClickButton={onClickButton}>
+      {children}
+    </MobileGradient>
+  )
+  const DesktopGradientAll = () => (
+    <DesktopGradient
+      title={title}
+      body={body}
+      items={items}
+      buttonText={buttonText}
+      buttonType={buttonType}
+      onClickButton={onClickButton}>
+      {children}
+    </DesktopGradient>
+  )
+
+  return (
+    <section className="flex lg:h-max flex-col lg:flex-row ">
+      {mobileContentPlacement === 'top' && <MobileGradientAll />}
+      <div
+        className={`${backgroundColor}_solid_left ${
+          contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
         } w-full flex-col items-end justify-center`}>
-      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h2>{title}</h2>
-        <div className="text=tiny">
-          <p className="my-4">{body}</p>
-        </div>
-        {items && <BannerFeatures items={items} />}
-        {buttonText && (
-          <Button type="button" buttonType="secondary">
-            {buttonText}
-          </Button>
-        )}
-        {/* <StructuredText data={dropDownText} /> */}
+        <DesktopGradientAll />
       </div>
-    </div>
-    <GradientRectangle
-      image={image}
-      variantGradient={backgroundColor}
-      className="w-full md:w-full"
-    />
-    <div
-      className={`${backgroundColor}_solid_right ${contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
+      <GradientRectangle image={image} variantGradient={backgroundColor} className="w-full " />
+      <div
+        className={`${backgroundColor}_solid_right ${
+          contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
         } w-full flex-col items-start justify-center`}>
-      <div className="flex flex-col pl-5 xl:p-0 w-full md:w-3/4 my-5">
-        <h2>{title}</h2>
-        <div className="text=tiny">
-          <p className="my-4">{body}</p>
-        </div>
-        {items && <BannerFeatures items={items} />}
-        {buttonText && (
-          <Button type="button" buttonType="secondary">
-            {buttonText}
-          </Button>
-        )}
-        {/* <StructuredText data={dropDownText} /> */}
+        <DesktopGradientAll />
       </div>
-    </div>
-    {mobileContentPlacement === 'bottom' && (
-      <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
-        <div className="flex flex-col">
-          <h2>{title}</h2>
-          <div className="text=tiny">
-            <p className="my-4">{body}</p>
-          </div>
-          {items && <BannerFeatures items={items} />}
-          {!buttonText === false && (
-            <Button type="button" buttonType="secondary">
-              {buttonText}
-            </Button>
-          )}
-          {/* <StructuredText data={dropDownText} /> */}
-        </div>
-      </div>
-    )}
-  </section>
-)
+      {mobileContentPlacement === 'bottom' && <MobileGradientAll />}
+    </section>
+  )
+}
 export default GradientBanner

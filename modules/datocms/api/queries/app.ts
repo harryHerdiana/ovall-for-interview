@@ -1,6 +1,19 @@
 export const FOOTER_QUERY = `
-query getFooter {
-  footer {
+query getFooter($locale: SiteLocale!) {
+  cookieNotice(locale: $locale) {
+    denyButtonText
+    title
+    text {
+      value
+      links {
+        id
+        title
+        slug
+      }
+    }
+    acceptButtonText
+  }
+  footer(locale: $locale) {
     facebook
     youtube
     pinterest

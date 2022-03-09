@@ -17,6 +17,7 @@ This project relies mainly on [Next.js](https://nextjs.org/), [tailwindcss](http
 
 ## Setup
 
+
 For getting started with development, please follow these simple steps.
 
 ### Prerequisites
