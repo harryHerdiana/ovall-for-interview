@@ -19,7 +19,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     product,
     heroSection
   } = props
-  console.log('homepage.props', props)
+  // console.log('homepage.props', props)
   const router = useRouter()
   const linkToProduct = '/products/ovall'
   return (

@@ -168,8 +168,10 @@ export interface IHomePage {
 
 export interface IAboutUsPage {
   heroSection: {
-    title: string
-    body: string
+    backgroundColor: string
+    title?: string
+    body?: string
+    image?: DatoCMSResponsiveImage
   }
   content: StructuredText
   accordionSection: {

@@ -153,14 +153,14 @@
   display:flex;
   width: max-content;
   top: 40%;
-  transform: translateY(22px) translateX(-20px) rotate(180deg);
+  transform: translateY(22px) translateX(22px) rotate(180deg);
 }
 
 .mood_next{
   display:flex;
   width: max-content;
   top: 40%;
-  transform: translateX(25px);
+  transform: translateX(-22px);
 }
 
 

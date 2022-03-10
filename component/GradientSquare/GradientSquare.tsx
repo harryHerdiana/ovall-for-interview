@@ -1,5 +1,4 @@
 import React from 'react'
-import ResponsiveImage from '@component/ResponsiveImage'
 
 interface IGradientSquare {
   variantGradient: string

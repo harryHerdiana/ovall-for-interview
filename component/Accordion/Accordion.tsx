@@ -5,7 +5,7 @@ import { IDatoAccordionItem } from '@modules/datocms/types'
 import { Disclosure } from '@headlessui/react'
 
 type IAccordionProps = {
-  buttonText: string
+  buttonText?: string
   items: IDatoAccordionItem[]
 }
 

@@ -14,7 +14,7 @@ import Cart from '@component/Cart'
 // import trackBeginCheckoutEvent from '../../../common/lib/tracking/trackBeginCheckoutEvent'
 
 const SlideOver: React.FC = () => {
-  const { checkout, loading, showCart, setShowCart } = React.useContext(ShopContext)
+  const { checkout, showCart, setShowCart } = React.useContext(ShopContext)
 
   const handleCheckout = () => {
     // trackBeginCheckoutEvent(checkout.lineItems, cartProducts)

@@ -1,11 +1,8 @@
 import React from 'react'
-import ShopContext from '@context/StoreContext'
 import { IProductPage } from '@lib/types'
 import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
-import Slider from '@component/Slider'
 import { toEuro } from '@lib/utils'
 import VariantSelect from './VariantSelect'
-import AddToCartButton from './AddToCartButton'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
 
@@ -45,7 +42,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-  console.log(productClaims)
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-12 max-w-site mx-auto mb-12">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center  w-full ">
@@ -53,7 +49,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
         </div>
       </div>
-      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto ">
+      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0 lg:mt-0">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
         <div className="text-left flex flex-row mb-3 mt-8">
           <span className=" self-center font-subtitleFont font-semibold text-2xl">

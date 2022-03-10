@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { IShopifyProductVariant } from '@modules/shopify/types'
 import Icon from '@component/Icon'
-import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import AddToCartButton from './AddToCartButton'
 
@@ -29,6 +28,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   const shopContext = React.useContext(ShopContext)
 
   const option = [1, 2, 3, 4, 5, 6, 7]
+  // eslint-disable-next-line prefer-const
   let [options, setOptions] = useState<number>(1)
   const increase = () => {
     setOptions((options += 1))

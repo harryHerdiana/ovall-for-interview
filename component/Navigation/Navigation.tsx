@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Link from 'next/link'
-import { ShoppingBagIcon } from '@heroicons/react/outline'
 import Icon from '@component/Icon'
 import ShopContext from '@context/StoreContext'
 import { IMenu } from '@lib/types'
