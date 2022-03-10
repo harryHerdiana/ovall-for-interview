@@ -14,13 +14,13 @@ type IBlockRecord = {
     id: string
     __typename: string
     image: {
-      responisveImage: DatoCMSResponsiveImage
+      responsiveImage: DatoCMSResponsiveImage
     }
   }
 }
 
 const BlockImage: React.FC<IBlockRecord> = ({ record }) => (
-  <Image data={record.image.responisveImage} />
+  <Image data={record.image.responsiveImage} />
 )
 
 const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
@@ -46,12 +46,10 @@ const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
               <StructuredText
                 data={item.body}
                 renderInlineRecord={({ record }) => <p>{record}</p>}
-                renderBlock={({ record }) => {
+                renderBlock={({ record }: IBlockRecord) => {
                   switch (record.__typename) {
                     case 'ImageRecord':
-                      //   return <BlockImage record={record} />
-                      //   return <Image data={record.image.responsiveImage} />
-                      return null
+                      return <BlockImage record={record} />
                     default:
                       return null
                   }
