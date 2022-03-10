@@ -49,6 +49,15 @@ export const ABOUT_US_QUERY = `
             body {
               value
               links
+              blocks{
+                id
+                __typename
+                image {
+                  responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
+                    ...ResponsiveImageFragment
+                  }
+              }
+             }
             }
           }
         }

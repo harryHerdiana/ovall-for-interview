@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import Icon from '@component/Icon'
-import GradientRectangle from '@component/GradientRectangle'
-import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import { StructuredTextDocument, StructuredText } from 'react-datocms'
 
 import Button from '@component/Button'

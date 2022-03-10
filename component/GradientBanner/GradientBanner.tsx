@@ -6,7 +6,7 @@ import { DesktopGradient, MobileGradient } from './GradientElements'
 
 export type IGradientBannerProps = {
   backgroundColor: string
-  image: DatoCMSResponsiveImage
+  image?: DatoCMSResponsiveImage
   title: string
   body?: string
   items?: {
@@ -63,7 +63,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   )
 
   return (
-    <section className="flex lg:h-max flex-col lg:flex-row ">
+    <section className="flex lg:h-max flex-col lg:flex-row max-w-site mx-auto">
       {mobileContentPlacement === 'top' && (
         <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
           <MobileGradientAll />

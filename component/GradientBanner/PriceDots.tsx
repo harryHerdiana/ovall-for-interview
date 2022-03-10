@@ -15,32 +15,29 @@ export const getCheapestVariantPrice = (product: IShopifyProduct) => {
   return { price: afterPrice, before: beforePrice }
 }
 
-const PriceDots: React.FC<IPriceDotsProps> = ({ product, selfTitle }) => {
-  console.log(getCheapestVariantPrice(product))
-  return (
-    <div className=" flex flex-col ">
-      <h2 className="self-center lg:self-start mb-8">{selfTitle}</h2>
-      <span className="self-center lg:self-start font-subtitleFont font-semibold text-2xl">
-        {toEuro(getCheapestVariantPrice(product).price)}
+const PriceDots: React.FC<IPriceDotsProps> = ({ product, selfTitle }) => (
+  <div className=" flex flex-col ">
+    <h2 className="self-center lg:self-start mb-8">{selfTitle}</h2>
+    <span className="self-center lg:self-start font-subtitleFont font-semibold text-2xl">
+      {toEuro(getCheapestVariantPrice(product).price)}
+    </span>
+    <div className="self-center lg:self-start">
+      <span className="line-through font-bold font-subtitleFont">
+        {toEuro(getCheapestVariantPrice(product).before)}
       </span>
-      <div className="self-center lg:self-start">
-        <span className="line-through font-bold font-subtitleFont">
-          {toEuro(getCheapestVariantPrice(product).before)}
-        </span>
-      </div>
-      <div className="my-8 flex justify-center lg:justify-start">
-        <ul className="flex gap-2">
-          {product.variants.map((vari, index) => (
-            <li
-              key={vari.id}
-              className={`md:w-6 md:h-6 w-5 h-5 list-none rounded-full bg-${vari.sku}-500`}
-              value={vari.sku}
-              aria-hidden="true"
-            />
-          ))}
-        </ul>
-      </div>
     </div>
-  )
-}
+    <div className="my-8 flex justify-center lg:justify-start">
+      <ul className="flex gap-2">
+        {product.variants.map((vari) => (
+          <li
+            key={vari.id}
+            className={`md:w-6 md:h-6 w-5 h-5 list-none rounded-full bg-${vari.sku}-500`}
+            value={vari.sku}
+            aria-hidden="true"
+          />
+        ))}
+      </ul>
+    </div>
+  </div>
+)
 export default PriceDots
