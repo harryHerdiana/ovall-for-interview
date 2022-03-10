@@ -4,11 +4,13 @@ import { GET_PRODUCT } from '@modules/shopify/api/storefront/queries'
 import parseProductResponse from '@modules/shopify/api/storefront/parser'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { FOOTER_QUERY, PRODUCT_PAGE_QUERY, HOMEPAGE_QUERY } from '@modules/datocms/api/queries'
-import { Context, IAppContent, IHomePage, IProductPage } from './types'
+import { ABOUT_US_QUERY } from '@modules/datocms/api/queries/aboutUs'
+import { Context, IAboutUsPage, IAppContent, IHomePage, IProductPage } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
 import mapHomepageData from './mapper/homepage'
 import mapAppContent from './mapper/app'
+import mapAboutUsData from './mapper/aboutUs'
 
 export default class PageDataService {
   context: Context
@@ -58,12 +60,16 @@ export default class PageDataService {
 
   private async getMenus(): Promise<any> {
     const { footer, cookieNotice } = await this.getAppContent()
-    console.log('cookieNotice', cookieNotice.text)
     const menu = [
       {
         id: '1',
         label: 'Product',
         path: '/products/ovall'
+      },
+      {
+        id: '2',
+        label: 'Über uns',
+        path: '/ueber-uns'
       }
     ]
 
@@ -106,5 +112,9 @@ export default class PageDataService {
 
   public async product(): Promise<IProductPage> {
     return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
+  }
+
+  public async aboutUs(): Promise<IAboutUsPage> {
+    return this.requestDatoCMSWithBaseData(ABOUT_US_QUERY, 'aboutUsPage', mapAboutUsData)
   }
 }

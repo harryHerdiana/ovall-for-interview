@@ -137,6 +137,13 @@ export interface IProductTeaserSection {
   backgroundColor: string
 }
 
+export interface IHtmlAccordionItem {
+  id: string
+  title: string
+  subtitle: string
+  body: StructuredText
+}
+
 /** ***** PAGES ************** */
 
 export interface IHomePage {
@@ -157,6 +164,19 @@ export interface IHomePage {
   newsletterSection: INewsletterSection
   infoSection: any // TODO add type
   productTeaserSection: IProductTeaserSection
+}
+
+export interface IAboutUsPage {
+  heroSection: {
+    title: string
+    body: string
+  }
+  content: StructuredText
+  accordionSection: {
+    items: IHtmlAccordionItem[]
+  }
+  productTeaserSection: IProductTeaserSection
+  newsletterSection: INewsletterSection
 }
 
 export interface IProductPage {
