@@ -41,7 +41,7 @@ const PrevArrow: React.FC<any> = (props) => {
 const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => (
   <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center">
     <div className="lg:px-24 ">
-      <ResponsiveImage image={image} />
+      <ResponsiveImage image={image} usePlaceholder={false} />
     </div>
     <div className="lg:w-4/5 my-3">
       <div className="text-left md:text-center">
