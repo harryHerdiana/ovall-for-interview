@@ -16,7 +16,6 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     productInfoAccordionSection,
     newsletterSection,
     productTeaserSection,
-    product,
     heroSection
   } = props
   // console.log('homepage.props', props)
