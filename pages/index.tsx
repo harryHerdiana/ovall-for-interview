@@ -7,7 +7,7 @@ import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import { useRouter } from 'next/router'
-import PriceDots from '@component/GradientBanner/PriceDots'
+import ProductTeaser from '@component/ProductTeaser'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const {
@@ -34,16 +34,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentSolidColor
       />
       <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
-      <GradientBanner
-        {...productTeaserSection}
-        mobileContentPlacement="bottom"
-        contentPlacement="right"
-        buttonType="primary"
-        title=""
-        onClickButton={() => router.push(linkToProduct)}>
-        <PriceDots product={product} selfTitle={productTeaserSection.title} />
-      </GradientBanner>
-
+      <ProductTeaser {...productTeaserSection} />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
