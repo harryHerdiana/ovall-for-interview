@@ -39,7 +39,7 @@ const PrevArrow: React.FC<any> = (props) => {
 }
 
 const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => (
-  <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center max-w-site">
+  <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center max-w-fullhd">
     <div className="lg:px-24 ">
       <ResponsiveImage image={image} usePlaceholder={false} />
     </div>
@@ -58,7 +58,7 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
     prevArrow: <PrevArrow />
   }
   return (
-    <div className="lg:w-4/5 mx-auto lg:text-center my-12 ">
+    <div className="lg:w-4/5 mx-auto lg:text-center my-12 max-w-fullhd">
       <div className="px-4">
         <span className="font-subtitleFont text-base uppercase">{title}</span>
         <h2 className="mt-2 mb-4">{kicker}</h2>

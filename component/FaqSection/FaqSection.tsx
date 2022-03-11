@@ -3,9 +3,9 @@ import { IDatoAccordionItem } from '@modules/datocms/types'
 import Accordion from '@component/Accordion'
 
 type IFaqSectionProps = {
-  faqButtonText: string
-  faqSubtitle: string
-  faqTitle: string
+  faqButtonText?: string
+  faqSubtitle?: string
+  faqTitle?: string
   items: IDatoAccordionItem[]
 }
 
