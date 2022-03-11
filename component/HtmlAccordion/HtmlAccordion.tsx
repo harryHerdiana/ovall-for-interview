@@ -20,7 +20,7 @@ type IBlockRecord = {
 }
 
 const BlockImage: React.FC<IBlockRecord> = ({ record }) => (
-  <Image data={record.image.responsiveImage} />
+  <Image data={record.image.responsiveImage} className="float-right" />
 )
 
 const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
@@ -45,7 +45,6 @@ const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
             <Disclosure.Panel className="px-5 pt-4 pb-2 text-tiny font-textFont text-left">
               <StructuredText
                 data={item.body}
-                renderInlineRecord={({ record }) => <p>{record}</p>}
                 renderBlock={({ record }: IBlockRecord) => {
                   switch (record.__typename) {
                     case 'ImageRecord':

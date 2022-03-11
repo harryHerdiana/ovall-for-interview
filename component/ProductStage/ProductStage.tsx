@@ -13,6 +13,16 @@ interface IProductStageProps extends IProductPage {
   product: IShopifyProduct
 }
 
+export const getCheapestVariantPrice = (product: IShopifyProduct) => {
+  const cheapest = product.variants.sort(
+    (a, b) => Number(a.priceV2.amount) - Number(b.priceV2.amount)
+  )[0]
+
+  const afterPrice = cheapest.priceV2.amount
+  const beforePrice = cheapest.compareAtPriceV2.amount
+  return { price: afterPrice, before: beforePrice }
+}
+
 const ProductStage: React.FC<IProductStageProps> = ({
   product,
   variant,
@@ -42,6 +52,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
+
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-12 max-w-site mx-auto mb-12">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center  w-full ">

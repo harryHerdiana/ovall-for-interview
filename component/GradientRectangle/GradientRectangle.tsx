@@ -1,11 +1,10 @@
 import React from 'react'
-import ResponsiveImage from '@component/ResponsiveImage'
-import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 
 interface IGradientRectangle {
   variantGradient: string
-  className: string
-  image: DatoCMSResponsiveImage
+  className?: string
+  children: React.ReactElement[] | React.ReactElement
+  contentPlacement: 'left' | 'right'
 }
 
 const gradientMap = {
@@ -16,14 +15,15 @@ const gradientMap = {
   violet: 'violet_gradient_rectangle',
   'lotus-pink': 'pink_gradient_rectangle'
 }
-const GradientRectangle: React.FC<IGradientRectangle> = ({ variantGradient, className, image }) => {
-  const gradient = gradientMap[variantGradient]
+const GradientRectangle: React.FC<IGradientRectangle> = ({
+  variantGradient,
+  className,
+  children,
+  contentPlacement
+}) => {
+  const gradient = `${gradientMap[variantGradient]}_${contentPlacement}`
 
-  return (
-    <div className={`${gradient} ${className} flex justify-center`}>
-      <ResponsiveImage image={image} />
-    </div>
-  )
+  return <div className={`${gradient} ${className}`}>{children}</div>
 }
 
 export default GradientRectangle

@@ -6,8 +6,8 @@ import { IDefaultProps, IHomePage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
-import { useRouter } from 'next/router'
-import PriceDots from '@component/GradientBanner/PriceDots'
+// import { useRouter } from 'next/router'
+import ProductTeaser from '@component/ProductTeaser'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const {
@@ -16,12 +16,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     productInfoAccordionSection,
     newsletterSection,
     productTeaserSection,
-    product,
     heroSection
   } = props
   // console.log('homepage.props', props)
-  const router = useRouter()
-  const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
+  // const router = useRouter()
+  // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <h1>Ovall HomePage</h1>
@@ -34,16 +33,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentSolidColor
       />
       <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
-      <GradientBanner
-        {...productTeaserSection}
-        mobileContentPlacement="bottom"
-        contentPlacement="right"
-        buttonType="primary"
-        title=""
-        onClickButton={() => router.push(linkToProduct)}>
-        <PriceDots product={product} selfTitle={productTeaserSection.title} />
-      </GradientBanner>
-
+      <ProductTeaser {...productTeaserSection} />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"

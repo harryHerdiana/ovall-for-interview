@@ -214,7 +214,7 @@ module.exports = {
         'Ovall-Turquoise': {
           500: '#c6cedf'
         },
-
+        grayLine: '#D2D2D2',
         green: {
           500: '#7E9F3C',
           600: '#7BB505'

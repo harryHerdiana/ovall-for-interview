@@ -9,7 +9,7 @@ export function mapLocaleString(locale: string): string {
     case 'en':
       return 'en'
     default:
-      console.warn(`Unsupported language: ${locale}`)
+      // console.warn(`Unsupported language: ${locale}`)
       return 'de'
   }
 }

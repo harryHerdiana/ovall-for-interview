@@ -7,18 +7,11 @@ import Newsletter from '@component/Newsletter'
 import GradientBanner from '@component/GradientBanner'
 import HtmlAccordion from '@component/HtmlAccordion'
 import { StructuredText } from 'react-datocms'
-import PriceDots from '@component/GradientBanner/PriceDots'
+import ProductTeaser from '@component/ProductTeaser'
 
 const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps) => {
-  const {
-    newsletterSection,
-    heroSection,
-    accordionSection,
-    content,
-    productTeaserSection,
-    product
-  } = props
-  console.log('aboutus.props', props)
+  const { newsletterSection, heroSection, accordionSection, content, productTeaserSection } = props
+  // console.log('aboutus.props', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
@@ -36,14 +29,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
         <StructuredText data={content} />
       </div>
       <HtmlAccordion items={accordionSection.items} />
-      <GradientBanner
-        {...productTeaserSection}
-        mobileContentPlacement="bottom"
-        contentPlacement="right"
-        buttonType="primary"
-        title="">
-        <PriceDots product={product} selfTitle={productTeaserSection.title} />
-      </GradientBanner>
+      <ProductTeaser {...productTeaserSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )

@@ -23,7 +23,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
           <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (
               <>
-                {index !== 0 && <hr />}
+                {index !== 0 && <hr className="border-grayLine" />}
                 <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
                   <h3 className="w-full md:w-3/4">{item.text}</h3>
                   <Icon

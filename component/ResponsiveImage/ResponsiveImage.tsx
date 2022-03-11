@@ -5,14 +5,15 @@ import { Image } from 'react-datocms'
 type IResponsiveImageProps = {
   image: DatoCMSResponsiveImage
   usePlaceholder?: boolean
+  className?: string
 }
 
-const ResponsiveImage: React.FC<IResponsiveImageProps> = ({ image, ...props }) => {
+const ResponsiveImage: React.FC<IResponsiveImageProps> = ({ className, image, ...props }) => {
   if (!image) {
     return null
   }
   return (
-    <div className="h-max">
+    <div className={`${className}`}>
       <Image data={image} {...props} />
     </div>
   )
