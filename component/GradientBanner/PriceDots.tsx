@@ -8,7 +8,9 @@ type IPriceDotsProps = {
 }
 
 export const getCheapestVariantPrice = (product: IShopifyProduct) => {
-  const cheapest = product.variants.sort((a: any, b: any) => a.priceV2.amount - b.priceV2.amount)[0]
+  const cheapest = product.variants.sort(
+    (a, b) => Number(a.priceV2.amount) - Number(b.priceV2.amount)
+  )[0]
 
   const afterPrice = cheapest.priceV2.amount
   const beforePrice = cheapest.compareAtPriceV2.amount

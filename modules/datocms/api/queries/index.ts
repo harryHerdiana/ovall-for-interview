@@ -1,3 +1,5 @@
 export * from './homepage'
 export * from './product'
 export * from './app'
+export * from './aboutUs'
+export * from './faq'

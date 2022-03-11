@@ -161,9 +161,27 @@ export interface IHomePage {
     items: IDatoAccordionItem[]
   }
   howToUseSection: IHowToUseSection
-  newsletterSection: INewsletterSection
   infoSection: any // TODO add type
   productTeaserSection: IProductTeaserSection
+  newsletterSection: INewsletterSection
+}
+
+export interface IFAQPage {
+  heroSection: {
+    backgroundColor: string
+    kicker: string
+    title: string
+    image: DatoCMSResponsiveImage
+  }
+  faqSection: {
+    items: IDatoAccordionItem[]
+    buttonText: string
+  }
+  descriptionSection: {
+    videoUrl: string
+  }
+  productTeaserSection: IProductTeaserSection
+  newsletterSection: INewsletterSection
 }
 
 export interface IAboutUsPage {
