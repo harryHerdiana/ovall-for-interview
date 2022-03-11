@@ -6,7 +6,7 @@ import { IDefaultProps, IHomePage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
@@ -19,8 +19,8 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     heroSection
   } = props
   // console.log('homepage.props', props)
-  const router = useRouter()
-  const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
+  // const router = useRouter()
+  // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <h1>Ovall HomePage</h1>
