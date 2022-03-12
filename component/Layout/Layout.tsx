@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { IMenu, SeoTags, IFooter, ICookieNotice } from '@lib/types'
+import { SeoTags, IFooter, ICookieNotice, ITopMenu } from '@lib/types'
 import Header from '@component/Layout/Header'
 import { TrackingIframe, TrackingScript } from '@modules/tracking'
 import CookieBanner from '@component/CookieBanner'
@@ -9,7 +9,7 @@ import Footer from './Footer'
 interface ILayout {
   seoTags: SeoTags
   children: React.ReactElement[]
-  menu: IMenu
+  menu: ITopMenu
   cookieNotice: ICookieNotice
   footer: IFooter
 }

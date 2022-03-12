@@ -19,6 +19,11 @@ export type SeoTags = {
   imageUrl?: string
 }
 
+export interface ITopMenu {
+  notification: string
+  items: MenuItem[]
+}
+
 export type MenuItem = {
   id: string
   path: string
@@ -54,13 +59,14 @@ export interface ICookieNotice {
 }
 
 export interface IAppContent {
+  menu: ITopMenu
   footer: IFooter
   cookieNotice: ICookieNotice
 }
 
 export interface IDefaultProps {
   appProps: {
-    menu: IMenu
+    menu: ITopMenu
     cookieNotice: ICookieNotice
     footer: IFooter
   }
@@ -162,6 +168,28 @@ export interface IHomePage {
   }
   howToUseSection: IHowToUseSection
   infoSection: any // TODO add type
+  productTeaserSection: IProductTeaserSection
+  newsletterSection: INewsletterSection
+}
+
+export interface IRatingsPage {
+  heroSection: {
+    backgroundColor: string
+    kicker: string
+    title: string
+    image: DatoCMSResponsiveImage
+  }
+  productFeatureSection: {
+    title: string
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    items: {
+      id: string
+      icon: string
+      title: string
+      text: StructuredTextDocument
+    }[]
+  }
   productTeaserSection: IProductTeaserSection
   newsletterSection: INewsletterSection
 }
