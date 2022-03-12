@@ -12,6 +12,11 @@ export const FAQ_QUERY = `
         title
       }
       heroSection {
+        ... on SectionHeadlineRecord {
+          id
+          text
+          _modelApiKey
+        }
         ... on SectionTextRecord {
           id
           text
@@ -23,7 +28,7 @@ export const FAQ_QUERY = `
           title
           backgroundColor
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 500, h: 500 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
               ...ResponsiveImageFragment
             }
           }

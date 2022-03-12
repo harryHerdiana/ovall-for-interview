@@ -59,7 +59,7 @@ interface ISliderItem {
 
 const SliderItem: React.FC<ISliderItem> = ({ image }) => (
   <div className="overflow-hidden flex flex-wrap justify-center h-max w-max">
-    <ResponsiveImage image={image} />
+    <ResponsiveImage image={image} usePlaceholder={false} />
   </div>
 )
 

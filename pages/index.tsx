@@ -18,13 +18,8 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     productTeaserSection,
     heroSection
   } = props
-  // console.log('homepage.props', props)
-  // const router = useRouter()
-  // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <h1>Ovall HomePage</h1>
-      {/* <div>{JSON.stringify(props.heroSection)}</div> */}
       <GradientBanner
         {...heroSection}
         mobileContentPlacement="bottom"

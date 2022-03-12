@@ -3,7 +3,10 @@ import * as utils from './utils'
 
 export default function mapAboutUsData(d: any): IFAQPage {
   return {
-    heroSection: null,
+    heroSection: {
+      ...utils.parseInfoBannerSection(d.heroSection),
+      kicker: utils.findByApiKey(d.heroSection, 'section_headline', 'text')
+    },
     faqSection: {
       items: d.faqAccordion.items.map((item) => ({
         id: item.id,

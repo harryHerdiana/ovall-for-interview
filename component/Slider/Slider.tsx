@@ -44,7 +44,7 @@ const PrevArrow = (props) => {
 }
 
 const Slider: React.FC<ISlider> = ({ children, settings = {}, ...extraProps }) => {
-  const sliderRef = useRef()
+  const sliderRef = useRef<Slickslider>()
   const mergedSettings = { ...settings }
   const variantContext = React.useContext(VariantContext)
   const goToFirst = () => {
@@ -53,7 +53,6 @@ const Slider: React.FC<ISlider> = ({ children, settings = {}, ...extraProps }) =
   React.useEffect(() => {
     if (variantContext.isSelected === true) {
       goToFirst()
-      console.log(variantContext.isSelected)
     }
   }, [variantContext.isSelected])
   return (
