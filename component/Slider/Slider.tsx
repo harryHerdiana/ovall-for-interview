@@ -5,6 +5,7 @@ import Slickslider from 'react-slick'
 // import 'slick-carousel/slick/slick.css'
 // import 'slick-carousel/slick/slick-theme.css'
 import Icon from '@component/Icon'
+import { VariantContext } from '@context/VariantContext'
 
 interface ISlider {
   children: React.ReactElement[]
@@ -45,23 +46,35 @@ const PrevArrow = (props) => {
 const Slider: React.FC<ISlider> = ({ children, settings = {}, ...extraProps }) => {
   const sliderRef = useRef()
   const mergedSettings = { ...settings }
+  const variantContext = React.useContext(VariantContext)
+  const goToFirst = () => {
+    sliderRef.current.slickGoTo(0)
+  }
+  React.useEffect(() => {
+    if (variantContext.isSelected === true) {
+      goToFirst()
+      console.log(variantContext.isSelected)
+    }
+  }, [variantContext.isSelected])
   return (
-    <Slickslider
-      ref={sliderRef}
-      dotsClass="slick-dots custom-indicator"
-      dots
-      autoplaySpeed={6500}
-      autoplay={false}
-      infinite
-      slidesToShow={1}
-      slidesToScroll={1}
-      fade={false}
-      nextArrow={<NextArrow />}
-      prevArrow={<PrevArrow />}
-      {...mergedSettings}
-      {...extraProps}>
-      {children}
-    </Slickslider>
+    <>
+      <Slickslider
+        ref={sliderRef}
+        dotsClass="slick-dots custom-indicator"
+        dots
+        autoplaySpeed={6500}
+        autoplay={false}
+        infinite
+        slidesToShow={1}
+        slidesToScroll={1}
+        fade={false}
+        nextArrow={<NextArrow />}
+        prevArrow={<PrevArrow />}
+        {...mergedSettings}
+        {...extraProps}>
+        {children}
+      </Slickslider>
+    </>
   )
 }
 

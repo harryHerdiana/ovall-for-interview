@@ -12,6 +12,7 @@ import FaqSection from '@component/FaqSection'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
 import MoodSlideShow from '@component/MoodSlideShow'
+import { VariantProvider } from '@context/VariantContext'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   // console.log('PROPS', props)
@@ -33,13 +34,15 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   const variant = product.variants.find((v) => v.sku === variantSku)
   return (
     <Layout {...appProps} seoTags={seoTags}>
-      <ProductStage
-        {...props}
-        product={product}
-        variant={variant}
-        activeSku={variantSku}
-        setVariantSku={setVariantSku}
-      />
+      <VariantProvider>
+        <ProductStage
+          {...props}
+          product={product}
+          variant={variant}
+          activeSku={variantSku}
+          setVariantSku={setVariantSku}
+        />
+      </VariantProvider>
       <GradientBanner
         {...productInfoBannerSection}
         mobileContentPlacement="bottom"

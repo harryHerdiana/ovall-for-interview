@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { IShopifyProductVariant } from '@modules/shopify/types'
 import Icon from '@component/Icon'
 import ShopContext from '@context/StoreContext'
+import { VariantContext } from '@context/VariantContext'
 import AddToCartButton from './AddToCartButton'
 
 interface IVariantSelect {
@@ -25,6 +26,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   colorCaption,
   addToCartLabel
 }) => {
+  const variantContext = React.useContext(VariantContext)
   const shopContext = React.useContext(ShopContext)
 
   const option = [1, 2, 3, 4, 5, 6, 7]
@@ -58,6 +60,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
                 type="button"
                 value={vari.sku}
                 onClick={() => {
+                  variantContext.setSelected()
                   setVariantSku(vari.sku)
                   setActiveButton({
                     buttonActivated: index
