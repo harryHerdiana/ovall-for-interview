@@ -5,6 +5,7 @@ import { ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
 import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
+import Icon from '@component/Icon'
 // import { useRouter } from 'next/router'
 
 // import Button from '../../../../components/shared/Button'
@@ -82,7 +83,7 @@ const SlideOver: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="w-full sm:w-1/2 flex justify-center sm:justify-end sm:pr-4">
+                        <div className="w-full sm:w-1/2 flex flex-col justify-center sm:justify-end sm:pr-4">
                           <Button
                             type="button"
                             buttonType="primary"
@@ -93,6 +94,14 @@ const SlideOver: React.FC = () => {
                             </div>
                             Zur Kasse
                           </Button>
+                          <div className="flex justify-between w-full mt-2">
+                            <Icon src="/images/pay-paypal.svg" className="w-12 h-12" />
+                            <Icon src="/images/pay-amex.svg" className="w-12 h-12" />
+                            <Icon src="/images/pay-klarna-rechnung.svg" className="w-12 h-12" />
+                            <Icon src="/images/pay-klarna-sofort.svg" className="w-12 h-12" />
+                            <Icon src="/images/pay-mastercard.svg" className="w-12 h-12" />
+                            <Icon src="/images/pay-visa.svg" className="w-12 h-12" />
+                          </div>
                         </div>
                       </div>
                     </div>
