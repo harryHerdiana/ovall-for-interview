@@ -17,7 +17,7 @@ export const PRODUCT_PAGE_QUERY = `
         image {
           gradientBackground
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 550, h: 550 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
               ...ResponsiveImageFragment
             }
           }
@@ -26,7 +26,7 @@ export const PRODUCT_PAGE_QUERY = `
       slideshowItems {
         gradientBackground
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 550, h: 550 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
             ...ResponsiveImageFragment
           }
         }
@@ -77,7 +77,7 @@ export const PRODUCT_PAGE_QUERY = `
           id
           title
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 500, h: 500 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
               ...ResponsiveImageFragment
             }
           }

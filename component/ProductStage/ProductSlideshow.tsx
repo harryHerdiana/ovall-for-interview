@@ -3,7 +3,7 @@
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-
+import { VariantContext } from '@context/VariantContext'
 import React, { useEffect, useState } from 'react'
 import GradientSquare from '@component/GradientSquare'
 import Icon from '@component/Icon'
@@ -14,6 +14,7 @@ interface IProductSlideshow {
 }
 
 const NextArrow: React.FC<any> = (props) => {
+  const variantContext = React.useContext(VariantContext)
   const { onClick, className, style } = props
   return (
     <div
@@ -22,12 +23,18 @@ const NextArrow: React.FC<any> = (props) => {
       style={{
         ...style
       }}>
-      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+      <div
+        onClick={() => {
+          variantContext.setUnselected()
+        }}>
+        <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+      </div>
     </div>
   )
 }
 
 const PrevArrow: React.FC<any> = (props) => {
+  const variantContext = React.useContext(VariantContext)
   const { onClick, className, style } = props
   return (
     <div
@@ -36,7 +43,12 @@ const PrevArrow: React.FC<any> = (props) => {
       style={{
         ...style
       }}>
-      <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+      <div
+        onClick={() => {
+          variantContext.setUnselected()
+        }}>
+        <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
+      </div>
     </div>
   )
 }
@@ -47,7 +59,7 @@ interface ISliderItem {
 
 const SliderItem: React.FC<ISliderItem> = ({ image }) => (
   <div className="overflow-hidden flex flex-wrap justify-center h-max w-max">
-    <ResponsiveImage image={image} />
+    <ResponsiveImage image={image} usePlaceholder={false} />
   </div>
 )
 

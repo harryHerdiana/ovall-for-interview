@@ -12,6 +12,11 @@ export const FAQ_QUERY = `
         title
       }
       heroSection {
+        ... on SectionHeadlineRecord {
+          id
+          text
+          _modelApiKey
+        }
         ... on SectionTextRecord {
           id
           text

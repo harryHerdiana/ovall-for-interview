@@ -23,7 +23,7 @@ export const ABOUT_US_QUERY = `
           title
           backgroundColor
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 400, h: 400 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 700, h: 500 }) {
               ...ResponsiveImageFragment
             }
           }
@@ -53,7 +53,7 @@ export const ABOUT_US_QUERY = `
                 id
                 __typename
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 384 }) {
+                  responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 500, h: 500 }) {
                     ...ResponsiveImageFragment
                   }
               }

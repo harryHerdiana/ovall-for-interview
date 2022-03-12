@@ -24,13 +24,13 @@ const BlockImage: React.FC<IBlockRecord> = ({ record }) => (
 )
 
 const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
-  <div className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center my-10">
+  <div className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center my-2">
     {items.map((item, index) => (
       <Disclosure key={item.id} defaultOpen={index === 0}>
         {({ open }) => (
           <>
             {index !== 0 && <hr />}
-            <Disclosure.Button className="flex relative justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left ">
+            <Disclosure.Button className="flex relative justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left ">
               <div className="flex gap-4">
                 <span className=" font-subtitleFont text-base uppercase font-semibold ">
                   {item.title}

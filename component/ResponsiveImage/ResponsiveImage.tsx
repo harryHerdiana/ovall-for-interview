@@ -13,7 +13,7 @@ const ResponsiveImage: React.FC<IResponsiveImageProps> = ({ className, image, ..
     return null
   }
   return (
-    <div className={`${className}`}>
+    <div className={`${className} `}>
       <Image data={image} {...props} />
     </div>
   )

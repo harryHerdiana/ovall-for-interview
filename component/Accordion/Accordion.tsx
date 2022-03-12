@@ -18,13 +18,13 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
   }
   return (
     <>
-      <div className="my-10">
+      <div className="">
         {items.map((item, index) => (
           <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (
               <>
                 {index !== 0 && <hr className="border-grayLine" />}
-                <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-tiny font-medium text-left rounded-lg  ">
+                <Disclosure.Button className="flex justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left rounded-lg  ">
                   <h3 className="w-full md:w-3/4">{item.text}</h3>
                   <Icon
                     src="/images/arrow-big.svg"
@@ -38,11 +38,11 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items }) => {
             )}
           </Disclosure>
         ))}
-      </div>
-      <div className="w-full md:w-1/2 m-auto  px-5 md:px-0">
-        <Button onClick={scrollToTop} buttonType="primary" type="button">
-          {buttonText}
-        </Button>
+        <div className="w-full md:w-1/2 m-auto  px-5 md:px-0">
+          <Button onClick={scrollToTop} buttonType="primary" type="button">
+            {buttonText}
+          </Button>
+        </div>
       </div>
     </>
   )
