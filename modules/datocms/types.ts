@@ -22,6 +22,7 @@ export type DatoCMSImage = {
   src: string
   height: number
   width: number
+  url: string
 }
 
 export type DatoProductVariantImage = {
