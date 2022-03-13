@@ -68,7 +68,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="flex lg:h-max flex-col lg:flex-row max-w-fullhd m-auto">
+      className="flex lg:h-max flex-col lg:flex-row max-w-fullhd h-400px m-auto">
       {mobileContentPlacement === 'top' && (
         <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
           <MobileGradientAll />
