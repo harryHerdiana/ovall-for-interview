@@ -57,6 +57,12 @@ export const PRODUCT_PAGE_QUERY = `
         id
         text
         title
+        image {
+          alt
+          url
+          width
+          height
+        }
       }
       productDescriptionSection {
         ... on SectionHeadlineRecord {

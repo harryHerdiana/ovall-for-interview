@@ -17,6 +17,13 @@ export type DatoCMSResponsiveImage = {
   aspectRatio: number
 }
 
+export type DatoCMSImage = {
+  alt: string
+  src: string
+  height: number
+  width: number
+}
+
 export type DatoProductVariantImage = {
   color: 'blue' | 'rose' | 'green'
   image: {
@@ -117,9 +124,7 @@ export interface IDatoProductPage {
     id: string
     text: string
     title: string
-    image?: {
-      responsiveImage: DatoCMSResponsiveImage
-    }
+    image?: DatoCMSImage
   }[]
   productDescriptionSection: {
     _modelApiKey: string

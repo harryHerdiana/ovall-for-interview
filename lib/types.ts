@@ -1,4 +1,4 @@
-import { DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
+import { DatoCMSImage, DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { StructuredText } from 'datocms-structured-text-utils'
 import { StructuredTextDocument } from 'react-datocms'
@@ -238,7 +238,7 @@ export interface IProductPage {
       id: string
       text: string
       title: string
-      image?: DatoCMSResponsiveImage
+      image?: DatoCMSImage
     }[]
     variantImages: IProductVariantImage[]
     slideshowImages: IProductSlideshowImage[]
