@@ -8,6 +8,7 @@ import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 // import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
+import Testimonial from '@component/Testimonial'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const {
@@ -16,7 +17,8 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     productInfoAccordionSection,
     newsletterSection,
     productTeaserSection,
-    heroSection
+    heroSection,
+    testimonialSection
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
@@ -28,6 +30,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentSolidColor
       />
       <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
+      <Testimonial {...testimonialSection} />
       <ProductTeaser {...productTeaserSection} />
       <GradientBanner
         {...productInfoBannerTechnology}

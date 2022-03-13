@@ -57,6 +57,12 @@ export const PRODUCT_PAGE_QUERY = `
         id
         text
         title
+        image {
+          alt
+          url
+          width
+          height
+        }
       }
       productDescriptionSection {
         ... on SectionHeadlineRecord {
@@ -114,6 +120,10 @@ export const PRODUCT_PAGE_QUERY = `
       }
       howToUseSection {
         ...HowToUseSectionFragment
+      }
+      testimonialSection {
+        subtitle
+        title
       }
     }
   }

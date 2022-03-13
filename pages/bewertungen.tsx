@@ -5,12 +5,14 @@ import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IRatingsPage } from '@lib/types'
 import Newsletter from '@component/Newsletter'
 import ProductTeaser from '@component/ProductTeaser'
+import ProductReview from '@component/ProductReview'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
   const { newsletterSection, productTeaserSection } = props
   console.log('props', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
+      <ProductReview />
       <ProductTeaser {...productTeaserSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

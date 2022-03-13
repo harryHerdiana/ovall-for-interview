@@ -1,4 +1,4 @@
-import { DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
+import { DatoCMSImage, DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { StructuredText } from 'datocms-structured-text-utils'
 import { StructuredTextDocument } from 'react-datocms'
@@ -160,6 +160,10 @@ export interface IHomePage {
     image: DatoCMSResponsiveImage
     backgroundColor: string
   }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
   moodSlideshowSection: IMoodSlideshow
   productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoAccordionSection: {
@@ -238,7 +242,7 @@ export interface IProductPage {
       id: string
       text: string
       title: string
-      image?: DatoCMSResponsiveImage
+      image?: DatoCMSImage
     }[]
     variantImages: IProductVariantImage[]
     slideshowImages: IProductSlideshowImage[]
@@ -253,6 +257,10 @@ export interface IProductPage {
     title: string
     text: string
     videoUrl: string
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
   }
   howToUseSection: IHowToUseSection
   moodSlideshowSection: IMoodSlideshow

@@ -13,6 +13,8 @@ import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
 import MoodSlideShow from '@component/MoodSlideShow'
 import { VariantProvider } from '@context/VariantContext'
+import { ReviewCarousel } from '@component/ProductReview'
+import Testimonial from '@component/Testimonial'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   // console.log('PROPS', props)
@@ -28,7 +30,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     productInfoBannerTechnology,
     productInfoBannerFeatures,
     howToUseSection,
-    moodSlideshowSection
+    moodSlideshowSection,
+    testimonialSection
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -43,11 +46,13 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
           setVariantSku={setVariantSku}
         />
       </VariantProvider>
+      <Testimonial {...testimonialSection} />
       <GradientBanner
         {...productInfoBannerSection}
         mobileContentPlacement="bottom"
         contentPlacement="left"
       />
+      <ReviewCarousel />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
       <GradientBanner

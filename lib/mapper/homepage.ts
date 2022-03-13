@@ -16,6 +16,10 @@ export default function mapHomepageData(d: any): IHomePage {
         background: item.imageWithGradient[0].gradientBackground || null
       }))
     },
+    testimonialSection: {
+      kicker: d.testimonialSection.title,
+      title: d.testimonialSection.subtitle
+    },
     infoSection: utils.parseProductInfoBannerTech(d.infoSection),
     productInfoBannerTechnology: utils.parseProductInfoBannerTech(d.productInfoSection),
     productInfoAccordionSection: {

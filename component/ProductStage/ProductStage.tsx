@@ -2,6 +2,7 @@ import React from 'react'
 import { IProductPage } from '@lib/types'
 import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import { toEuro } from '@lib/utils'
+import { ProductRating } from '@component/ProductReview'
 import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
@@ -62,7 +63,10 @@ const ProductStage: React.FC<IProductStageProps> = ({
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0 lg:mt-0">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
-        <div className="text-left flex flex-row mb-3 mt-8">
+        <div className="mt-1">
+          <ProductRating />
+        </div>
+        <div className="text-left flex flex-row mb-3 mt-5">
           <span className=" self-center font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>

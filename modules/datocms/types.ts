@@ -17,6 +17,13 @@ export type DatoCMSResponsiveImage = {
   aspectRatio: number
 }
 
+export type DatoCMSImage = {
+  alt: string
+  src: string
+  height: number
+  width: number
+}
+
 export type DatoProductVariantImage = {
   color: 'blue' | 'rose' | 'green'
   image: {
@@ -117,9 +124,7 @@ export interface IDatoProductPage {
     id: string
     text: string
     title: string
-    image?: {
-      responsiveImage: DatoCMSResponsiveImage
-    }
+    image?: DatoCMSImage
   }[]
   productDescriptionSection: {
     _modelApiKey: string
@@ -130,6 +135,10 @@ export interface IDatoProductPage {
   productInfoBannerMiniSpa: IDatoProductBannerSection
   productInfoBannerSection: IDatoProductBannerSection
   moodSlideshowSection: any // TODO add type
+  testimonialSection: {
+    subtitle: string
+    title: string
+  }
   productInfoBannerFeatures: IDatoProductBannerSection
   productInfoAccordionSection: {
     buttonText: string
