@@ -1,13 +1,13 @@
 import React from 'react'
 import Icon from '@component/Icon'
-import { DatoCMSResponsiveImage } from '@modules/datocms/types'
+import { DatoCMSImage } from '@modules/datocms/types'
 
 type IProps = {
   productClaims: {
     id: string
     text: string
     title: string
-    image?: DatoCMSResponsiveImage
+    image?: DatoCMSImage
   }[]
 }
 const ProductClaimsSection: React.FC<IProps> = ({ productClaims }) => (
