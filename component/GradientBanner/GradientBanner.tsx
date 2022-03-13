@@ -70,35 +70,37 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="flex lg:h-max flex-col lg:flex-row max-w-screen min-h-400px m-auto">
-      {mobileContentPlacement === 'top' && (
-        <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
-          <MobileGradientAll />
+      className="block lg:h-max flex-col lg:flex-row max-w-screen min-h-400px m-auto">
+      <div className="flex lg:h-max flex-col lg:flex-row max-w-site min-h-400px m-auto">
+        {mobileContentPlacement === 'top' && (
+          <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
+            <MobileGradientAll />
+          </div>
+        )}
+        <div
+          className={` ${
+            contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
+          } w-full flex-col items-end justify-center`}>
+          <DesktopGradientAll />
         </div>
-      )}
-      <div
-        className={`${backgroundColor}_solid_lefts ${
-          contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
-        } w-full flex-col items-end justify-center`}>
-        <DesktopGradientAll />
-      </div>
-      <GradientSquare
-        variantGradient={backgroundColor}
-        className="lg:hidden h-full w-full max-h-96">
+        <GradientSquare
+          variantGradient={backgroundColor}
+          className="lg:hidden h-full w-full max-h-96">
+          <ResponsiveImage
+            image={image}
+            className={`${imageClassName} w-full h-full flex justify-center`}
+          />
+        </GradientSquare>
         <ResponsiveImage
           image={image}
-          className={`${imageClassName} w-full h-full flex justify-center`}
+          className={`${imageClassName} w-full h-full justify-center hidden lg:flex`}
         />
-      </GradientSquare>
-      <ResponsiveImage
-        image={image}
-        className={`${imageClassName} w-full h-full justify-center hidden lg:flex`}
-      />
-      <div
-        className={`${backgroundColor}_solid_rights ${
-          contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
-        } w-full flex-col items-start justify-center`}>
-        <DesktopGradientAll />
+        <div
+          className={` ${
+            contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
+          } w-full flex-col items-start justify-center`}>
+          <DesktopGradientAll />
+        </div>
       </div>
       {mobileContentPlacement === 'bottom' && (
         <div className={`${mobileContentSolidColor && backgroundColor}_mobile_bottom`}>
