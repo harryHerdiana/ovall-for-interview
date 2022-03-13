@@ -36,6 +36,7 @@ export interface IShopifyLineItem {
   title: string
   quantity: number
   variant: IShopifyLineItemVariant
+  hasPreviousPage: boolean
 }
 
 export interface IShopifyImage {

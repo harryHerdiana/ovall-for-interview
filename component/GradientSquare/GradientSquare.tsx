@@ -12,7 +12,10 @@ const gradientMap = {
   green: 'green_gradient_rectangle',
   pink: 'pink_gradient_rectangle',
   violet: 'violet_gradient_rectangle',
-  'lotus-pink': 'pink_gradient_rectangle'
+  'lotus-pink': 'pink_gradient_rectangle',
+  'Ovall-Turquoise': 'green_gradient_rectangle',
+  'Ovall-Blue': 'blue_gradient_rectangle',
+  'Ovall-Pink': 'pink_gradient_rectangle'
 }
 
 const GradientSquare: React.FC<IGradientSquare> = ({ variantGradient, className, children }) => {
