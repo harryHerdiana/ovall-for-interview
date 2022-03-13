@@ -26,7 +26,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
     setInput(e.target.value)
   }
   return (
-    <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-5 md:text-center">
+    <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-center">
       <h3>{title}</h3>
       <h2 className="mb-2">{subheader}</h2>
       <div>

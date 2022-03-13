@@ -25,6 +25,7 @@ export type IGradientBannerProps = {
   contentPlacement: 'left' | 'right'
   onClickButton?: () => void
   children?: React.ReactElement
+  imageClassName?: string
 }
 
 const GradientBanner: React.FC<IGradientBannerProps> = ({
@@ -39,7 +40,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   buttonType,
   onClickButton,
   children,
-  mobileContentSolidColor
+  mobileContentSolidColor,
+  imageClassName
 }) => {
   const MobileGradientAll = () => (
     <MobileGradient
@@ -68,7 +70,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="flex lg:h-max flex-col lg:flex-row max-w-fullhd h-400px m-auto">
+      className="flex lg:h-max flex-col lg:flex-row max-w-screen min-h-400px m-auto">
       {mobileContentPlacement === 'top' && (
         <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
           <MobileGradientAll />
@@ -83,9 +85,15 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
       <GradientSquare
         variantGradient={backgroundColor}
         className="lg:hidden h-full w-full max-h-96">
-        <ResponsiveImage image={image} className=" w-full h-full flex justify-center" />
+        <ResponsiveImage
+          image={image}
+          className={`${imageClassName} w-full h-full flex justify-center`}
+        />
       </GradientSquare>
-      <ResponsiveImage image={image} className=" w-full h-full justify-center hidden lg:flex " />
+      <ResponsiveImage
+        image={image}
+        className={`${imageClassName} w-full h-full justify-center hidden lg:flex`}
+      />
       <div
         className={`${backgroundColor}_solid_rights ${
           contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'

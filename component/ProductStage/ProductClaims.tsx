@@ -11,7 +11,7 @@ type IProps = {
   }[]
 }
 const ProductClaimsSection: React.FC<IProps> = ({ productClaims }) => (
-  <div className="mt-6">
+  <div className="mt-5">
     {productClaims.map((productClaim) => (
       <div key={productClaim.id} className="flex items-start gap-4 mb-4">
         <Icon src="/images/check.svg" className="h-10 w-10" />
