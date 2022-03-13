@@ -121,6 +121,10 @@ export const PRODUCT_PAGE_QUERY = `
       howToUseSection {
         ...HowToUseSectionFragment
       }
+      testimonialSection {
+        subtitle
+        title
+      }
     }
   }
 

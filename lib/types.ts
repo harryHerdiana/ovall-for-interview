@@ -160,6 +160,10 @@ export interface IHomePage {
     image: DatoCMSResponsiveImage
     backgroundColor: string
   }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
   moodSlideshowSection: IMoodSlideshow
   productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoAccordionSection: {
@@ -253,6 +257,10 @@ export interface IProductPage {
     title: string
     text: string
     videoUrl: string
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
   }
   howToUseSection: IHowToUseSection
   moodSlideshowSection: IMoodSlideshow

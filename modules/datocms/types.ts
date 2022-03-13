@@ -135,6 +135,10 @@ export interface IDatoProductPage {
   productInfoBannerMiniSpa: IDatoProductBannerSection
   productInfoBannerSection: IDatoProductBannerSection
   moodSlideshowSection: any // TODO add type
+  testimonialSection: {
+    subtitle: string
+    title: string
+  }
   productInfoBannerFeatures: IDatoProductBannerSection
   productInfoAccordionSection: {
     buttonText: string
