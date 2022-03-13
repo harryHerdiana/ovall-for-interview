@@ -1,12 +1,8 @@
 import Script from 'next/script'
-import React, { useEffect } from 'react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import React from 'react'
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-interface IStarRating {
-  // product: IProduct
-}
-
-const ProductReview: React.FC<IProductReview> = () => {
+const ProductReview: React.FC<any> = () => {
   console.log('Reviews script ru')
   // useEffect(() => {
   //   const script = document.createElement('script')
