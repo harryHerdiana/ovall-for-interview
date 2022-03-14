@@ -126,7 +126,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
           {toEuro(parseFloat(lineItem.variant.priceV2.amount))}
         </div>
       </div>
-      {lineItem.hasPreviousPage === false && <hr className="border-grayLine w-full" />}
     </div>
   )
 }
