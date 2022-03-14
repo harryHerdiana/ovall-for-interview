@@ -2,13 +2,13 @@
 import React, { useContext, useState, Fragment } from 'react'
 import debounce from 'lodash.debounce'
 import { Image } from 'react-datocms'
-import { TrashIcon } from '@heroicons/react/outline'
 import GradientSquare from '@component/GradientSquare'
 import { IShopifyLineItem } from '@modules/shopify/types'
 import ShopContext from '@context/StoreContext'
 import { toEuro } from '@lib/utils'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/solid'
+import Icon from '@component/Icon'
 interface IShoppingCartItem {
   lineItem: IShopifyLineItem
 }
@@ -65,11 +65,11 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
             <div className={` w-4 h-4 rounded-full bg-${lineItem.variant.sku}-500`} />
           </div>
           <div className="block text-tiny text-black">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <div className="py-2 md:py-1  flex items-center justify-between my-3">
                 <Listbox value={quantity} onChange={(e) => handleQuantityChange(e)}>
                   <div className="relative w-24 mt-1">
-                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border-2 border-grayLine cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-black cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                       <span className="block truncate">{quantity}</span>
                       <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <DownArrow />
@@ -117,7 +117,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                 onClick={handleRemove}
                 type="button">
                 <span className="sr-only">Artikel entfernen</span>
-                <TrashIcon className="h-7 w-7" aria-hidden="true" />
+                <Icon src="/images/delete.svg" className="h-7 w-7" aria-hidden="true" />
               </button>
             </div>
           </div>
