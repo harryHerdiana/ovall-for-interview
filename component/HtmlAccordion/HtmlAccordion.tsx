@@ -42,7 +42,7 @@ const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
                 className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
               />
             </Disclosure.Button>
-            <Disclosure.Panel className="px-5 pt-4 pb-2 text-tiny font-textFont text-left">
+            <Disclosure.Panel className="px-4 pt-4 pb-2 text-tiny font-textFont text-left">
               <StructuredText
                 data={item.body}
                 renderBlock={({ record }: IBlockRecord) => {

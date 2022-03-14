@@ -1,4 +1,4 @@
-import { DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
+import { DatoCMSImage, DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { StructuredText } from 'datocms-structured-text-utils'
 import { StructuredTextDocument } from 'react-datocms'
@@ -17,6 +17,11 @@ export type SeoTags = {
   description: string
   title: string
   imageUrl?: string
+}
+
+export interface ITopMenu {
+  notification: string
+  items: MenuItem[]
 }
 
 export type MenuItem = {
@@ -54,18 +59,30 @@ export interface ICookieNotice {
 }
 
 export interface IAppContent {
+  menu: ITopMenu
   footer: IFooter
   cookieNotice: ICookieNotice
+  cart: ICartText
 }
 
 export interface IDefaultProps {
   appProps: {
-    menu: IMenu
+    menu: ITopMenu
     cookieNotice: ICookieNotice
     footer: IFooter
+    cart: ICartText
   }
   seoTags: SeoTags
   product: IShopifyProduct
+}
+
+export interface ICartText {
+  cartEmpty: string
+  buttonText: string
+  cartName: string
+  closeCart: string
+  taxInfo: string
+  total: string
 }
 
 export interface IProductVariantImage {
@@ -154,6 +171,10 @@ export interface IHomePage {
     image: DatoCMSResponsiveImage
     backgroundColor: string
   }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
   moodSlideshowSection: IMoodSlideshow
   productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoAccordionSection: {
@@ -162,6 +183,28 @@ export interface IHomePage {
   }
   howToUseSection: IHowToUseSection
   infoSection: any // TODO add type
+  productTeaserSection: IProductTeaserSection
+  newsletterSection: INewsletterSection
+}
+
+export interface IRatingsPage {
+  heroSection: {
+    backgroundColor: string
+    kicker: string
+    title: string
+    image: DatoCMSResponsiveImage
+  }
+  productFeatureSection: {
+    title: string
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    items: {
+      id: string
+      icon: string
+      title: string
+      text: StructuredTextDocument
+    }[]
+  }
   productTeaserSection: IProductTeaserSection
   newsletterSection: INewsletterSection
 }
@@ -210,7 +253,7 @@ export interface IProductPage {
       id: string
       text: string
       title: string
-      image?: DatoCMSResponsiveImage
+      image?: DatoCMSImage
     }[]
     variantImages: IProductVariantImage[]
     slideshowImages: IProductSlideshowImage[]
@@ -225,6 +268,10 @@ export interface IProductPage {
     title: string
     text: string
     videoUrl: string
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
   }
   howToUseSection: IHowToUseSection
   moodSlideshowSection: IMoodSlideshow

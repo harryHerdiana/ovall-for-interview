@@ -49,7 +49,7 @@ export default AboutUsPage
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: [
     { params: { aboutUs: 'about-us' }, locale: 'en' },
-    { params: { aboutUs: 'ueber-uns' }, locale: 'de-DE' }
+    { params: { aboutUs: 'uber-uns' }, locale: 'de-DE' }
   ],
   fallback: false
 })

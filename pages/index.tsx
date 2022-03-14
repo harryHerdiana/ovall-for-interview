@@ -8,6 +8,9 @@ import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 // import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
+import Testimonial from '@component/Testimonial'
+import MoodSlideShow from '@component/MoodSlideShow'
+import HowToUse from '@component/HowToUse'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const {
@@ -16,8 +19,12 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     productInfoAccordionSection,
     newsletterSection,
     productTeaserSection,
-    heroSection
+    heroSection,
+    testimonialSection,
+    moodSlideshowSection,
+    howToUseSection
   } = props
+  console.log(props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
@@ -28,12 +35,16 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentSolidColor
       />
       <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
-      <ProductTeaser {...productTeaserSection} />
+      <MoodSlideShow {...moodSlideshowSection} />
+      <Testimonial {...testimonialSection} />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
+        imageClassName="lg:py-10 px-4 pt-7"
       />
+      <HowToUse {...howToUseSection} />
+      <ProductTeaser {...productTeaserSection} />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

@@ -2,6 +2,7 @@ import React from 'react'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import GradientBanner from '@component/GradientBanner'
 import { toEuro } from '@lib/utils'
+import { ProductRating } from '@component/ProductReview'
 
 type IProductTeaserProps = {
   backgroundColor: string
@@ -25,7 +26,10 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
     buttonType="primary"
     title="">
     <div className=" flex flex-col ">
-      <h2 className="self-center lg:self-start mb-8">{title}</h2>
+      <h2 className="self-center lg:self-start">{title}</h2>
+      <div className="mt-1 mb-8" style={{ minHeight: '25px' }}>
+        <ProductRating />
+      </div>
       <span className="self-center lg:self-start font-subtitleFont font-semibold text-2xl">
         {toEuro('59.90')}
       </span>

@@ -27,7 +27,7 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
   onClickButton,
   children
 }) => (
-  <div className="lg:hidden flex-col items-start h-max justify-center w-full p-5">
+  <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4">
     <div className="flex flex-col">
       <h2>{title}</h2>
       <div className="text=tiny">

@@ -1,13 +1,13 @@
 import React from 'react'
 import Icon from '@component/Icon'
-import { DatoCMSResponsiveImage } from '@modules/datocms/types'
+import { DatoCMSImage } from '@modules/datocms/types'
 
 type IProps = {
   productClaims: {
     id: string
     text: string
     title: string
-    image?: DatoCMSResponsiveImage
+    image?: DatoCMSImage
   }[]
 }
 const ProductClaimsSection: React.FC<IProps> = ({ productClaims }) => (
@@ -19,11 +19,13 @@ const ProductClaimsSection: React.FC<IProps> = ({ productClaims }) => (
           <h3 className="mt-2">{productClaim.title}</h3>
           <div className="text-tiny">
             <p>{productClaim.text}</p>
+            {productClaim.image && (
+              <Icon className="h-10 lg:h-14 w-full my-2" src={`${productClaim.image.url}`} />
+            )}
           </div>
         </div>
       </div>
     ))}
   </div>
 )
-
 export default ProductClaimsSection

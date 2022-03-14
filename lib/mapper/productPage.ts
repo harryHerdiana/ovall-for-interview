@@ -12,7 +12,7 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       deliveryTime: d.deliveryTime,
       productClaims: d.productClaims.map((claim) => ({
         ...claim,
-        image: claim.image?.responsiveImage || null
+        image: claim.image || null
       })),
       variantImages: d.variantImages.map((variantImage) => ({
         id: variantImage.color,
@@ -30,6 +30,10 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       title: utils.findByApiKey(d.productDescriptionSection, 'section_headline', 'text'),
       text: utils.findByApiKey(d.productDescriptionSection, 'section_text', 'text'),
       videoUrl: utils.findByApiKey(d.productDescriptionSection, 'video_url_record', 'url')
+    },
+    testimonialSection: {
+      kicker: d.testimonialSection.title,
+      title: d.testimonialSection.subtitle
     },
     howToUseSection: {
       title: d.howToUseSection.header,
