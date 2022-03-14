@@ -62,6 +62,7 @@ export interface IAppContent {
   menu: ITopMenu
   footer: IFooter
   cookieNotice: ICookieNotice
+  cart: ICartText
 }
 
 export interface IDefaultProps {
@@ -69,9 +70,19 @@ export interface IDefaultProps {
     menu: ITopMenu
     cookieNotice: ICookieNotice
     footer: IFooter
+    cart: ICartText
   }
   seoTags: SeoTags
   product: IShopifyProduct
+}
+
+export interface ICartText {
+  cartEmpty: string
+  buttonText: string
+  cartName: string
+  closeCart: string
+  taxInfo: string
+  total: string
 }
 
 export interface IProductVariantImage {

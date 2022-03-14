@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { SeoTags, IFooter, ICookieNotice, ITopMenu } from '@lib/types'
+import { SeoTags, IFooter, ICookieNotice, ITopMenu, ICartText } from '@lib/types'
 import Header from '@component/Layout/Header'
 import { TrackingIframe, TrackingScript } from '@modules/tracking'
 import CookieBanner from '@component/CookieBanner'
@@ -12,9 +12,10 @@ interface ILayout {
   menu: ITopMenu
   cookieNotice: ICookieNotice
   footer: IFooter
+  cart: ICartText
 }
 
-const Layout: React.FC<ILayout> = ({ seoTags, menu, children, footer, cookieNotice }) => {
+const Layout: React.FC<ILayout> = ({ seoTags, menu, cart, children, footer, cookieNotice }) => {
   const [showCookieBanner, setShowCookieBanner] = React.useState(false)
 
   const onCookieConfirmed = () => {
@@ -48,7 +49,7 @@ const Layout: React.FC<ILayout> = ({ seoTags, menu, children, footer, cookieNoti
       </Head>
       <TrackingIframe />
       <div className="flex flex-col font-main">
-        <Header menu={menu} />
+        <Header menu={menu} cart={cart} />
         <main className="flex-grow font-main">{children}</main>
       </div>
 

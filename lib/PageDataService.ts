@@ -67,12 +67,13 @@ export default class PageDataService {
   }
 
   private async getMenus(): Promise<any> {
-    const { footer, cookieNotice, menu } = await this.getAppContent()
+    const { footer, cookieNotice, menu, cart } = await this.getAppContent()
 
     return {
       menu,
       cookieNotice,
-      footer
+      footer,
+      cart
     }
   }
 
@@ -94,7 +95,8 @@ export default class PageDataService {
       appProps: {
         menu: menus.menu,
         footer: menus.footer,
-        cookieNotice: menus.cookieNotice
+        cookieNotice: menus.cookieNotice,
+        cart: menus.cart
       },
       seoTags: content.seoTags,
       product,

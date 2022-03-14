@@ -39,6 +39,14 @@ query getFooter($locale: SiteLocale!) {
     }
     acceptButtonText
   }
+  cart(locale: $locale) {
+    cartEmpty
+    buttonText
+    cartName
+    closeCart
+    taxInfo
+    total
+  }
   footer(locale: $locale) {
     facebook
     youtube

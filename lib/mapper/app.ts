@@ -1,17 +1,19 @@
-import { ICookieNotice, IFooter, ITopMenu } from '@lib/types'
+import { ICartText, ICookieNotice, IFooter, ITopMenu } from '@lib/types'
 import { IColumnNavItem, IColumnTitle, IDatoFooter } from '@modules/datocms/types'
 
 interface IData {
   topMenu: any
   footer: IDatoFooter
   cookieNotice: any
+  cart: ICartText
 }
 export default function mapFooter(d: IData): {
   menu: ITopMenu
   footer: IFooter
   cookieNotice: ICookieNotice
+  cart: ICartText
 } {
-  const { footer, cookieNotice, topMenu } = d
+  const { footer, cookieNotice, topMenu, cart } = d
   return {
     menu: {
       notification: topMenu.notification,
@@ -30,6 +32,7 @@ export default function mapFooter(d: IData): {
       title: cookieNotice.title,
       text: cookieNotice.text
     },
+    cart,
     footer: {
       leftColumn: {
         title: (
