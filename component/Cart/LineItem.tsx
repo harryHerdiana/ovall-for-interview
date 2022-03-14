@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, { useContext, useState, Fragment } from 'react'
 import debounce from 'lodash.debounce'
 import { Image } from 'react-datocms'
@@ -8,7 +9,6 @@ import ShopContext from '@context/StoreContext'
 import { toEuro } from '@lib/utils'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/solid'
-import Icon from '@component/Icon'
 interface IShoppingCartItem {
   lineItem: IShopifyLineItem
 }
@@ -19,7 +19,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
   const updateItem = debounce((value) => updateLineItem(lineItem, value), 300)
   const debouncedLineItemUpdate = React.useCallback((value) => updateItem(value), [])
   const option = [1, 2, 3, 4, 5, 6, 7]
-  const [selected, setSelected] = useState<number>(1)
   const handleQuantityChange = (value) => {
     if (value !== '' && Number(value) < 1) {
       return
@@ -35,6 +34,19 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
   const handleRemove = () => {
     removeLineItem(lineItem)
   }
+
+  const DownArrow = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ fill: 'GrayText' }}
+      width="32"
+      height="32"
+      fill="currentColor"
+      stroke="currentColor"
+      viewBox="0 0 70 70">
+      <path d="M59.84,21.3a1.66,1.66,0,0,0-2.35,0L35.05,43.74,12.51,21.21a1.66,1.66,0,0,0-2.35,2.34L35.05,48.44,59.84,23.65A1.66,1.66,0,0,0,59.84,21.3Z" />
+    </svg>
+  )
 
   return (
     <div className="mt-2">
@@ -60,11 +72,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                     <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border-2 border-grayLine cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                       <span className="block truncate">{quantity}</span>
                       <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                        <Icon
-                          src="/images/arrow-big.svg"
-                          className="w-8 h-8 border-0"
-                          aria-hidden="true"
-                        />
+                        <DownArrow />
                       </span>
                     </Listbox.Button>
                     <Transition

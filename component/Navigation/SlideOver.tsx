@@ -7,6 +7,7 @@ import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
 import { toEuro } from '@lib/utils'
+import { ICartText } from '@lib/types'
 // import { useRouter } from 'next/router'
 
 // import Button from '../../../../components/shared/Button'
@@ -64,7 +65,7 @@ const SlideOver: React.FC<ICartText> = (props) => {
                   </div>
 
                   <div className="md:mt-6 relative">
-                    <Cart />
+                    <Cart {...props} />
 
                     <div className="bg-white bottom-0 sticky w-full  ">
                       <div className="flex flex-col flex-wrap justify-center items-center">
@@ -72,7 +73,6 @@ const SlideOver: React.FC<ICartText> = (props) => {
                           <div className="rounded px-4 font-titleFont text-2xl">Gesamt:</div>
                           <div className="rounded px-2 font-titleFont text-2xl">
                             {toEuro(checkout.totalPrice)}
-
                           </div>
                         </div>
                         <div className="text-sm self-end mb-3">
@@ -87,8 +87,8 @@ const SlideOver: React.FC<ICartText> = (props) => {
                             onClick={handleCheckout}>
                             {/* <div className="inline-block mr-4">
                               <ShoppingBagIcon className="h-6 w-6" />
-                            </div>
-                            {props.buttonText}
+                            </div> */}
+                            JETZT SICHER ZUR KASSE
                           </Button>
                           <div className="flex justify-between w-full mt-2">
                             <Icon src="/images/pay-paypal.svg" className="w-12 h-12" />

@@ -20,7 +20,7 @@ const ProductClaimsSection: React.FC<IProps> = ({ productClaims }) => (
           <div className="text-tiny">
             <p>{productClaim.text}</p>
             {productClaim.image && (
-              <Icon className="h-10 lg:h-14 w-full my-2" src={`${productClaim.image.url}`} />
+              <Icon className="h-8  w-full my-2" src={`${productClaim.image.url}`} />
             )}
           </div>
         </div>
