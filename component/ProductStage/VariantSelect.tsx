@@ -50,13 +50,13 @@ const VariantSelect: React.FC<IVariantSelect> = ({
       <div className="flex flex-row gap-2 my-4 justify-between h-17">
         <div className="flex flex-col justify-between h-max">
           <h3 className="justify-self-start text-left mb-5 ">{colorCaption}</h3>
-          <div className="flex flex-row gap-5 ml-1">
+          <div className="flex flex-row gap-2 ml-1 mb-3">
             {variants.map((vari, index) => (
               <button
                 key={vari.id}
                 className={`${
-                  activebutton.buttonActivated === index && 'ring-1 ring-offset-4 ring-black'
-                } md:w-6 md:h-6 w-5 h-5 rounded-full bg-${vari.sku}-500`}
+                  activebutton.buttonActivated === index && 'ring-1 ring-offset-2 ring-black'
+                } md:w-4 md:h-4 w-5 h-5 rounded-full bg-${vari.sku}-500`}
                 type="button"
                 value={vari.sku}
                 onClick={() => {
@@ -72,9 +72,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
         <div className="flex flex-col justify-between">
-          <h3 className=" items-center text-left md:text-right">{quantityCaption.toUpperCase()}</h3>
-          <div className="block md:hidden">
-            <select value={options} onChange={(e) => setOptions(+e.target.value)}>
+          <h3 className=" items-center text-right mb-3">{quantityCaption.toUpperCase()}</h3>
+          <div className="flex md:hidden">
+            <select value={options} onChange={(e) => setOptions(+e.target.value)} className=" w-24">
               {option.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -93,8 +93,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
       </div>
-
-      <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
+      <div className="mt-2">
+        <AddToCartButton onClick={handleAddToCartClick}>{addToCartLabel}</AddToCartButton>
+      </div>
     </>
   )
 }

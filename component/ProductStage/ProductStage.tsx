@@ -88,9 +88,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
           quantityCaption={quantityCaption}
         />
 
-        <div className="flex justify-between my-4">
+        <div className="flex justify-between mt-4">
           <span className="w-32 md:w-max text-left font-textFont">{deliveryTime}</span>
-          <span className="text-greenLink font-textFont">{freeShippingCaption}</span>
+          <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
       </div>
