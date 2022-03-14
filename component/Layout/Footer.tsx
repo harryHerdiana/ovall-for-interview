@@ -74,28 +74,34 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
                   {item.label}
                 </div>
               </Link>
-              {index !== middleColumn.items.length && <hr className="border-grayLine" />}
+              {index !== middleColumn.items.length - 1 && <hr className="border-grayLine" />}
             </div>
           ))}
         </div>
-        <div className="md:grid md:grid-rows-3 md:grid-flow-col md:gap-4 gap-2 flex justify-between">
+        <div className="md:grid  md:grid-rows-4 md:grid-flow-col md:gap-4 gap-2 grid grid-cols-6 place-items-center">
           <div>
-            <Icon src="/images/pay-paypal.svg" className="h-full w-14" />
+            <Icon src="/images/pay-paypal-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-amex.svg" className="h-full w-14" />
+            <Icon src="/images/pay-amex-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-klarna-rechnung.svg" className="h-full w-14" />
+            <Icon src="/images/pay-klarna-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-klarna-sofort.svg" className="h-full w-14" />
+            <Icon src="/images/pay-mastercard-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-mastercard.svg" className="h-full w-14" />
+            <Icon src="/images/pay-visa-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-visa.svg" className="h-full w-14" />
+            <Icon src="/images/pay-shopify-ohne-rahmen.svg" className="h-full w-14" />
+          </div>
+          <div className="col-start-3 md:col-start-2">
+            <Icon src="/images/pay-apple-ohne-rahmen.svg" className="h-full w-14" />
+          </div>
+          <div className="col-start-4  md:col-start-2">
+            <Icon src="/images/pay-google-ohne-rahmen.svg" className="h-full w-14" />
           </div>
         </div>
       </div>
