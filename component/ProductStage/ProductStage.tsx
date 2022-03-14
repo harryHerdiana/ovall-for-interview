@@ -46,9 +46,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
   //   shopContext.setShowCart(true)
   // }
   const skuColorMap = {
-    'Ovall-Blue': 'green',
+    'Ovall-Blue': 'blue',
     'Ovall-Pink': 'rose',
-    'Ovall-Turquoise': 'blue'
+    'Ovall-Turquoise': 'green'
   }
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
