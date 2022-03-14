@@ -62,12 +62,19 @@ query getFooter($locale: SiteLocale!) {
         externalLink
         internalLink {
           ... on AboutUsPageRecord {
-            slug
-          }
-          ... on StaticPageRecord {
+            id
             slug
           }
           ... on FaqPageRecord {
+            id
+            slug
+          }
+          ... on ProductRecord {
+            id
+            slug
+          }
+          ... on RatingPageRecord {
+            id
             slug
           }
         }
@@ -85,12 +92,19 @@ query getFooter($locale: SiteLocale!) {
         externalLink
         internalLink {
           ... on AboutUsPageRecord {
-            slug
-          }
-          ... on StaticPageRecord {
+            id
             slug
           }
           ... on FaqPageRecord {
+            id
+            slug
+          }
+          ... on ProductRecord {
+            id
+            slug
+          }
+          ... on RatingPageRecord {
+            id
             slug
           }
         }
