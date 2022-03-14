@@ -22,7 +22,7 @@ const Cart: React.FC<ICart> = () => {
   }
 
   return (
-    <div className="pb-4 md:pb-16">
+    <div className="pb-4 md:pb-16  z-auto">
       {checkout.lineItems.map((lineItem: IShopifyLineItem) => (
         <LineItem lineItem={lineItem} key={lineItem.id} />
       ))}

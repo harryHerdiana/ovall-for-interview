@@ -45,8 +45,8 @@ const SlideOver: React.FC = () => {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full">
               <div className="w-screen max-w-sm">
-                <div className="h-full flex flex-col bg-white shadow-bottom overflow-y-scroll">
-                  <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 shadow-bottom">
+                <div className="h-full flex flex-col bg-white overflow-y-scroll">
+                  <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
                       <Dialog.Title className="flex-grow-1 text-2xl font-titleFont text-gray-900">
                         Dein Warenkorb
@@ -66,30 +66,28 @@ const SlideOver: React.FC = () => {
                   <div className="md:mt-6 relative">
                     <Cart />
 
-                    <div className="bg-white bottom-0 sticky w-full shadow-top ">
+                    <div className="bg-white bottom-0 sticky w-full  ">
                       <div className="flex flex-col flex-wrap justify-center items-center">
                         <div className="flex flex-wrap w-full justify-between items-center">
-                          <div className="rounded px-4 font-titleFont text-2xl">Gesamtsumme:</div>
+                          <div className="rounded px-4 font-titleFont text-2xl">Gesamt:</div>
                           <div className="rounded px-2 font-titleFont text-2xl">
                             {toEuro(checkout.totalPrice)}
                           </div>
                         </div>
-                        <div className="text-tiny">
-                          <p className="text-center md:text-right pt-2 pb-4 sm:pb-0 px-4">
-                            Preisangaben inkl. gesetzl. MwSt., versandkostenfrei
-                          </p>
+                        <div className="text-sm self-end mb-3">
+                          <p className="md:text-right sm:pb-0 px-4">inkl. 19% MwSt.</p>
                         </div>
 
-                        <div className="w-full flex flex-col justify-center sm:justify-end px-2">
+                        <div className="w-full flex flex-col justify-center sm:justify-end px-4">
                           <Button
                             type="button"
                             buttonType="primary"
                             disabled={checkout.lineItems.length === 0}
                             onClick={handleCheckout}>
-                            <div className="inline-block mr-4">
+                            {/* <div className="inline-block mr-4">
                               <ShoppingBagIcon className="h-6 w-6" />
-                            </div>
-                            Zur Kasse
+                            </div> */}
+                            JETZT SICHER ZUR KASSE
                           </Button>
                           <div className="flex justify-between w-full mt-2">
                             <Icon src="/images/pay-paypal.svg" className="w-12 h-12" />
