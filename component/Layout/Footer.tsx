@@ -12,12 +12,15 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
       <div className="flex  justify-between  flex-col md:flex-row text-center md:text-left gap-12">
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{leftColumn.title}</div>
-          {leftColumn.items.map((item) => (
+          {leftColumn.items.map((item, index) => (
             <Link key={item.id} href={`${item.path}`}>
               <div
                 id={item.id}
-                className=" text-tiny font-textFont hover:text-greenLink cursor-pointer">
-                {item.label}
+                className="my-2 text-tiny font-textFont hover:text-greenLink cursor-pointer">
+                <div className="mb-2"> {item.label}</div>
+                {index !== middleColumn.items.length && (
+                  <hr className="border-grayLine block lg:hidden" />
+                )}
               </div>
             </Link>
           ))}
@@ -64,33 +67,41 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
         </div>
         <div className="md:hidden mb-8">
           <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
-          {/* {middleColumn.items.map((item) => (
-            <div
-              key={item.id}
-              id={item.id}
-              className="text-tiny font-textFont hover:text-greenLink  hover:cursor-pointer">
-              <Link href={item.path}>{item.label}</Link>
+          {middleColumn.items.map((item, index) => (
+            <div key={item.id} id={item.id}>
+              <Link href={item.path}>
+                <div className="text-tiny font-textFont  hover:cursor-pointer my-2">
+                  {item.label}
+                </div>
+              </Link>
+              {index !== middleColumn.items.length - 1 && <hr className="border-grayLine" />}
             </div>
-          ))} */}
+          ))}
         </div>
-        <div className="md:grid md:grid-rows-3 md:grid-flow-col md:gap-4 flex justify-between">
+        <div className="md:grid  md:grid-rows-4 md:grid-flow-col md:gap-4 gap-2 grid grid-cols-6 place-items-center">
           <div>
-            <Icon src="/images/pay-paypal.svg" className="h-9" />
+            <Icon src="/images/pay-paypal-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-klarna-rechnung.svg" className="h-9" />
+            <Icon src="/images/pay-amex-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-mastercard.svg" className="h-9" />
+            <Icon src="/images/pay-klarna-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-amex.svg" className="h-9" />
+            <Icon src="/images/pay-mastercard-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-klarna-sofort.svg" className="h-9" />
+            <Icon src="/images/pay-visa-ohne-rahmen.svg" className="h-full w-14" />
           </div>
           <div>
-            <Icon src="/images/pay-visa.svg" className="h-9" />
+            <Icon src="/images/pay-shopify-ohne-rahmen.svg" className="h-full w-14" />
+          </div>
+          <div className="col-start-3 md:col-start-2">
+            <Icon src="/images/pay-apple-ohne-rahmen.svg" className="h-full w-14" />
+          </div>
+          <div className="col-start-4  md:col-start-2">
+            <Icon src="/images/pay-google-ohne-rahmen.svg" className="h-full w-14" />
           </div>
         </div>
       </div>
