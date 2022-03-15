@@ -8,15 +8,15 @@ import { IDefaultProps, IProductPage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import FaqSection from '@component/FaqSection'
-// import ProductDescription from '@component/ProductDescription'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
 import MoodSlideShow from '@component/MoodSlideShow'
 import { VariantProvider } from '@context/VariantContext'
 import ProductReview from '@component/ProductReview'
+import DescriptionSection from '@component/DescriptionSection'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
-  // console.log('PROPS', props)
+  console.log('PROPS', props)
   const {
     seoTags,
     appProps,
@@ -30,8 +30,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     productInfoBannerFeatures,
     howToUseSection,
     moodSlideshowSection,
-    testimonialSection
-    // descriptionSection
+    testimonialSection,
+    descriptionSection
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -46,7 +46,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
           setVariantSku={setVariantSku}
         />
       </VariantProvider>
-      {/* <ProductDescription {...descriptionSection} /> */}
+      <DescriptionSection {...descriptionSection} />
       <GradientBanner
         {...productInfoBannerSection}
         mobileContentPlacement="bottom"
