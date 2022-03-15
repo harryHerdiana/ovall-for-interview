@@ -82,7 +82,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
               ))}
             </select>
           </div>
-          <div className="hidden md:flex border border-black">
+          <div className="hidden md:flex border border-black flex items-center">
             <button disabled={options === 1} type="button" onClick={decrease}>
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>

@@ -3,13 +3,13 @@ import GradientRectangle from '@component/GradientRectangle'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import { StructuredTextDocument } from 'react-datocms'
 import ResponsiveImage from '@component/ResponsiveImage'
-import { DesktopGradient, MobileGradient } from './GradientElements'
 import GradientSquare from '@component/GradientSquare'
+import { DesktopGradient, MobileGradient } from './GradientElements'
 
 export type IGradientBannerProps = {
   backgroundColor: string
   image?: DatoCMSResponsiveImage
-  title: string
+  title?: string
   body?: string
   items?: {
     id: string
