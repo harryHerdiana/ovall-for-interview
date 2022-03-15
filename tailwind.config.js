@@ -210,10 +210,10 @@ module.exports = {
           500: '#eebdb7'
         },
         'Ovall-Blue': {
-          500: '#84d3d0'
+          500: '#c6cedf'
         },
         'Ovall-Turquoise': {
-          500: '#c6cedf'
+          500: ' #84d3d0'
         },
         grayLine: '#D2D2D2',
         green: {

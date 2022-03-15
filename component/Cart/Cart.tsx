@@ -17,9 +17,12 @@ const Cart: React.FC<ICartText> = ({ cartEmpty }) => {
   }
 
   return (
-    <div className="px-4 sm:px-8 lg:px-16 pb-4 md:pb-16 divide-y">
-      {checkout.lineItems.map((lineItem: IShopifyLineItem) => (
-        <LineItem lineItem={lineItem} key={lineItem.id} />
+    <div className="pb-4 md:pb-16  z-auto">
+      {checkout.lineItems.map((lineItem: IShopifyLineItem, index) => (
+        <>
+          <LineItem lineItem={lineItem} key={lineItem.id} />
+          {index !== checkout.lineItems.length - 1 && <hr className="border-grayLine w-full" />}
+        </>
       ))}
     </div>
   )

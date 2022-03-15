@@ -11,7 +11,7 @@ import ProductTeaser from '@component/ProductTeaser'
 
 const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps) => {
   const { newsletterSection, heroSection, accordionSection, content, productTeaserSection } = props
-  // console.log('aboutus.props', props)
+  console.log('aboutus.props', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner

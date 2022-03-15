@@ -27,7 +27,7 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
     title="">
     <div className=" flex flex-col ">
       <h2 className="self-center lg:self-start">{title}</h2>
-      <div className="mt-1 mb-8" style={{ minHeight: '25px' }}>
+      <div className="mt-1 mb-8 self-center lg:self-start" style={{ minHeight: '25px' }}>
         <ProductRating />
       </div>
       <span className="self-center lg:self-start font-subtitleFont font-semibold text-2xl">

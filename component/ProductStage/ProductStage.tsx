@@ -47,9 +47,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
   //   shopContext.setShowCart(true)
   // }
   const skuColorMap = {
-    'Ovall-Blue': 'green',
+    'Ovall-Blue': 'blue',
     'Ovall-Pink': 'rose',
-    'Ovall-Turquoise': 'blue'
+    'Ovall-Turquoise': 'green'
   }
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
@@ -64,7 +64,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0 lg:mt-0">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
-        <div className="mt-1" style={{ minHeight: '25px' }}>
+        <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
             <ProductRating />
           </ScrollableLink>
