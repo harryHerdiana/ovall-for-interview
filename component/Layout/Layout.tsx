@@ -52,7 +52,7 @@ const Layout: React.FC<ILayout> = ({ seoTags, menu, cart, children, footer, cook
         <Header menu={menu} cart={cart} />
         <main className="flex-grow font-main">{children}</main>
       </div>
-
+      <CookieBanner onConfirm={onCookieConfirmed} onDecline={onCookieDeclined} {...cookieNotice} />
       {showCookieBanner ? (
         <CookieBanner
           onConfirm={onCookieConfirmed}
