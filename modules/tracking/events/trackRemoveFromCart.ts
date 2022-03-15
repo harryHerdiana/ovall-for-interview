@@ -1,9 +1,9 @@
 import { ICartTrackingData } from '../types'
 import { pushEcommerceEvent } from './utils'
 
-export const trackAddToCartEvent = (data: ICartTrackingData): void => {
+export const trackRemoveFromCart = (data: ICartTrackingData): void => {
   pushEcommerceEvent({
-    event: 'add_to_cart',
+    event: 'remove_from_cart',
     ecommerce: {
       items: [
         {
@@ -18,10 +18,10 @@ export const trackAddToCartEvent = (data: ICartTrackingData): void => {
   })
 
   pushEcommerceEvent({
-    event: 'ua_add_to_cart',
+    event: 'ua_remove_from_cart',
     ecommerce: {
       currencyCode: 'EUR',
-      add: {
+      remove: {
         products: [
           {
             brand: data.brand,

@@ -1,28 +1,21 @@
 import React, { Fragment } from 'react'
-
 import { Dialog, Transition } from '@headlessui/react'
-import { ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
+import { XIcon } from '@heroicons/react/outline'
+
 import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
 import { toEuro } from '@lib/utils'
 import { ICartText } from '@lib/types'
-// import { useRouter } from 'next/router'
-
-// import Button from '../../../../components/shared/Button'
-// import ShopContext from '../../../../context/ShopContext'
-// import ShoppingCart from '../ShoppingCart'
-// import { shopifyToEuro } from '../../../../utils'
-// import trackBeginCheckoutEvent from '../../../common/lib/tracking/trackBeginCheckoutEvent'
+import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginCheckoutEvent'
 
 const SlideOver: React.FC<ICartText> = (props) => {
   const { checkout, showCart, setShowCart } = React.useContext(ShopContext)
 
   const handleCheckout = () => {
-    // trackBeginCheckoutEvent(checkout.lineItems, cartProducts)
+    trackBeginCheckoutEvent(checkout.lineItems)
     window.location.href = checkout.webUrl
-    // alert('handleCheckout')
   }
 
   return (

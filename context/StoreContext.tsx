@@ -3,8 +3,8 @@ import { IShopifyLineItem, IShopifyProduct, IShopifyProductVariant } from '@modu
 import { getShopifyClient } from '@modules/shopify/api/buy/client'
 import { Language } from '@lib/types'
 import * as utils from '@lib/utils'
-import { LOCALSTORAGE_CHECKOUT_KEY } from '@lib/constants'
-import { trackAddToCartEvent } from '@modules/tracking/events'
+import { BRAND_NAME, LOCALSTORAGE_CHECKOUT_KEY } from '@lib/constants'
+import { trackAddToCartEvent, trackRemoveFromCart } from '@modules/tracking/events'
 import fetchNewOrExistingCheckout from './fetchNewOrExistingCheckout'
 
 /* eslint-disable */
@@ -67,8 +67,8 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
       .checkout.addLineItems(checkoutID, lineItemsToUpdate)
       .then((response) => {
         trackAddToCartEvent({
-          brand: 'ovall',
-          itemId: variant.id,
+          brand: BRAND_NAME,
+          itemId: variant.sku,
           quantity,
           price: variant.priceV2.amount,
           itemName: variant.title
@@ -85,9 +85,21 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
       .checkout.updateLineItems(checkout.id, lineItemsToUpdate)
       .then((response) => {
         if (quantity > lineItem.quantity) {
-          // TODO: track added quantity
+          trackAddToCartEvent({
+            brand: BRAND_NAME,
+            itemId: lineItem.variant.sku,
+            quantity,
+            price: lineItem.variant.priceV2.amount,
+            itemName: lineItem.variant.title
+          })
         } else {
-          // TODO: track reduced quantity
+          trackRemoveFromCart({
+            brand: BRAND_NAME,
+            itemId: lineItem.variant.sku,
+            quantity,
+            price: lineItem.variant.priceV2.amount,
+            itemName: lineItem.variant.title
+          })
         }
         setCheckout(response)
         setLoading(false)
@@ -99,7 +111,13 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
     return getShopifyClient(locale as Language)
       .checkout.removeLineItems(checkout.id, [lineItem.id])
       .then((res) => {
-        // TODO: track remove line item from cart
+        trackRemoveFromCart({
+          brand: BRAND_NAME,
+          itemId: lineItem.variant.sku,
+          quantity: lineItem.quantity,
+          price: lineItem.variant.priceV2.amount,
+          itemName: lineItem.variant.title
+        })
         setCheckout(res)
         setLoading(false)
       })
