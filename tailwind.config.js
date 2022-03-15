@@ -118,6 +118,17 @@ module.exports = {
       },
       width: {
         fit: 'fit-content',
+        '600px': '600px',
+        '500px': '500px',
+        '440px': '440px',
+        '400px': '400px',
+        '360px': '360px',
+        '300px': '300px',
+        '245px': '245px',
+        '235px': '235px',
+        '190px': '190px',
+        '150px': '150px',
+        '120px': '120px',
         '345px': '345px'
       },
       spacing: {
