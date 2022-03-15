@@ -72,6 +72,7 @@ export interface IDefaultProps {
     cookieNotice: ICookieNotice
     footer: IFooter
     cart: ICartText
+    variantImages: IProductVariantImage[]
   }
   seoTags: SeoTags
   product: IShopifyProduct
