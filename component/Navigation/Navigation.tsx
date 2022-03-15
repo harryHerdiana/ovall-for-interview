@@ -33,7 +33,6 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
-
   return (
     <nav className="mx-auto w-full border-b border-gray-300">
       <div
@@ -57,7 +56,7 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
             </a>
           </Link>
         </div>
-        <Menu items={menu} />
+        <Menu items={menu} onClick={closeMenu} />
         <button
           aria-label="Warenkorb"
           className="focus:outline-none md:order-last relative p-2"
