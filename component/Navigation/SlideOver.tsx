@@ -88,7 +88,7 @@ const SlideOver: React.FC<ICartText> = (props) => {
                             {/* <div className="inline-block mr-4">
                               <ShoppingBagIcon className="h-6 w-6" />
                             </div> */}
-                            JETZT SICHER ZUR KASSE
+                            {props.buttonText}
                           </Button>
                           <div className="flex justify-between w-full mt-2">
                             <Icon src="/images/pay-paypal.svg" className="w-12 h-12" />

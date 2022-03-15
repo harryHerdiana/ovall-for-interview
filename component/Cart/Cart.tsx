@@ -19,10 +19,10 @@ const Cart: React.FC<ICartText> = ({ cartEmpty }) => {
   return (
     <div className="pb-4 md:pb-16  z-auto">
       {checkout.lineItems.map((lineItem: IShopifyLineItem, index) => (
-        <div>
+        <>
           <LineItem lineItem={lineItem} key={lineItem.id} />
           {index !== checkout.lineItems.length - 1 && <hr className="border-grayLine w-full" />}
-        </div>
+        </>
       ))}
     </div>
   )
