@@ -1,3 +1,5 @@
+import { ResponsiveImageFragment } from '../fragments'
+
 export const APP_QUERY = `
 query getFooter($locale: SiteLocale!) {
   topMenu(locale: $locale) {
@@ -39,6 +41,19 @@ query getFooter($locale: SiteLocale!) {
     }
     acceptButtonText
     moreInfo
+  }
+  product(locale: $locale) {
+    variantImages {
+      id
+      color
+      image {
+        image {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 200, h: 200 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+      }
+    }
   }
   cart(locale: $locale) {
     cartEmpty
@@ -117,7 +132,8 @@ query getFooter($locale: SiteLocale!) {
         text
       }
     }
-
   }
 }
+
+${ResponsiveImageFragment}
 `

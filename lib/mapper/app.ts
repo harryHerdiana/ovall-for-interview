@@ -1,4 +1,4 @@
-import { ICartText, ICookieNotice, IFooter, ITopMenu } from '@lib/types'
+import { ICartText, ICookieNotice, IFooter, IProductVariantImage, ITopMenu } from '@lib/types'
 import { IColumnNavItem, IColumnTitle, IDatoFooter } from '@modules/datocms/types'
 
 interface IData {
@@ -6,14 +6,16 @@ interface IData {
   footer: IDatoFooter
   cookieNotice: any
   cart: ICartText
+  product: any
 }
 export default function mapFooter(d: IData): {
   menu: ITopMenu
   footer: IFooter
   cookieNotice: ICookieNotice
   cart: ICartText
+  variantImages: IProductVariantImage[]
 } {
-  const { footer, cookieNotice, topMenu, cart } = d
+  const { footer, cookieNotice, topMenu, cart, product } = d
   return {
     menu: {
       notification: topMenu.notification,
@@ -26,6 +28,12 @@ export default function mapFooter(d: IData): {
         }
       })
     },
+    variantImages: product.variantImages.map((variantImage) => ({
+      id: variantImage.id,
+      color: variantImage.color,
+      background: null,
+      image: variantImage.image[0].image.responsiveImage
+    })),
     cookieNotice: {
       acceptText: cookieNotice.acceptButtonText,
       denyText: cookieNotice.denyButtonText,

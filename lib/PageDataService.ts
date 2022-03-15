@@ -67,14 +67,7 @@ export default class PageDataService {
   }
 
   private async getMenus(): Promise<any> {
-    const { footer, cookieNotice, menu, cart } = await this.getAppContent()
-
-    return {
-      menu,
-      cookieNotice,
-      footer,
-      cart
-    }
+    return this.getAppContent()
   }
 
   /**
@@ -83,7 +76,7 @@ export default class PageDataService {
    * @returns IPageProps
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?) {
-    const [menus, product] = await Promise.all([this.getMenus(), this.getProductData()])
+    const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
     const datoCMSResponse = await this.requestDatoCMS(query)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
@@ -92,12 +85,7 @@ export default class PageDataService {
       console.warn('Page Data does not contain SeoTags')
     }
     return {
-      appProps: {
-        menu: menus.menu,
-        footer: menus.footer,
-        cookieNotice: menus.cookieNotice,
-        cart: menus.cart
-      },
+      appProps,
       seoTags: content.seoTags,
       product,
       ...mappedContent

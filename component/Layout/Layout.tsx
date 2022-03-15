@@ -1,7 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 import { CookieSerializeOptions, serialize } from 'cookie'
-import { SeoTags, IFooter, ICookieNotice, ITopMenu, ICartText } from '@lib/types'
+import {
+  SeoTags,
+  IFooter,
+  ICookieNotice,
+  ITopMenu,
+  ICartText,
+  IProductVariantImage
+} from '@lib/types'
 import Header from '@component/Layout/Header'
 import { TrackingIframe, TrackingScript } from '@modules/tracking'
 import CookieBanner from '@component/CookieBanner'
@@ -15,6 +22,7 @@ interface ILayout {
   cookieNotice: ICookieNotice
   footer: IFooter
   cart: ICartText
+  variantImages: IProductVariantImage[]
 }
 
 const COOKIE_PREFIX = '_ovallskincare'
@@ -39,7 +47,15 @@ const setNoConsentCookie = () => {
   document.cookie = serialize(COOKIE_PREFIX, `no-consent`, options)
 }
 
-const Layout: React.FC<ILayout> = ({ seoTags, menu, cart, children, footer, cookieNotice }) => {
+const Layout: React.FC<ILayout> = ({
+  seoTags,
+  menu,
+  cart,
+  children,
+  footer,
+  cookieNotice,
+  variantImages
+}) => {
   const [showCookieBanner, setShowCookieBanner] = React.useState(false)
 
   const onCookieConfirmed = () => {
@@ -72,7 +88,7 @@ const Layout: React.FC<ILayout> = ({ seoTags, menu, cart, children, footer, cook
       </Head>
       <TrackingIframe />
       <div className="flex flex-col font-main">
-        <Header menu={menu} cart={cart} />
+        <Header menu={menu} cart={cart} variantImages={variantImages} />
         <main className="flex-grow font-main">{children}</main>
       </div>
       {showCookieBanner && (

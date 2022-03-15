@@ -7,12 +7,15 @@ import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
 import { toEuro } from '@lib/utils'
-import { ICartText } from '@lib/types'
+import { ICartText, IProductVariantImage } from '@lib/types'
 import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginCheckoutEvent'
 
-const SlideOver: React.FC<ICartText> = (props) => {
+interface IProps extends ICartText {
+  variantImages: IProductVariantImage[]
+}
+const SlideOver: React.FC<IProps> = (props) => {
   const { checkout, showCart, setShowCart } = React.useContext(ShopContext)
-
+  console.log('SDFSDF', props)
   const handleCheckout = () => {
     trackBeginCheckoutEvent(checkout.lineItems)
     window.location.href = checkout.webUrl

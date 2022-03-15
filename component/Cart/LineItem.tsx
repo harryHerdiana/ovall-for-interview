@@ -7,13 +7,15 @@ import { IShopifyLineItem } from '@modules/shopify/types'
 import ShopContext from '@context/StoreContext'
 import { toEuro } from '@lib/utils'
 import Icon from '@component/Icon'
+import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import { DownArrow } from '../Icon/DownArrow'
 
 interface IShoppingCartItem {
   lineItem: IShopifyLineItem
+  image: DatoCMSResponsiveImage
 }
 
-const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
+const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
   const [quantity, setQuantity] = useState(lineItem.quantity)
   const { updateLineItem, removeLineItem } = useContext(ShopContext)
   const updateItem = debounce((value) => updateLineItem(lineItem, value), 300)
@@ -41,7 +43,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
         <div className="flex items-start">
           {lineItem.variant.image && (
             <GradientSquare variantGradient={lineItem.variant.sku} className="h-20 w-full">
-              <Image data={{ ...lineItem.variant.image, aspectRatio: null }} lazyLoad={false} />
+              <Image data={image} lazyLoad={false} />
             </GradientSquare>
           )}
         </div>
@@ -72,8 +74,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                           <Listbox.Option
                             key={v}
                             className={({ active }) =>
-                              `cursor-default select-none relative py-2 pl-10 pr-4 ${
-                                active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
+                              `cursor-default select-none relative py-2 pl-10 pr-4 ${active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
                               }`
                             }
                             value={v}>
