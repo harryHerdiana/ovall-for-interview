@@ -15,7 +15,6 @@ interface IProps extends ICartText {
 }
 const SlideOver: React.FC<IProps> = (props) => {
   const { checkout, showCart, setShowCart } = React.useContext(ShopContext)
-  console.log('SDFSDF', props)
   const handleCheckout = () => {
     trackBeginCheckoutEvent(checkout.lineItems)
     window.location.href = checkout.webUrl
