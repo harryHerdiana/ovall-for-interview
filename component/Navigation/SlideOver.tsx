@@ -49,7 +49,7 @@ const SlideOver: React.FC<ICartText> = (props) => {
                 <div className="h-full flex flex-col bg-white overflow-y-scroll">
                   <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
-                      <Dialog.Title className="flex-grow-1 text-2xl font-titleFont text-gray-900">
+                      <Dialog.Title className="flex-grow-1 text-2xl font-titleFont text-gray-900 mt-2">
                         Dein Warenkorb
                       </Dialog.Title>
                       <div className="h-7 flex flex-shrink-0 items-center">
@@ -88,7 +88,7 @@ const SlideOver: React.FC<ICartText> = (props) => {
                             {/* <div className="inline-block mr-4">
                               <ShoppingBagIcon className="h-6 w-6" />
                             </div> */}
-                            JETZT SICHER ZUR KASSE
+                            {props.buttonText}
                           </Button>
                           <div className="flex justify-between w-full mt-2">
                             <Icon src="/images/pay-paypal.svg" className="w-12 h-12" />

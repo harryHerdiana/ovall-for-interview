@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/no-shadow */
+import { Listbox, Transition } from '@headlessui/react'
 import React, { useContext, useState, Fragment } from 'react'
-import debounce from 'lodash.debounce'
 import { Image } from 'react-datocms'
-import { TrashIcon } from '@heroicons/react/outline'
+import debounce from 'lodash.debounce'
 import GradientSquare from '@component/GradientSquare'
 import { IShopifyLineItem } from '@modules/shopify/types'
 import ShopContext from '@context/StoreContext'
 import { toEuro } from '@lib/utils'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/solid'
+import Icon from '@component/Icon'
+import { DownArrow } from '../Icon/DownArrow'
+
 interface IShoppingCartItem {
   lineItem: IShopifyLineItem
 }
@@ -18,7 +18,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
   const { updateLineItem, removeLineItem } = useContext(ShopContext)
   const updateItem = debounce((value) => updateLineItem(lineItem, value), 300)
   const debouncedLineItemUpdate = React.useCallback((value) => updateItem(value), [])
-  const option = [1, 2, 3, 4, 5, 6, 7]
+  const option = [1, 2, 3, 4, 5, 6]
   const handleQuantityChange = (value) => {
     if (value !== '' && Number(value) < 1) {
       return
@@ -34,19 +34,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
   const handleRemove = () => {
     removeLineItem(lineItem)
   }
-
-  const DownArrow = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ fill: 'GrayText' }}
-      width="32"
-      height="32"
-      fill="currentColor"
-      stroke="currentColor"
-      viewBox="0 0 70 70">
-      <path d="M59.84,21.3a1.66,1.66,0,0,0-2.35,0L35.05,43.74,12.51,21.21a1.66,1.66,0,0,0-2.35,2.34L35.05,48.44,59.84,23.65A1.66,1.66,0,0,0,59.84,21.3Z" />
-    </svg>
-  )
 
   return (
     <div className="mt-2">
@@ -65,11 +52,11 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
             <div className={` w-4 h-4 rounded-full bg-${lineItem.variant.sku}-500`} />
           </div>
           <div className="block text-tiny text-black">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <div className="py-2 md:py-1  flex items-center justify-between my-3">
                 <Listbox value={quantity} onChange={(e) => handleQuantityChange(e)}>
                   <div className="relative w-24 mt-1">
-                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border-2 border-grayLine cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-black cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                       <span className="block truncate">{quantity}</span>
                       <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <DownArrow />
@@ -90,21 +77,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                               }`
                             }
                             value={v}>
-                            {({ selected }) => (
-                              <>
-                                <span
-                                  className={`block truncate ${
-                                    selected ? 'font-medium' : 'font-normal'
-                                  }`}>
-                                  {v}
-                                </span>
-                                {selected ? (
-                                  <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                                    <CheckIcon className="w-5 h-5" aria-hidden="true" />
-                                  </span>
-                                ) : null}
-                              </>
-                            )}
+                            {v}
                           </Listbox.Option>
                         ))}
                       </Listbox.Options>
@@ -117,7 +90,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
                 onClick={handleRemove}
                 type="button">
                 <span className="sr-only">Artikel entfernen</span>
-                <TrashIcon className="h-7 w-7" aria-hidden="true" />
+                <Icon src="/images/delete.svg" className="h-7 w-7" aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -126,7 +99,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem }) => {
           {toEuro(parseFloat(lineItem.variant.priceV2.amount))}
         </div>
       </div>
-      {lineItem.hasPreviousPage === false && <hr className="border-grayLine w-full" />}
     </div>
   )
 }

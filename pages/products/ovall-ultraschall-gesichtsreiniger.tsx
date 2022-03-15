@@ -13,8 +13,7 @@ import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
 import MoodSlideShow from '@component/MoodSlideShow'
 import { VariantProvider } from '@context/VariantContext'
-import { ReviewCarousel } from '@component/ProductReview'
-import Testimonial from '@component/Testimonial'
+import ProductReview from '@component/ProductReview'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   // console.log('PROPS', props)
@@ -32,6 +31,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     howToUseSection,
     moodSlideshowSection,
     testimonialSection
+    // descriptionSection
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -46,13 +46,12 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
           setVariantSku={setVariantSku}
         />
       </VariantProvider>
-      <Testimonial {...testimonialSection} />
+      {/* <ProductDescription {...descriptionSection} /> */}
       <GradientBanner
         {...productInfoBannerSection}
         mobileContentPlacement="bottom"
         contentPlacement="left"
       />
-      <ReviewCarousel />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
       <GradientBanner
@@ -75,6 +74,14 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       />
       <FaqSection {...faqSection} />
       <Newsletter {...newsletterSection} />
+
+      <div id="testimonial" className="lg:w-4/5 mx-auto lg:text-center my-12 max-w-fullhd">
+        <div className="px-4">
+          <span className="font-subtitleFont text-base uppercase">{testimonialSection.kicker}</span>
+          <h2 className="mt-2 mb-4">{testimonialSection.title}</h2>
+          <ProductReview />
+        </div>
+      </div>
     </Layout>
   )
 }
