@@ -56,6 +56,7 @@ export interface ICookieNotice {
   denyText: string
   text: StructuredText
   title: UrlWithStringQuery
+  moreInfo: string
 }
 
 export interface IAppContent {

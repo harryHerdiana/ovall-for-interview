@@ -11,10 +11,11 @@ import TransparencySection from '@component/TransparencySection'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
   const { newsletterSection, productTeaserSection, heroSection, productFeatureSection } = props
-  console.log('props', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <ProductReview />
+      <div className="mx-auto">
+        <ProductReview />
+      </div>
       <GradientBanner
         title=""
         mobileContentPlacement="bottom"

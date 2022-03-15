@@ -38,6 +38,7 @@ query getFooter($locale: SiteLocale!) {
       }
     }
     acceptButtonText
+    moreInfo
   }
   cart(locale: $locale) {
     cartEmpty

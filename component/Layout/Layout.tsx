@@ -1,9 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
+import { CookieSerializeOptions, serialize } from 'cookie'
 import { SeoTags, IFooter, ICookieNotice, ITopMenu, ICartText } from '@lib/types'
 import Header from '@component/Layout/Header'
 import { TrackingIframe, TrackingScript } from '@modules/tracking'
 import CookieBanner from '@component/CookieBanner'
+import { trackCookieConsentGiven } from '@modules/tracking/events'
 import Footer from './Footer'
 
 interface ILayout {
@@ -15,29 +17,50 @@ interface ILayout {
   cart: ICartText
 }
 
+const COOKIE_PREFIX = '_ovallskincare'
+
+const getCookies = () =>
+  document.cookie.split(';').reduce((res, c) => {
+    const [key, val] = c.trim().split('=').map(decodeURIComponent)
+    try {
+      return Object.assign(res, { [key]: JSON.parse(val) })
+    } catch (e) {
+      return Object.assign(res, { [key]: val })
+    }
+  }, {})
+
+const setNoConsentCookie = () => {
+  const options: CookieSerializeOptions = {
+    expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
+    secure: true,
+    path: '/'
+  }
+
+  document.cookie = serialize(COOKIE_PREFIX, `no-consent`, options)
+}
+
 const Layout: React.FC<ILayout> = ({ seoTags, menu, cart, children, footer, cookieNotice }) => {
   const [showCookieBanner, setShowCookieBanner] = React.useState(false)
 
   const onCookieConfirmed = () => {
-    // trackCookieConsentGiven()
+    trackCookieConsentGiven()
 
-    // fetch('/api/cookie', {}).then(() => {
-    setShowCookieBanner(false)
-    // })
+    fetch('/api/cookie', {}).then(() => {
+      setShowCookieBanner(false)
+    })
   }
 
   const onCookieDeclined = () => {
-    // setNoConsentCookie()
+    setNoConsentCookie()
     setShowCookieBanner(false)
   }
 
   React.useEffect(() => {
-    // check if cookie exists
-    // const cookies = getCookies()
+    const cookies = getCookies()
 
-    // if (COOKIE_PREFIX in cookies === false) {
-    setShowCookieBanner(false)
-    // }
+    if (COOKIE_PREFIX in cookies === false) {
+      setShowCookieBanner(true)
+    }
   })
 
   return (
@@ -52,15 +75,12 @@ const Layout: React.FC<ILayout> = ({ seoTags, menu, cart, children, footer, cook
         <Header menu={menu} cart={cart} />
         <main className="flex-grow font-main">{children}</main>
       </div>
-      <CookieBanner onConfirm={onCookieConfirmed} onDecline={onCookieDeclined} {...cookieNotice} />
-      {showCookieBanner ? (
+      {showCookieBanner && (
         <CookieBanner
           onConfirm={onCookieConfirmed}
           onDecline={onCookieDeclined}
           {...cookieNotice}
         />
-      ) : (
-        <></>
       )}
 
       <Footer {...footer} />

@@ -30,7 +30,8 @@ export default function mapFooter(d: IData): {
       acceptText: cookieNotice.acceptButtonText,
       denyText: cookieNotice.denyButtonText,
       title: cookieNotice.title,
-      text: cookieNotice.text
+      text: cookieNotice.text,
+      moreInfo: cookieNotice.moreInfo
     },
     cart,
     footer: {

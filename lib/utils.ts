@@ -24,3 +24,16 @@ export const toEuro = (amount: number | string): string =>
   currency(amount, { symbol: '€', separator: '.', decimal: '.', pattern: '# !' }).format({
     decimal: ','
   })
+
+export const appUrl = (): string => {
+  switch (process.env.NEXT_PUBLIC_VERCEL_ENV) {
+    case 'preview':
+      return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    case 'staging':
+      return 'https://staging.ovallskincare.de/'
+    case 'production':
+      return 'https://ovallskincare.de/'
+    default:
+      return `http://localhost:${process.env.PORT || '3000'}`
+  }
+}

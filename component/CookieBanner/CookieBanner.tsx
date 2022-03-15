@@ -15,7 +15,8 @@ const CookieBanner: React.FC<IProps> = ({
   title,
   text,
   acceptText,
-  denyText
+  denyText,
+  moreInfo
 }) => {
   console.log('test')
 
@@ -24,10 +25,6 @@ const CookieBanner: React.FC<IProps> = ({
       <div className="mx-auto w-max">
         <div className="font-titleFont text-2xl my-2">{title}</div>
         <div className="font-textFont mb-6">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eveniet ipsum non
-            reprehenderit possimus iusto!
-          </p>
           <StructuredText
             renderInlineRecord={({ record }) => (
               <Link href={`/${record.slug}`}>
@@ -46,7 +43,7 @@ const CookieBanner: React.FC<IProps> = ({
               {denyText}
             </button>
             <Link href="/">
-              <span className="cursor-pointer underline">Mehr Informationen</span>
+              <span className="cursor-pointer underline">{moreInfo}</span>
             </Link>
           </div>
         </div>
