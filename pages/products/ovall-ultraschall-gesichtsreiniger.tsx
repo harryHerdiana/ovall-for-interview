@@ -31,6 +31,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     howToUseSection,
     moodSlideshowSection,
     testimonialSection
+    // descriptionSection
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
@@ -45,6 +46,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
           setVariantSku={setVariantSku}
         />
       </VariantProvider>
+      {/* <ProductDescription {...descriptionSection} /> */}
       <GradientBanner
         {...productInfoBannerSection}
         mobileContentPlacement="bottom"
