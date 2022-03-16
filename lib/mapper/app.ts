@@ -20,11 +20,12 @@ export default function mapFooter(d: IData): {
     menu: {
       notification: topMenu.notification,
       items: topMenu.items.map((item) => {
-        const { slug } = item.internalLink
+        const { slug, title } = item.internalLink
         return {
           id: item.id,
           label: item.label,
-          path: slug.includes('ovall') ? `/products/${slug}` : `/${slug}`
+          path: slug.includes('ovall') ? `/products/${slug}` : `/${slug}`,
+          title
         }
       })
     },
@@ -52,7 +53,8 @@ export default function mapFooter(d: IData): {
           .map((c: IColumnNavItem) => ({
             id: c.id,
             path: c.internalLink.slug,
-            label: c.label
+            label: c.label,
+            title: c.internalLink.title
           }))
       },
       middleColumn: {
@@ -64,7 +66,8 @@ export default function mapFooter(d: IData): {
           .map((c: IColumnNavItem) => ({
             id: c.id,
             path: c.internalLink.slug,
-            label: c.label
+            label: c.label,
+            title: c.internalLink.title
           }))
       },
       rightColumn: {

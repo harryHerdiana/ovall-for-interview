@@ -10,18 +10,22 @@ query getFooter($locale: SiteLocale!) {
         ... on AboutUsPageRecord {
           id
           slug
+          title
         }
         ... on FaqPageRecord {
           id
           slug
+          title
         }
         ... on ProductRecord {
           id
           slug
+          title
         }
         ... on RatingPageRecord {
           id
           slug
+          title
         }
       }
       label
@@ -80,18 +84,27 @@ query getFooter($locale: SiteLocale!) {
           ... on AboutUsPageRecord {
             id
             slug
+            title
           }
           ... on FaqPageRecord {
             id
             slug
+            title
           }
           ... on ProductRecord {
             id
             slug
+            title
           }
           ... on RatingPageRecord {
             id
             slug
+            title
+          }
+          ... on StaticPageRecord {
+            id
+            slug
+            title
           }
         }
       }
@@ -110,18 +123,27 @@ query getFooter($locale: SiteLocale!) {
           ... on AboutUsPageRecord {
             id
             slug
+            title
           }
           ... on FaqPageRecord {
             id
             slug
+            title
           }
           ... on ProductRecord {
             id
             slug
+            title
           }
           ... on RatingPageRecord {
             id
             slug
+            title
+          }
+          ... on StaticPageRecord {
+            id
+            slug
+            title
           }
         }
         label

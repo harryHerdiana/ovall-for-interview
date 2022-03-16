@@ -28,6 +28,7 @@ export type MenuItem = {
   id: string
   path: string
   label: string
+  title: string
 }
 
 export type IMenu = MenuItem[]

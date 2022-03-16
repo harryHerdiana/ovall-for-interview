@@ -160,6 +160,7 @@ export interface IColumnNavItem {
   label: string
   internalLink: {
     slug: string
+    title: string
   }
 }
 

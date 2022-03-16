@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { IMenu } from '@lib/types'
+import { IMenu, MenuItem } from '@lib/types'
 import { useRouter } from 'next/router'
 
 type IMenuProps = {
@@ -8,8 +8,12 @@ type IMenuProps = {
   onClick: () => void
 }
 
+const isItemActive = (pathname: string, menuItem: MenuItem): boolean =>
+  pathname === menuItem.path || pathname.includes(menuItem.title)
+
 const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
-  const router = useRouter()
+  const { pathname } = useRouter()
+
   return (
     <div className="-mx-4 w-screen md:w-1/2 lg:w-2/5 relative order-last md:order-2 flex flex-col overflow-y-auto p-3 pb-16 menu-height bg-white md:mt-5 md:flex-row md:justify-between md:h-auto items-start  md:p-0">
       {items.map((menuItem) => (
@@ -21,13 +25,8 @@ const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
             <div>
               <span>{menuItem.label}</span>
               <hr
-                className={`border border-white ${
-                  router.pathname === menuItem.path && 'border-greenLink'
-                } ${
-                  router.pathname === '/[aboutUs]' &&
-                  menuItem.path === '/uber-uns' &&
-                  'border-greenLink'
-                }`}
+                className={`border border-white ${isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
+                  }`}
               />
             </div>
           </Link>
