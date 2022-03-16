@@ -33,7 +33,6 @@ const getImage = (
 const Cart: React.FC<IProps> = ({ cartEmpty, variantImages }) => {
   const { checkout } = React.useContext(ShopContext)
 
-  console.log('CART.number', checkout.lineItems[0].quantity)
   if (checkout.lineItems.length === 0) {
     return (
       <div className="text-center text-gray-300 font-bold text-base">

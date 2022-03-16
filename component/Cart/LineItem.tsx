@@ -1,5 +1,5 @@
 import { Listbox, Transition } from '@headlessui/react'
-import React, { useContext, useState, Fragment } from 'react'
+import React, { useContext, Fragment } from 'react'
 import { Image } from 'react-datocms'
 import debounce from 'lodash.debounce'
 import GradientSquare from '@component/GradientSquare'
@@ -16,7 +16,6 @@ interface IShoppingCartItem {
 }
 
 const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
-  const [quantity, setQuantity] = useState(lineItem.quantity)
   const { updateLineItem, removeLineItem } = useContext(ShopContext)
   const updateItem = debounce((value) => updateLineItem(lineItem, value), 300)
   const debouncedLineItemUpdate = React.useCallback((value) => updateItem(value), [])
@@ -26,8 +25,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       return
     }
 
-    setQuantity(value)
-
     if (Number(value) >= 1) {
       debouncedLineItemUpdate(value)
     }
@@ -36,8 +33,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
   const handleRemove = () => {
     removeLineItem(lineItem)
   }
-
-  console.log('RENDER', quantity)
 
   return (
     <div className="mt-2">
