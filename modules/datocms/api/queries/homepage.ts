@@ -30,7 +30,7 @@ export const HOMEPAGE_QUERY = `
           title
           backgroundColor
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 500, h: 500 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 650, h: 400 }) {
               ...ResponsiveImageFragment
             }
           }

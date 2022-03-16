@@ -8,7 +8,7 @@ type IDescriptionSectionProps = {
 
 const DescriptionSection: React.FC<IDescriptionSectionProps> = ({ title, text }) => (
   <section className=" px-4 md:px-0 m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 md:p-5 md:text-center mb-10 lg:items-center">
-    <div className="mb-8 lg:text-2xl lg:normal-case font-titleFont text-left uppercase text-base ">
+    <div className="mb-8 lg:text-2xl lg:normal-case font-subtitleFont text-left uppercase text-base ">
       {title}
     </div>
     <p className="mb-4">{text}</p>

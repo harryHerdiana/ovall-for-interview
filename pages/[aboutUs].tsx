@@ -22,7 +22,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
         title="">
         <div className="flex flex-col gap-4">
           <div className="text-base font-subtitleFont uppercase">{heroSection.title}</div>
-          <div className="font-subtitleFont font-semibold text-2xl">{heroSection.body}</div>
+          <h2>{heroSection.body}</h2>
         </div>
       </GradientBanner>
       <div className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto px-4 md:px-8 md:text-left lg:py-12">

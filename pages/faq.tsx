@@ -16,7 +16,17 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <GradientBanner mobileContentPlacement="bottom" {...heroSection} contentPlacement="left" />
+      <GradientBanner
+        title=""
+        mobileContentPlacement="bottom"
+        contentPlacement="left"
+        image={heroSection.image}
+        backgroundColor={heroSection.backgroundColor}>
+        <>
+          <div className="font-subtitleFont text-base">{heroSection.kicker}</div>
+          <h2>{heroSection.title}</h2>
+        </>
+      </GradientBanner>
       <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
       <ProductTeaser {...productTeaserSection} />
       <Newsletter {...newsletterSection} />

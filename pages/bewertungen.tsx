@@ -23,7 +23,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         image={heroSection.image}
         backgroundColor={heroSection.backgroundColor}>
         <>
-          <h3>{heroSection.title}</h3>
+          <div className="font-subtitleFont text-base">{heroSection.title}</div>
           <h2>{heroSection.kicker}</h2>
         </>
       </GradientBanner>

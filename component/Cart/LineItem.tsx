@@ -6,8 +6,8 @@ import GradientSquare from '@component/GradientSquare'
 import { IShopifyLineItem } from '@modules/shopify/types'
 import ShopContext from '@context/StoreContext'
 import { toEuro } from '@lib/utils'
-import Icon from '@component/Icon'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
+import { DeleteIcon } from '@component/Icon/Delete'
 import { DownArrow } from '../Icon/DownArrow'
 
 interface IShoppingCartItem {
@@ -71,7 +71,8 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
                           <Listbox.Option
                             key={v}
                             className={({ active }) =>
-                              `cursor-default select-none relative py-2 pl-10 pr-4 ${active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
+                              `cursor-default select-none relative py-2 pl-10 pr-4 ${
+                                active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
                               }`
                             }
                             value={v}>
@@ -84,11 +85,11 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
                 </Listbox>
               </div>
               <button
-                className="bg-white focus:outline-none text-black p-2 hover:bg-gray-900 rounded-full hover:text-white"
+                className="bg-white focus:outline-none text-black p-2 hover:bg-black rounded-full hover:text-white"
                 onClick={handleRemove}
                 type="button">
                 <span className="sr-only">Artikel entfernen</span>
-                <Icon src="/images/delete.svg" className="h-7 w-7" aria-hidden="true" />
+                <DeleteIcon className="h-6 w-6" />
               </button>
             </div>
           </div>

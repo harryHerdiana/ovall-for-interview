@@ -37,7 +37,7 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
     <nav className="mx-auto w-full border-b border-gray-300">
       <div
         className={`section-content-width flex flex-wrap items-center justify-between h-14 bg-white duration-200 ease-in-out ${
-          isScrollDown ? 'md:h-16 lg:h-16 xl:h-16 fullhd:h-18' : 'md:h-20 lg:h-24 xl:h-32'
+          isScrollDown ? 'md:h-16 lg:h-16 xl:h-16 fullhd:h-16' : 'md:h-20 lg:h-20 xl:h-90px'
         }`}>
         <button className="burger order-first mr-1 md:hidden" type="button" onClick={toggleMenu}>
           <span />
@@ -46,13 +46,7 @@ const Navigation: React.FC<INavigation> = ({ menu }) => {
           <Link href="/">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
             <a onClick={closeMenu}>
-              <img
-                src="/images/ovall-logo.png"
-                width="110"
-                height="74"
-                alt="ovall logo"
-                className="h-14 md:h-16 fullhd:h-18 w-auto py-3.5"
-              />
+              <Icon src="/images/ovall-logo.png" className="h-6 md:h-8 mx-auto md:mx-0" />
             </a>
           </Link>
         </div>

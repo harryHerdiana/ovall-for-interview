@@ -41,11 +41,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
-        imageClassName="lg:py-10 px-4 pt-7"
+        imageClassName="lg:pt-10 pt-7"
       />
+      <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />
       <ProductTeaser {...productTeaserSection} />
-      <ProductInfoAccordion {...productInfoAccordionSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )

@@ -56,10 +56,15 @@ const ProductStage: React.FC<IProductStageProps> = ({
   }
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 md:p-4 xl:p-12 max-w-site mx-auto mb-12">
-      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center  w-full ">
-        <div className="relative w-full h-full lg:w-5/6">
+    <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 md:p-4 max-w-site mx-auto mb-12">
+      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center w-full ">
+        <div className="relative h-full w-full">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
+          {variant.currentlyNotInStock === false && (
+            <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
+              Leider Ausverkauft
+            </div>
+          )}
         </div>
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0 lg:mt-0">

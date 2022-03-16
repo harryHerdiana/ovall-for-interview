@@ -105,6 +105,7 @@ module.exports = {
         '190px': '190px',
         '150px': '150px',
         '120px': '120px',
+        '90px': '90px',
         0: '0',
         18: '4.5rem'
       },
@@ -226,6 +227,8 @@ module.exports = {
         'Ovall-Turquoise': {
           500: ' #84d3d0'
         },
+        purple_soldout: '#9c85c7',
+        gray_soldout: '#e5e5e5',
         grayLine: '#D2D2D2',
         green: {
           500: '#7E9F3C',

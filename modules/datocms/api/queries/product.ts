@@ -83,7 +83,7 @@ export const PRODUCT_PAGE_QUERY = `
           id
           title
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 700, h: 400 }) {
               ...ResponsiveImageFragment
             }
           }

@@ -9,8 +9,8 @@ import GradientSquare from '@component/GradientSquare'
 import Icon from '@component/Icon'
 
 interface IProductSlideshow {
-  variantItem: any
-  items: any[]
+  variantItem: Record<string, any>
+  items: Record<string, any>[]
 }
 
 const NextArrow: React.FC<any> = (props) => {
