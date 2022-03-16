@@ -37,6 +37,8 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
     removeLineItem(lineItem)
   }
 
+  console.log('RENDER', quantity)
+
   return (
     <div className="mt-2">
       <div className="grid gap-2 grid-cols-4 text-black px-4">
@@ -56,10 +58,10 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
           <div className="block text-tiny text-black">
             <div className="flex items-center gap-2">
               <div className="py-2 md:py-1  flex items-center justify-between my-3">
-                <Listbox value={quantity} onChange={(e) => handleQuantityChange(e)}>
+                <Listbox value={lineItem.quantity} onChange={(e) => handleQuantityChange(e)}>
                   <div className="relative w-24 mt-1">
                     <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-black cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
-                      <span className="block truncate">{quantity}</span>
+                      <span className="block truncate">{lineItem.quantity}</span>
                       <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <DownArrow />
                       </span>
