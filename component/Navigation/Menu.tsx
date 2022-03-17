@@ -25,8 +25,9 @@ const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
             <div>
               <span>{menuItem.label}</span>
               <hr
-                className={`border border-white ${isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
-                  }`}
+                className={`border border-white ${
+                  isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
+                }`}
               />
             </div>
           </Link>

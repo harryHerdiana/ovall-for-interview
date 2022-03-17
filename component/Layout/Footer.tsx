@@ -7,7 +7,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
   <div className="blue_gradient_rectangle">
     <div className="px-4 md:px-24 pt-12 pb-40 w-full  max-w-site xl:w-3/4 mx-auto">
       <div className="mb-14">
-        <Icon src="/images/ovall-logo.png" className="h-8 mx-auto md:mx-0" />
+        <Icon src="/images/ovall-logo.png" className="h-7 mx-auto md:mx-0" />
       </div>
       <div className="flex justify-evenly flex-col lg:flex-row text-center lg:text-left gap-12">
         <div>

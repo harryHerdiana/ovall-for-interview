@@ -23,7 +23,9 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
         image={heroSection.image}
         backgroundColor={heroSection.backgroundColor}>
         <>
-          <div className="font-subtitleFont text-base">{heroSection.kicker}</div>
+          <div style={{ lineHeight: 1.154 }} className="font-subtitleFont text-base">
+            {heroSection.kicker}
+          </div>
           <h2>{heroSection.title}</h2>
         </>
       </GradientBanner>

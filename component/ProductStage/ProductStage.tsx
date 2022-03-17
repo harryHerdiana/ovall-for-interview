@@ -61,13 +61,13 @@ const ProductStage: React.FC<IProductStageProps> = ({
         <div className="relative h-full w-full">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
           {variant.currentlyNotInStock === false && (
-            <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
+            <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-235px">
               Leider Ausverkauft
             </div>
           )}
         </div>
       </div>
-      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0 lg:mt-0">
+      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0  lg:mt-4">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
