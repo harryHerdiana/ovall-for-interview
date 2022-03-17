@@ -5,7 +5,7 @@ const TrackingIframe: React.FC = () => (
     {!process.env.NEXT_PUBLIC_DISABLE_TRACKING && (
       <noscript>
         <iframe
-          src="https://collect.ovallskincare.de/ns.html?id=GTM-5RTZV7W"
+          src="https://connect.ovallskincare.de/ns.html?id=GTM-STWMXQS"
           height="0"
           width="0"
           style={{ display: 'none', visibility: 'hidden' }}
