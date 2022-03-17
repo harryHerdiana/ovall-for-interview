@@ -22,12 +22,10 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
         contentPlacement="left"
         image={heroSection.image}
         backgroundColor={heroSection.backgroundColor}>
-        <>
-          <div style={{ lineHeight: 1.154 }} className="font-subtitleFont text-base">
-            {heroSection.kicker}
-          </div>
+        <div className="flex flex-col gap-2">
+          <div className="h3_element">{heroSection.kicker}</div>
           <h2>{heroSection.title}</h2>
-        </>
+        </div>
       </GradientBanner>
       <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
       <ProductTeaser {...productTeaserSection} />

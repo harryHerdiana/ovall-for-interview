@@ -79,4 +79,10 @@
     letter-spacing: -0.015em;
     @apply text-base font-normal font-subtitleFont uppercase;
   }
+
+  .h3_element {
+    line-height: 1.154;
+    font-size: 1.0588rem;
+    @apply font-subtitleFont font-normal uppercase;
+  }
 }

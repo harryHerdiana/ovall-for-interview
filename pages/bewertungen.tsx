@@ -19,12 +19,10 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         contentPlacement="left"
         image={heroSection.image}
         backgroundColor={heroSection.backgroundColor}>
-        <>
-          <div style={{ lineHeight: 1.154 }} className="font-subtitleFont text-base uppercase">
-            {heroSection.title}
-          </div>
+        <div className="flex flex-col gap-2">
+          <div className="h3_element">{heroSection.title}</div>
           <h2>{heroSection.kicker}</h2>
-        </>
+        </div>
       </GradientBanner>
       <ProductReview />
       <TransparencySection
