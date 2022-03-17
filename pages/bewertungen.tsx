@@ -13,7 +13,6 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
   const { newsletterSection, productTeaserSection, heroSection, productFeatureSection } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <ProductReview />
       <GradientBanner
         title=""
         mobileContentPlacement="bottom"
@@ -25,6 +24,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
           <h2>{heroSection.kicker}</h2>
         </>
       </GradientBanner>
+      <ProductReview />
       <TransparencySection
         title="Woher kommen unsere Bewertungen?"
         subtitle="transparenz"
