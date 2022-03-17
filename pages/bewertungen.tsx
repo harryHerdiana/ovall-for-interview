@@ -28,7 +28,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
       <TransparencySection
         title="Woher kommen unsere Bewertungen?"
         subtitle="transparenz"
-        body="Miaow then turn around and show you my bum relentlessly pursues moth only use one corner of the litter box or purr like a car engine oh yes, there is my human slave woman she does best pats ever that all i like about her hiss meow for bird bird bird bird bird bird human why take bird out i could have eaten that. One of these days i'm going to get that red dot, just you wait and see"
+        body="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       />
       <GradientBanner
         {...productFeatureSection}
