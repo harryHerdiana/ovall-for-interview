@@ -5,9 +5,9 @@ import Icon from '@component/Icon'
 
 const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) => (
   <div className="blue_gradient_rectangle">
-    <div className="px-4 md:px-24 pt-12 pb-40 w-full  max-w-site  mx-auto">
+    <div className="px-4 md:px-14 pt-12 pb-40 w-full  max-w-site  mx-auto">
       <div className="mb-14">
-        <Icon src="/images/ovall-logo.png" className="h-7 mx-auto md:mx-0" />
+        <Icon src="/images/ovall-logo.png" className="h-8 mx-auto md:mx-0" />
       </div>
       <div className="flex justify-between flex-col lg:flex-row text-center lg:text-left gap-12">
         <div>
@@ -32,7 +32,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
               <div
                 id={item.id}
                 className=" text-tiny font-textFont hover:text-greenLink cursor-pointer">
-                {item.label}
+                <div className="mb-2"> {item.label}</div>
               </div>
             </Link>
           ))}

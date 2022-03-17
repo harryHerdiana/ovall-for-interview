@@ -89,7 +89,7 @@ const Layout: React.FC<ILayout> = ({
       <TrackingIframe />
       <div className="flex flex-col font-main">
         <Header menu={menu} cart={cart} variantImages={variantImages} />
-        <main className="flex-grow font-main mt-8 lg:mt-12">{children}</main>
+        <main className="flex-grow font-main mt-8 sm:mt-12 xl:mt-0">{children}</main>
       </div>
       {showCookieBanner && (
         <CookieBanner

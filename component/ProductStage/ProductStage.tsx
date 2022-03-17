@@ -56,8 +56,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
   }
 
   return (
-    <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 max-w-site mx-auto mb-12">
-      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center w-full ">
+    <section className="grid grid-cols-1 lg:grid-cols-2 max-w-site mx-auto mb-12">
+      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center justify-center w-full ">
         <div className="relative h-full w-full lg:w-5/6">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
           {variant.currentlyNotInStock === false && (
@@ -67,7 +67,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           )}
         </div>
       </div>
-      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-8 lg:p-0  lg:mt-4">
+      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-3 lg:p-0  lg:pt-5">
         <h1 className="w-full text-left mb-1">{product.title}</h1>
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">

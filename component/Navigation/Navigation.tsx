@@ -28,9 +28,9 @@ const Navigation: React.FC<INavigation> = ({ className, menu, notification }) =>
 
   return (
     <>
-      <nav className={`${className} mx-auto w-full border-b border-gray-300 px`}>
+      <nav className={`${className} mx-auto w-full `}>
         <TopNotification notification={notification} />
-        <div className="section-content-width flex md:px-24 flex-wrap items-center justify-between h-14 bg-white md:h-16 lg:h-16 xl:h-16 fullhd:h-16">
+        <div className="section-content-width flex md:px-14 flex-wrap items-center justify-between h-14 bg-white md:h-20 ">
           <button className="burger order-first mr-1 md:hidden" type="button" onClick={toggleMenu}>
             <span />
           </button>
@@ -38,7 +38,7 @@ const Navigation: React.FC<INavigation> = ({ className, menu, notification }) =>
             <Link href="/">
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
               <a onClick={closeMenu}>
-                <Icon src="/images/ovall-logo.png" className="h-6 md:h-7 mx-auto md:mx-0" />
+                <Icon src="/images/ovall-logo.png" className="h-6 md:h-8 mx-auto md:mx-0" />
               </a>
             </Link>
           </div>
