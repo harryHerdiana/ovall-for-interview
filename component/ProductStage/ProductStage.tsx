@@ -60,7 +60,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap items-center justify-center w-full ">
         <div className="relative h-full w-full">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
-          {variant.currentlyNotInStock === false && (
+          {variant.quantityAvailable < 1 && (
             <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
               Leider Ausverkauft
             </div>
