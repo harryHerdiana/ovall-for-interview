@@ -30,7 +30,7 @@ const Navigation: React.FC<INavigation> = ({ className, menu, notification }) =>
     <>
       <nav className={`${className} mx-auto w-full border-b border-gray-300 px`}>
         <TopNotification notification={notification} />
-        <div className="section-content-width flex px-24 flex-wrap items-center justify-between h-14 bg-white md:h-16 lg:h-16 xl:h-16 fullhd:h-16">
+        <div className="section-content-width flex md:px-24 flex-wrap items-center justify-between h-14 bg-white md:h-16 lg:h-16 xl:h-16 fullhd:h-16">
           <button className="burger order-first mr-1 md:hidden" type="button" onClick={toggleMenu}>
             <span />
           </button>
