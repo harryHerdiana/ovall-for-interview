@@ -19,8 +19,8 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
         contentPlacement="left"
         image={heroSection.image}
         title="">
-        <div className="flex flex-col gap-4">
-          <div className="text-base font-subtitleFont uppercase">{heroSection.title}</div>
+        <div className="flex flex-col gap-2">
+          <div className="h3_element">{heroSection.title}</div>
           <h2>{heroSection.body}</h2>
         </div>
       </GradientBanner>

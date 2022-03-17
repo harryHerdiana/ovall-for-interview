@@ -21,7 +21,9 @@ const gradientMap = {
 const GradientSquare: React.FC<IGradientSquare> = ({ variantGradient, className, children }) => {
   const gradient = gradientMap[variantGradient]
   return (
-    <div className={`${gradient} ${className} flex justify-center square_gradient`}>{children}</div>
+    <div className={`${gradient} ${className} flex justify-center square_gradient `}>
+      {children}
+    </div>
   )
 }
 

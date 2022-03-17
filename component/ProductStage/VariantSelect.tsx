@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IShopifyProductVariant } from '@modules/shopify/types'
 import Icon from '@component/Icon'
 import ShopContext from '@context/StoreContext'
@@ -31,6 +31,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
 
   const option = [1, 2, 3, 4, 5, 6, 7]
   const [currentQuantity, setQuantity] = useState<number>(1)
+
   const increase = () => {
     setQuantity(currentQuantity + 1)
   }
@@ -44,6 +45,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   const [activebutton, setActiveButton] = useState<IActiveButton>({
     buttonActivated: 0
   })
+
   return (
     <>
       <div className="flex flex-row gap-2 my-4 justify-between h-17">
@@ -69,7 +71,10 @@ const VariantSelect: React.FC<IVariantSelect> = ({
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-between">
+        <div
+          className={`${
+            variant.quantityAvailable === 0 && 'hidden'
+          } flex flex-col justify-between`}>
           <h3 className=" items-center text-right mb-3">{quantityCaption.toUpperCase()}</h3>
           <div className="flex md:hidden">
             <select
@@ -88,7 +93,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>
             <h4 className="w-10 text-center">{currentQuantity}</h4>
-            <button type="button" onClick={increase}>
+            <button disabled={variant.quantityAvailable === 0} type="button" onClick={increase}>
               <Icon src="/images/plus.svg" className="h-7 w-7" />
             </button>
           </div>

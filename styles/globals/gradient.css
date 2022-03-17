@@ -52,7 +52,7 @@
 }
 
 .blue_mobile_bottom {
-  background-color: #fee9e1;
+  background: linear-gradient(to right, #fee9e1, #ffede5);
 }
 
 /* people === violet */

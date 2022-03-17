@@ -5,11 +5,11 @@ import Icon from '@component/Icon'
 
 const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) => (
   <div className="blue_gradient_rectangle">
-    <div className="px-4 md:px-24 pt-12 pb-40 w-full  max-w-site xl:w-3/4 mx-auto">
+    <div className="px-4 md:px-14 pt-12 pb-40 w-full  max-w-site  mx-auto">
       <div className="mb-14">
         <Icon src="/images/ovall-logo.png" className="h-8 mx-auto md:mx-0" />
       </div>
-      <div className="flex justify-evenly flex-col lg:flex-row text-center lg:text-left gap-12">
+      <div className="flex justify-between flex-col lg:flex-row text-center lg:text-left gap-12">
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{leftColumn.title}</div>
           {leftColumn.items.map((item, index) => (
@@ -32,17 +32,17 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
               <div
                 id={item.id}
                 className=" text-tiny font-textFont hover:text-greenLink cursor-pointer">
-                {item.label}
+                <div className="mb-2"> {item.label}</div>
               </div>
             </Link>
           ))}
         </div>
-        <div>
+        <div className="lg:w-400px mx-auto lg:mx-0">
           <div className="text-base font-subtitleFont uppercase mb-5">{rightColumn.title}</div>
           <div className="text-tiny">
             <p>{rightColumn.text}</p>
           </div>
-          <div className="flex lg:grid lg:grid-cols-2 xxl:grid-cols-4 gap-7 mt-5 justify-center lg:justify-start">
+          <div className="flex lg:grid lg:grid-cols-3 w-max xxl:grid-cols-4 gap-2 mt-5 lg:justify-self-start mx-auto lg:mx-0">
             <Link href={rightColumn.facebook}>
               <div className="hover:cursor-pointer">
                 <Icon src="/images/facebook.svg" className="h-12" />
@@ -78,7 +78,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
             </div>
           ))}
         </div>
-        <div className=" lg:grid-cols-2 lg:gap-4 gap-2 grid grid-cols-6 place-items-center">
+        <div className=" lg:grid-cols-2 lg:gap-4 gap-2 grid grid-cols-6 place-items-center h-full lg:min-w-max">
           <div>
             <Icon src="/images/pay-paypal-ohne-rahmen.svg" className="h-full w-14" />
           </div>
