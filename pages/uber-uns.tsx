@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IAboutUsPage } from '@lib/types'
@@ -11,7 +11,6 @@ import ProductTeaser from '@component/ProductTeaser'
 
 const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps) => {
   const { newsletterSection, heroSection, accordionSection, content, productTeaserSection } = props
-  console.log('aboutus.props', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
@@ -45,11 +44,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export default AboutUsPage
-
-export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [
-    { params: { aboutUs: 'about-us' }, locale: 'en' },
-    { params: { aboutUs: 'uber-uns' }, locale: 'de-DE' }
-  ],
-  fallback: false
-})

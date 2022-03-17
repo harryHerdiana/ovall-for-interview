@@ -13,9 +13,16 @@ const moduleExports = {
   async redirects() {
     return [
       {
-        source: '/source',
-        destination: '/destination/',
-        permanent: true
+        source: '/en/uber-uns',
+        destination: '/en/about-us/',
+        permanent: true,
+        locale: false
+      },
+      {
+        source: '/about-us',
+        destination: '/uber-uns',
+        permanent: true,
+        locale: false
       }
     ]
   }

@@ -166,6 +166,15 @@ export interface IHtmlAccordionItem {
 
 /** ***** PAGES ************** */
 
+export interface IStaticPage {
+  heroSection: {
+    backgroundColor: string
+    title: string
+    text: string
+  }
+  content: StructuredText
+}
+
 export interface IHomePage {
   heroSection: {
     buttonText: string

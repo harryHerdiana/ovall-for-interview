@@ -9,9 +9,18 @@ import {
   HOMEPAGE_QUERY,
   ABOUT_US_QUERY,
   FAQ_QUERY,
-  RATINGS_QUERY
+  RATINGS_QUERY,
+  STATIC_PAGE_QUERY
 } from '@modules/datocms/api/queries'
-import { Context, IAboutUsPage, IAppContent, IFAQPage, IHomePage, IProductPage } from './types'
+import {
+  Context,
+  IAboutUsPage,
+  IAppContent,
+  IFAQPage,
+  IHomePage,
+  IProductPage,
+  IStaticPage
+} from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
 import mapHomepageData from './mapper/homepage'
@@ -19,6 +28,7 @@ import mapAppContent from './mapper/app'
 import mapAboutUsData from './mapper/aboutUs'
 import mapFAQData from './mapper/faq'
 import mapRatingData from './mapper/ratings'
+import mapStaticPage from './mapper/staticPage'
 
 export default class PageDataService {
   context: Context
@@ -75,9 +85,9 @@ export default class PageDataService {
    * @param entryKey model name in datocms
    * @returns IPageProps
    */
-  private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?) {
+  private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
     const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
-    const datoCMSResponse = await this.requestDatoCMS(query)
+    const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
 
@@ -110,5 +120,11 @@ export default class PageDataService {
 
   public async ratings(): Promise<IFAQPage> {
     return this.requestDatoCMSWithBaseData(RATINGS_QUERY, 'ratingPage', mapRatingData)
+  }
+
+  public async staticPage(title: string): Promise<IStaticPage> {
+    return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
+      title
+    })
   }
 }

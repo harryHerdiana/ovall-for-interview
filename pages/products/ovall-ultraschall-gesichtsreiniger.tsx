@@ -16,7 +16,6 @@ import ProductReview from '@component/ProductReview'
 import DescriptionSection from '@component/DescriptionSection'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
-  console.log('PROPS', props)
   const {
     seoTags,
     appProps,

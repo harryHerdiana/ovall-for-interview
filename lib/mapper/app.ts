@@ -52,7 +52,9 @@ export default function mapFooter(d: IData): {
           .filter((c) => c._modelApiKey === 'navigation_link')
           .map((c: IColumnNavItem) => ({
             id: c.id,
-            path: c.internalLink.slug,
+            path: c.internalLink.slug.includes('ovall')
+              ? `/products/${c.internalLink.slug}`
+              : `/${c.internalLink.slug}`,
             label: c.label,
             title: c.internalLink.title
           }))
@@ -65,7 +67,9 @@ export default function mapFooter(d: IData): {
           .filter((c) => c._modelApiKey === 'navigation_link')
           .map((c: IColumnNavItem) => ({
             id: c.id,
-            path: c.internalLink.slug,
+            path: c.internalLink.slug.includes('ovall')
+              ? `/products/${c.internalLink.slug}`
+              : `/${c.internalLink.slug}`,
             label: c.label,
             title: c.internalLink.title
           }))

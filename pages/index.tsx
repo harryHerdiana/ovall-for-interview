@@ -24,7 +24,6 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     moodSlideshowSection,
     howToUseSection
   } = props
-  console.log(props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
