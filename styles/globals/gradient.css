@@ -107,7 +107,7 @@
 }
 
 .blue_gradient_rectangle {
-  background: conic-gradient(from 243deg at 50% 50%, #fff7ef, #fee8e0);
+  background: conic-gradient(from 243deg at 20% 80%, #fff7ef, #fee8e0);
 }
 
 .pink_gradient_rectangle {
