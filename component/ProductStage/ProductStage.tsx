@@ -54,13 +54,13 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-
+  console.log(variant.quantityAvailable)
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 max-w-site mx-auto mb-12">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center justify-center w-full ">
         <div className="relative h-full w-full lg:w-5/6">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
-          {variant.currentlyNotInStock === false && (
+          {variant.quantityAvailable === 0 && (
             <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-235px">
               Leider Ausverkauft
             </div>

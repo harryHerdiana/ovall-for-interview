@@ -45,11 +45,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   const [activebutton, setActiveButton] = useState<IActiveButton>({
     buttonActivated: 0
   })
-  useEffect(() => {
-    if (variant.currentlyNotInStock === false) {
-      setQuantity(0)
-    }
-  }, [variant.currentlyNotInStock])
+
   return (
     <>
       <div className="flex flex-row gap-2 my-4 justify-between h-17">
@@ -78,7 +74,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
         </div>
         <div
           className={`${
-            variant.currentlyNotInStock === false && 'hidden'
+            variant.quantityAvailable === 0 && 'hidden'
           } flex flex-col justify-between`}>
           <h3 className=" items-center text-right mb-3">{quantityCaption.toUpperCase()}</h3>
           <div className="flex md:hidden">
@@ -98,17 +94,14 @@ const VariantSelect: React.FC<IVariantSelect> = ({
               <Icon src="/images/minus.svg" className="h-7 w-7" />
             </button>
             <h4 className="w-10 text-center">{currentQuantity}</h4>
-            <button
-              disabled={variant.currentlyNotInStock === false}
-              type="button"
-              onClick={increase}>
+            <button disabled={variant.quantityAvailable === 0} type="button" onClick={increase}>
               <Icon src="/images/plus.svg" className="h-7 w-7" />
             </button>
           </div>
         </div>
       </div>
       <div className="mt-2">
-        {!variant.currentlyNotInStock ? (
+        {variant.quantityAvailable === 0 ? (
           <AddToCartButton disabled buttonType="disabled" onClick={handleAddToCartClick}>
             <span>LEIDER AUSVERKAUFT</span>
           </AddToCartButton>
