@@ -13,9 +13,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
   const { newsletterSection, productTeaserSection, heroSection, productFeatureSection } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <div className="mx-auto">
-        <ProductReview />
-      </div>
+      <ProductReview />
       <GradientBanner
         title=""
         mobileContentPlacement="bottom"
