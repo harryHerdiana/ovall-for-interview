@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IAboutUsPage } from '@lib/types'
