@@ -39,13 +39,14 @@
     "prettier/prettier": [
       "error"
     ],
-    "react/require-default-props":"off",
-    "react/button-has-type":"off",
+    "react/require-default-props": "off",
+    "react/button-has-type": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": "off",
     "react/no-danger": "off",
+    "react/no-unknown-property": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
