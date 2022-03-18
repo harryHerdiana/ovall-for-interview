@@ -12,7 +12,7 @@ const HrefLang: React.FC<IProps> = ({ en, de }) => {
   return (
     <>
       <link rel="alternate" hrefLang="en" href={enUrl} />
-      <link rel="alternate" hrefLang="de-DE" href={deUrl} />
+      <link rel="alternate" hrefLang="de" href={deUrl} />
     </>
   )
 }

@@ -30,9 +30,9 @@ export const appUrl = (): string => {
     case 'preview':
       return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     case 'staging':
-      return 'https://staging.ovallskincare.de/'
+      return 'https://staging.ovallskincare.de'
     case 'production':
-      return 'https://ovallskincare.de/'
+      return 'https://ovallskincare.de'
     default:
       return `http://localhost:${process.env.PORT || '3000'}`
   }
