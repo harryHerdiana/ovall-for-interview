@@ -39,7 +39,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const data = await pageDataService.aboutUs()
 
   return {
-    props: data
+    props: {
+      ...data,
+      appProps: {
+        ...data.appProps,
+        i18n: {
+          en: '/en/about-us',
+          de: '/uber-uns'
+        }
+      }
+    }
   }
 }
 

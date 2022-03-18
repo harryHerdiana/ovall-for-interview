@@ -16,6 +16,7 @@ import {
   Context,
   IAboutUsPage,
   IAppContent,
+  IDefaultProps,
   IFAQPage,
   IHomePage,
   IProductPage,
@@ -110,7 +111,7 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
   }
 
-  public async aboutUs(): Promise<IAboutUsPage> {
+  public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {
     return this.requestDatoCMSWithBaseData(ABOUT_US_QUERY, 'aboutUsPage', mapAboutUsData)
   }
 
@@ -122,7 +123,7 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(RATINGS_QUERY, 'ratingPage', mapRatingData)
   }
 
-  public async staticPage(title: string): Promise<IStaticPage> {
+  public async staticPage(title: string): Promise<IStaticPage & IDefaultProps> {
     return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
       title
     })

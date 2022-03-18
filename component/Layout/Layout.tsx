@@ -13,6 +13,8 @@ import Header from '@component/Layout/Header'
 import { TrackingIframe, TrackingScript } from '@modules/tracking'
 import CookieBanner from '@component/CookieBanner'
 import { trackCookieConsentGiven } from '@modules/tracking/events'
+import HrefLang from '@component/HrefLang'
+import { useRouter } from 'next/router'
 import Footer from './Footer'
 
 interface ILayout {
@@ -23,6 +25,10 @@ interface ILayout {
   footer: IFooter
   cart: ICartText
   variantImages: IProductVariantImage[]
+  i18n?: {
+    en: string
+    de: string
+  }
 }
 
 const COOKIE_PREFIX = '_ovallskincare'
@@ -54,7 +60,8 @@ const Layout: React.FC<ILayout> = ({
   children,
   footer,
   cookieNotice,
-  variantImages
+  variantImages,
+  i18n
 }) => {
   const [showCookieBanner, setShowCookieBanner] = React.useState(false)
 
@@ -78,6 +85,10 @@ const Layout: React.FC<ILayout> = ({
       setShowCookieBanner(true)
     }
   })
+  const router = useRouter()
+
+  const en = i18n?.en || `/en${router.pathname}`
+  const de = i18n?.de || router.pathname.replace('en/', '')
 
   return (
     <>
@@ -85,6 +96,7 @@ const Layout: React.FC<ILayout> = ({
         <TrackingScript />
         <title>{seoTags.title}</title>
         <meta name="description" content={seoTags.description} key="description" />
+        <HrefLang en={en} de={de} />
       </Head>
       <TrackingIframe />
       <div className="flex flex-col font-main">

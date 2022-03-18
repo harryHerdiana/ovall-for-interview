@@ -5,6 +5,7 @@ import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IStaticPage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
+import { STATIC_PAGE_I18N, STATIC_PAGE_PATHS } from '@lib/constants'
 
 const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) => {
   const { heroSection, content } = props
@@ -25,32 +26,24 @@ const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) 
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  const { staticPage } = context.params
   const pageDataService = new PageDataService(context)
-  const data = await pageDataService.staticPage(context.params.staticPage as string)
+  const data = await pageDataService.staticPage(staticPage as string)
 
   return {
-    props: data
+    props: {
+      ...data,
+      appProps: {
+        ...data.appProps,
+        i18n: STATIC_PAGE_I18N[staticPage as string]
+      }
+    }
   }
 }
 
 export default ImprintPage
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [
-    { params: { staticPage: 'imprint' }, locale: 'en' },
-    { params: { staticPage: 'impressum' }, locale: 'de-DE' },
-    { params: { staticPage: 'widerruf' }, locale: 'en' },
-    { params: { staticPage: 'widerrufsbelehrung' }, locale: 'de-DE' },
-    { params: { staticPage: 'shipping' }, locale: 'en' },
-    { params: { staticPage: 'versand' }, locale: 'de-DE' },
-    { params: { staticPage: 'agb' }, locale: 'en' },
-    { params: { staticPage: 'agb' }, locale: 'de-DE' },
-    { params: { staticPage: 'payment-options' }, locale: 'en' },
-    { params: { staticPage: 'zahlungsmoglichkeiten' }, locale: 'de-DE' },
-    { params: { staticPage: 'contact' }, locale: 'en' },
-    { params: { staticPage: 'kontakt' }, locale: 'de-DE' },
-    { params: { staticPage: 'privacy' }, locale: 'en' },
-    { params: { staticPage: 'datenschutz' }, locale: 'de-DE' }
-  ],
+  paths: STATIC_PAGE_PATHS,
   fallback: false
 })
