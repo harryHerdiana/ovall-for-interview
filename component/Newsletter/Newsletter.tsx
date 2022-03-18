@@ -25,6 +25,18 @@ const Newsletter: React.FC<INewsletterProps> = ({
     e.preventDefault()
     setInput(e.target.value)
   }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    await fetch('/api/newsletter-signup', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ email: input })
+    })
+  }
   return (
     <section className="mx-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-center my-10">
       <h3>{title}</h3>
@@ -32,9 +44,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
       <div>
         <StructuredText data={description} />
       </div>
-      <form
-        onSubmit={() => console.log('welcome ', input)}
-        className="w-full flex flex-col md:flex-row my-5 gap-5 h-fit">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col md:flex-row my-5 gap-5 h-fit">
         <input
           onChange={handleChange}
           type="email"
@@ -50,6 +60,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
       <div className="md:w-1/2 m-auto text-2xs">
         <StructuredText data={disclaimer} />
       </div>
+      <div className="klaviyo-form-UFFrGa" />
     </section>
   )
 }
