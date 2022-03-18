@@ -29,6 +29,7 @@ interface ILayout {
     en: string
     de: string
   }
+  indexable?: boolean
 }
 
 const COOKIE_PREFIX = '_ovallskincare'
@@ -61,7 +62,8 @@ const Layout: React.FC<ILayout> = ({
   footer,
   cookieNotice,
   variantImages,
-  i18n
+  i18n,
+  indexable = true
 }) => {
   const [showCookieBanner, setShowCookieBanner] = React.useState(false)
 
@@ -97,6 +99,16 @@ const Layout: React.FC<ILayout> = ({
         <title>{seoTags.title}</title>
         <meta name="description" content={seoTags.description} key="description" />
         <HrefLang en={en} de={de} />
+        <meta
+          name="robots"
+          content={
+            indexable === true && process.env.NEXT_PUBLIC_INDEX !== 'false'
+              ? 'index,follow'
+              : 'noindex,follow'
+          }
+          key="robots"
+        />
+        <meta name="revisit-after" content="3 days" key="revisit_after" />
       </Head>
       <TrackingIframe />
       <div className="flex flex-col font-main">
