@@ -1,3 +1,3 @@
-import HrefLang from './HrefLang'
+import HrefLang from './Hreflang'
 
 export default HrefLang
