@@ -64,7 +64,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         contentPlacement="left"
         imageClassName="px-4 pt-7 lg:pt-10"
       />
-      <ProductInfoAccordion {...productInfoAccordionSection} />
+      <ProductInfoAccordion {...productInfoAccordionSection} buttonAction="scroll" />
       <GradientBanner
         {...productInfoBannerFeatures}
         items={productInfoBannerFeatures.items}
@@ -72,7 +72,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         contentPlacement="left"
         imageClassName="px-4 pt-7 lg:pt-11"
       />
-      <FaqSection {...faqSection} />
+      <FaqSection {...faqSection} buttonAction="scroll" />
       <Newsletter {...newsletterSection} />
 
       <div id="testimonial" className="lg:w-4/5 mx-auto lg:text-center my-12 max-w-fullhd">

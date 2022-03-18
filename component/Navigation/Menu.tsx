@@ -21,13 +21,12 @@ const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
           key={menuItem.id}
           onClick={onClick}
           className="whitespace-nowrap md:first:flex-grow md:last:flex-grow md:first:text-right md:last:text-left cursor-pointer uppercase font-subtitleFont my-2">
-          <Link href={menuItem.path} prefetch={false}>
+          <Link href={menuItem.path} prefetch={menuItem.label === 'Shop'}>
             <div>
               <span>{menuItem.label}</span>
               <hr
-                className={`border border-white ${
-                  isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
-                }`}
+                className={`border border-white ${isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
+                  }`}
               />
             </div>
           </Link>

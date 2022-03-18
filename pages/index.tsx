@@ -6,13 +6,15 @@ import { IDefaultProps, IHomePage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
 import Testimonial from '@component/Testimonial'
 import MoodSlideShow from '@component/MoodSlideShow'
 import HowToUse from '@component/HowToUse'
+import { PRODUCT_PATH } from '@lib/constants'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
+  const router = useRouter()
   const {
     productInfoBannerTechnology,
     infoSection,
@@ -32,6 +34,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         contentPlacement="right"
         buttonType="primary"
         mobileContentSolidColor
+        onClickButton={() => router.push(PRODUCT_PATH)}
       />
       <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
       <MoodSlideShow {...moodSlideshowSection} />
