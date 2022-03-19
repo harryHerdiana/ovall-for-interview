@@ -5,11 +5,9 @@
 @import "./globals/slider-scrollbar.css";
 @import "./globals//gradient.css";
 
-
 /* defaults for the page (like the text color, background color, or font family) */
 @import "tailwindcss/base";
 @import "./base/_index.css";
-
 
 /* components layer for any more complicated classes (like card, btn, badge) */
 @import "tailwindcss/components";
@@ -20,48 +18,42 @@
 @import "./utilities/custom-utilities.css";
 
 @font-face {
-    font-family: 'SourceCodeProRegular';
+    font-family: "SourceCodeProRegular";
     font-style: normal;
-    font-display:swap;
-    src: url('/fonts/SourceCode/SourceCodePro-Regular.woff2') format('truetype');
-    
+    font-display: swap;
+    src: url("/fonts/SourceCode/SourceCodePro-Regular.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'SourceCodeProSemibold';
+    font-family: "SourceCodeProSemibold";
     font-style: normal;
-    font-display:swap;
-    src: url('/fonts/SourceCode/SourceCodePro-SemiBold.woff2') format('truetype');
-    
+    font-display: swap;
+    src: url("/fonts/SourceCode/SourceCodePro-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'WorkSansMedium';
+    font-family: "WorkSansMedium";
     font-style: normal;
-    font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-Medium.woff2') format('truetype');
-    
+    font-display: swap;
+    src: url("/fonts/WorkSans/WorkSans-Medium.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'WorkSansRegular';
+    font-family: "WorkSansRegular";
     font-style: normal;
-    font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-Regular.woff2') format('truetype');
-    
+    font-display: swap;
+    src: url("/fonts/WorkSans/WorkSans-Regular.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'WorkSansLight';
+    font-family: "WorkSansLight";
     font-style: normal;
-    font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-Light.woff2') format('truetype');
-    
+    font-display: swap;
+    src: url("/fonts/WorkSans/WorkSans-Light.woff2") format("woff2");
 }
 @font-face {
-    font-family: 'WorkSansSemiBold';
+    font-family: "WorkSansSemiBold";
     font-style: normal;
-    font-display:swap;
-    src: url('/fonts/WorkSans/WorkSans-SemiBold.woff2') format('truetype');
-    
+    font-display: swap;
+    src: url("/fonts/WorkSans/WorkSans-SemiBold.woff2") format("woff2");
 }
