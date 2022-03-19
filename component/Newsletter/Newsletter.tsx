@@ -39,7 +39,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
           onChange={handleChange}
           type="email"
           placeholder={placeholder.toUpperCase()}
-          className="w-full md:w-1/2"
+          className="w-full md:w-1/2 border border-black placeholder-black"
         />
         <div className="mb md:w-1/2 h-max">
           <Button type="submit" buttonType="primary">

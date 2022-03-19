@@ -9,7 +9,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
       <div className="mb-14">
         <Icon src="/images/ovall-logo.png" className="h-8 mx-auto md:mx-0" />
       </div>
-      <div className="flex justify-between flex-col lg:flex-row text-center lg:text-left gap-12">
+      <div className="flex justify-between flex-col lg:flex-row text-center lg:text-left gap-4 lg:gap-12">
         <div>
           <div className="text-base font-subtitleFont uppercase mb-5">{leftColumn.title}</div>
           {leftColumn.items.map((item, index) => (
@@ -65,7 +65,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
             </Link>
           </div>
         </div>
-        <div className="lg:hidden mb-8">
+        <div className="lg:hidden">
           <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
           {middleColumn.items.map((item, index) => (
             <div key={item.id} id={item.id}>
@@ -78,30 +78,38 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
             </div>
           ))}
         </div>
-        <div className=" lg:grid-cols-2 lg:gap-4 gap-2 grid grid-cols-6 place-items-center h-full lg:min-w-max">
-          <div>
-            <Icon src="/images/pay-paypal-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div>
-            <Icon src="/images/pay-amex-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div>
-            <Icon src="/images/pay-klarna-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div>
-            <Icon src="/images/pay-mastercard-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div>
-            <Icon src="/images/pay-visa-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div>
-            <Icon src="/images/pay-shopify-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div className="col-start-3 lg:col-start-1">
-            <Icon src="/images/pay-apple-ohne-rahmen.svg" className="h-full w-14" />
-          </div>
-          <div className="col-start-4  lg:col-start-2">
-            <Icon src="/images/pay-google-ohne-rahmen.svg" className="h-full w-14" />
+        <div>
+          <div className=" lg:grid-cols-2 lg:gap-4 gap-2 grid grid-cols-6 place-items-center h-full lg:min-w-max lg:mr-32">
+            <div className="col-start-3 row-start-2 lg:hidden">
+              <Icon src="/images/pay-apple-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="col-start-4 row-start-2 lg:hidden">
+              <Icon src="/images/pay-google-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="col-start-2 lg:row-start-2">
+              <Icon src="/images/pay-paypal-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="col-start-3 lg:col-start-2">
+              <Icon src="/images/pay-amex-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="">
+              <Icon src="/images/pay-klarna-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div>
+              <Icon src="/images/pay-mastercard-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="">
+              <Icon src="/images/pay-visa-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="row-start-1 lg:col-start-1 lg:row-start-1">
+              <Icon src="/images/pay-shopify-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="hidden lg:grid lg:col-start-1">
+              <Icon src="/images/pay-apple-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
+            <div className="hidden  lg:grid lg:col-start-2">
+              <Icon src="/images/pay-google-ohne-rahmen.svg" className="h-full w-14" />
+            </div>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => (
     <div className="lg:px-24 ">
       <ResponsiveImage image={image} usePlaceholder={false} />
     </div>
-    <div className="lg:w-4/5 my-3">
+    <div className=" my-3 max-w-800px">
       <div className="text-left md:text-center">
         <span className="font-subtitleFont text-base uppercase">{title}</span>
       </div>
@@ -58,7 +58,7 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
     prevArrow: <PrevArrow />
   }
   return (
-    <div className="lg:w-4/5 mx-auto lg:text-center mt-12 mb-24 max-w-fullhd">
+    <div className="lg:w-4/5 mx-auto lg:text-center max-w-fullhd">
       <div className="px-4">
         <span className="font-subtitleFont text-base uppercase">{title}</span>
         <h2 className="mt-2 mb-4">{kicker}</h2>

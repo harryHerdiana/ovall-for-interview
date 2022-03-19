@@ -10,7 +10,14 @@ import { StructuredText } from 'react-datocms'
 import ProductTeaser from '@component/ProductTeaser'
 
 const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps) => {
-  const { newsletterSection, heroSection, accordionSection, content, productTeaserSection } = props
+  const {
+    product,
+    newsletterSection,
+    heroSection,
+    accordionSection,
+    content,
+    productTeaserSection
+  } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
@@ -28,7 +35,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
         <StructuredText data={content} />
       </div>
       <HtmlAccordion items={accordionSection.items} />
-      <ProductTeaser {...productTeaserSection} />
+      <ProductTeaser product={product} {...productTeaserSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )

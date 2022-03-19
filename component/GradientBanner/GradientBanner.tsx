@@ -26,6 +26,7 @@ export type IGradientBannerProps = {
   onClickButton?: () => void
   children?: React.ReactElement
   imageClassName?: string
+  className?: string
 }
 
 const GradientBanner: React.FC<IGradientBannerProps> = ({
@@ -41,7 +42,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   onClickButton,
   children,
   mobileContentSolidColor,
-  imageClassName
+  imageClassName,
+  className
 }) => {
   const MobileGradientAll = () => (
     <MobileGradient
@@ -70,8 +72,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-400px m-auto">
-      <div className="flex lg:h-max flex-col lg:flex-row max-w-site min-h-400px m-auto">
+      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px m-auto">
+      <div
+        className={`${className} flex lg:h-max flex-col lg:flex-row max-w-site min-h-400px m-auto`}>
         {mobileContentPlacement === 'top' && (
           <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
             <MobileGradientAll />
@@ -79,7 +82,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         )}
         <div
           className={` ${
-            contentPlacement === 'left' ? ' hidden lg:flex' : 'hidden'
+            contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
           } w-full flex-col items-end justify-center`}>
           <DesktopGradientAll />
         </div>
@@ -88,7 +91,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
           className="lg:hidden h-full w-full max-h-full">
           <ResponsiveImage
             image={image}
-            className={`${imageClassName} w-full h-full flex justify-center`}
+            className={`${imageClassName} w-full h-full flex justify-start md:justify-center`}
           />
         </GradientSquare>
         <ResponsiveImage
@@ -97,7 +100,7 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
         />
         <div
           className={` ${
-            contentPlacement === 'right' ? ' hidden lg:flex' : 'hidden'
+            contentPlacement === 'right' ? ' hidden lg:flex items-end mr-8' : 'hidden'
           } w-full flex-col items-start justify-center`}>
           <DesktopGradientAll />
         </div>

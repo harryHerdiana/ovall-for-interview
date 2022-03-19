@@ -55,7 +55,7 @@ export const MoodSlideShowFragment = `
       imageWithGradient {
         gradientBackground
         image {
-          responsiveImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 1040, h: 520 }) {
             ...ResponsiveImageFragment
           }
         }
@@ -73,7 +73,7 @@ export const ProductInfoBannerFragment = `
         backgroundColor
         title
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 600, h: 350 }){
+          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 600, h: 400 }){
             ...ResponsiveImageFragment
           }
         }
@@ -145,7 +145,7 @@ export const ProductTeaserFragment = `
         _modelApiKey
         title
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 650, h: 400 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 650, h: 540 }) {
             ...ResponsiveImageFragment
           }
         }

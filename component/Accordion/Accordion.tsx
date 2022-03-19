@@ -26,7 +26,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
   }
   return (
     <>
-      <div className="">
+      <div className="max-w-800px">
         {items.map((item, index) => (
           <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (
@@ -39,14 +39,14 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
                     className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-tiny font-textFont text-left">
+                <Disclosure.Panel className="px-4 pt-0 pb-5 text-tiny font-textFont text-left">
                   {item.body}
                 </Disclosure.Panel>
               </>
             )}
           </Disclosure>
         ))}
-        <div className="w-full md:w-1/2 m-auto  px-4 md:px-0">
+        <div className="w-full md:w-1/2 m-auto  px-4 md:px-0 mt-8">
           <Button
             onClick={buttonAction === 'link' ? linkToProductPage : scrollToTop}
             buttonType="primary"

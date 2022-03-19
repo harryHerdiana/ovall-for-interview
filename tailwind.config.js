@@ -119,6 +119,7 @@ module.exports = {
       },
       width: {
         fit: 'fit-content',
+        '800px': '800px',
         '600px': '600px',
         '500px': '500px',
         '440px': '440px',
@@ -142,7 +143,19 @@ module.exports = {
         '30pc': '30%'
       },
       margin: {
-        '100vw': '100vw'
+        '100vw': '100vw',
+        '50px': '50px',
+        '100px': '100px'
+      },
+      marginTop: {
+        '100vw': '100vw',
+        '50px': '50px',
+        '100px': '100px'
+      },
+      marginBottom: {
+        '100vw': '100vw',
+        '50px': '50px',
+        '100px': '100px'
       },
       maxHeight: {
         'stage-tablet': '620px',
@@ -162,7 +175,7 @@ module.exports = {
         '300px': '300px'
       },
       maxWidth: {
-        site: '1440px',
+        site: '1300px',
         fullhd: '1920px',
         'fullhd+': '2160px',
         wqhd: '2560px',
@@ -170,6 +183,7 @@ module.exports = {
         'content-lg': '1140px',
         'content-sm': '946px',
         img: '400px',
+        '800px': '800px',
         '500px': '500px',
         '570px': '570px',
         '345px': '345px',

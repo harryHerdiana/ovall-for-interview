@@ -85,4 +85,12 @@
     font-size: 1.0588rem;
     @apply font-subtitleFont font-normal uppercase;
   }
+  .h2_element {
+    line-height: 1.154;
+    font-size: 1.529411rem;
+    letter-spacing: -0.015em;
+    @apply font-subtitleFont font-semibold;
+  }
+
+
 }

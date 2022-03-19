@@ -54,9 +54,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-  console.log(variant.quantityAvailable)
+
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 max-w-site mx-auto mb-12">
+    <section className="grid grid-cols-1 lg:grid-cols-2 max-w-site mx-auto">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center justify-center w-full ">
         <div className="relative h-full w-full lg:w-5/6">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
@@ -75,7 +75,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           </ScrollableLink>
         </div>
         <div className="text-left flex flex-row mb-3 mt-5">
-          <span className=" self-center font-subtitleFont font-semibold text-2xl">
+          <span className=" self-end font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>
           <div className="ml-8 md:ml-10">

@@ -13,7 +13,7 @@ type IHowToUseProps = {
 }
 
 const HowToUse: React.FC<IHowToUseProps> = ({ title, items }) => (
-  <div className=" md:w-4/5 mx-auto mb-10 mt-24 max-w-site">
+  <div className=" md:w-4/5 mx-auto mb-10 mt-100px max-w-site">
     <h2 className="px-4 mb-7 lg:mb-10 text-left w-2/3 lg:px-0 lg:w-full lg:text-center">{title}</h2>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
       {items.map((item) => (

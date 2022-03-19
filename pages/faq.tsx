@@ -10,7 +10,7 @@ import ProductTeaser from '@component/ProductTeaser'
 import GradientBanner from '@component/GradientBanner'
 
 const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
-  const { newsletterSection, productTeaserSection, faqSection, heroSection } = props
+  const { newsletterSection, productTeaserSection, faqSection, heroSection, product } = props
   console.log('faq.props', props)
   // const router = useRouter()
   // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
@@ -28,7 +28,7 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
         </div>
       </GradientBanner>
       <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
-      <ProductTeaser {...productTeaserSection} />
+      <ProductTeaser product={product} {...productTeaserSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )

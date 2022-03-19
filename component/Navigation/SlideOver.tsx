@@ -44,8 +44,8 @@ const SlideOver: React.FC<IProps> = (props) => {
                 <div className="h-full flex flex-col bg-white overflow-y-scroll">
                   <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
-                      <Dialog.Title className="flex-grow-1 text-2xl font-titleFont text-gray-900 mt-2">
-                        {props.cartName}
+                      <Dialog.Title>
+                        <h2> {props.cartName}</h2>
                       </Dialog.Title>
                       <div className="h-7 flex flex-shrink-0 items-center">
                         <button
@@ -65,10 +65,8 @@ const SlideOver: React.FC<IProps> = (props) => {
                     <div className="bg-white bottom-0 sticky w-full  ">
                       <div className="flex flex-col flex-wrap justify-center items-center">
                         <div className="flex flex-wrap w-full justify-between items-center">
-                          <div className="rounded px-4 font-titleFont text-2xl">Gesamt:</div>
-                          <div className="rounded px-2 font-titleFont text-2xl">
-                            {toEuro(checkout.totalPrice)}
-                          </div>
+                          <div className="h2_element px-4">Gesamt:</div>
+                          <div className="h2_element">{toEuro(checkout.totalPrice)}</div>
                         </div>
                         <div className="text-sm self-end mb-3">
                           <p className="md:text-right sm:pb-0 px-4">inkl. 19% MwSt.</p>

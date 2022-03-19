@@ -24,7 +24,8 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
     heroSection,
     testimonialSection,
     moodSlideshowSection,
-    howToUseSection
+    howToUseSection,
+    product
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
@@ -36,10 +37,16 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentSolidColor
         onClickButton={() => router.push(PRODUCT_PATH)}
       />
-      <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
+      <GradientBanner
+        className="my-100px"
+        {...infoSection}
+        mobileContentPlacement="bottom"
+        contentPlacement="left"
+      />
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />
       <GradientBanner
+        className="my-100px"
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
@@ -47,7 +54,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
       />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />
-      <ProductTeaser {...productTeaserSection} />
+      <ProductTeaser product={product} {...productTeaserSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )

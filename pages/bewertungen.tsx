@@ -10,7 +10,8 @@ import GradientBanner from '@component/GradientBanner'
 import TransparencySection from '@component/TransparencySection'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
-  const { newsletterSection, productTeaserSection, heroSection, productFeatureSection } = props
+  const { product, newsletterSection, productTeaserSection, heroSection, productFeatureSection } =
+    props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
@@ -37,7 +38,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         contentPlacement="left"
       />
 
-      <ProductTeaser {...productTeaserSection} />
+      <ProductTeaser product={product} {...productTeaserSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )
