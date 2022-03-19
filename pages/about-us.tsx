@@ -8,6 +8,7 @@ import GradientBanner from '@component/GradientBanner'
 import HtmlAccordion from '@component/HtmlAccordion'
 import { StructuredText } from 'react-datocms'
 import ProductTeaser from '@component/ProductTeaser'
+import SocialFeed from '@component/SocialFeed'
 
 const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps) => {
   const { newsletterSection, heroSection, accordionSection, content, productTeaserSection } = props
@@ -29,6 +30,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
       </div>
       <HtmlAccordion items={accordionSection.items} />
       <ProductTeaser {...productTeaserSection} />
+      <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )

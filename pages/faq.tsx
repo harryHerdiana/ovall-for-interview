@@ -8,6 +8,7 @@ import Newsletter from '@component/Newsletter'
 // import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
 import GradientBanner from '@component/GradientBanner'
+import SocialFeed from '@component/SocialFeed'
 
 const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   const { newsletterSection, productTeaserSection, faqSection, heroSection } = props
@@ -28,6 +29,7 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
       </GradientBanner>
       <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
       <ProductTeaser {...productTeaserSection} />
+      <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )
