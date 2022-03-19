@@ -1,5 +1,4 @@
 import Instagram from 'instagram-web-api'
-import fs from 'fs'
 
 const client = new Instagram({
   username: process.env.INSTA_USERNAME,

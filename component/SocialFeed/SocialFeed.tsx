@@ -1,18 +1,14 @@
 import React from 'react'
 
-import InstagramFeed from '@component/InstagramFeed'
-
 interface IProps {
   title: string
   subtitle: string
-  images: any[]
 }
 
-const TestimonialSection: React.FC<IProps> = ({ title, subtitle, images }) => (
+const TestimonialSection: React.FC<IProps> = ({ title, subtitle }) => (
   <div className="lg:w-4/5 mx-auto lg:text-center my-14 max-w-fullhd">
-    <div>{subtitle}</div>
-    <h2>{title}</h2>
-    <InstagramFeed images={images} />
+    <div>{title.toUpperCase()}</div>
+    <h2>{subtitle}</h2>
   </div>
 )
 
