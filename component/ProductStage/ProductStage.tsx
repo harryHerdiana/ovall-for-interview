@@ -41,11 +41,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
     variantImages
   }
 }) => {
-  // const shopContext = React.useContext(ShopContext)
-  // const handleAddToCartClick = () => {
-  //   shopContext.addVariantToCart(variant, 1)
-  //   shopContext.setShowCart(true)
-  // }
   const skuColorMap = {
     'Ovall-Blue': 'blue',
     'Ovall-Pink': 'rose',
@@ -54,7 +49,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-  console.log(variant.quantityAvailable)
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 max-w-site mx-auto mb-12">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center justify-center w-full ">
