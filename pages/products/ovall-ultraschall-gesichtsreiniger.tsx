@@ -14,6 +14,7 @@ import MoodSlideShow from '@component/MoodSlideShow'
 import { VariantProvider } from '@context/VariantContext'
 import ProductReview from '@component/ProductReview'
 import DescriptionSection from '@component/DescriptionSection'
+import SocialFeed from '@component/SocialFeed'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   const {
@@ -78,6 +79,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         className="my-40px lg:my-100px"
       />
       <FaqSection {...faqSection} buttonAction="scroll" />
+      <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
 
       <div id="testimonial" className="lg:w-4/5 mx-auto lg:text-center my-12 max-w-fullhd">

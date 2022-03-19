@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StructuredTextDocument, StructuredText } from 'react-datocms'
 
 import Button from '@component/Button'
+import { trackNewsletterSignup } from '@modules/tracking/events'
 
 type INewsletterProps = {
   placeholder: string
@@ -38,6 +39,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
       },
       body: JSON.stringify({ email: input })
     })
+    trackNewsletterSignup()
     setLoading(false)
     setInput('')
   }
@@ -64,7 +66,6 @@ const Newsletter: React.FC<INewsletterProps> = ({
       <div className="md:w-1/2 m-auto text-2xs">
         <StructuredText data={disclaimer} />
       </div>
-      <div className="klaviyo-form-UFFrGa" />
     </section>
   )
 }

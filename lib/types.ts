@@ -74,6 +74,11 @@ export interface IDefaultProps {
     footer: IFooter
     cart: ICartText
     variantImages: IProductVariantImage[]
+    socialFeedSection: {
+      subtitle
+      title
+      images
+    }
   }
   seoTags: SeoTags
   product: IShopifyProduct
@@ -269,6 +274,8 @@ export interface IProductPage {
     }[]
     variantImages: IProductVariantImage[]
     slideshowImages: IProductSlideshowImage[]
+    soldoutLabel: string
+    discountLabel: string
   }
   faqSection: {
     faqButtonText: string

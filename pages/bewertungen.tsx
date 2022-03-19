@@ -8,6 +8,7 @@ import ProductTeaser from '@component/ProductTeaser'
 import ProductReview from '@component/ProductReview'
 import GradientBanner from '@component/GradientBanner'
 import TransparencySection from '@component/TransparencySection'
+import SocialFeed from '@component/SocialFeed'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
   const { product, newsletterSection, productTeaserSection, heroSection, productFeatureSection } =
@@ -41,7 +42,12 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         imageClassName="px-4 pt-7 lg:pt-11"
       />
 
+<<<<<<< HEAD
       <ProductTeaser product={product} {...productTeaserSection} />
+=======
+      <ProductTeaser {...productTeaserSection} />
+      <SocialFeed {...props.appProps.socialFeedSection} />
+>>>>>>> main
       <Newsletter {...newsletterSection} />
     </Layout>
   )

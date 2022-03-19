@@ -88,6 +88,7 @@ export default class PageDataService {
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
     const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
+
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content

@@ -13,6 +13,12 @@ export const trackLoaded = (): void => {
   })
 }
 
+export const trackNewsletterSignup = (): void => {
+  pushToDatalayer({
+    event: 'newsletter_signup'
+  })
+}
+
 export const addPageviewAndOptimizeEvent = (): void => {
   pushToDatalayer({
     event: 'optimize.event'

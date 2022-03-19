@@ -38,14 +38,11 @@ const ProductStage: React.FC<IProductStageProps> = ({
     deliveryTime,
     freeShippingCaption,
     slideshowImages,
-    variantImages
+    variantImages,
+    soldoutLabel,
+    discountLabel
   }
 }) => {
-  // const shopContext = React.useContext(ShopContext)
-  // const handleAddToCartClick = () => {
-  //   shopContext.addVariantToCart(variant, 1)
-  //   shopContext.setShowCart(true)
-  // }
   const skuColorMap = {
     'Ovall-Blue': 'blue',
     'Ovall-Pink': 'rose',
@@ -54,7 +51,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
-
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 max-w-site mx-auto">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center justify-center w-full ">
@@ -62,7 +58,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
           {variant.quantityAvailable < 1 && (
             <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
-              Leider Ausverkauft
+              {soldoutLabel}
             </div>
           )}
         </div>
@@ -80,7 +76,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           </span>
           <div className="ml-8 md:ml-10">
             <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
-              Spare 20%
+              {discountLabel}
             </div>
             <span className="line-through font-bold  font-subtitleFont">
               {toEuro(variant.compareAtPriceV2.amount)}
@@ -94,6 +90,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           setVariantSku={setVariantSku}
           variants={product.variants}
           quantityCaption={quantityCaption}
+          soldoutLabel={soldoutLabel}
         />
 
         <div className="flex justify-between mt-4">

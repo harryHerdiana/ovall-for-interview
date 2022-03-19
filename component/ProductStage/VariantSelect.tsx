@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { IShopifyProductVariant } from '@modules/shopify/types'
 import Icon from '@component/Icon'
 import ShopContext from '@context/StoreContext'
@@ -12,6 +12,7 @@ interface IVariantSelect {
   quantityCaption: string
   colorCaption: string
   addToCartLabel: string
+  soldoutLabel: string
 }
 
 interface IActiveButton {
@@ -24,7 +25,8 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   variants,
   quantityCaption,
   colorCaption,
-  addToCartLabel
+  addToCartLabel,
+  soldoutLabel
 }) => {
   const variantContext = React.useContext(VariantContext)
   const shopContext = React.useContext(ShopContext)
@@ -72,9 +74,8 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
         <div
-          className={`${
-            variant.quantityAvailable === 0 && 'hidden'
-          } flex flex-col justify-between`}>
+          className={`${variant.quantityAvailable === 0 && 'hidden'
+            } flex flex-col justify-between`}>
           <h3 className=" items-center text-right mb-3">{quantityCaption.toUpperCase()}</h3>
           <div className="flex md:hidden">
             <select
@@ -102,7 +103,7 @@ const VariantSelect: React.FC<IVariantSelect> = ({
       <div className="mt-2">
         {variant.quantityAvailable < 1 ? (
           <AddToCartButton disabled buttonType="disabled" onClick={handleAddToCartClick}>
-            <span>LEIDER AUSVERKAUFT</span>
+            <span>{soldoutLabel.toUpperCase()}</span>
           </AddToCartButton>
         ) : (
           <AddToCartButton buttonType="primary" onClick={handleAddToCartClick}>

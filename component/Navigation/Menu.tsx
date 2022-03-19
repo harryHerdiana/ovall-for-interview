@@ -20,7 +20,7 @@ const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
         <button
           key={menuItem.id}
           onClick={onClick}
-          className="whitespace-nowrap md:first:flex-grow md:last:flex-grow md:first:text-right md:last:text-left cursor-pointer uppercase font-subtitleFont my-2">
+          className="whitespace-nowrap cursor-pointer uppercase font-subtitleFont my-2">
           <Link href={menuItem.path} prefetch={menuItem.label === 'Shop'}>
             <div>
               <span>{menuItem.label}</span>

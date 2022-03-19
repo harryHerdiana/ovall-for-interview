@@ -24,7 +24,9 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         id: item.id,
         background: item.gradientBackground,
         image: item.image.responsiveImage
-      }))
+      })),
+      soldoutLabel: d.soldoutLabel,
+      discountLabel: d.discountLabel
     },
     descriptionSection: {
       title: utils.findByApiKey(d.productDescriptionSection, 'section_headline', 'text'),

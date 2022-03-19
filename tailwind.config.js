@@ -2,6 +2,7 @@
 
 module.exports = {
   content: [
+    './component/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
     './icons/**/*.{js,jsx,ts,tsx}',
     './modules/**/*.{js,jsx,ts,tsx}',
@@ -14,21 +15,12 @@ module.exports = {
       decimal: 'decimal'
     },
     fontFamily: {
-      // sans: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
-      // hand: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
-      // body: ['ReferenzGrotesk', 'Helvetica', 'system-ui'],
-      // hydeep: ['Montserrat', 'Helvetica', 'system-ui'],
-      // main: ['ReferenzGrotesk', 'Helvetica', 'Arial', 'Verdana', 'system-ui']
       subtitleFont: ['SourceCodeProRegular', 'Courier New', 'Tahoma', 'monospace'],
       titleFont: ['SourceCodeProSemibold', 'Courier New', 'Tahoma', 'monospace'],
       tagFont: ['WorkSansMedium', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       subTagFont: ['WorkSansRegular', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       textFont: ['WorkSansLight', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       textFontBold: ['WorkSansSemiBold', 'Helvetica Neue', 'Helvetica', ' sans-serif']
-      // hand: ['Helvetica', 'system-ui'],
-      // body: ['Helvetica', 'system-ui'],
-      // hydeep: ['Helvetica', 'system-ui'],
-      // main: ['Helvetica', 'Arial', 'Verdana', 'system-ui']
     },
     fontSize: {
       xxs: '.4705rem', // 8px for mobile subtext

@@ -8,10 +8,10 @@ import Newsletter from '@component/Newsletter'
 // import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
 import GradientBanner from '@component/GradientBanner'
+import SocialFeed from '@component/SocialFeed'
 
 const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
-  const { newsletterSection, productTeaserSection, faqSection, heroSection, product } = props
-  console.log('faq.props', props)
+  const { newsletterSection, productTeaserSection, faqSection, heroSection } = props
   // const router = useRouter()
   // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (
@@ -29,7 +29,12 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
         </div>
       </GradientBanner>
       <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
+<<<<<<< HEAD
       <ProductTeaser product={product} {...productTeaserSection} />
+=======
+      <ProductTeaser {...productTeaserSection} />
+      <SocialFeed {...props.appProps.socialFeedSection} />
+>>>>>>> main
       <Newsletter {...newsletterSection} />
     </Layout>
   )

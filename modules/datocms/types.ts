@@ -109,6 +109,8 @@ export interface IDatoProductPage {
   faqButtonText: string
   faqSubtitle: string
   faqTitle: string
+  soldoutLabel: string
+  discountLabel: string
   faqItems: {
     items: IDatoAccordionItem[]
   }

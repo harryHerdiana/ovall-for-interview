@@ -12,6 +12,7 @@ import Testimonial from '@component/Testimonial'
 import MoodSlideShow from '@component/MoodSlideShow'
 import HowToUse from '@component/HowToUse'
 import { PRODUCT_PATH } from '@lib/constants'
+import SocialFeed from '@component/SocialFeed'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const router = useRouter()
@@ -54,7 +55,8 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
       />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />
-      <ProductTeaser product={product} {...productTeaserSection} />
+      <ProductTeaser {...productTeaserSection} />
+      <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
   )
