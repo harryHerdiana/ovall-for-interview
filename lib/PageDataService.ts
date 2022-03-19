@@ -1,5 +1,6 @@
 import datoCMSAPI from '@modules/datocms/api/client'
 import shopifyStoreFrontAPI from '@modules/shopify/api/storefront/client'
+import InstagramAPI from '@modules/instagram/api'
 import { GET_PRODUCT } from '@modules/shopify/api/storefront/queries'
 import parseProductResponse from '@modules/shopify/api/storefront/parser'
 import { IShopifyProduct } from '@modules/shopify/types'
@@ -88,6 +89,13 @@ export default class PageDataService {
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
     const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
+
+    let instagramImages = []
+
+    if (datoCMSModelKey === 'homepage') {
+      instagramImages = await InstagramAPI.getImages()
+    }
+
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
@@ -96,7 +104,13 @@ export default class PageDataService {
       console.warn('Page Data does not contain SeoTags')
     }
     return {
-      appProps,
+      appProps: {
+        ...appProps,
+        socialFeedSection: {
+          ...appProps.socialFeedSection,
+          images: instagramImages
+        }
+      },
       seoTags: content.seoTags,
       product,
       ...mappedContent

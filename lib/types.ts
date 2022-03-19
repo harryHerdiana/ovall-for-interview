@@ -74,6 +74,11 @@ export interface IDefaultProps {
     footer: IFooter
     cart: ICartText
     variantImages: IProductVariantImage[]
+    socialFeedSection: {
+      subtitle
+      title
+      images
+    }
   }
   seoTags: SeoTags
   product: IShopifyProduct

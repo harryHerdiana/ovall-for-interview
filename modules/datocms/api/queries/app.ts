@@ -32,6 +32,10 @@ query getFooter($locale: SiteLocale!) {
     }
     notification
   }
+  socialFeedSection(locale: $locale) {
+    subtitle
+    title
+  }
   cookieNotice(locale: $locale) {
     denyButtonText
     title

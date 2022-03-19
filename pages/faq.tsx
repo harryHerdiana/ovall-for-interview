@@ -11,7 +11,6 @@ import GradientBanner from '@component/GradientBanner'
 
 const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   const { newsletterSection, productTeaserSection, faqSection, heroSection } = props
-  console.log('faq.props', props)
   // const router = useRouter()
   // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (

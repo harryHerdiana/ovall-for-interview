@@ -65,7 +65,6 @@ const Newsletter: React.FC<INewsletterProps> = ({
       <div className="md:w-1/2 m-auto text-2xs">
         <StructuredText data={disclaimer} />
       </div>
-      <div className="klaviyo-form-UFFrGa" />
     </section>
   )
 }

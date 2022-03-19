@@ -7,6 +7,7 @@ interface IData {
   cookieNotice: any
   cart: ICartText
   product: any
+  socialFeedSection: any
 }
 export default function mapFooter(d: IData): {
   menu: ITopMenu
@@ -14,8 +15,9 @@ export default function mapFooter(d: IData): {
   cookieNotice: ICookieNotice
   cart: ICartText
   variantImages: IProductVariantImage[]
+  socialFeedSection: { title: string; subtitle }
 } {
-  const { footer, cookieNotice, topMenu, cart, product } = d
+  const { footer, cookieNotice, topMenu, cart, product, socialFeedSection } = d
   return {
     menu: {
       notification: topMenu.notification,
@@ -29,6 +31,7 @@ export default function mapFooter(d: IData): {
         }
       })
     },
+    socialFeedSection,
     variantImages: product.variantImages.map((variantImage) => ({
       id: variantImage.id,
       color: variantImage.color,

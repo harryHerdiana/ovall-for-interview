@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import fetch from 'node-fetch'
 import { URLSearchParams } from 'url'
 
+// const LIST_ID='SR7Jrm' // prod
 const LIST_ID = 'VqvzGe'
 const idUrl = 'https://a.klaviyo.com/api/identify'
 const subscribeUrl = `https://a.klaviyo.com/api/v2/list/${LIST_ID}/subscribe?api_key=${process.env.KLAVIYO_API_KEY}`
