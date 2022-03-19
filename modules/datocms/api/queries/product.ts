@@ -40,6 +40,8 @@ export const PRODUCT_PAGE_QUERY = `
       deliveryTime
       quantityCaption
       addToCartLabel
+      discountLabel
+      soldoutLabel
       faqTitle
       faqSubtitle
       faqButtonText

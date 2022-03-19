@@ -274,6 +274,8 @@ export interface IProductPage {
     }[]
     variantImages: IProductVariantImage[]
     slideshowImages: IProductSlideshowImage[]
+    soldoutLabel: string
+    discountLabel: string
   }
   faqSection: {
     faqButtonText: string

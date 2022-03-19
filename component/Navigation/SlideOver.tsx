@@ -65,13 +65,13 @@ const SlideOver: React.FC<IProps> = (props) => {
                     <div className="bg-white bottom-0 sticky w-full  ">
                       <div className="flex flex-col flex-wrap justify-center items-center">
                         <div className="flex flex-wrap w-full justify-between items-center">
-                          <div className="rounded px-4 font-titleFont text-2xl">Gesamt:</div>
+                          <div className="rounded px-4 font-titleFont text-2xl">{props.total}:</div>
                           <div className="rounded px-2 font-titleFont text-2xl">
                             {toEuro(checkout.totalPrice)}
                           </div>
                         </div>
                         <div className="text-sm self-end mb-3">
-                          <p className="md:text-right sm:pb-0 px-4">inkl. 19% MwSt.</p>
+                          <p className="md:text-right sm:pb-0 px-4">{props.taxInfo}</p>
                         </div>
 
                         <div className="w-full flex flex-col justify-center sm:justify-end px-4">
