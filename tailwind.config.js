@@ -2,6 +2,7 @@
 
 module.exports = {
   content: [
+    './component/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
     './icons/**/*.{js,jsx,ts,tsx}',
     './modules/**/*.{js,jsx,ts,tsx}',
