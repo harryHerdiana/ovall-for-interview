@@ -21,9 +21,25 @@ const Newsletter: React.FC<INewsletterProps> = ({
   buttonText
 }) => {
   const [input, setInput] = useState<string>('')
+  const [loading, setLoading] = useState(false)
   const handleChange = (e) => {
     e.preventDefault()
     setInput(e.target.value)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setLoading(true)
+
+    await fetch('/api/newsletter-signup', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ email: input })
+    })
+    setLoading(false)
+    setInput('')
   }
   return (
     <section className="mx-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-center my-10">
@@ -32,9 +48,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
       <div>
         <StructuredText data={description} />
       </div>
-      <form
-        onSubmit={() => console.log('welcome ', input)}
-        className="w-full flex flex-col md:flex-row my-5 gap-5 h-fit">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col md:flex-row my-5 gap-5 h-fit">
         <input
           onChange={handleChange}
           type="email"
@@ -42,7 +56,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
           className="w-full md:w-1/2 border border-black placeholder-black"
         />
         <div className="mb md:w-1/2 h-max">
-          <Button type="submit" buttonType="primary">
+          <Button disabled={loading} type="submit" buttonType="primary">
             {buttonText}
           </Button>
         </div>
@@ -50,6 +64,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
       <div className="md:w-1/2 m-auto text-2xs">
         <StructuredText data={disclaimer} />
       </div>
+      <div className="klaviyo-form-UFFrGa" />
     </section>
   )
 }
