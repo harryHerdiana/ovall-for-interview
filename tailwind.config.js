@@ -154,11 +154,11 @@ module.exports = {
         '300px': '300px'
       },
       maxWidth: {
-        site: '1440px',
+        site: '1300px',
         fullhd: '1920px',
         'fullhd+': '2160px',
         wqhd: '2560px',
-        'content-xl': '1440px',
+        'content-xl': '1300px',
         'content-lg': '1140px',
         'content-sm': '946px',
         img: '400px',
@@ -173,11 +173,11 @@ module.exports = {
         full: '100%'
       },
       minWidth: {
-        site: '1440px',
+        site: '1300px',
         fullhd: '1920px',
         'fullhd+': '2160px',
         wqhd: '2560px',
-        'content-xl': '1440px',
+        'content-xl': '1300px',
         'content-lg': '1140px',
         'content-sm': '946px',
         img: '400px',
