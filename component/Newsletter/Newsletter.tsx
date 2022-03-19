@@ -21,6 +21,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
   buttonText
 }) => {
   const [input, setInput] = useState<string>('')
+  const [loading, setLoading] = useState(false)
   const handleChange = (e) => {
     e.preventDefault()
     setInput(e.target.value)
@@ -28,6 +29,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setLoading(true)
 
     await fetch('/api/newsletter-signup', {
       method: 'POST',
@@ -36,6 +38,8 @@ const Newsletter: React.FC<INewsletterProps> = ({
       },
       body: JSON.stringify({ email: input })
     })
+    setLoading(false)
+    setInput('')
   }
   return (
     <section className="mx-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-center my-10">
@@ -50,9 +54,10 @@ const Newsletter: React.FC<INewsletterProps> = ({
           type="email"
           placeholder={placeholder.toUpperCase()}
           className="w-full md:w-1/2"
+          value={input}
         />
         <div className="mb md:w-1/2 h-max">
-          <Button type="submit" buttonType="primary">
+          <Button disabled={loading} type="submit" buttonType="primary">
             {buttonText}
           </Button>
         </div>
