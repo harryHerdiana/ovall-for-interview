@@ -17,6 +17,7 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
+        className="mb-40px lg:mb-40px"
         title=""
         mobileContentPlacement="bottom"
         contentPlacement="left"

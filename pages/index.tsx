@@ -38,7 +38,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         onClickButton={() => router.push(PRODUCT_PATH)}
       />
       <GradientBanner
-        className="my-100px"
+        className="my-40px lg:my-100px"
         {...infoSection}
         mobileContentPlacement="bottom"
         contentPlacement="left"
@@ -46,11 +46,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />
       <GradientBanner
-        className="my-100px"
+        className="my-40px lg:my-100px"
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
-        imageClassName="lg:pt-10 pt-7"
+        imageClassName="px-4 pt-7 lg:pt-10"
       />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />

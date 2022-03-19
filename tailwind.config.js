@@ -145,7 +145,8 @@ module.exports = {
       margin: {
         '100vw': '100vw',
         '50px': '50px',
-        '100px': '100px'
+        '100px': '100px',
+        '40px': '40px'
       },
       marginTop: {
         '100vw': '100vw',

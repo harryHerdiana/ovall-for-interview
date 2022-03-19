@@ -26,16 +26,15 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   const router = useRouter()
   return (
     <GradientBanner
-      className="my-100px"
+      className="my-40px lg:my-100px"
       mobileContentPlacement="bottom"
       contentPlacement="right"
       backgroundColor={backgroundColor}
       buttonText={buttonText}
       image={image}
       buttonType="primary"
-      onClickButton={() => router.push(PRODUCT_PATH)}
-      title="">
-      <div className=" flex flex-col ">
+      onClickButton={() => router.push(PRODUCT_PATH)}>
+      <div className=" flex flex-col">
         <h2 className="self-center lg:self-start">{title}</h2>
         <div className="mt-1 mb-8 self-center lg:self-start" style={{ minHeight: '25px' }}>
           <ProductRating />

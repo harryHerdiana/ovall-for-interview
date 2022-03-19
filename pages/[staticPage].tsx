@@ -9,16 +9,18 @@ import { STATIC_PAGE_I18N, STATIC_PAGE_PATHS } from '@lib/constants'
 
 const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) => {
   const { heroSection, content } = props
+  console.log(heroSection.backgroundColor)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
-        backgroundColor={heroSection.backgroundColor}
-        title={heroSection.title}
+        backgroundColor="violet"
+        title=""
         mobileContentPlacement="top"
-        contentPlacement="right"
-      />
+        contentPlacement="left">
+        <div className="h2_element absolute">{heroSection.title}</div>
+      </GradientBanner>
 
-      <section className="static-page-section m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-center">
+      <section className="static-page-section m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-left">
         <StructuredText data={content} />
       </section>
     </Layout>

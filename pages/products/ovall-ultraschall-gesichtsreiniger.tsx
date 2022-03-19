@@ -50,7 +50,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         {...productInfoBannerSection}
         mobileContentPlacement="bottom"
         contentPlacement="left"
-        className="my-100px"
+        className="my-40px lg:my-100px"
       />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
@@ -59,14 +59,14 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="bottom"
         contentPlacement="right"
         imageClassName="ml-20"
-        className="my-100px"
+        className="my-40px lg:my-100px"
       />
       <GradientBanner
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
         imageClassName="px-4 pt-7 lg:pt-10"
-        className="my-100px"
+        className="my-40px lg:my-100px"
       />
       <ProductInfoAccordion {...productInfoAccordionSection} buttonAction="scroll" />
       <GradientBanner
@@ -75,7 +75,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         mobileContentPlacement="bottom"
         contentPlacement="left"
         imageClassName="px-4 pt-7 lg:pt-11"
-        className="my-100px"
+        className="my-40px lg:my-100px"
       />
       <FaqSection {...faqSection} buttonAction="scroll" />
       <Newsletter {...newsletterSection} />

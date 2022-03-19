@@ -29,12 +29,12 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
 }) => (
   <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4">
     <div className="flex flex-col">
+      {children}
       <h2>{title}</h2>
       <div className="text=tiny">
         <p className="my-4">{body}</p>
       </div>
       {items && <BannerFeatures items={items} />}
-      {children}
       {buttonText && (
         <Button onClick={onClickButton} type="button" buttonType={buttonType}>
           {buttonText}
@@ -59,8 +59,8 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
     <div className="text=tiny">
       <p className="my-4">{body}</p>
     </div>
-    {items && <BannerFeatures items={items} />}
     {children}
+    {items && <BannerFeatures items={items} />}
     {buttonText && (
       <div className="lg:w-4/5">
         <Button onClick={onClickButton} type="button" buttonType={buttonType}>

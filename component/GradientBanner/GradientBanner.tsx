@@ -69,48 +69,49 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   )
 
   return (
-    <GradientRectangle
-      contentPlacement={contentPlacement}
-      variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto ">
-      <div
-        className={`${className} flex lg:h-max flex-col lg:flex-row max-w-site min-h-400px m-auto`}>
-        {mobileContentPlacement === 'top' && (
-          <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
+    <div className={`${className}`}>
+      <GradientRectangle
+        contentPlacement={contentPlacement}
+        variantGradient={backgroundColor}
+        className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto ">
+        <div className="flex lg:h-max flex-col lg:flex-row max-w-site min-h-400px m-auto">
+          {mobileContentPlacement === 'top' && (
+            <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>
+              <MobileGradientAll />
+            </div>
+          )}
+          <div
+            className={` ${
+              contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
+            } w-full flex-col items-end justify-center`}>
+            <DesktopGradientAll />
+          </div>
+          <GradientSquare
+            variantGradient={backgroundColor}
+            className="lg:hidden h-full w-full max-h-full">
+            <ResponsiveImage
+              image={image}
+              className={`${imageClassName} w-full h-full flex justify-start md:justify-center`}
+            />
+          </GradientSquare>
+          <ResponsiveImage
+            image={image}
+            className={`${imageClassName} w-full h-full justify-center hidden lg:flex`}
+          />
+          <div
+            className={` ${
+              contentPlacement === 'right' ? ' hidden lg:flex items-end mr-8' : 'hidden'
+            } w-full flex-col items-start justify-center`}>
+            <DesktopGradientAll />
+          </div>
+        </div>
+        {mobileContentPlacement === 'bottom' && (
+          <div className={`${mobileContentSolidColor && backgroundColor}_mobile_bottom`}>
             <MobileGradientAll />
           </div>
         )}
-        <div
-          className={` ${
-            contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-          } w-full flex-col items-end justify-center`}>
-          <DesktopGradientAll />
-        </div>
-        <GradientSquare
-          variantGradient={backgroundColor}
-          className="lg:hidden h-full w-full max-h-full">
-          <ResponsiveImage
-            image={image}
-            className={`${imageClassName} w-full h-full flex justify-start md:justify-center`}
-          />
-        </GradientSquare>
-        <ResponsiveImage
-          image={image}
-          className={`${imageClassName} w-full h-full justify-center hidden lg:flex`}
-        />
-        <div
-          className={` ${
-            contentPlacement === 'right' ? ' hidden lg:flex items-end mr-8' : 'hidden'
-          } w-full flex-col items-start justify-center`}>
-          <DesktopGradientAll />
-        </div>
-      </div>
-      {mobileContentPlacement === 'bottom' && (
-        <div className={`${mobileContentSolidColor && backgroundColor}_mobile_bottom`}>
-          <MobileGradientAll />
-        </div>
-      )}
-    </GradientRectangle>
+      </GradientRectangle>
+    </div>
   )
 }
 export default GradientBanner
