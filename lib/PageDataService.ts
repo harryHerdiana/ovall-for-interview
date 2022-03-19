@@ -1,6 +1,5 @@
 import datoCMSAPI from '@modules/datocms/api/client'
 import shopifyStoreFrontAPI from '@modules/shopify/api/storefront/client'
-import InstagramAPI from '@modules/instagram/api'
 import { GET_PRODUCT } from '@modules/shopify/api/storefront/queries'
 import parseProductResponse from '@modules/shopify/api/storefront/parser'
 import { IShopifyProduct } from '@modules/shopify/types'
