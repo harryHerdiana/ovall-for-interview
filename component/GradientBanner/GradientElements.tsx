@@ -62,7 +62,7 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
     {items && <BannerFeatures items={items} />}
     {children}
     {buttonText && (
-      <div className="lg:w-4/5 xl:w-3/5">
+      <div className="lg:w-4/5">
         <Button onClick={onClickButton} type="button" buttonType={buttonType}>
           {buttonText}
         </Button>

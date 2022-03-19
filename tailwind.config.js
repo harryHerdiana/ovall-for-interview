@@ -208,6 +208,7 @@ module.exports = {
         'img-sm': '300px',
         'img-slider-desktop': '600px'
       },
+
       zIndex: {
         0: 0,
         10: 10

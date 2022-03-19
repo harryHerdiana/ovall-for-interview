@@ -26,6 +26,7 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   const router = useRouter()
   return (
     <GradientBanner
+      className="my-100px"
       mobileContentPlacement="bottom"
       contentPlacement="right"
       backgroundColor={backgroundColor}

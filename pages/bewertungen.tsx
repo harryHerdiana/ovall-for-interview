@@ -15,6 +15,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
+        className="mb-100px"
         title=""
         mobileContentPlacement="bottom"
         contentPlacement="left"
@@ -36,6 +37,8 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         items={productFeatureSection.items}
         mobileContentPlacement="bottom"
         contentPlacement="left"
+        className="my-100px"
+        imageClassName="px-4 pt-7 lg:pt-11"
       />
 
       <ProductTeaser product={product} {...productTeaserSection} />

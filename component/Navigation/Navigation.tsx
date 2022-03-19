@@ -10,10 +10,9 @@ import TopNotification from './TopNotification'
 interface INavigation {
   menu: IMenu
   notification: string
-  className?: string
 }
 
-const Navigation: React.FC<INavigation> = ({ className, menu, notification }) => {
+const Navigation: React.FC<INavigation> = ({ menu, notification }) => {
   const shopContext = React.useContext(ShopContext)
   const isCartHasItems: boolean = shopContext.checkout.lineItems.length > 0
   const toggleMenu = () => {
@@ -28,9 +27,9 @@ const Navigation: React.FC<INavigation> = ({ className, menu, notification }) =>
 
   return (
     <>
-      <nav className={`${className} mx-auto w-full `}>
+      <nav className="mx-auto w-full">
         <TopNotification notification={notification} />
-        <div className="section-content-width flex md:px-14 flex-wrap items-center justify-between h-14 bg-white md:h-20 ">
+        <div className="section-content-width flex md:px-14 flex-wrap items-center justify-between h-18 bg-white md:h-20 ">
           <button className="burger order-first mr-1 md:hidden" type="button" onClick={toggleMenu}>
             <span />
           </button>
