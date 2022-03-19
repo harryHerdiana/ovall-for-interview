@@ -36,7 +36,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
         <StructuredText data={content} />
       </div>
       <HtmlAccordion items={accordionSection.items} />
-      <ProductTeaser {...productTeaserSection} />
+      <ProductTeaser product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

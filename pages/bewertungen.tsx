@@ -42,12 +42,8 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         imageClassName="px-4 pt-7 lg:pt-11"
       />
 
-<<<<<<< HEAD
       <ProductTeaser product={product} {...productTeaserSection} />
-=======
-      <ProductTeaser {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
->>>>>>> main
       <Newsletter {...newsletterSection} />
     </Layout>
   )

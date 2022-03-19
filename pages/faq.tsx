@@ -29,12 +29,8 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
         </div>
       </GradientBanner>
       <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
-<<<<<<< HEAD
       <ProductTeaser product={product} {...productTeaserSection} />
-=======
-      <ProductTeaser {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
->>>>>>> main
       <Newsletter {...newsletterSection} />
     </Layout>
   )

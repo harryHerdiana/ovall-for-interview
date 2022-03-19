@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const TestimonialSection: React.FC<IProps> = ({ title, subtitle }) => (
-  <div className="lg:w-4/5 mx-auto lg:text-center my-14 max-w-fullhd">
+  <div className="lg:w-4/5 mx-auto lg:text-center my-14 max-w-fullhd px-4 w-">
     <div>{title.toUpperCase()}</div>
     <h2 className="mb-5">{subtitle}</h2>
 
