@@ -37,7 +37,13 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         mobileContentSolidColor
         onClickButton={() => router.push(PRODUCT_PATH)}
       />
-      <GradientBanner {...infoSection} mobileContentPlacement="bottom" contentPlacement="left" />
+      <GradientBanner
+        {...infoSection}
+        buttonType="secondary"
+        mobileContentPlacement="bottom"
+        contentPlacement="left"
+        onClickButton={() => router.push(PRODUCT_PATH)}
+      />
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />
       <GradientBanner

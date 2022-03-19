@@ -48,6 +48,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
         ))}
         <div className="w-full md:w-1/2 m-auto  px-4 md:px-0">
           <Button
+            className="accordion-action-button"
             onClick={buttonAction === 'link' ? linkToProductPage : scrollToTop}
             buttonType="primary"
             type="button">

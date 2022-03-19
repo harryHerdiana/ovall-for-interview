@@ -153,6 +153,7 @@ export interface IProductInfoTechnologySection {
   image: DatoCMSResponsiveImage
   title: string
   body: string
+  buttonText: string
 }
 
 export interface IProductTeaserSection {

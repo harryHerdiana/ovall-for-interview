@@ -39,7 +39,8 @@ export const parseProductInfoBannerTech = (section: any) => ({
     findByApiKey(section.content, 'section_with_gradient_background', 'image')?.responsiveImage ||
     null,
   title: findByApiKey(section.content, 'section_with_gradient_background', 'title'),
-  body: findByApiKey(section.content, 'section_text', 'text')
+  body: findByApiKey(section.content, 'section_text', 'text'),
+  buttonText: findByApiKey(section.content, 'section_call_to_action', 'text')
 })
 
 export const parseProductTeaser = (section: any) => ({
