@@ -63,7 +63,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       /> */}
       <GradientBanner
         {...skinTypeInfoSection}
-        mobileContentPlacement="top"
+        mobileContentPlacement="bottom"
         contentPlacement="right"
         imageClassName="px-4 pt-0 lg:pt-0"
       />

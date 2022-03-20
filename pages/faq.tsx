@@ -24,7 +24,7 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
         backgroundColor={heroSection.backgroundColor}>
         <div className="flex flex-col gap-2">
           <div className="h3_element">{heroSection.kicker}</div>
-          <h2>{heroSection.title}</h2>
+          <h2 className="mt-0">{heroSection.title}</h2>
         </div>
       </GradientBanner>
       <div className="-mt-10">
