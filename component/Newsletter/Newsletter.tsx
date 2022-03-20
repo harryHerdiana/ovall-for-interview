@@ -58,7 +58,11 @@ const Newsletter: React.FC<INewsletterProps> = ({
           className="w-full md:w-1/2 border border-black placeholder-black"
         />
         <div className="mb md:w-1/2 h-max">
-          <Button disabled={loading} type="submit" buttonType="primary">
+          <Button
+            className="submit-newsletter"
+            disabled={loading}
+            type="submit"
+            buttonType="primary">
             {buttonText}
           </Button>
         </div>

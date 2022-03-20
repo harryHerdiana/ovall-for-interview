@@ -36,11 +36,14 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
       </div>
       {items && <BannerFeatures items={items} />}
       {buttonText && (
-        <Button onClick={onClickButton} type="button" buttonType={buttonType}>
+        <Button
+          onClick={onClickButton}
+          type="button"
+          buttonType={buttonType}
+          className="button-product-details">
           {buttonText}
         </Button>
       )}
-      {/* <StructuredText data={dropDownText} /> */}
     </div>
   </div>
 )
@@ -63,7 +66,11 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
     {items && <BannerFeatures items={items} />}
     {buttonText && (
       <div className="lg:w-4/5">
-        <Button onClick={onClickButton} type="button" buttonType={buttonType}>
+        <Button
+          onClick={onClickButton}
+          type="button"
+          buttonType={buttonType}
+          className="button-product-details">
           {buttonText}
         </Button>
       </div>

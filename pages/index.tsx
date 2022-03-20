@@ -1,12 +1,12 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IHomePage } from '@lib/types'
 import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
-import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
 import Testimonial from '@component/Testimonial'
 import MoodSlideShow from '@component/MoodSlideShow'
@@ -39,10 +39,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
         onClickButton={() => router.push(PRODUCT_PATH)}
       />
       <GradientBanner
-        className="my-40px lg:my-100px"
         {...infoSection}
+        buttonType="secondary"
         mobileContentPlacement="bottom"
         contentPlacement="left"
+        onClickButton={() => router.push(PRODUCT_PATH)}
       />
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />

@@ -15,6 +15,7 @@ type IMoonSlideShowProps = {
 }
 
 interface IMoodSliderItem {
+  id: number
   image: DatoCMSResponsiveImage
   title: string
   text: string
@@ -38,8 +39,10 @@ const PrevArrow: React.FC<any> = (props) => {
   )
 }
 
-const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text }) => (
-  <div className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center max-w-fullhd">
+const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text, id }) => (
+  <div
+    className="mx-auto w-4/5 md:w-4/5 lg:w-full flex flex-wrap justify-center max-w-fullhd"
+    id={`mood-slider-item-${id}`}>
     <div className="lg:px-24 ">
       <ResponsiveImage image={image} usePlaceholder={false} />
     </div>
@@ -64,8 +67,14 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
         <h2 className="mt-2 mb-4">{kicker}</h2>
       </div>
       <Slider settings={setting} className="w-full items-center">
-        {items.map((item) => (
-          <MoodSliderItem key={item.id} image={item.image} title={item.title} text={item.text} />
+        {items.map((item, index) => (
+          <MoodSliderItem
+            key={item.id}
+            id={index}
+            image={item.image}
+            title={item.title}
+            text={item.text}
+          />
         ))}
       </Slider>
     </div>

@@ -49,7 +49,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                       </Dialog.Title>
                       <div className="h-7 flex flex-shrink-0 items-center">
                         <button
-                          className="bg-white rounded-md focus:outline-none"
+                          className="close-cart bg-white rounded-md focus:outline-none"
                           onClick={() => setShowCart(false)}
                           type="button">
                           <span className="sr-only">Warenkorb schließen</span>

@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 
 interface IButton {
   disabled?: boolean
@@ -6,6 +7,7 @@ interface IButton {
   ariaLabel?: string
   buttonType: 'primary' | 'secondary' | 'disabled'
   type: 'submit' | 'button' | 'reset'
+  className?: string
 }
 
 const Button: React.FC<IButton> = ({
@@ -14,7 +16,8 @@ const Button: React.FC<IButton> = ({
   onClick,
   ariaLabel,
   buttonType,
-  type
+  type,
+  className
 }) => {
   const arrowSmall = (
     <svg
@@ -37,7 +40,11 @@ const Button: React.FC<IButton> = ({
 
   return (
     <button
-      className={` flex gap-3 ${buttonProperty[buttonType]} w-full text-tiny h-11 min-h-11  md:text-tiny fullhd:text-tiny uppercase tracking-wider items-center`}
+      className={classnames(
+        className,
+        `flex gap-3 ${buttonProperty[buttonType]} w-full text-tiny h-11 min-h-11  md:text-tiny fullhd:text-tiny uppercase tracking-wider items-center`,
+        {}
+      )}
       disabled={disabled}
       onClick={onClick}
       type={type}
