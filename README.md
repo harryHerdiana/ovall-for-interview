@@ -66,6 +66,7 @@ To ease the development flow we've established a couple of commands in `package.
 - `lint` – Runs ESLint and prints possible issues.
 - `prettier` – Runs prettier and writes changes directly to the files.
 
+
 ### Code Conventions & Styles
 
 We utilize prettier and ESLint with the well known [AirBnb Style Guide](https://github.com/airbnb/javascript). Please configure your editor in a way that it uses prettier on save and ESLint. This will greatly benefit the developer experience as issues are shown right away.
