@@ -35,6 +35,23 @@ export const RATINGS_QUERY = `
           }
         }
       }
+      transparencySection {
+        ... on SectionTextRecord {
+          id
+          text
+          _modelApiKey
+        }
+        ... on SectionSubheadlineRecord {
+          id
+          text
+          _modelApiKey
+        }
+        ... on SectionHeadlineRecord {
+          id
+          text
+          _modelApiKey
+        }
+      }
       productFeatureSection {
         ...ProductInfoBannerFragment
       }

@@ -223,6 +223,11 @@ export interface IRatingsPage {
       text: StructuredTextDocument
     }[]
   }
+  transparencySection: {
+    kicker: string
+    title: string
+    text: string
+  }
   productTeaserSection: IProductTeaserSection
   newsletterSection: INewsletterSection
 }

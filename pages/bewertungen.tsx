@@ -11,7 +11,13 @@ import TransparencySection from '@component/TransparencySection'
 import SocialFeed from '@component/SocialFeed'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
-  const { newsletterSection, productTeaserSection, heroSection, productFeatureSection } = props
+  const {
+    newsletterSection,
+    productTeaserSection,
+    heroSection,
+    productFeatureSection,
+    transparencySection
+  } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
@@ -27,9 +33,9 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
       </GradientBanner>
       <ProductReview />
       <TransparencySection
-        title="Woher kommen unsere Bewertungen?"
-        subtitle="transparenz"
-        body="Lorem  Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        title={transparencySection.title}
+        subtitle={transparencySection.kicker}
+        body={transparencySection.text}
       />
       <GradientBanner
         {...productFeatureSection}

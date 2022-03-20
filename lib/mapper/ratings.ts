@@ -12,6 +12,11 @@ export default function mapRatingsData(d: any): IRatingsPage {
       ...utils.parseInfoBannerSection(d.productFeatureSection.content),
       items: utils.findByApiKey(d.productFeatureSection.content, 'icon_list', 'items')
     },
+    transparencySection: {
+      kicker: utils.findByApiKey(d.transparencySection, 'section_headline', 'text'),
+      title: utils.findByApiKey(d.transparencySection, 'section_subheadline', 'text'),
+      text: utils.findByApiKey(d.transparencySection, 'section_text', 'text')
+    },
     newsletterSection: {
       ...d.newsletterSection,
       disclaimer: d.newsletterSection.disclaimer.value,
