@@ -67,12 +67,11 @@ const Layout: React.FC<ILayout> = ({
 }) => {
   const [showCookieBanner, setShowCookieBanner] = React.useState(false)
 
-  const onCookieConfirmed = () => {
+  const onCookieConfirmed = async () => {
     trackCookieConsentGiven()
+    setShowCookieBanner(false)
 
-    fetch('/api/cookie', {}).then(() => {
-      setShowCookieBanner(false)
-    })
+    await fetch('/api/cookie')
   }
 
   const onCookieDeclined = () => {
