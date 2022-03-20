@@ -9,7 +9,6 @@ import { STATIC_PAGE_I18N, STATIC_PAGE_PATHS } from '@lib/constants'
 
 const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) => {
   const { heroSection, content } = props
-  console.log(heroSection.backgroundColor)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner

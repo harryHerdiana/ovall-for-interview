@@ -22,7 +22,6 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   image,
   product
 }) => {
-  console.log(product)
   const router = useRouter()
   return (
     <GradientBanner
