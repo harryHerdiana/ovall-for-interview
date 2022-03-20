@@ -56,7 +56,7 @@ export default class PageDataService {
       const response = await this.shopifyClient.query({
         data: {
           query: GET_PRODUCT,
-          variables: { handle: 'ovall™-2' }
+          variables: { handle: 'ovall-ultraschall-gesichtsreiniger' }
         }
       })
 
