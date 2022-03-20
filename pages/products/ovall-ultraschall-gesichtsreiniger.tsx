@@ -93,7 +93,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const data = await pageDataService.product()
 
   return {
-    props: data
+    props: data,
+    revalidate: 600
   }
 }
 
