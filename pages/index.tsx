@@ -13,6 +13,8 @@ import MoodSlideShow from '@component/MoodSlideShow'
 import HowToUse from '@component/HowToUse'
 import { PRODUCT_PATH } from '@lib/constants'
 import SocialFeed from '@component/SocialFeed'
+import InfoBannerSection from '@component/InfoBannerSection'
+import HeroSection from '@component/HeroSection'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const router = useRouter()
@@ -30,17 +32,17 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <GradientBanner
+      <HeroSection
         {...heroSection}
         mobileContentPlacement="bottom"
         contentPlacement="right"
         buttonType="primary"
         mobileContentSolidColor
+        imageClassName="lg:justify-end"
         onClickButton={() => router.push(PRODUCT_PATH)}
       />
-      <GradientBanner
+      <InfoBannerSection
         {...infoSection}
-        buttonType="secondary"
         mobileContentPlacement="bottom"
         contentPlacement="left"
         onClickButton={() => router.push(PRODUCT_PATH)}
@@ -48,7 +50,6 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />
       <GradientBanner
-        className="my-40px lg:my-100px"
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"

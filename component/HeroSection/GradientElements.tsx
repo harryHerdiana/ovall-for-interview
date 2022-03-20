@@ -1,7 +1,7 @@
 import React from 'react'
 import { StructuredTextDocument } from 'react-datocms'
 import Button from '@component/Button'
-import BannerFeatures from './BannerFeatures'
+import BannerFeatures from '@component/GradientBanner/BannerFeatures'
 
 type IGradientElementProps = {
   title?: string
@@ -32,7 +32,7 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
       {children}
       <h2 className="">{title}</h2>
       <div className="text=tiny">
-        <p className="my-4">{body}</p>
+        <div className="my-4 h3_element_normalcase">{body}</div>
       </div>
       {items && <BannerFeatures items={items} />}
       {buttonText && (
@@ -59,9 +59,9 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
 }) => (
   <div className="flex flex-col pl-5 xl:p-0 w-full">
     <h2 className="mb-2">{title}</h2>
+    {children}
     <div className="text=tiny -mt-2">
-      <p className="my-4">{body}</p>
-      {children}
+      <div className="my-4 h3_element_normalcase">{body}</div>
     </div>
     {items && <BannerFeatures items={items} />}
     {buttonText && (

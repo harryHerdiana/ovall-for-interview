@@ -25,10 +25,11 @@ const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
               className="text-black no-underline no-hover hover:text-black"
               href={menuItem.path}
               onClick={onClick}>
-              <span>{menuItem.label}</span>
+              <span className="h3_element">{menuItem.label}</span>
               <hr
-                className={`border border-white ${isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
-                  }`}
+                className={`border border-white ${
+                  isItemActive(pathname, menuItem) ? 'border-greenLink' : ''
+                }`}
               />
             </a>
           </Link>

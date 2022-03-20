@@ -1,11 +1,11 @@
 import React from 'react'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import GradientBanner from '@component/GradientBanner'
 import { toEuro } from '@lib/utils'
 import { ProductRating } from '@component/ProductReview'
 import { useRouter } from 'next/router'
 import { PRODUCT_PATH } from '@lib/constants'
 import { IShopifyProduct } from '@modules/shopify/types'
+import GradientBanner from './GradientBanner'
 
 type IProductTeaserProps = {
   backgroundColor: string
@@ -26,7 +26,6 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   const router = useRouter()
   return (
     <GradientBanner
-      className="my-40px lg:my-100px"
       mobileContentPlacement="bottom"
       contentPlacement="right"
       backgroundColor={backgroundColor}
@@ -34,9 +33,9 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
       image={image}
       buttonType="primary"
       onClickButton={() => router.push(PRODUCT_PATH)}>
-      <div className=" flex flex-col">
-        <h2 className="self-center lg:self-start">{title}</h2>
-        <div className="mt-1 mb-8 self-center lg:self-start" style={{ minHeight: '25px' }}>
+      <div className=" block">
+        <div className="self-center lg:self-start font-titleFont text-2xl">{title}</div>
+        <div className=" mb-8 self-center lg:self-start" style={{ minHeight: '25px' }}>
           <ProductRating />
         </div>
         <span className="self-center lg:self-start font-subtitleFont font-semibold text-2xl">

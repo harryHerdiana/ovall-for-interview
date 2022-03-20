@@ -87,9 +87,12 @@ module.exports = {
         '90vh': '90vh',
         '95vh': '95vh',
         '600px': '600px',
+        '505px': '505px',
         '500px': '500px',
+        '460px': '460px',
         '440px': '440px',
         '400px': '400px',
+        '370px': '370px',
         '360px': '360px',
         '300px': '300px',
         '245px': '245px',
@@ -97,6 +100,7 @@ module.exports = {
         '190px': '190px',
         '150px': '150px',
         '120px': '120px',
+        '100px': '100px',
         '90px': '90px',
         0: '0',
         18: '4.5rem'
@@ -112,6 +116,7 @@ module.exports = {
       width: {
         fit: 'fit-content',
         '800px': '800px',
+        '700px': '700px',
         '600px': '600px',
         '500px': '500px',
         '440px': '440px',
@@ -136,8 +141,9 @@ module.exports = {
       },
       margin: {
         '100vw': '100vw',
-        '50px': '50px',
+        '120px': '120px',
         '100px': '100px',
+        '50px': '50px',
         '40px': '40px'
       },
       marginTop: {

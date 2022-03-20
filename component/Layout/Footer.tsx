@@ -5,7 +5,7 @@ import Icon from '@component/Icon'
 
 const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) => (
   <div className="blue_gradient_rectangle">
-    <div className="px-4 md:px-14 pt-12 pb-40 w-full  max-w-site  mx-auto">
+    <div className="px-4 md:px-8 pt-12 pb-40 w-full  max-w-site  mx-auto">
       <div className="mb-14">
         <Icon src="/images/ovall-logo.png" className="h-8 mx-auto md:mx-0" />
       </div>
@@ -79,7 +79,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
           ))}
         </div>
         <div>
-          <div className=" lg:grid-cols-2 lg:gap-4 gap-2 grid grid-cols-6 place-items-center h-full lg:min-w-max lg:mr-32">
+          <div className=" lg:grid-cols-2 lg:gap-4 gap-2 grid grid-cols-6 place-items-center h-full lg:min-w-max">
             <div className="col-start-3 row-start-2 lg:hidden">
               <Icon src="/images/pay-apple-ohne-rahmen.svg" className="h-full w-14" />
             </div>

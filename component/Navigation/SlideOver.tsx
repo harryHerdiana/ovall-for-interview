@@ -45,7 +45,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                   <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
                       <Dialog.Title>
-                        <h2> {props.cartName}</h2>
+                        <div className="h2_element"> {props.cartName}</div>
                       </Dialog.Title>
                       <div className="h-7 flex flex-shrink-0 items-center">
                         <button

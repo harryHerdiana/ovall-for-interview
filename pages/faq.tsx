@@ -17,7 +17,6 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
-        className="mb-40px lg:mb-40px"
         title=""
         mobileContentPlacement="bottom"
         contentPlacement="left"
@@ -28,7 +27,9 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
           <h2>{heroSection.title}</h2>
         </div>
       </GradientBanner>
-      <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
+      <div className="-mt-10">
+        <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
+      </div>
       <ProductTeaser product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />

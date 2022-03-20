@@ -85,36 +85,38 @@
     font-size: 1.0588rem;
     @apply font-subtitleFont font-normal uppercase;
   }
+  .h3_element_normalcase {
+    line-height: 1.154;
+    font-size: 1.0588rem;
+    @apply font-subtitleFont font-normal;
+  }
   .h2_element {
     line-height: 1.154;
     font-size: 1.529411rem;
     letter-spacing: -0.015em;
     @apply font-subtitleFont font-semibold;
   }
-  .static-page-section > h1,h2{
+  .static-page-section > h1,
+  h2 {
     line-height: 1.154;
     font-size: 1.529411rem;
     letter-spacing: -0.015em;
     @apply font-subtitleFont font-semibold;
     margin-top: 30px;
-    margin-bottom:30px;
-   
-}
-.static-page-section > p{
-  margin:5px 0 5px 0;
-  line-height: 1.353;
-  font-size: 1em;
-  @apply font-textFont font-light;
- 
-}
-.static-page-section > p>strong{
- @apply font-bold;
- 
-}
-.static-page-section > h4{
-  line-height: 1.353;
-  font-size: 1rem;
-  @apply font-subTagFont font-medium;
- 
-}
+    margin-bottom: 30px;
+  }
+  .static-page-section > p {
+    margin: 5px 0 5px 0;
+    line-height: 1.353;
+    font-size: 1em;
+    @apply font-textFont font-light;
+  }
+  .static-page-section > p > strong {
+    @apply font-bold;
+  }
+  .static-page-section > h4 {
+    line-height: 1.353;
+    font-size: 1rem;
+    @apply font-subTagFont font-medium;
+  }
 }

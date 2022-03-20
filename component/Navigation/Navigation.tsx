@@ -29,7 +29,7 @@ const Navigation: React.FC<INavigation> = ({ menu, notification }) => {
     <>
       <nav className="mx-auto w-full">
         <TopNotification notification={notification} />
-        <div className="section-content-width flex md:px-14 flex-wrap items-center justify-between h-18 bg-white md:h-20 ">
+        <div className="section-content-width flex md:px-8 flex-wrap items-center justify-between h-18 bg-white md:h-100px ">
           <button className="burger order-first mr-1 md:hidden" type="button" onClick={toggleMenu}>
             <span />
           </button>
@@ -49,7 +49,7 @@ const Navigation: React.FC<INavigation> = ({ menu, notification }) => {
               shopContext.setShowCart(true)
             }}
             type="button">
-            <Icon src="/images/cart.svg" className="h-8 w-8" />
+            <Icon src="/images/cart.svg" className="h-8 w-8 mt-3" />
 
             {isCartHasItems && (
               <div className="absolute top-1 right-0 block h-4 w-4 rounded-full bg-greenLink mb-0.5 mr-0.5 border-2 border-white">

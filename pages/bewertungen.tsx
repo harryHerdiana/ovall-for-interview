@@ -16,7 +16,6 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
-        className="mb-40px lg:mb-100px"
         title=""
         mobileContentPlacement="bottom"
         contentPlacement="left"
@@ -24,7 +23,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         backgroundColor={heroSection.backgroundColor}>
         <div className="flex flex-col gap-2">
           <div className="h3_element">{heroSection.title}</div>
-          <h2>{heroSection.kicker}</h2>
+          <h2 className="mt-0">{heroSection.kicker}</h2>
         </div>
       </GradientBanner>
       <ProductReview />
@@ -38,7 +37,6 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         items={productFeatureSection.items}
         mobileContentPlacement="bottom"
         contentPlacement="left"
-        className="my-40px lg:my-100px"
         imageClassName="px-4 pt-7 lg:pt-11"
       />
 

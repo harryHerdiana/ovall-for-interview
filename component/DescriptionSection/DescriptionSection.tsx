@@ -14,7 +14,7 @@ const DescriptionSection: React.FC<IDescriptionSectionProps> = ({ title, text })
       {title}
     </div>
     <p className="mb-4">{text}</p>
-    <div className="h-190px lg:h-400px w-full">
+    <div className="h-190px lg:h-370px lg:w-700px">
       <iframe
         title={title}
         className="w-full h-full"
