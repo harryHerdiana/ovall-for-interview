@@ -74,8 +74,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <span className=" self-end font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>
-          <div className="ml-8 md:ml-10">
-            <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont">
+          <div className="ml-8 md:ml-10 mb-px lg:mb-0">
+            <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont -mb-1.5 lg:mb-0">
               {discountLabel}
             </div>
             <span className="line-through font-bold  font-subtitleFont">

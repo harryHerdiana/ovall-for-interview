@@ -33,7 +33,7 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
       image={image}
       buttonType="primary"
       onClickButton={() => router.push(PRODUCT_PATH)}>
-      <div className=" block">
+      <div className="text-center lg:text-left block">
         <div className="self-center lg:self-start font-titleFont text-2xl">{title}</div>
         <div className=" mb-8 self-center lg:self-start" style={{ minHeight: '25px' }}>
           <ProductRating />

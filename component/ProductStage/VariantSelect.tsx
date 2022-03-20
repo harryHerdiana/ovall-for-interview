@@ -57,8 +57,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
             {variants.map((vari, index) => (
               <button
                 key={vari.id}
-                className={`${activebutton.buttonActivated === index && 'ring-1 ring-offset-2 ring-black'
-                  } md:w-4 md:h-4 w-5 h-5 rounded-full bg-${vari.sku}-500`}
+                className={`${
+                  activebutton.buttonActivated === index && 'ring-1 ring-offset-2 ring-black'
+                } md:w-4 md:h-4 w-5 h-5 rounded-full bg-${vari.sku}-500`}
                 type="button"
                 value={vari.sku}
                 onClick={() => {
@@ -74,8 +75,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
           </div>
         </div>
         <div
-          className={`${variant.quantityAvailable === 0 && 'hidden'
-            } flex flex-col justify-between`}>
+          className={`${
+            variant.quantityAvailable === 0 && 'hidden'
+          } flex flex-col justify-between`}>
           <h3 className=" items-center text-right mb-3">{quantityCaption.toUpperCase()}</h3>
           <div className="flex md:hidden">
             <select

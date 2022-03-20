@@ -23,8 +23,8 @@ const Header: React.FC<IHeader> = ({ menu, cart, variantImages }) => {
   }, [isScrollDown])
   return (
     <header
-      className={`transition transform ease-in-out delay-150 z-50 sticky top-0 bg-white mb-4 lg:mb-0 h-12 xl:h-full ${
-        isScrollDown && 'sm:-translate-y-9 -translate-y-7'
+      className={`transition transform ease-in-out delay-150 z-50 sticky top-0 bg-white mb-2 lg:mb-0 h-12 xl:h-full ${
+        isScrollDown && 'sm:-translate-y-10 -translate-y-7'
       } `}>
       <Navigation menu={menu.items} notification={menu.notification} />
       <SlideOver {...cart} variantImages={variantImages} />

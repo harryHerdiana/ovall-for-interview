@@ -55,11 +55,11 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
-      <GradientBanner
+
+      <InfoBannerSection
         {...skinTypeInfoSection}
         mobileContentPlacement="bottom"
         contentPlacement="right"
-        imageClassName="ml-20"
       />
       <GradientBanner
         {...productInfoBannerTechnology}

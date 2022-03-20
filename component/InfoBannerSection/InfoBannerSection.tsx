@@ -4,7 +4,7 @@ import GradientRectangle from '@component/GradientRectangle'
 import ResponsiveImage from '@component/ResponsiveImage'
 import GradientSquare from '@component/GradientSquare'
 import { IGradientBannerProps } from '@component/GradientBanner/GradientBanner'
-import { DesktopGradient, MobileGradient } from '@component/GradientBanner/GradientElements'
+import { DesktopGradient, MobileGradient } from './GradientElements'
 
 const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBannerProps) => {
   const {
@@ -52,7 +52,7 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
         <div
           className={` ${
             contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-          } w-full flex-col items-end justify-center my-12`}>
+          } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
           <DesktopGradientAll />
         </div>
         <GradientSquare
@@ -65,11 +65,11 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
         </GradientSquare>
         <ResponsiveImage
           image={image}
-          className={`${imageClassName} w-full h-max justify-center items-end hidden lg:flex`}
+          className={`${imageClassName} w-full justify-center items-end hidden lg:flex`}
         />
       </div>
       {mobileContentPlacement === 'bottom' && (
-        <div className={`${mobileContentSolidColor && backgroundColor}_mobile_bottom`}>
+        <div className={`${mobileContentSolidColor && backgroundColor}_mobile_bottom -mt-0`}>
           <MobileGradientAll />
         </div>
       )}

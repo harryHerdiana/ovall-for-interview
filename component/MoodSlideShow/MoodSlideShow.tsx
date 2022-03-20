@@ -61,7 +61,7 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
     prevArrow: <PrevArrow />
   }
   return (
-    <div className="lg:w-4/5 mx-auto lg:text-center max-w-fullhd my-100px">
+    <div className="lg:w-4/5 mx-auto lg:text-center max-w-fullhd mt-40px mb-100px lg:my-100px">
       <div className="px-4">
         <span className="font-subtitleFont text-base uppercase">{title}</span>
         <h2 className="mt-2 mb-4">{kicker}</h2>
