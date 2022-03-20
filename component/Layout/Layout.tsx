@@ -79,14 +79,15 @@ const Layout: React.FC<ILayout> = ({
     setShowCookieBanner(false)
   }
 
+  const router = useRouter()
+
   React.useEffect(() => {
     const cookies = getCookies()
 
     if (COOKIE_PREFIX in cookies === false) {
       setShowCookieBanner(true)
     }
-  })
-  const router = useRouter()
+  }, [router.isReady])
 
   const canonicalURL = `https://ovallskincare.de${useRouter().asPath}`
 
