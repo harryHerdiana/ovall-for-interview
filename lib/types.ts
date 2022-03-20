@@ -177,6 +177,7 @@ export interface IStaticPage {
     backgroundColor: string
     title: string
     text: string
+    image: DatoCMSResponsiveImage
   }
   content: StructuredText
 }

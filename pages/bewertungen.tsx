@@ -29,7 +29,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         backgroundColor={heroSection.backgroundColor}>
         <div className="flex flex-col gap-2">
           <div className="h3_element">{heroSection.title}</div>
-          <h2>{heroSection.kicker}</h2>
+          <h2 className="mt-2">{heroSection.kicker}</h2>
         </div>
       </GradientBanner>
       <ProductReview />

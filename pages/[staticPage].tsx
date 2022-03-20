@@ -14,6 +14,7 @@ const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) 
       <GradientBanner
         backgroundColor="violet"
         title=""
+        image={heroSection.image}
         mobileContentPlacement="top"
         contentPlacement="left">
         <div className="h2_element absolute">{heroSection.title}</div>

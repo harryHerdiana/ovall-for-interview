@@ -47,12 +47,11 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
     <GradientRectangle
       contentPlacement="left"
       variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto ">
+      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto">
       <div className="flex lg:h-max flex-col lg:flex-row max-w-site m-auto">
         <div
-          className={` ${
-            contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-          } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
+          className={` ${contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
+            } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
           <DesktopGradientAll />
         </div>
         <GradientSquare
