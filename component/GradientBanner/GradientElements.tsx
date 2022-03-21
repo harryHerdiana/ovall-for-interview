@@ -30,10 +30,8 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
   <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4">
     <div className="flex flex-col">
       {children}
-      <h2 className="my-0">{title}</h2>
-      <div className="text=tiny mt-2">
-        <p className="my-4">{body}</p>
-      </div>
+      {title && <h2 className="my-0">{title}</h2>}
+      {body && <p className="mt-4">{body}</p>}
       {items && <BannerFeatures items={items} />}
       {buttonText && (
         <Button
@@ -58,11 +56,13 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
   children
 }) => (
   <div className="flex flex-col pl-5 xl:p-0 w-full">
-    <h2 className="mb-2">{title}</h2>
-    <div className="text=tiny -mt-2">
-      <p className="my-4">{body}</p>
-      {children}
-    </div>
+    {title && <h2 className="mb-0">{title}</h2>}
+    {body && (
+      <div className="text=tiny -mt-2">
+        <p className="my-4">{body}</p>
+      </div>
+    )}
+    {children}
     {items && <BannerFeatures items={items} />}
     {buttonText && (
       <div className="lg:w-4/5">

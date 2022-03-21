@@ -12,7 +12,7 @@ type IProps = {
 }
 
 const BannerFeatures: React.FC<IProps> = ({ items }) => (
-  <div>
+  <div className="mt-4">
     {items.map((item) => (
       <div key={item.id} className="flex">
         <Icon src={`/images/${item.icon}.svg`} className="h-12 w-12" />

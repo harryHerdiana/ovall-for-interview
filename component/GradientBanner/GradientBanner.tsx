@@ -78,8 +78,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
           </div>
         )}
         <div
-          className={` ${contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-            } w-full flex-col items-end justify-center`}>
+          className={` ${
+            contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
+          } w-full flex-col items-end justify-center`}>
           <DesktopGradientAll />
         </div>
         <GradientSquare
@@ -95,8 +96,9 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
           className={`${imageClassName} w-full h-full justify-center hidden lg:flex`}
         />
         <div
-          className={` ${contentPlacement === 'right' ? ' hidden lg:flex items-end mr-8' : 'hidden'
-            } w-full flex-col items-baseline justify-center`}>
+          className={` ${
+            contentPlacement === 'right' ? ' hidden lg:flex items-end mr-8' : 'hidden'
+          } w-full flex-col items-baseline justify-center`}>
           <DesktopGradientAll />
         </div>
       </div>

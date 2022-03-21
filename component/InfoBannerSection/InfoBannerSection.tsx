@@ -4,7 +4,7 @@ import GradientRectangle from '@component/GradientRectangle'
 import ResponsiveImage from '@component/ResponsiveImage'
 import GradientSquare from '@component/GradientSquare'
 import { IGradientBannerProps } from '@component/GradientBanner/GradientBanner'
-import { DesktopGradient, MobileGradient } from './GradientElements'
+import { DesktopGradient, MobileGradient } from '@component/GradientBanner/GradientElements'
 
 const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBannerProps) => {
   const {
@@ -50,8 +50,9 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
       className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto">
       <div className="flex lg:h-max flex-col lg:flex-row max-w-site m-auto">
         <div
-          className={` ${contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-            } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
+          className={` ${
+            contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
+          } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
           <DesktopGradientAll />
         </div>
         <GradientSquare
