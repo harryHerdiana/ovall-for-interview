@@ -79,7 +79,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         items={productInfoBannerFeatures.items}
         mobileContentPlacement="bottom"
         contentPlacement="left"
-        imageClassName="px-4 pt-7 lg:pt-11"
+        imageClassName="px-4 pt-7 lg:pt-11 mr-16"
       />
       <FaqSection {...faqSection} buttonAction="scroll" />
       <SocialFeed {...props.appProps.socialFeedSection} />

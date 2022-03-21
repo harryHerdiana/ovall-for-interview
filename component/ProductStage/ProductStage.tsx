@@ -53,7 +53,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
   }
   return (
     <section className="grid grid-cols-1 lg:gap-4 lg:grid-cols-2 max-w-site mx-auto mb-0">
-      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-center justify-center w-full ">
+      <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
         <div className="relative h-full w-full lg:px-8">
           <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
           {variant.quantityAvailable < 1 && (
@@ -74,8 +74,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <span className=" self-end font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>
-          <div className="ml-8 md:ml-10 mb-0.5 lg:mb-0">
-            <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont -mb-1.5 lg:mb-0">
+          <div className="ml-8 md:ml-10 -mb-0.5 ">
+            <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont -mb-1.5 lg:-mb-1">
               {discountLabel}
             </div>
             <span className="line-through font-bold  font-subtitleFont">
