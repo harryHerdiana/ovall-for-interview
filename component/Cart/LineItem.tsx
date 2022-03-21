@@ -112,7 +112,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
               </div>
             </div>
           </div>
-          <div className="font-textFont text-tiny md:text-base text-right pr-4">
+          <div className="font-textFont text-tiny md:text-base text-right">
             {toEuro(parseFloat(lineItem.variant.priceV2.amount))}
           </div>
         </div>

@@ -6,7 +6,7 @@ import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
-import { toEuro } from '@lib/utils'
+import { toEuro, toEuroNS } from '@lib/utils'
 import { ICartText, IProductVariantImage } from '@lib/types'
 import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginCheckoutEvent'
 
@@ -44,9 +44,8 @@ const SlideOver: React.FC<IProps> = (props) => {
                 <div className="h-full flex flex-col bg-white overflow-y-scroll">
                   <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
-                      <Dialog.Title className="my-2 -ml-2 ">
+                      <Dialog.Title className="my-2 lg:-ml-2 ">
                         <div className="font-subtitleFont text-2xl font-normal">
-                          {' '}
                           {props.cartName}
                         </div>
                       </Dialog.Title>
@@ -70,7 +69,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                         <div className="flex flex-wrap w-full justify-between items-center px-4">
                           <div className="font-subtitleFont text-2xl">{props.total}:</div>
                           <div className="font-subtitleFont text-2xl">
-                            {toEuro(checkout.totalPrice)}
+                            {toEuroNS(checkout.totalPrice)}
                           </div>
                         </div>
                         <div className="text-sm self-end mb-3">
