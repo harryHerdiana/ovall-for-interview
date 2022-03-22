@@ -13,7 +13,7 @@ type IGradientElementProps = {
     text: StructuredTextDocument
   }[]
   buttonText?: string
-  buttonType?: 'primary' | 'secondary'
+  buttonType?: 'primary' | 'secondary' | 'hidden'
   onClickButton?: () => void
   children?: React.ReactElement
   className?: string
