@@ -32,7 +32,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
+      <HomeHeroSection
+        contentPlacement="right"
+        {...heroSection}
+        onClickButton={() => router.push(PRODUCT_PATH)}
+      />
       <InfoBannerSection
         {...infoSection}
         mobileContentPlacement="bottom"
