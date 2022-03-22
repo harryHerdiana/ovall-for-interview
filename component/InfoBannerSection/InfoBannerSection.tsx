@@ -77,7 +77,7 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
           <DesktopGradientAll />
         </div>
       </div>
-      <div className="mb-60px">
+      <div className="mb-60px lg:mb-0">
         <MobileGradientAll />
       </div>
     </GradientRectangle>

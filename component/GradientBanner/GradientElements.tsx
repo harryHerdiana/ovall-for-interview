@@ -71,7 +71,7 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
     }>
     {title && <h2 className="mb-0">{title}</h2>}
     {body && (
-      <div className="text=tiny -mt-2">
+      <div className="-mt-2 lg:mt-2">
         <p className="my-4">{body}</p>
       </div>
     )}

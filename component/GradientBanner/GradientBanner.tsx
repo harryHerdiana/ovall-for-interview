@@ -18,7 +18,7 @@ export type IGradientBannerProps = {
     text: StructuredTextDocument
   }[]
   buttonText?: string
-  buttonType?: 'primary' | 'secondary'
+  buttonType?: 'primary' | 'secondary' | 'hidden'
   dropDownText?: StructuredTextDocument
   mobileContentPlacement?: 'top' | 'bottom'
   mobileContentSolidColor?: boolean

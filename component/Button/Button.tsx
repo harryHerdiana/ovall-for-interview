@@ -5,7 +5,7 @@ interface IButton {
   disabled?: boolean
   onClick?: () => void
   ariaLabel?: string
-  buttonType: 'primary' | 'secondary' | 'disabled'
+  buttonType: 'primary' | 'secondary' | 'disabled' | 'hidden'
   type: 'submit' | 'button' | 'reset'
   className?: string
 }
@@ -35,7 +35,8 @@ const Button: React.FC<IButton> = ({
       ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-subtitleFont justify-center ',
     secondary:
       ' hover:text-greenLink hover:border-black bg-transparent text-black  font-subtitleFont text-tiny justify-start',
-    disabled: 'bg-gray_soldout font-subtitleFont justify-center cursor-not-allowed'
+    disabled: 'bg-gray_soldout font-subtitleFont justify-center cursor-not-allowed',
+    hidden: 'hidden'
   }
 
   return (

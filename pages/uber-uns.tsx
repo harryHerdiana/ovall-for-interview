@@ -22,10 +22,13 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection}>
-        <div className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto text-left ">
+        <div className="m-auto lg:hidden flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto text-left ">
           <StructuredText data={content} />
         </div>
       </HeroSection>
+      <div className="m-auto hidden lg:flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto px-4 md:px-8 md:text-left lg:py-12 ">
+        <StructuredText data={content} />
+      </div>
       <HtmlAccordion items={accordionSection.items} />
       <ProductTeaser className="mb-80px mt-80px" product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />

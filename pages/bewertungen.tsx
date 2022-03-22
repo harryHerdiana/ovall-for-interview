@@ -34,10 +34,15 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         items={productFeatureSection.items}
         mobileContentPlacement="bottom"
         contentPlacement="left"
-        className="mb-50px"
+        className="mb-50px lg:mb-0"
+        imageClassName="lg:mr-20"
       />
 
-      <ProductTeaser className="mb-80px mt-80px" product={product} {...productTeaserSection} />
+      <ProductTeaser
+        className="mb-80px mt-80px lg:mt-0 lg:mb-100px"
+        product={product}
+        {...productTeaserSection}
+      />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

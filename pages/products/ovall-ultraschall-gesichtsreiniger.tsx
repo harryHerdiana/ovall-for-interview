@@ -53,7 +53,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       <HowToUse {...howToUseSection} />
       <InfoBannerSection {...skinTypeInfoSection} contentPlacement="right" />
       <GradientBanner
-        className="-mt-8"
+        className="-mt-8 lg:mt-0"
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
@@ -61,6 +61,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
       />
       <ProductInfoAccordion {...productInfoAccordionSection} buttonAction="scroll" />
       <GradientBanner
+        className="lg:mt-20"
         {...productInfoBannerFeatures}
         items={productInfoBannerFeatures.items}
         mobileContentPlacement="bottom"
