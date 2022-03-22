@@ -145,8 +145,10 @@ module.exports = {
         '120px': '120px',
         '100px': '100px',
         '80px': '80px',
+        '60px': '60px',
         '50px': '50px',
-        '40px': '40px'
+        '40px': '40px',
+        '3px': '3px'
       },
       marginTop: {
         '100vw': '100vw',

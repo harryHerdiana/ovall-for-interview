@@ -14,7 +14,7 @@ import HowToUse from '@component/HowToUse'
 import { PRODUCT_PATH } from '@lib/constants'
 import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
-import HeroSection from '@component/HeroSection'
+import HomeHeroSection from '@component/HomeHeroSection'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const router = useRouter()
@@ -32,15 +32,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <HeroSection
-        {...heroSection}
-        mobileContentPlacement="bottom"
-        contentPlacement="right"
-        buttonType="primary"
-        mobileContentSolidColor
-        imageClassName="lg:justify-end"
-        onClickButton={() => router.push(PRODUCT_PATH)}
-      />
+      <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
       <InfoBannerSection
         {...infoSection}
         mobileContentPlacement="bottom"

@@ -6,7 +6,7 @@ import GradientSquare from '@component/GradientSquare'
 import { IGradientBannerProps } from '@component/GradientBanner/GradientBanner'
 import { DesktopGradient, MobileGradient } from '@component/GradientBanner/GradientElements'
 
-const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBannerProps) => {
+const HomeHeroSection: React.FC<IGradientBannerProps> = (props: IGradientBannerProps) => {
   const {
     backgroundColor,
     image,
@@ -21,11 +21,12 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
   } = props
   const MobileGradientAll = () => (
     <MobileGradient
+      className="-mt-20 lg:mt-0"
       title={title}
       body={body}
       items={items}
       buttonText={buttonText}
-      buttonType="secondary"
+      buttonType="primary"
       onClickButton={onClickButton}>
       {children}
     </MobileGradient>
@@ -36,7 +37,7 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
       body={body}
       items={items}
       buttonText={buttonText}
-      buttonType="secondary"
+      buttonType="primary"
       onClickButton={onClickButton}>
       {children}
     </DesktopGradient>
@@ -45,14 +46,8 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto">
+      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto ">
       <div className="flex lg:h-max flex-col lg:flex-row max-w-site m-auto">
-        <div
-          className={` ${
-            contentPlacement === 'left' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-          } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
-          <DesktopGradientAll />
-        </div>
         <GradientSquare
           variantGradient={backgroundColor}
           className="lg:hidden h-full w-full max-h-full">
@@ -63,20 +58,18 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
         </GradientSquare>
         <ResponsiveImage
           image={image}
-          className={`${imageClassName} w-full justify-center items-end hidden lg:flex`}
+          className="lg:justify-end w-full h-full justify-center hidden lg:flex"
         />
-        <div
-          className={` ${
-            contentPlacement === 'right' ? ' hidden lg:flex items-baseline ml-8' : 'hidden'
-          } w-full flex-col items-end justify-center lg:my-4 xl:my-12`}>
+        <div className="hidden lg:flex items-end mr-8 w-full flex-col items-baseline justify-center">
           <DesktopGradientAll />
         </div>
       </div>
-      <div className="mb-60px">
+
+      <div className={`${backgroundColor}_mobile_bottom`}>
         <MobileGradientAll />
       </div>
     </GradientRectangle>
   )
 }
 
-export default InfoBannerSection
+export default HomeHeroSection

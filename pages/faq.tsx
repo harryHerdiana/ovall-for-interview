@@ -7,8 +7,8 @@ import FaqSection from '@component/FaqSection'
 import Newsletter from '@component/Newsletter'
 // import { useRouter } from 'next/router'
 import ProductTeaser from '@component/ProductTeaser'
-import GradientBanner from '@component/GradientBanner'
 import SocialFeed from '@component/SocialFeed'
+import HeroSection from '@component/HeroSection'
 
 const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   const { newsletterSection, productTeaserSection, faqSection, heroSection, product } = props
@@ -16,18 +16,8 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <GradientBanner
-        title=""
-        mobileContentPlacement="bottom"
-        contentPlacement="left"
-        image={heroSection.image}
-        backgroundColor={heroSection.backgroundColor}>
-        <div className="flex flex-col gap-2">
-          <div className="h3_element">{heroSection.kicker}</div>
-          <h2 className="mt-0">{heroSection.title}</h2>
-        </div>
-      </GradientBanner>
-      <div className="-mt-10">
+      <HeroSection {...heroSection} title={heroSection.kicker} kicker={heroSection.title} />
+      <div className="-mt-24">
         <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
       </div>
       <ProductTeaser product={product} {...productTeaserSection} />

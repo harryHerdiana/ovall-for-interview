@@ -5,7 +5,7 @@ import { ProductRating } from '@component/ProductReview'
 import { useRouter } from 'next/router'
 import { PRODUCT_PATH } from '@lib/constants'
 import { IShopifyProduct } from '@modules/shopify/types'
-import GradientBanner from './GradientBanner'
+import GradientBanner from '@component/GradientBanner'
 
 type IProductTeaserProps = {
   backgroundColor: string
@@ -25,6 +25,7 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   const router = useRouter()
   return (
     <GradientBanner
+      className="mb-80px mt-80px"
       mobileContentPlacement="bottom"
       contentPlacement="right"
       backgroundColor={backgroundColor}

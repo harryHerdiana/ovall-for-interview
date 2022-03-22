@@ -9,6 +9,7 @@ import ProductReview from '@component/ProductReview'
 import GradientBanner from '@component/GradientBanner'
 import TransparencySection from '@component/TransparencySection'
 import SocialFeed from '@component/SocialFeed'
+import HeroSection from '@component/HeroSection'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
   const {
@@ -21,17 +22,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <GradientBanner
-        title=""
-        mobileContentPlacement="bottom"
-        contentPlacement="left"
-        image={heroSection.image}
-        backgroundColor={heroSection.backgroundColor}>
-        <div className="flex flex-col gap-2">
-          <div className="h3_element">{heroSection.title}</div>
-          <h2 className="mt-0">{heroSection.kicker}</h2>
-        </div>
-      </GradientBanner>
+      <HeroSection {...heroSection} />
       <ProductReview />
       <TransparencySection
         title={transparencySection.title}
@@ -43,6 +34,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         items={productFeatureSection.items}
         mobileContentPlacement="bottom"
         contentPlacement="left"
+        className="mb-50px"
       />
 
       <ProductTeaser product={product} {...productTeaserSection} />

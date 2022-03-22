@@ -20,12 +20,13 @@ export type IGradientBannerProps = {
   buttonText?: string
   buttonType?: 'primary' | 'secondary'
   dropDownText?: StructuredTextDocument
-  mobileContentPlacement: 'top' | 'bottom'
+  mobileContentPlacement?: 'top' | 'bottom'
   mobileContentSolidColor?: boolean
-  contentPlacement: 'left' | 'right'
+  contentPlacement?: 'left' | 'right'
   onClickButton?: () => void
   children?: React.ReactElement
   imageClassName?: string
+  className?: string
 }
 
 const GradientBanner: React.FC<IGradientBannerProps> = ({
@@ -41,7 +42,8 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
   onClickButton,
   children,
   mobileContentSolidColor,
-  imageClassName
+  imageClassName,
+  className
 }) => {
   const MobileGradientAll = () => (
     <MobileGradient
@@ -70,7 +72,11 @@ const GradientBanner: React.FC<IGradientBannerProps> = ({
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto">
+      className={
+        className
+          ? `${className} block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto`
+          : 'block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto'
+      }>
       <div className="flex lg:h-max flex-col lg:flex-row max-w-site m-auto">
         {mobileContentPlacement === 'top' && (
           <div className={`${mobileContentSolidColor && backgroundColor}_mobile_top`}>

@@ -26,7 +26,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
   }
   return (
     <>
-      <div className="max-w-800px">
+      <div className="max-w-800px mt-3">
         {items.map((item, index) => (
           <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (

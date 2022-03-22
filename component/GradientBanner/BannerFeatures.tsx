@@ -17,7 +17,7 @@ const BannerFeatures: React.FC<IProps> = ({ items }) => (
       <div key={item.id} className="flex">
         <Icon src={`/images/${item.icon}.svg`} className="h-12 w-12" />
         <div className="ml-4 mb-7">
-          <h3 className="mb-3">{item.title}</h3>
+          <h3 className="mb-2.5">{item.title}</h3>
           <StructuredText data={item.text} />
         </div>
       </div>
