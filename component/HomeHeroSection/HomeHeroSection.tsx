@@ -4,7 +4,7 @@ import GradientRectangle from '@component/GradientRectangle'
 import ResponsiveImage from '@component/ResponsiveImage'
 import GradientSquare from '@component/GradientSquare'
 import { IGradientBannerProps } from '@component/GradientBanner/GradientBanner'
-import { DesktopGradient, MobileGradient } from '@component/GradientBanner/GradientElements'
+import { DesktopGradient, MobileGradient } from './GradientElements'
 
 const HomeHeroSection: React.FC<IGradientBannerProps> = (props: IGradientBannerProps) => {
   const {
@@ -21,7 +21,6 @@ const HomeHeroSection: React.FC<IGradientBannerProps> = (props: IGradientBannerP
   } = props
   const MobileGradientAll = () => (
     <MobileGradient
-      className="-mt-20 lg:mt-0"
       title={title}
       body={body}
       items={items}

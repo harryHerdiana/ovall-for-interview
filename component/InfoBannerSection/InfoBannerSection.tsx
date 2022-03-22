@@ -17,7 +17,8 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
     items,
     onClickButton,
     children,
-    imageClassName
+    imageClassName,
+    className
   } = props
   const MobileGradientAll = () => (
     <MobileGradient
@@ -45,7 +46,11 @@ const InfoBannerSection: React.FC<IGradientBannerProps> = (props: IGradientBanne
     <GradientRectangle
       contentPlacement={contentPlacement}
       variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto">
+      className={
+        className
+          ? `${className} block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto`
+          : 'block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto'
+      }>
       <div className="flex lg:h-max flex-col lg:flex-row max-w-site m-auto">
         <div
           className={` ${

@@ -20,7 +20,7 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
       <div className="-mt-24">
         <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
       </div>
-      <ProductTeaser product={product} {...productTeaserSection} />
+      <ProductTeaser className="-mt-4 mb-80px" product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

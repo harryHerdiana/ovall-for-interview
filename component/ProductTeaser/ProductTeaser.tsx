@@ -13,6 +13,7 @@ type IProductTeaserProps = {
   buttonText: string
   title: string
   product: IShopifyProduct
+  className?: string
 }
 
 const ProductTeaser: React.FC<IProductTeaserProps> = ({
@@ -20,12 +21,13 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   buttonText,
   title,
   image,
-  product
+  product,
+  className
 }) => {
   const router = useRouter()
   return (
     <GradientBanner
-      className="mb-80px mt-80px"
+      className={className ? `${className}` : ''}
       mobileContentPlacement="bottom"
       contentPlacement="right"
       backgroundColor={backgroundColor}

@@ -48,11 +48,12 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         />
       </VariantProvider>
       <DescriptionSection {...descriptionSection} />
-      <InfoBannerSection {...productInfoBannerSection} contentPlacement="left" />
+      <InfoBannerSection className="mb-20" {...productInfoBannerSection} contentPlacement="left" />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
       <InfoBannerSection {...skinTypeInfoSection} contentPlacement="right" />
       <GradientBanner
+        className="-mt-8"
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"

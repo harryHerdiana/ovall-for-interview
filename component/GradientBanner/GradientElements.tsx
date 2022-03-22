@@ -35,10 +35,10 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
         ? `${className} lg:hidden flex-col items-start h-max justify-center w-full p-4`
         : 'lg:hidden flex-col items-start h-max justify-center w-full p-4'
     }>
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-4">
       {children}
-      {title && <h2 className="mb-3 mt-0">{title}</h2>}
-      {body && <p className="mt-4">{body}</p>}
+      {title && <h2 className="mb-2 mt-1">{title}</h2>}
+      {body && <p className="mt-4 mb-4">{body}</p>}
       {items && <BannerFeatures items={items} />}
       {buttonText && (
         <Button

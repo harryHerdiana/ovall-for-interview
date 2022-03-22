@@ -37,7 +37,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         className="mb-50px"
       />
 
-      <ProductTeaser product={product} {...productTeaserSection} />
+      <ProductTeaser className="mb-80px mt-80px" product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

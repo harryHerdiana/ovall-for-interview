@@ -27,7 +27,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
         </div>
       </HeroSection>
       <HtmlAccordion items={accordionSection.items} />
-      <ProductTeaser product={product} {...productTeaserSection} />
+      <ProductTeaser className="mb-80px mt-80px" product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>

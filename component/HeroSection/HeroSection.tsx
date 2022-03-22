@@ -25,7 +25,7 @@ const HeroSection: React.FC<IHeroSectionProps> = ({
     contentPlacement="left"
     image={image}
     backgroundColor={backgroundColor}>
-    <div className="flex flex-col gap-2 mt-5">
+    <div className="flex flex-col gap-2 -mb-1 -mt-0">
       {title && <div className="h3_element">{title}</div>}
       <h2 className="my-0">{kicker || body}</h2>
       {children}

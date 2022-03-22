@@ -53,7 +53,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
       />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />
-      <ProductTeaser product={product} {...productTeaserSection} />
+      <ProductTeaser className="mb-80px mt-80px" product={product} {...productTeaserSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
     </Layout>
