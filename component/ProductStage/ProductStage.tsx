@@ -78,7 +78,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
             <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont -mb-1.5 lg:-mb-1.5">
               {discountLabel}
             </div>
-            <span className="line-through font-bold  font-subtitleFont">
+            <span className="line-through font-bold text-sm font-subtitleFont">
               {toEuro(variant.compareAtPriceV2.amount)}
             </span>
           </div>

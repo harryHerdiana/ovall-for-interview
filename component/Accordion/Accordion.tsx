@@ -26,14 +26,14 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
   }
   return (
     <>
-      <div className="max-w-800px mt-3 mx-auto">
+      <div className="max-w-800px">
         {items.map((item, index) => (
           <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (
               <>
                 {index !== 0 && <hr className="border-grayLine" />}
                 <Disclosure.Button className="flex justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left rounded-lg  ">
-                  <h3 className="w-full md:w-3/4 mb-2">{item.text}</h3>
+                  <h3 className="w-full md:w-3/4 mb-1">{item.text}</h3>
                   <Icon
                     src="/images/arrow-big.svg"
                     className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
