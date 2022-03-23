@@ -19,15 +19,19 @@ type IGradientElementProps = {
 }
 
 export const MobileGradient: React.FC<IGradientElementProps> = ({
+  title,
+  body,
   buttonText,
   items,
   buttonType,
   onClickButton,
   children
 }) => (
-  <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4">
-    <div className="flex flex-col">
+  <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4 -mt-16 lg:mt-0">
+    <div className="flex flex-col mb-4 lg:mb-0">
       {children}
+      <h2 className="mb-0 mt-0">{title}</h2>
+      <div className="my-4 h3_element_normalcase">{body}</div>
       {items && <BannerFeatures items={items} />}
       {buttonText && (
         <Button
@@ -43,16 +47,23 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
 )
 
 export const DesktopGradient: React.FC<IGradientElementProps> = ({
+  title,
+  body,
   buttonText,
+  items,
   buttonType,
   onClickButton,
   children
 }) => (
   <div className="flex flex-col pl-5 xl:p-0 w-full">
-    <div className="text=tiny">{children}</div>
-
+    <h2 className="mb-2">{title}</h2>
+    {children}
+    <div className="text=tiny -mt-2">
+      <div className="my-4 h3_element_normalcase">{body}</div>
+    </div>
+    {items && <BannerFeatures items={items} />}
     {buttonText && (
-      <div className="lg:w-3/5">
+      <div className="lg:w-4/5">
         <Button
           onClick={onClickButton}
           type="button"

@@ -12,14 +12,13 @@ const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) 
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <GradientBanner
+        mobileContentSolidColor
         backgroundColor="violet"
-        title=""
+        title={heroSection.title}
         image={heroSection.image}
         mobileContentPlacement="top"
-        contentPlacement="left">
-        <div className="h2_element absolute">{heroSection.title}</div>
-      </GradientBanner>
-
+        contentPlacement="left"
+      />
       <section className="static-page-section m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-left">
         <StructuredText data={content} />
       </section>

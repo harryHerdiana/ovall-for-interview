@@ -6,7 +6,7 @@ import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
-import { toEuro } from '@lib/utils'
+import { toEuro, toEuroNS } from '@lib/utils'
 import { ICartText, IProductVariantImage } from '@lib/types'
 import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginCheckoutEvent'
 
@@ -44,8 +44,10 @@ const SlideOver: React.FC<IProps> = (props) => {
                 <div className="h-full flex flex-col bg-white overflow-y-scroll">
                   <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
-                      <Dialog.Title>
-                        <div className="h2_element"> {props.cartName}</div>
+                      <Dialog.Title className="my-2 lg:-ml-2 ">
+                        <div className="font-subtitleFont text-2xl font-normal">
+                          {props.cartName}
+                        </div>
                       </Dialog.Title>
                       <div className="h-7 flex flex-shrink-0 items-center">
                         <button
@@ -59,15 +61,15 @@ const SlideOver: React.FC<IProps> = (props) => {
                     </div>
                   </div>
 
-                  <div className="md:mt-6 relative">
+                  <div className="md:mt-0 relative">
                     <Cart {...props} />
 
                     <div className="bg-white bottom-0 sticky w-full  ">
                       <div className="flex flex-col flex-wrap justify-center items-center">
-                        <div className="flex flex-wrap w-full justify-between items-center">
-                          <div className="rounded px-4 font-titleFont text-2xl">{props.total}:</div>
-                          <div className="rounded px-2 font-titleFont text-2xl">
-                            {toEuro(checkout.totalPrice)}
+                        <div className="flex flex-wrap w-full justify-between items-center px-4">
+                          <div className="font-subtitleFont text-2xl">{props.total}:</div>
+                          <div className="font-subtitleFont text-2xl">
+                            {toEuroNS(checkout.totalPrice)}
                           </div>
                         </div>
                         <div className="text-sm self-end mb-3">

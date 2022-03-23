@@ -51,8 +51,9 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       )}
 
       <div
-        className={`mt-2 transition duration-300 transition-opacity ${loading ? 'opacity-30' : ''
-          } `}>
+        className={`mt-2 transition duration-300 transition-opacity ${
+          loading ? 'opacity-30' : ''
+        } `}>
         <div className="grid gap-2 grid-cols-4 text-black px-4">
           <div className="flex items-start">
             {lineItem.variant.image && (
@@ -88,7 +89,8 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
                             <Listbox.Option
                               key={v}
                               className={({ active }) =>
-                                `cursor-default select-none relative py-2 pl-10 pr-4 ${active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
+                                `cursor-default select-none relative py-2 pl-10 pr-4 ${
+                                  active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
                                 }`
                               }
                               value={v}>
@@ -105,12 +107,12 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
                   onClick={handleRemove}
                   type="button">
                   <span className="sr-only">Artikel entfernen</span>
-                  <DeleteIcon className="h-6 w-6" />
+                  <DeleteIcon className="h-7 w-7" />
                 </button>
               </div>
             </div>
           </div>
-          <div className="font-textFont text-tiny md:text-base text-right pr-4">
+          <div className="font-textFont text-tiny md:text-base text-right">
             {toEuro(parseFloat(lineItem.variant.priceV2.amount))}
           </div>
         </div>

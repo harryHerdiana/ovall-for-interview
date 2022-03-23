@@ -24,6 +24,10 @@ export const toEuro = (amount: number | string): string =>
   currency(amount, { symbol: '€', separator: '.', decimal: '.', pattern: '# !' }).format({
     decimal: ','
   })
+export const toEuroNS = (amount: number | string): string =>
+  currency(amount, { symbol: '€', separator: '.', decimal: '.', pattern: '#!' }).format({
+    decimal: ','
+  })
 
 export const appUrl = (): string => {
   switch (process.env.NEXT_PUBLIC_VERCEL_ENV) {

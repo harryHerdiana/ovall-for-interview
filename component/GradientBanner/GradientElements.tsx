@@ -13,9 +13,10 @@ type IGradientElementProps = {
     text: StructuredTextDocument
   }[]
   buttonText?: string
-  buttonType?: 'primary' | 'secondary'
+  buttonType?: 'primary' | 'secondary' | 'hidden'
   onClickButton?: () => void
   children?: React.ReactElement
+  className?: string
 }
 
 export const MobileGradient: React.FC<IGradientElementProps> = ({
@@ -25,15 +26,19 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
   items,
   buttonType,
   onClickButton,
-  children
+  children,
+  className
 }) => (
-  <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4">
-    <div className="flex flex-col">
+  <div
+    className={
+      className
+        ? `${className} lg:hidden flex-col items-start h-max justify-center w-full p-4`
+        : 'lg:hidden flex-col items-start h-max justify-center w-full p-4'
+    }>
+    <div className="flex flex-col mt-4">
       {children}
-      <h2 className="my-0">{title}</h2>
-      <div className="text=tiny mt-2">
-        <p className="my-4">{body}</p>
-      </div>
+      {title && <h2 className="mb-2 mt-1">{title}</h2>}
+      {body && <p className="mt-4 mb-4">{body}</p>}
       {items && <BannerFeatures items={items} />}
       {buttonText && (
         <Button
@@ -55,14 +60,22 @@ export const DesktopGradient: React.FC<IGradientElementProps> = ({
   items,
   buttonType,
   onClickButton,
-  children
+  children,
+  className
 }) => (
-  <div className="flex flex-col pl-5 xl:p-0 w-full">
-    <h2 className="mb-2">{title}</h2>
-    <div className="text=tiny -mt-2">
-      <p className="my-4">{body}</p>
-      {children}
-    </div>
+  <div
+    className={
+      className
+        ? `${className} flex flex-col pl-5 xl:p-0 w-full`
+        : 'flex flex-col pl-5 xl:p-0 w-full'
+    }>
+    {title && <h2 className="mb-0">{title}</h2>}
+    {body && (
+      <div className="-mt-2 lg:mt-2">
+        <p className="my-4">{body}</p>
+      </div>
+    )}
+    {children}
     {items && <BannerFeatures items={items} />}
     {buttonText && (
       <div className="lg:w-4/5">

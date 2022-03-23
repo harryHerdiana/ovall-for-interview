@@ -9,7 +9,7 @@ type IProductInfoAccordionProps = {
 }
 
 const ProductInfoAccordion: React.FC<IProductInfoAccordionProps> = (props) => (
-  <section className="m-auto flex flex-col max-w-800px md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center mt-0 mb-40px lg:mb-100px">
+  <section className="m-auto flex flex-col max-w-800px md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center mt-0 mb-100px lg:-mt-5 lg:mb-60px">
     <Accordion {...props} />
   </section>
 )

@@ -5,7 +5,8 @@ import { ProductRating } from '@component/ProductReview'
 import { useRouter } from 'next/router'
 import { PRODUCT_PATH } from '@lib/constants'
 import { IShopifyProduct } from '@modules/shopify/types'
-import GradientBanner from './GradientBanner'
+import GradientBanner from '@component/GradientBanner'
+import Button from '@component/Button'
 
 type IProductTeaserProps = {
   backgroundColor: string
@@ -13,6 +14,7 @@ type IProductTeaserProps = {
   buttonText: string
   title: string
   product: IShopifyProduct
+  className?: string
 }
 
 const ProductTeaser: React.FC<IProductTeaserProps> = ({
@@ -20,17 +22,19 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
   buttonText,
   title,
   image,
-  product
+  product,
+  className
 }) => {
   const router = useRouter()
   return (
     <GradientBanner
+      className={className ? `${className}` : ''}
       mobileContentPlacement="bottom"
       contentPlacement="right"
       backgroundColor={backgroundColor}
       buttonText={buttonText}
       image={image}
-      buttonType="primary"
+      buttonType="hidden"
       onClickButton={() => router.push(PRODUCT_PATH)}>
       <div className="text-center lg:text-left block">
         <div className="self-center lg:self-start font-titleFont text-2xl">{title}</div>
@@ -54,6 +58,15 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
               aria-hidden="true"
             />
           </ul>
+        </div>
+        <div className="lg:w-3/5">
+          <Button
+            onClick={() => router.push(PRODUCT_PATH)}
+            type="button"
+            buttonType="primary"
+            className="button-product-details">
+            {buttonText}
+          </Button>
         </div>
       </div>
     </GradientBanner>
