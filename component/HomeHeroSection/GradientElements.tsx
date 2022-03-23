@@ -28,7 +28,7 @@ export const MobileGradient: React.FC<IGradientElementProps> = ({
   children
 }) => (
   <div className="lg:hidden flex-col items-start h-max justify-center w-full p-4 -mt-16 lg:mt-0">
-    <div className="flex flex-col">
+    <div className="flex flex-col mb-4 lg:mb-0">
       {children}
       <h2 className="mb-0 mt-0">{title}</h2>
       <div className="my-4 h3_element_normalcase">{body}</div>
