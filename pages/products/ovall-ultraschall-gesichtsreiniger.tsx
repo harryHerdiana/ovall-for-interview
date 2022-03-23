@@ -57,7 +57,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         {...productInfoBannerTechnology}
         mobileContentPlacement="top"
         contentPlacement="left"
-        imageClassName="px-4 pt-7 lg:pt-10"
+        imageClassName="px-4 lg:px-0"
       />
       <ProductInfoAccordion {...productInfoAccordionSection} buttonAction="scroll" />
       <GradientBanner
