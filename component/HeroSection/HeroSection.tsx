@@ -33,7 +33,7 @@ const HeroSection: React.FC<IHeroSectionProps> = ({
       <GradientSquare className="lg:bg-none" variantGradient={backgroundColor}>
         <ResponsiveImage
           image={image}
-          className="flex justify-start md:justify-center lg:justify-center h-max lg:w-full "
+          className="flex justify-start md:justify-center items-end lg:justify-center h-max lg:w-full "
         />
       </GradientSquare>
     </div>

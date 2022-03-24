@@ -31,7 +31,7 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
       />
       <InfoBannerFeatures {...productFeatureSection} />
       <ProductTeaser
-        className="mb-80px mt-80px lg:mb-100px"
+        className="mb-80px mt-80px lg:mt-0 lg:mb-100px"
         product={product}
         {...productTeaserSection}
       />
