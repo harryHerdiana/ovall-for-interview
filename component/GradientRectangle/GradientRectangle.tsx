@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 
 interface IGradientRectangle {
   variantGradient: string
@@ -23,7 +24,7 @@ const GradientRectangle: React.FC<IGradientRectangle> = ({
 }) => {
   const gradient = `${gradientMap[variantGradient]}_${contentPlacement}`
 
-  return <section className={`${gradient} ${className}`}>{children}</section>
+  return <section className={classnames(className, `${gradient}`)}>{children}</section>
 }
 
 export default GradientRectangle
