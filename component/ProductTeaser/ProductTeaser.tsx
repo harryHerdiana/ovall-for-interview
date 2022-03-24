@@ -31,7 +31,7 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
     contentPlacement="right"
     variantGradient={backgroundColor}
     className={className}>
-    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:h-max max-w-site lg:max-h-540px mx-auto ">
+    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:h-max max-w-site mx-auto ">
       <GradientSquare className="lg:bg-none" variantGradient={backgroundColor}>
         <ResponsiveImage
           image={image}

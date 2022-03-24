@@ -24,8 +24,11 @@ const InfoBannerFeatures: React.FC<IInfoBannerFeaturesProps> = ({
   title,
   items
 }) => (
-  <GradientRectangle contentPlacement="left" variantGradient={backgroundColor}>
-    <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:items-center lg:h-max max-w-site lg:max-h-540px mx-auto">
+  <GradientRectangle
+    contentPlacement="left"
+    variantGradient={backgroundColor}
+    className="block lg:h-max lg:min-h-465px">
+    <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:items-center lg:h-max max-w-site mx-auto">
       <div className="flex-col items-start h-max justify-center w-full pt-8 p-4 lg:p-0 bg-white lg:bg-transparent lg:mt-0 lg:pl-8">
         <div className="flex flex-col lg:mb-0">
           <h2 className="mb-2 mt-1">{title}</h2>
@@ -45,7 +48,7 @@ const InfoBannerFeatures: React.FC<IInfoBannerFeaturesProps> = ({
       <GradientSquare className="lg:bg-none" variantGradient={backgroundColor}>
         <ResponsiveImage
           image={image}
-          className="flex justify-start md:justify-center lg:justify-center h-max lg:w-full lg:pt-11 lg:mr-16"
+          className="flex justify-start md:justify-center lg:justify-center h-max lg:w-full  lg:mr-16"
         />
       </GradientSquare>
     </div>

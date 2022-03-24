@@ -22,9 +22,9 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} />
-      <div className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto px-4 md:px-8 md:text-left lg:py-16">
+      <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto px-4 md:px-8 md:text-left lg:py-16">
         <StructuredText data={content} />
-      </div>
+      </section>
       <HtmlAccordion items={accordionSection.items} />
       <ProductTeaser
         className="mb-80px mt-80px lg:mb-100px"

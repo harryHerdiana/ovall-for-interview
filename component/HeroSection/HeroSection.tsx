@@ -20,7 +20,7 @@ const HeroSection: React.FC<IHeroSectionProps> = ({
   body
 }) => (
   <GradientRectangle
-    className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto"
+    className="block lg:h-max lg:min-h-465px"
     contentPlacement="left"
     variantGradient={backgroundColor}>
     <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">

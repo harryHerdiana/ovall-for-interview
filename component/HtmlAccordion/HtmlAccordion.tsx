@@ -24,7 +24,7 @@ const BlockImage: React.FC<IBlockRecord> = ({ record }) => (
 )
 
 const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
-  <div className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center my-2">
+  <section className="m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto md:p-5 md:text-center my-2">
     {items.map((item, index) => (
       <Disclosure key={item.id} defaultOpen={index === 0}>
         {({ open }) => (
@@ -67,7 +67,7 @@ const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
         )}
       </Disclosure>
     ))}
-  </div>
+  </section>
 )
 
 export default HtmlAccordion

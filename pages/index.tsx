@@ -40,7 +40,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />
       <ProductTeaser
-        className="mb-80px mt-80px lg:mb-100px"
+        className="mb-80px mt-80px lg:mb-100px block lg:h-max lg:min-h-650px"
         product={product}
         {...productTeaserSection}
       />

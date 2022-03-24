@@ -17,11 +17,11 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} title={heroSection.kicker} kicker={heroSection.title} />
-      <div className="-mt-16 lg:-mt-32">
+      <section className="-mt-16 lg:-mt-32">
         <FaqSection {...faqSection} faqButtonText={faqSection.buttonText} />
-      </div>
+      </section>
       <ProductTeaser
-        className="-mt-16 mb-80px lg:mb-100px"
+        className="-mt-16 mb-80px lg:mb-100px lg:min-h-650px"
         product={product}
         {...productTeaserSection}
       />
