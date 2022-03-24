@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IHomePage } from '@lib/types'
-import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import ProductTeaser from '@component/ProductTeaser'
@@ -15,6 +14,7 @@ import { PRODUCT_PATH } from '@lib/constants'
 import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
 import HomeHeroSection from '@component/HomeHeroSection'
+import InfoTechSection from '@component/InfoTechSection'
 
 const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   const router = useRouter()
@@ -32,25 +32,11 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <HomeHeroSection
-        contentPlacement="right"
-        {...heroSection}
-        onClickButton={() => router.push(PRODUCT_PATH)}
-      />
-      <InfoBannerSection
-        {...infoSection}
-        mobileContentPlacement="bottom"
-        contentPlacement="left"
-        onClickButton={() => router.push(PRODUCT_PATH)}
-      />
+      <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
+      <InfoBannerSection {...infoSection} onClickButton={() => router.push(PRODUCT_PATH)} />
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />
-      <GradientBanner
-        {...productInfoBannerTechnology}
-        mobileContentPlacement="top"
-        contentPlacement="left"
-        imageClassName="px-4 lg:px-0"
-      />
+      <InfoTechSection {...productInfoBannerTechnology} />
       <ProductInfoAccordion {...productInfoAccordionSection} />
       <HowToUse {...howToUseSection} />
       <ProductTeaser

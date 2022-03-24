@@ -1,74 +1,50 @@
 import React from 'react'
+import Button from '@component/Button'
+import ResponsiveImage from '@component/ResponsiveImage'
+import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import GradientRectangle from '@component/GradientRectangle'
 
-import ResponsiveImage from '@component/ResponsiveImage'
-import GradientSquare from '@component/GradientSquare'
-import { IGradientBannerProps } from '@component/GradientBanner/GradientBanner'
-import { DesktopGradient, MobileGradient } from './GradientElements'
+type IHomeHeroSectionProps = {
+  backgroundColor: string
+  image: DatoCMSResponsiveImage
+  title: string
+  body: string
+  buttonText: string
+  onClickButton?: () => void
+}
 
-const HomeHeroSection: React.FC<IGradientBannerProps> = (props: IGradientBannerProps) => {
-  const {
-    backgroundColor,
-    image,
-    title,
-    body,
-    buttonText,
-    contentPlacement,
-    items,
-    onClickButton,
-    children,
-    imageClassName
-  } = props
-  const MobileGradientAll = () => (
-    <MobileGradient
-      title={title}
-      body={body}
-      items={items}
-      buttonText={buttonText}
-      buttonType="primary"
-      onClickButton={onClickButton}>
-      {children}
-    </MobileGradient>
-  )
-  const DesktopGradientAll = () => (
-    <DesktopGradient
-      title={title}
-      body={body}
-      items={items}
-      buttonText={buttonText}
-      buttonType="primary"
-      onClickButton={onClickButton}>
-      {children}
-    </DesktopGradient>
-  )
-  return (
-    <GradientRectangle
-      contentPlacement={contentPlacement}
-      variantGradient={backgroundColor}
-      className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto ">
-      <div className="flex lg:h-max flex-col lg:flex-row max-w-site m-auto">
-        <GradientSquare
-          variantGradient={backgroundColor}
-          className="lg:hidden h-full w-full max-h-full">
-          <ResponsiveImage
-            image={image}
-            className={`${imageClassName} w-full h-full flex justify-start md:justify-center`}
-          />
-        </GradientSquare>
-        <ResponsiveImage
-          image={image}
-          className="lg:justify-end w-full h-full justify-center hidden lg:flex"
-        />
-        <div className="hidden lg:flex items-end mr-8 w-full flex-col items-baseline justify-center">
-          <DesktopGradientAll />
+const HomeHeroSection: React.FC<IHomeHeroSectionProps> = ({
+  backgroundColor,
+  image,
+  title,
+  body,
+  buttonText,
+  onClickButton
+}) => (
+  <GradientRectangle
+    className="block lg:h-max flex-col lg:flex-row max-w-screen lg:max-h-540px mx-auto"
+    contentPlacement="right"
+    variantGradient={backgroundColor}>
+    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
+      <ResponsiveImage
+        image={image}
+        className="flex justify-start  w-full h-full md:justify-center "
+      />
+      <div className="flex-col items-start h-max justify-center w-full lg:w-full p-4 lg:p-0 -mt-16 lg:mt-0 lg:mr-8">
+        <div className="flex flex-col mb-4 lg:mb-0">
+          <h2 className="mb-0 mt-0">{title}</h2>
+          <div className="my-4 h3_element_normalcase">{body}</div>
+          <Button
+            onClick={onClickButton}
+            type="button"
+            buttonType="primary"
+            className="button-product-details lg:w-4/5">
+            {buttonText}
+          </Button>
         </div>
       </div>
-
-      <div className={`${backgroundColor}_mobile_bottom`}>
-        <MobileGradientAll />
-      </div>
-    </GradientRectangle>
-  )
-}
+    </div>
+  </GradientRectangle>
+)
 
 export default HomeHeroSection

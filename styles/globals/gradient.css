@@ -126,7 +126,7 @@
 .notification_gradient {
   background: linear-gradient(90deg, #1cedaf 0%, #00f1b7 50%, #00f2b5 100%);
 }
-
+/* 
 @media screen and (max-width: 1024px) {
   .people_gradient_rectangle_left {
     background: transparent;
@@ -167,4 +167,4 @@
   .green_gradient_rectangle_right {
     background: transparent;
   }
-}
+} */

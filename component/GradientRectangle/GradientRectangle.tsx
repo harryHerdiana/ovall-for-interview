@@ -23,7 +23,7 @@ const GradientRectangle: React.FC<IGradientRectangle> = ({
 }) => {
   const gradient = `${gradientMap[variantGradient]}_${contentPlacement}`
 
-  return <div className={`${gradient} ${className}`}>{children}</div>
+  return <section className={`${gradient} ${className}`}>{children}</section>
 }
 
 export default GradientRectangle
