@@ -91,6 +91,10 @@ export interface ICartText {
   closeCart: string
   taxInfo: string
   total: string
+  subtotalLabel: string
+  shippingCostLabel: string
+  shippingCostValue: string
+  discountLabel: string
 }
 
 export interface IProductVariantImage {

@@ -50,6 +50,18 @@ export interface IShopifyImage {
 export interface IShopifyCheckout {
   id: string
   lineItems: IShopifyLineItem[]
+  lineItemsSubtotalPrice: {
+    amount: string
+  }
+  discountApplications: {
+    targetSelection: string
+    applicable: boolean
+    code: string
+  }[]
+  subtotalPriceV2: {
+    amount: string
+  }
   webUrl: string
   totalPrice: string
+  completedAt: string
 }

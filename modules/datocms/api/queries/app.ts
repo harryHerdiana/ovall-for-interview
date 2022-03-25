@@ -69,7 +69,11 @@ query getFooter($locale: SiteLocale!) {
     cartName
     closeCart
     taxInfo
-    total
+    total,
+    subtotalLabel
+    discountLabel
+    shippingCostLabel
+    shippingCostValue
   }
   footer(locale: $locale) {
     facebook

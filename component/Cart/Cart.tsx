@@ -42,7 +42,7 @@ const Cart: React.FC<IProps> = ({ cartEmpty, variantImages }) => {
   }
 
   return (
-    <div className="pb-4 md:pb-16  z-auto">
+    <div className="pb-5 md:pb-16 z-auto">
       {checkout.lineItems.map((lineItem: IShopifyLineItem, index) => (
         <div key={lineItem.id}>
           <LineItem

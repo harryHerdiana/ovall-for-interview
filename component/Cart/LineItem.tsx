@@ -1,7 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react'
 import React, { useContext, Fragment } from 'react'
 import { Image } from 'react-datocms'
-import debounce from 'lodash.debounce'
 import GradientSquare from '@component/GradientSquare'
 import { IShopifyLineItem } from '@modules/shopify/types'
 import ShopContext from '@context/StoreContext'
@@ -43,7 +42,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative px-5">
       {loading && (
         <div className="absolute inset-x-1/2 inset-y-1/4">
           <Spinner />
@@ -51,20 +50,19 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       )}
 
       <div
-        className={`mt-2 transition duration-300 transition-opacity ${
-          loading ? 'opacity-30' : ''
-        } `}>
-        <div className="grid gap-2 grid-cols-4 text-black px-4">
+        className={`mt-2 transition duration-300 transition-opacity ${loading ? 'opacity-30' : ''
+          } `}>
+        <div className="grid gap-2 grid-cols-4 text-black">
           <div className="flex items-start">
             {lineItem.variant.image && (
-              <GradientSquare variantGradient={lineItem.variant.sku} className="h-20 w-full">
+              <GradientSquare variantGradient={lineItem.variant.sku} className="h-18 w-18">
                 <Image data={image} lazyLoad={false} />
               </GradientSquare>
             )}
           </div>
 
-          <div className="col-span-2 font-bold text-tiny md:text-base text-left">
-            <div className="flex items-center uppercase font-textFont gap-8">
+          <div className="col-span-2 font-bold text-tiny md:text-base text-left ml-1">
+            <div className="flex items-center uppercase font-textFont gap-4">
               {lineItem.title}
               <div className={` w-4 h-4 rounded-full bg-${lineItem.variant.sku}-500`} />
             </div>
@@ -72,8 +70,8 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
               <div className="flex items-center gap-2">
                 <div className="py-2 md:py-1  flex items-center justify-between my-3">
                   <Listbox value={lineItem.quantity} onChange={(e) => handleQuantityChange(e)}>
-                    <div className="relative w-24 mt-1">
-                      <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-black cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                    <div className="relative w-24">
+                      <Listbox.Button className="relative w-full py-1 pl-3 pr-10 text-left bg-white border border-black cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                         <span className="block truncate">{lineItem.quantity}</span>
                         <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                           <DownArrow />
@@ -89,8 +87,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
                             <Listbox.Option
                               key={v}
                               className={({ active }) =>
-                                `cursor-default select-none relative py-2 pl-10 pr-4 ${
-                                  active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
+                                `cursor-default select-none relative py-2 pl-10 pr-4 ${active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
                                 }`
                               }
                               value={v}>

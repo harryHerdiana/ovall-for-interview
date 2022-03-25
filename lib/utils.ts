@@ -1,3 +1,4 @@
+import { IShopifyCheckout } from '@modules/shopify/types'
 import currency from 'currency.js'
 
 const isBrowser = typeof window !== `undefined`
@@ -41,3 +42,23 @@ export const appUrl = (): string => {
       return `http://localhost:${process.env.PORT || '3000'}`
   }
 }
+
+export const getGenericDiscountLabel = (checkout: IShopifyCheckout): string => {
+  const applicableDiscount = checkout.discountApplications.find(
+    (discount) => discount.targetSelection === 'ALL' && discount.applicable === true
+  )
+
+  if (!applicableDiscount) {
+    return ''
+  }
+
+  return applicableDiscount.code
+}
+
+export const getTotalDiscountAmount = (checkout: IShopifyCheckout): number =>
+  Number(checkout.lineItemsSubtotalPrice.amount) - Number(checkout.subtotalPriceV2.amount)
+
+export const hasGenericDiscount = (checkout: IShopifyCheckout): boolean =>
+  checkout.discountApplications.filter(
+    (discountApplication) => discountApplication.targetSelection === 'ALL'
+  ).length > 0
