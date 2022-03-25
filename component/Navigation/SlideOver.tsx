@@ -6,7 +6,7 @@ import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
-import { toEuro, toEuroNS } from '@lib/utils'
+import { toEuroNS } from '@lib/utils'
 import { ICartText, IProductVariantImage } from '@lib/types'
 import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginCheckoutEvent'
 
@@ -40,7 +40,7 @@ const SlideOver: React.FC<IProps> = (props) => {
               leave="transform transition ease-in-out duration-500 sm:duration-700"
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full">
-              <div className="w-screen max-w-sm">
+              <div className="w-screen max-w-screen sm:max-w-sm">
                 <div className="h-full flex flex-col bg-white overflow-y-scroll">
                   <div className="px-4 sm:px-6 sticky top-0 bg-white py-2 md:pt-6 md:pb-4 z-40 ">
                     <div className="flex items-start justify-between">
@@ -66,11 +66,9 @@ const SlideOver: React.FC<IProps> = (props) => {
 
                     <div className="bg-white bottom-0 sticky w-full  ">
                       <div className="flex flex-col flex-wrap justify-center items-center">
-                        <div className="flex flex-wrap w-full justify-between items-center px-4">
-                          <div className="font-subtitleFont text-2xl">{props.total}:</div>
-                          <div className="font-subtitleFont text-2xl">
-                            {toEuroNS(checkout.totalPrice)}
-                          </div>
+                        <div className="flex flex-wrap w-full justify-between items-center px-4 font-subtitleFont text-2xl">
+                          <div>{props.total}:</div>
+                          <div>{toEuroNS(checkout.totalPrice)}</div>
                         </div>
                         <div className="text-sm self-end mb-3">
                           <p className="md:text-right sm:pb-0 px-4">{props.taxInfo}</p>

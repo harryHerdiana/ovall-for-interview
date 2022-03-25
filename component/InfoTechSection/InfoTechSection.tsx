@@ -31,7 +31,7 @@ const InfoTechSection: React.FC<IInfoTechSectionProps> = ({
       <GradientSquare className="lg:bg-none" variantGradient={backgroundColor}>
         <ResponsiveImage
           image={image}
-          className="flex justify-start md:justify-center lg:justify-end h-full lg:w-full px-4 md:px-0"
+          className="flex justify-start md:justify-center lg:justify-center h-full lg:w-full px-4 md:px-0"
         />
       </GradientSquare>
     </div>
