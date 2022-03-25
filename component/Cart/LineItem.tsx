@@ -67,7 +67,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
             <div className="block text-tiny text-black">
               <div className="flex items-center gap-2">
                 <div className="py-2 md:py-1  flex items-center justify-between my-3">
-                  <QuantitySelect onchange={(e) => handleQuantityChange(e)} lineItem={lineItem} />
+                  <QuantitySelect onchange={handleQuantityChange} lineItem={lineItem} />
                 </div>
                 <button
                   className="bg-white focus:outline-none text-black p-2 hover:bg-black rounded-full hover:text-white"
