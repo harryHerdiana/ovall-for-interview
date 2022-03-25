@@ -65,7 +65,7 @@
 }
 
 .blue_gradient_rectangle_left {
-  background: conic-gradient(from 243deg at 72% 49%, #fff7ef 0%, #fee8e0 100%);
+  background:conic-gradient(from 243deg at 66% 61%, #FFF7EF 0%, #FEE8E0 100%);
 }
 
 .pink_gradient_rectangle_left {
@@ -89,7 +89,7 @@
 }
 
 .pink_gradient_rectangle_right {
-  background: conic-gradient(from 243deg at 29% 55%, #e9f4ff 0%, #eae9f7 100%);
+  background: conic-gradient(from 243deg at 28% 47%, #e9f4ff 0%, #eae9f7 100%);
 }
 
 .green_gradient_rectangle_right {
@@ -127,44 +127,9 @@
   background: linear-gradient(90deg, #1cedaf 0%, #00f1b7 50%, #00f2b5 100%);
 }
 
+.small_banner {
+  min-height: 465px;
+}
+
 @media screen and (max-width: 1024px) {
-  .people_gradient_rectangle_left {
-    background: transparent;
-  }
-
-  .violet_gradient_rectangle_left {
-    background: transparent;
-  }
-
-  .blue_gradient_rectangle_left {
-    background: transparent;
-  }
-
-  .pink_gradient_rectangle_left {
-    background: transparent;
-  }
-
-  .green_gradient_rectangle_left {
-    background: transparent;
-  }
-
-  .people_gradient_rectangle_right {
-    background: transparent;
-  }
-
-  .violet_gradient_rectangle_right {
-    background: transparent;
-  }
-
-  .blue_gradient_rectangle_right {
-    background: transparent;
-  }
-
-  .pink_gradient_rectangle_right {
-    background: transparent;
-  }
-
-  .green_gradient_rectangle_right {
-    background: transparent;
-  }
 }
