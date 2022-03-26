@@ -52,7 +52,7 @@ export const getGenericDiscountLabel = (checkout: IShopifyCheckout): string => {
     return ''
   }
 
-  return applicableDiscount.code
+  return `"${applicableDiscount.code}":`
 }
 
 export const getTotalDiscountAmount = (checkout: IShopifyCheckout): number =>

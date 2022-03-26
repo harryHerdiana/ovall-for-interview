@@ -60,7 +60,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
           </div>
 
           <div className="col-span-2 font-bold text-tiny md:text-base text-left ml-1">
-            <div className="flex items-center uppercase font-textFont gap-4">
+            <div className="flex items-center font-textFont gap-4">
               {lineItem.title}
               <div className={` w-4 h-4 rounded-full bg-${lineItem.variant.sku}-500`} />
             </div>

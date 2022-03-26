@@ -42,15 +42,15 @@ const Cart: React.FC<IProps> = ({ cartEmpty, variantImages }) => {
   }
 
   return (
-    <div className="pb-5 md:pb-16 z-auto">
-      {checkout.lineItems.map((lineItem: IShopifyLineItem, index) => (
+    <div className="pb-5 md:pb-4 z-auto">
+      {checkout.lineItems.map((lineItem: IShopifyLineItem) => (
         <div key={lineItem.id}>
           <LineItem
             lineItem={lineItem}
             key={lineItem.id}
             image={getImage(lineItem, variantImages)}
           />
-          <hr className="border-grayLine w-full" />
+          {checkout.lineItems.length > 1 && <hr className="border-grayLine w-full" />}
         </div>
       ))}
     </div>

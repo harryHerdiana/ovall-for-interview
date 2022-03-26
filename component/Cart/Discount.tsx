@@ -10,9 +10,8 @@ interface IProps {
 
 const Discount: React.FC<IProps> = ({ checkout, label }) => (
   <div className="flex flex-wrap w-full text-tiny  font-textFontBold">
-    <span className="mr-1">{label}: </span>
+    <span className="mr-1">{label} </span>
     <span className="flex uppercase align-center self-center text-tiny tracking-wide">
-      <Icon src="/images/invest.svg" className="inline h-5 w-5" />
       <span className="self-center">{getGenericDiscountLabel(checkout)}</span>
     </span>{' '}
     <div className="ml-auto  text-greenLink">-{toEuro(getTotalDiscountAmount(checkout))}</div>
