@@ -13,7 +13,7 @@ interface IProductSlideshow {
   items: Record<string, any>[]
 }
 
-const NextArrow: React.FC<any> = (props) => {
+const NextArrow = (props) => {
   const variantContext = React.useContext(VariantContext)
   const { onClick, className, style } = props
   return (
@@ -33,7 +33,7 @@ const NextArrow: React.FC<any> = (props) => {
   )
 }
 
-const PrevArrow: React.FC<any> = (props) => {
+const PrevArrow = (props) => {
   const variantContext = React.useContext(VariantContext)
   const { onClick, className, style } = props
   return (

@@ -2,7 +2,7 @@
   height: calc(100vh - 54px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .menu-height {
     height: calc(100vh - 54px);
     right: -100vw;
