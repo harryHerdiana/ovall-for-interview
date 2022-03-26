@@ -12,6 +12,7 @@ import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginChec
 import Subtotal from '@component/Cart/Subtotal'
 import ShippingCost from '@component/Cart/ShippingCost'
 import Discount from '@component/Cart/Discount'
+import GoodChoice from '@component/Cart/GoodChoice'
 
 interface IProps extends ICartText {
   variantImages: IProductVariantImage[]
@@ -66,6 +67,8 @@ const SlideOver: React.FC<IProps> = (props) => {
                     </div>
                   </div>
 
+                  <GoodChoice {...props} />
+
                   <div className="md:mt-0 relative">
                     <Cart {...props} />
 
@@ -100,9 +103,6 @@ const SlideOver: React.FC<IProps> = (props) => {
                             buttonType="primary"
                             disabled={checkout.lineItems.length === 0}
                             onClick={handleCheckout}>
-                            {/* <div className="inline-block mr-4">
-                              <ShoppingBagIcon className="h-6 w-6" />
-                            </div> */}
                             {props.buttonText}
                           </Button>
                           <div className="flex justify-between w-full mt-2">

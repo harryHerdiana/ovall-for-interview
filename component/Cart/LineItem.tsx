@@ -53,7 +53,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
         <div className="grid gap-2 grid-cols-4 text-black">
           <div className="flex items-start">
             {lineItem.variant.image && (
-              <GradientSquare variantGradient={lineItem.variant.sku} className="h-18 w-18">
+              <GradientSquare variantGradient={lineItem.variant.sku} className="h-20 w-20">
                 <Image data={image} lazyLoad={false} />
               </GradientSquare>
             )}

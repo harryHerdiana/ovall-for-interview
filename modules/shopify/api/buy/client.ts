@@ -1,6 +1,6 @@
 import { Languages } from '@lib/enums'
 import { Language } from '@lib/types'
-import Client, { GraphQlClient } from 'shopify-buy/index.unoptimized.umd'
+import Client, { GraphQlClient } from 'shopify-buy'
 
 export const getShopifyClient = (language: Language = Languages.German): GraphQlClient =>
   Client.buildClient({

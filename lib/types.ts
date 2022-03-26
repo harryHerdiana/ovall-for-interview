@@ -95,6 +95,10 @@ export interface ICartText {
   shippingCostLabel: string
   shippingCostValue: string
   discountLabel: string
+  discountAddedText: string
+  discountAddedTitle: string
+  goodChoiceHeader: string
+  goodChoiceText: string
 }
 
 export interface IProductVariantImage {

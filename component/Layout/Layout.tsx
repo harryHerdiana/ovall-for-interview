@@ -15,6 +15,7 @@ import CookieBanner from '@component/CookieBanner'
 import { trackCookieConsentGiven } from '@modules/tracking/events'
 import HrefLang from '@component/HrefLang'
 import { useRouter } from 'next/router'
+import DiscountToast from '@component/DiscountToast'
 import Footer from './Footer'
 
 interface ILayout {
@@ -149,6 +150,9 @@ const Layout: React.FC<ILayout> = ({
       <TrackingIframe />
       <div className="flex flex-col font-main">
         <Header menu={menu} cart={cart} variantImages={variantImages} />
+        <div>
+          <DiscountToast title={cart.discountAddedTitle} text={cart.discountAddedText} />
+        </div>
         <main className="flex-grow font-main mt-8 sm:mt-12 xl:mt-0">{children}</main>
       </div>
       {showCookieBanner && (

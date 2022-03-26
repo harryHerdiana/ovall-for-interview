@@ -1,4 +1,5 @@
 import React from 'react'
+import toast from 'react-hot-toast'
 import { IShopifyLineItem, IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import { getShopifyClient } from '@modules/shopify/api/buy/client'
 import { Language } from '@lib/types'
@@ -65,6 +66,8 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
     if (discount) {
       try {
         await client.checkout.addDiscount(newOrExistingCheckout.id, discount)
+
+        toast.success('DISCOUNT')
       } catch (err) {
         console.error(err)
       }

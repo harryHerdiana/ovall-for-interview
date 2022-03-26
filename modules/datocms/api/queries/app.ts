@@ -74,6 +74,10 @@ query getFooter($locale: SiteLocale!) {
     discountLabel
     shippingCostLabel
     shippingCostValue
+    discountAddedText
+    discountAddedTitle
+    goodChoiceHeader
+    goodChoiceText
   }
   footer(locale: $locale) {
     facebook
