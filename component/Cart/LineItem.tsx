@@ -39,7 +39,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
     setLoading(false)
   }
   return (
-    <div className="relative">
+    <div className="relative px-4 md:px-5">
       {loading && (
         <div className="absolute inset-x-1/2 inset-y-1/4">
           <Spinner />
@@ -47,20 +47,20 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       )}
 
       <div
-        className={`mt-2 transition duration-300 transition-opacity ${
+        className={`mt-4 transition duration-300 transition-opacity ${
           loading ? 'opacity-30' : ''
         } `}>
-        <div className="grid gap-2 grid-cols-4 text-black px-4">
+        <div className="grid gap-2 grid-cols-4 text-black">
           <div className="flex items-start">
             {lineItem.variant.image && (
-              <GradientSquare variantGradient={lineItem.variant.sku} className="h-20 w-full">
+              <GradientSquare variantGradient={lineItem.variant.sku} className="h-20 w-20">
                 <Image data={image} lazyLoad={false} />
               </GradientSquare>
             )}
           </div>
 
-          <div className="col-span-2 font-bold text-tiny md:text-base text-left">
-            <div className="flex items-center uppercase font-textFont gap-8">
+          <div className="col-span-2 font-bold text-tiny md:text-base text-left ml-1">
+            <div className="flex items-center font-textFont gap-4">
               {lineItem.title}
               <div className={` w-4 h-4 rounded-full bg-${lineItem.variant.sku}-500`} />
             </div>
