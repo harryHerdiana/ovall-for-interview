@@ -65,7 +65,12 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
 
     if (discount) {
       try {
-        await client.checkout.addDiscount(newOrExistingCheckout.id, discount)
+        const updatedCheckout = await client.checkout.addDiscount(
+          newOrExistingCheckout.id,
+          discount
+        )
+
+        setCheckout(updatedCheckout)
 
         toast.success('DISCOUNT')
       } catch (err) {
