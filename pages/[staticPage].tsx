@@ -4,21 +4,15 @@ import { StructuredText } from 'react-datocms'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IStaticPage } from '@lib/types'
-import GradientBanner from '@component/GradientBanner'
 import { STATIC_PAGE_I18N, STATIC_PAGE_PATHS } from '@lib/constants'
+import HeroSection from '@component/HeroSection'
 
 const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) => {
   const { heroSection, content } = props
+
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <GradientBanner
-        mobileContentSolidColor
-        backgroundColor="violet"
-        title={heroSection.title}
-        image={heroSection.image}
-        mobileContentPlacement="top"
-        contentPlacement="left"
-      />
+      <HeroSection {...heroSection} kicker={heroSection.title} title="" />
       <section className="static-page-section m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-left">
         <StructuredText data={content} />
       </section>

@@ -73,7 +73,7 @@ export const ProductInfoBannerFragment = `
         backgroundColor
         title
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 800, h: 460 }){
+          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 800, h: 465 }){
             ...ResponsiveImageFragment
           }
         }
@@ -145,7 +145,7 @@ export const ProductTeaserFragment = `
         _modelApiKey
         title
         image {
-          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 650, h: 540 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 1270, h: 1270 }) {
             ...ResponsiveImageFragment
           }
         }

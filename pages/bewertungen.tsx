@@ -6,10 +6,10 @@ import { IDefaultProps, IRatingsPage } from '@lib/types'
 import Newsletter from '@component/Newsletter'
 import ProductTeaser from '@component/ProductTeaser'
 import ProductReview from '@component/ProductReview'
-import GradientBanner from '@component/GradientBanner'
 import TransparencySection from '@component/TransparencySection'
 import SocialFeed from '@component/SocialFeed'
 import HeroSection from '@component/HeroSection'
+import InfoBannerFeatures from '@component/InfoBannerFeatures'
 
 const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps) => {
   const {
@@ -29,17 +29,9 @@ const RatingsPage: React.FC<IRatingsPage> = (props: IRatingsPage & IDefaultProps
         subtitle={transparencySection.kicker}
         body={transparencySection.text}
       />
-      <GradientBanner
-        {...productFeatureSection}
-        items={productFeatureSection.items}
-        mobileContentPlacement="bottom"
-        contentPlacement="left"
-        className="mb-50px lg:mb-0"
-        imageClassName="lg:mr-20"
-      />
-
+      <InfoBannerFeatures {...productFeatureSection} />
       <ProductTeaser
-        className="mb-80px mt-80px lg:mt-0 lg:mb-100px"
+        className="mb-80px mt-80px lg:mt-0 lg:mb-100px lg:min-h-650px"
         product={product}
         {...productTeaserSection}
       />

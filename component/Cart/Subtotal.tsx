@@ -9,7 +9,7 @@ interface IProps {
 
 const Subtotal: React.FC<IProps> = ({ checkout, label }) => (
   <>
-    <div className="flex flex-wrap w-full justify-between text-sm md:text-base">
+    <div className="flex flex-wrap w-full justify-between text-tiny">
       <div>{label}:</div>
       <div className="ml-auto">{toEuro(Number(checkout.lineItemsSubtotalPrice.amount))}</div>
     </div>

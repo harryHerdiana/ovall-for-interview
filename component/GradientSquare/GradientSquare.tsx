@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 
 interface IGradientSquare {
   variantGradient: string
@@ -21,7 +22,7 @@ const gradientMap = {
 const GradientSquare: React.FC<IGradientSquare> = ({ variantGradient, className, children }) => {
   const gradient = gradientMap[variantGradient]
   return (
-    <div className={`${gradient} ${className} flex justify-center square_gradient `}>
+    <div className={classnames(className, gradient, 'flex justify-center square_gradient')}>
       {children}
     </div>
   )

@@ -5,7 +5,6 @@ import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
-import GradientBanner from '@component/GradientBanner'
 import Newsletter from '@component/Newsletter'
 import FaqSection from '@component/FaqSection'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
@@ -16,6 +15,8 @@ import ProductReview from '@component/ProductReview'
 import DescriptionSection from '@component/DescriptionSection'
 import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
+import InfoTechSection from '@component/InfoTechSection'
+import InfoBannerFeatures from '@component/InfoBannerFeatures'
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   const {
@@ -48,26 +49,13 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         />
       </VariantProvider>
       <DescriptionSection {...descriptionSection} />
-      <InfoBannerSection className="mb-20" {...productInfoBannerSection} contentPlacement="left" />
+      <InfoBannerSection {...productInfoBannerSection} />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
-      <InfoBannerSection {...skinTypeInfoSection} contentPlacement="right" />
-      <GradientBanner
-        className="-mt-8 lg:mt-0"
-        {...productInfoBannerTechnology}
-        mobileContentPlacement="top"
-        contentPlacement="left"
-        imageClassName="px-4 lg:px-0"
-      />
+      <InfoBannerSection {...skinTypeInfoSection} />
+      <InfoTechSection {...productInfoBannerTechnology} />
       <ProductInfoAccordion {...productInfoAccordionSection} buttonAction="scroll" />
-      <GradientBanner
-        className="lg:mt-20"
-        {...productInfoBannerFeatures}
-        items={productInfoBannerFeatures.items}
-        mobileContentPlacement="bottom"
-        contentPlacement="left"
-        imageClassName="px-4 pt-7 lg:pt-11 lg:mr-16"
-      />
+      <InfoBannerFeatures {...productInfoBannerFeatures} />
       <FaqSection {...faqSection} buttonAction="scroll" />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />

@@ -6,9 +6,9 @@ interface IProps {
 }
 
 const ShippingCost: React.FC<IProps> = ({ label, value }) => (
-  <div className="flex flex-wrap w-full justify-between text-sm md:text-base font-subtitleFont">
-    <div>{label}:</div>
-    <div className="text-greenLink">{value}</div>
+  <div className="flex flex-wrap w-full justify-between text-tiny">
+    <div className="font-textFont">{label}:</div>
+    <div className="font-textFontBold text-greenLink">{value}</div>
   </div>
 )
 
