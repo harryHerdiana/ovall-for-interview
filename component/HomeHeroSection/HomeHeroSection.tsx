@@ -27,6 +27,7 @@ const HomeHeroSection: React.FC<IHomeHeroSectionProps> = ({
     variantGradient={backgroundColor}>
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
       <ResponsiveImage
+        lazy={false}
         image={image}
         className="flex justify-start  w-full h-full md:justify-center "
       />

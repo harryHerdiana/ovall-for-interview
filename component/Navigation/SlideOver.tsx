@@ -67,7 +67,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                     </div>
                   </div>
 
-                  <GoodChoice {...props} />
+                  {checkout.lineItems.length > 0 && <GoodChoice {...props} />}
 
                   <div className="md:mt-0 relative">
                     <Cart {...props} />
