@@ -50,7 +50,7 @@ const Cart: React.FC<IProps> = ({ cartEmpty, variantImages }) => {
             key={lineItem.id}
             image={getImage(lineItem, variantImages)}
           />
-          {index !== checkout.lineItems.length - 1 && <hr className="border-grayLine w-full" />}
+          <hr className="border-grayLine w-full" />
         </div>
       ))}
     </div>

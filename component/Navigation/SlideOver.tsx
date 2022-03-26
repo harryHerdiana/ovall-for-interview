@@ -73,7 +73,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                     <Cart {...props} />
 
                     <div className="bg-white bottom-0 sticky w-full  ">
-                      <div className="flex flex-col flex-wrap justify-center items-center px-5">
+                      <div className="flex flex-col flex-wrap justify-center items-center px-4 md:px-5">
                         <div className="flex w-full font-textFont">
                           <Subtotal checkout={checkout} label={props.subtotalLabel || 'Subtotal'} />
                         </div>

@@ -39,7 +39,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
     setLoading(false)
   }
   return (
-    <div className="relative px-5">
+    <div className="relative px-4 md:px-5">
       {loading && (
         <div className="absolute inset-x-1/2 inset-y-1/4">
           <Spinner />
@@ -47,7 +47,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       )}
 
       <div
-        className={`mt-2 transition duration-300 transition-opacity ${
+        className={`mt-4 transition duration-300 transition-opacity ${
           loading ? 'opacity-30' : ''
         } `}>
         <div className="grid gap-2 grid-cols-4 text-black">
