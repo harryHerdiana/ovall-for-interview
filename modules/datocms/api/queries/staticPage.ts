@@ -1,8 +1,8 @@
 import { ResponsiveImageFragment } from '../fragments'
 
 export const STATIC_PAGE_QUERY = `
-  query getStaticPage($locale: SiteLocale!, $title: String!) {
-    staticPage(locale: $locale, filter: { title: { eq: $title }}) {
+  query getStaticPage($locale: SiteLocale!, $slug: String!) {
+    staticPage(locale: $locale, filter: { slug: { eq: $slug }}) {
       slug
       seoTags {
         description
