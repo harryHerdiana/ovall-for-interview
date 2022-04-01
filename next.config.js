@@ -23,6 +23,11 @@ const moduleExports = {
         destination: '/uber-uns',
         permanent: true,
         locale: false
+      },
+      {
+        source: '/discount/:discountCode',
+        destination: '/api/discount/:discountCode',
+        permanent: true
       }
     ]
   }

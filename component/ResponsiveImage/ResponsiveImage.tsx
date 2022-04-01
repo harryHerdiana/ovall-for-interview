@@ -6,6 +6,7 @@ type IResponsiveImageProps = {
   image: DatoCMSResponsiveImage
   usePlaceholder?: boolean
   className?: string
+  lazyLoad?: boolean
 }
 
 const ResponsiveImage: React.FC<IResponsiveImageProps> = ({ className, image, ...props }) => {

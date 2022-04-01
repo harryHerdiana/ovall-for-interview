@@ -1,10 +1,12 @@
 import React from 'react'
+import toast from 'react-hot-toast'
 import { IShopifyLineItem, IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import { getShopifyClient } from '@modules/shopify/api/buy/client'
 import { Language } from '@lib/types'
 import * as utils from '@lib/utils'
 import { BRAND_NAME, LOCALSTORAGE_CHECKOUT_KEY } from '@lib/constants'
 import { trackAddToCartEvent, trackRemoveFromCart } from '@modules/tracking/events'
+import { useRouter } from 'next/router'
 import fetchNewOrExistingCheckout from './fetchNewOrExistingCheckout'
 
 /* eslint-disable */
@@ -19,8 +21,16 @@ export const defaultValues = {
   checkout: {
     id: null,
     lineItems: [],
+    lineItemsSubtotalPrice: {
+      amount: ''
+    },
+    discountApplications: [],
+    subtotalPriceV2: {
+      amount: ''
+    },
     totalPrice: null,
-    webUrl: ''
+    webUrl: '',
+    completedAt: null
   },
   showCart: false,
 }
@@ -39,18 +49,39 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
   const [loading, setLoading] = React.useState(false)
   const [showCart, setShowCart] = React.useState(false)
   const [product] = React.useState(shopifyProduct)
+  const router = useRouter()
 
   const initializeCheckout = async () => {
-    const newOrExistingCheckout = await fetchNewOrExistingCheckout(
-      getShopifyClient(locale as Language)
-    )
+    const client = getShopifyClient(locale as Language)
+    const newOrExistingCheckout = await fetchNewOrExistingCheckout(client)
+
     setCheckout(newOrExistingCheckout)
     utils.setLocalStorageSafe(LOCALSTORAGE_CHECKOUT_KEY, newOrExistingCheckout.id)
+
+    if (!router.isReady) {
+      return
+    }
+    const { discount } = router.query
+
+    if (discount) {
+      try {
+        const updatedCheckout = await client.checkout.addDiscount(
+          newOrExistingCheckout.id,
+          discount
+        )
+
+        setCheckout(updatedCheckout)
+
+        toast.success('DISCOUNT')
+      } catch (err) {
+        console.error(err)
+      }
+    }
   }
 
   React.useEffect(() => {
     initializeCheckout()
-  }, [])
+  }, [router.isReady])
 
   const addVariantToCart = (variant: IShopifyProductVariant, quantity = 1) => {
     const checkoutID = checkout.id

@@ -13,7 +13,7 @@ const QuantitySelect: React.FC<IQuantitySelectProps> = ({ onchange, lineItem }) 
   return (
     <Listbox value={lineItem.quantity} onChange={onchange}>
       <div className="relative w-24 mt-1">
-        <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-black cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+        <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-black cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
           <span className="block truncate">{lineItem.quantity}</span>
           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
             <DownArrow />
@@ -29,7 +29,7 @@ const QuantitySelect: React.FC<IQuantitySelectProps> = ({ onchange, lineItem }) 
               <Listbox.Option
                 key={v}
                 className={({ active }) =>
-                  `cursor-default select-none relative py-2 pl-10 pr-4 ${
+                  `cursor-pointer select-none relative py-2 pl-10 pr-4 ${
                     active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
                   }`
                 }
