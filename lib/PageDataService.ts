@@ -124,9 +124,9 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(RATINGS_QUERY, 'ratingPage', mapRatingData)
   }
 
-  public async staticPage(title: string): Promise<IStaticPage & IDefaultProps> {
+  public async staticPage(slug: string): Promise<IStaticPage & IDefaultProps> {
     return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
-      title
+      slug
     })
   }
 }
