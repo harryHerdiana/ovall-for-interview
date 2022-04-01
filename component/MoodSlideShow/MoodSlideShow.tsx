@@ -21,7 +21,7 @@ interface IMoodSliderItem {
   text: string
 }
 
-const NextArrow: React.FC<any> = (props) => {
+const NextArrow = (props) => {
   const { onClick, className, style } = props
   return (
     <div onClick={onClick} className={`${className} mood_next`} style={{ ...style }}>
@@ -30,7 +30,7 @@ const NextArrow: React.FC<any> = (props) => {
   )
 }
 
-const PrevArrow: React.FC<any> = (props) => {
+const PrevArrow = (props) => {
   const { onClick, className, style } = props
   return (
     <div onClick={onClick} className={`${className} mood_prev`} style={{ ...style }}>
