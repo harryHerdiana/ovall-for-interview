@@ -57,7 +57,8 @@ module.exports = {
         'wxga+': '1440px',
         fullhd: '1920px',
         'fullhd+': '2160px',
-        wqhd: '2560px'
+        wqhd: '2560px',
+        site: '1300px'
       },
       opacity: {
         15: 0.15
