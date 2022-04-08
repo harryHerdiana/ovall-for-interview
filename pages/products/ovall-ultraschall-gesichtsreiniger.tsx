@@ -1,6 +1,8 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 
+import { trackViewItemEvent } from '@modules/tracking/events'
+import { VariantProvider } from '@context/VariantContext'
 import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
@@ -10,7 +12,6 @@ import FaqSection from '@component/FaqSection'
 import ProductInfoAccordion from '@component/ProductInfoAccordion'
 import HowToUse from '@component/HowToUse'
 import MoodSlideShow from '@component/MoodSlideShow'
-import { VariantProvider } from '@context/VariantContext'
 import ProductReview from '@component/ProductReview'
 import DescriptionSection from '@component/DescriptionSection'
 import SocialFeed from '@component/SocialFeed'
@@ -37,6 +38,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   } = props
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku)
+
+  React.useEffect(() => trackViewItemEvent(variant), [variant.sku])
   return (
     <Layout {...appProps} seoTags={seoTags}>
       <VariantProvider>
