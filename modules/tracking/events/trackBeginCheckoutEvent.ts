@@ -8,8 +8,8 @@ export const trackBeginCheckoutEvent = (lineItems: IShopifyLineItem[]): void => 
     ecommerce: {
       items: lineItems.map((lineItem) => ({
         item_brand: BRAND_NAME,
-        item_id: lineItem.variant.id,
-        item_name: lineItem.title,
+        item_id: lineItem.variant.sku,
+        item_name: lineItem.variant.title,
         price: lineItem.variant.priceV2.amount,
         quantity: lineItem.quantity
       }))
