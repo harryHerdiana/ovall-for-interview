@@ -24,7 +24,7 @@ export const addPageviewAndOptimizeEvent = (): void => {
     event: 'optimize.event'
   })
   // fix delayed title update https://github.com/nfl/react-helmet/issues/189
-  setTimeout(() => pushToDatalayer({ event: 'page_view' }), 100)
+  setTimeout(() => pushToDatalayer({ event: 'pageview' }), 100)
 }
 
 export const setOriginalPageLocation = (): void => {
