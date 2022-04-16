@@ -3,9 +3,14 @@ import { IShopifyLineItem } from '@modules/shopify/types'
 import { pushEcommerceEvent } from './utils'
 
 export const trackBeginCheckoutEvent = (lineItems: IShopifyLineItem[]): void => {
+  const value = lineItems.reduce(
+    (acc, item) => acc + Number(item.variant.priceV2.amount) * item.quantity,
+    0
+  )
   pushEcommerceEvent({
     event: 'begin_checkout',
     ecommerce: {
+      value,
       items: lineItems.map((lineItem) => ({
         item_brand: BRAND_NAME,
         item_id: lineItem.variant.sku,
