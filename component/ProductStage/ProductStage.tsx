@@ -61,7 +61,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
             variantItem={getVariantImageBySku(activeSku)}
           />
           {variant.quantityAvailable < 1 && (
-            <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
+            <div className="py-1 px-4 absolute top-4 lg:top-8 lg:right-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
               {soldoutLabel}
             </div>
           )}
