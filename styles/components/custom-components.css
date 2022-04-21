@@ -34,36 +34,36 @@
   }
   h1,
   h2 {
-    line-height: 30px;
+    line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 1px;
-    @apply font-titleFont uppercase;
+    letter-spacing: 0.058823529rem;
+    @apply font-titleFont uppercase font-semibold;
   }
 
   h3 {
-    line-height: 21px;
+    line-height: 1.235294118rem;
     font-size: 1.0588rem;
-    letter-spacing: 1px;
-    @apply font-titleFont uppercase;
+    letter-spacing: 0.058823529rem;
+    @apply font-titleFont uppercase font-semibold;
   }
 
   h4 {
-    line-height: 23px;
+    line-height: 1.352941176rem;
     font-size: 1rem;
-    @apply font-tagFont;
+    @apply font-tagFont font-medium;
   }
 
   h5,
   h6 {
-    line-height: 23px;
+    line-height: 1.352941176rem;
     font-size: 1rem;
-    @apply font-subTagFont;
+    @apply font-subTagFont font-normal;
   }
 
   p {
     line-height: 1.353;
     font-size: 1em;
-    @apply font-textFont;
+    @apply font-textFont font-light;
   }
 
   a {
@@ -81,44 +81,44 @@
   }
 
   .h3_element {
-    line-height: 21px;
+    line-height: 1.235294118rem;
     font-size: 1.0588rem;
-    letter-spacing: 1px;
-    @apply font-titleFont  uppercase;
+    letter-spacing: 0.058823529rem;
+    @apply font-titleFont uppercase font-semibold;
   }
   .h3_element_normalcase {
-    line-height: 21px;
+    line-height: 1.235294118rem;
     font-size: 1.0588rem;
-    letter-spacing: 1px;
-    @apply font-titleFont;
+    letter-spacing: 0.058823529rem;
+    @apply font-titleFont font-semibold;
   }
   .h2_element {
-    line-height: 30px;
+    line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 1px;
-    @apply font-titleFont  uppercase;
+    letter-spacing: 0.058823529rem;
+    @apply font-titleFont uppercase font-semibold;
   }
   .static-page-section > h1,
   h2 {
-    line-height: 30px;
+    line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 1px;
-    @apply font-titleFont uppercase;
+    letter-spacing: 0.058823529rem;
+    @apply font-titleFont uppercase font-semibold;
     margin-top: 30px;
     margin-bottom: 30px;
   }
   .static-page-section > p {
     margin: 5px 0 5px 0;
     line-height: 1.353;
-    font-size: 1em;
-    @apply font-textFont;
+    font-size: 1rem;
+    @apply font-textFont font-light;
   }
   .static-page-section > p > strong {
     @apply font-bold;
   }
   .static-page-section > h4 {
-    line-height: 23px;
+    line-height: 1.352941176rem;
     font-size: 1rem;
-    @apply font-tagFont;
+    @apply font-tagFont font-medium;
   }
 }
