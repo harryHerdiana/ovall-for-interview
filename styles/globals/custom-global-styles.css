@@ -329,49 +329,63 @@ button:hover .triangle {
 }
 
 .scroll-offset:before {
-  content: "";
+  content: '';
   display: block;
   height: 72px;
   margin: -72px 0 0;
 }
 
 @font-face {
-  font-family: "SourceCodeProRegular";
+  font-family: 'SourceCodeProRegular';
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/SourceCode/SourceCodePro-Regular.woff2") format("woff2");
+  src: url('/fonts/SourceCode/SourceCodePro-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "SourceCodeProSemibold";
+  font-family: 'SourceCodeProSemibold';
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/SourceCode/SourceCodePro-SemiBold.woff2") format("woff2");
+  src: url('/fonts/SourceCode/SourceCodePro-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "WorkSansMedium";
+  font-family: 'WorkSansMedium';
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/WorkSans/WorkSans-Medium.woff2") format("woff2");
+  src: url('/fonts/WorkSans/WorkSans-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "WorkSansRegular";
+  font-family: 'WorkSansRegular';
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/WorkSans/WorkSans-Regular.woff2") format("woff2");
+  src: url('/fonts/WorkSans/WorkSans-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "WorkSansLight";
+  font-family: 'WorkSansLight';
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/WorkSans/WorkSans-Light.woff2") format("woff2");
+  src: url('/fonts/WorkSans/WorkSans-Light.woff2') format('woff2');
 }
 @font-face {
-  font-family: "WorkSansSemiBold";
+  font-family: 'WorkSansSemiBold';
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/WorkSans/WorkSans-SemiBold.woff2") format("woff2");
+  src: url('/fonts/WorkSans/WorkSans-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'CartographDemiBold';
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Cartograph/CartographCF-DemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'CartographRegular';
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Cartograph/CartographCF-Regular.woff2') format('woff2');
 }

@@ -65,7 +65,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
 
       <div id="testimonial" className="lg:w-4/5 mx-auto lg:text-center my-12 max-w-fullhd">
         <div className="px-4">
-          <span className="font-subtitleFont text-base uppercase">{testimonialSection.kicker}</span>
+          <span className="kicker">{testimonialSection.kicker}</span>
           <h2 className="mt-2 mb-4">{testimonialSection.title}</h2>
           <ProductReview />
         </div>

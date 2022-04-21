@@ -48,7 +48,7 @@ const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text, id }) =
     </div>
     <div className=" my-3 max-w-800px">
       <div className="text-left md:text-center">
-        <span className="font-subtitleFont text-base uppercase">{title}</span>
+        <span className="kicker">{title}</span>
       </div>
       <p className="mt-2 text-left md:text-center">{text}</p>
     </div>
@@ -63,7 +63,7 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
   return (
     <section className="lg:w-4/5 mx-auto lg:text-center max-w-fullhd mt-60px mb-120px lg:mb-115px lg:mt-70px">
       <div className="px-4">
-        <span className="font-subtitleFont text-base uppercase">{title}</span>
+        <span className="kicker">{title}</span>
         <h2 className="mt-2 mb-4">{kicker}</h2>
       </div>
       <Slider settings={setting} className="w-full items-center">

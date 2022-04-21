@@ -45,7 +45,7 @@ const Newsletter: React.FC<INewsletterProps> = ({
   }
   return (
     <section className="mx-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-center my-10 lg:mt-85px lg:mb-80px">
-      <h3>{title}</h3>
+      <span className="kicker">{title}</span>
       <h2 className="mb-2 mt-3">{subheader}</h2>
       <div>
         <StructuredText data={description} />

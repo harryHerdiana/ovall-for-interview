@@ -34,35 +34,36 @@
   }
   h1,
   h2 {
-    line-height: 1.154;
+    line-height: 30px;
     font-size: 1.529411rem;
-    letter-spacing: -0.015em;
-    @apply font-subtitleFont font-semibold;
+    letter-spacing: 1px;
+    @apply font-titleFont uppercase;
   }
 
   h3 {
-    line-height: 1.154;
+    line-height: 21px;
     font-size: 1.0588rem;
-    @apply font-subtitleFont font-normal uppercase;
+    letter-spacing: 1px;
+    @apply font-titleFont uppercase;
   }
 
   h4 {
-    line-height: 1.353;
+    line-height: 23px;
     font-size: 1rem;
-    @apply font-subTagFont font-medium;
+    @apply font-tagFont;
   }
 
   h5,
   h6 {
-    line-height: 1.353;
+    line-height: 23px;
     font-size: 1rem;
-    @apply font-subTagFont font-normal;
+    @apply font-subTagFont;
   }
 
   p {
     line-height: 1.353;
     font-size: 1em;
-    @apply font-textFont font-light;
+    @apply font-textFont;
   }
 
   a {
@@ -75,33 +76,34 @@
     @apply text-tiny font-subTagFont font-semibold text-greenLink;
   }
   .kicker {
-    line-height: 1;
-    letter-spacing: -0.015em;
-    @apply text-base font-normal font-subtitleFont uppercase;
+    font-size: 1.0588rem;
+    @apply text-base font-subTagFont;
   }
 
   .h3_element {
-    line-height: 1.154;
+    line-height: 21px;
     font-size: 1.0588rem;
-    @apply font-subtitleFont font-normal uppercase;
+    letter-spacing: 1px;
+    @apply font-titleFont  uppercase;
   }
   .h3_element_normalcase {
-    line-height: 1.154;
+    line-height: 21px;
     font-size: 1.0588rem;
-    @apply font-subtitleFont font-normal;
+    letter-spacing: 1px;
+    @apply font-titleFont;
   }
   .h2_element {
-    line-height: 1.154;
+    line-height: 30px;
     font-size: 1.529411rem;
-    letter-spacing: -0.015em;
-    @apply font-subtitleFont font-semibold;
+    letter-spacing: 1px;
+    @apply font-titleFont  uppercase;
   }
   .static-page-section > h1,
   h2 {
-    line-height: 1.154;
+    line-height: 30px;
     font-size: 1.529411rem;
-    letter-spacing: -0.015em;
-    @apply font-subtitleFont font-semibold;
+    letter-spacing: 1px;
+    @apply font-titleFont uppercase;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -109,14 +111,14 @@
     margin: 5px 0 5px 0;
     line-height: 1.353;
     font-size: 1em;
-    @apply font-textFont font-light;
+    @apply font-textFont;
   }
   .static-page-section > p > strong {
     @apply font-bold;
   }
   .static-page-section > h4 {
-    line-height: 1.353;
+    line-height: 23px;
     font-size: 1rem;
-    @apply font-subTagFont font-medium;
+    @apply font-tagFont;
   }
 }
