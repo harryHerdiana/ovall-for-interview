@@ -19,11 +19,17 @@ import InfoTechSection from '@component/InfoTechSection'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
 import { useRouter } from 'next/router'
 
+const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
+
 const getVariantFromRouter = (router) => {
   if (!router.isReady) {
     return null
   }
   if (!router.query || !router.query.variant) {
+    return null
+  }
+
+  if (!VALID_SKUS.includes(router.query.variant)) {
     return null
   }
 
@@ -49,7 +55,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   } = props
 
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
-  const variant = product.variants.find((v) => v.sku === variantSku)
+  const variant = product.variants.find((v) => v.sku === variantSku) || product.variants[0]
 
   const v = getVariantFromRouter(useRouter())
   React.useEffect(() => trackViewItemEvent(variant), [variant.sku])
