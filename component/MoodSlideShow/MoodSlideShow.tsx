@@ -66,7 +66,7 @@ const MoodSlideShow: React.FC<IMoonSlideShowProps> = ({ kicker, title, items }) 
         <span className="font-subtitleFont text-base uppercase">{title}</span>
         <h2 className="mt-2 mb-4">{kicker}</h2>
       </div>
-      <Slider settings={setting} className="w-full items-center">
+      <Slider name="MoodSlideShow" settings={setting} className="w-full items-center">
         {items.map((item, index) => (
           <MoodSliderItem
             key={item.id}

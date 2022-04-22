@@ -3,12 +3,12 @@
 import React, { useRef } from 'react'
 import Slickslider from 'react-slick'
 import Icon from '@component/Icon'
-import { VariantContext } from '@context/VariantContext'
 
 interface ISlider {
   children: React.ReactElement[]
   settings?: Record<string, unknown>
   className: string
+  name: string
 }
 
 const NextArrow = (props) => {
@@ -41,18 +41,15 @@ const PrevArrow = (props) => {
   )
 }
 
-const Slider: React.FC<ISlider> = ({ children, settings = {}, ...extraProps }) => {
+const Slider: React.FC<ISlider> = ({ children, settings = {}, name, ...extraProps }) => {
   const sliderRef = useRef<Slickslider>()
   const mergedSettings = { ...settings }
-  const variantContext = React.useContext(VariantContext)
   const goToFirst = () => {
     sliderRef.current.slickGoTo(0)
   }
   React.useEffect(() => {
-    if (variantContext.isSelected === true) {
-      goToFirst()
-    }
-  }, [variantContext.isSelected])
+    goToFirst()
+  }, [name])
   return (
     <>
       <Slickslider
