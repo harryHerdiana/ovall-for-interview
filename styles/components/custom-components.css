@@ -42,7 +42,7 @@
 
   h3 {
     line-height: 1.235294118rem;
-    font-size: 1.0588rem;
+    font-size: 1.058823529rem;
     letter-spacing: 0.058823529rem;
     @apply font-titleFont uppercase font-semibold;
   }
@@ -82,15 +82,15 @@
 
   .h3_element {
     line-height: 1.235294118rem;
-    font-size: 1.0588rem;
+    font-size: 1.058823529rem;
     letter-spacing: 0.058823529rem;
     @apply font-titleFont uppercase font-semibold;
   }
   .h3_element_normalcase {
     line-height: 1.235294118rem;
-    font-size: 1.0588rem;
+    font-size: 1.058823529rem;
     letter-spacing: 0.058823529rem;
-    @apply font-titleFont font-semibold;
+    @apply font-titleFont;
   }
   .h2_element {
     line-height: 1.7647rem;

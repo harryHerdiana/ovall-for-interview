@@ -31,11 +31,9 @@ const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
           <>
             {index !== 0 && <hr />}
             <Disclosure.Button className="flex relative justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left ">
-              <div className="flex gap-4">
-                <span className=" font-subtitleFont text-base uppercase font-semibold ">
-                  {item.title}
-                </span>
-                <span className=" font-subtitleFont text-base uppercase ">{item.subtitle}</span>
+              <div className="flex gap-4 items-center">
+                <span className=" h3_element">{item.title}</span>
+                <span className=" h3_element_normalcase uppercase">{item.subtitle}</span>
               </div>
               <Icon
                 src="/images/arrow-big.svg"
