@@ -104,8 +104,6 @@
     font-size: 1.529411rem;
     letter-spacing: 0.058823529rem;
     @apply font-titleFont uppercase font-semibold;
-    margin-top: 30px;
-    margin-bottom: 30px;
   }
   .static-page-section > p {
     margin: 5px 0 5px 0;
