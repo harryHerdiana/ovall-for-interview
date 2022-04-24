@@ -2,7 +2,6 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 
 import { trackViewItemEvent } from '@modules/tracking/events'
-import { VariantProvider } from '@context/VariantContext'
 import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
@@ -18,6 +17,24 @@ import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
 import InfoTechSection from '@component/InfoTechSection'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
+import { useRouter } from 'next/router'
+
+const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
+
+const getVariantFromRouter = (router) => {
+  if (!router.isReady) {
+    return null
+  }
+  if (!router.query || !router.query.variant) {
+    return null
+  }
+
+  if (!VALID_SKUS.includes(router.query.variant)) {
+    return null
+  }
+
+  return router.query.variant
+}
 
 const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps) => {
   const {
@@ -36,21 +53,25 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     testimonialSection,
     descriptionSection
   } = props
-  const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
-  const variant = product.variants.find((v) => v.sku === variantSku)
 
+  const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
+  const variant = product.variants.find((v) => v.sku === variantSku) || product.variants[0]
+
+  const v = getVariantFromRouter(useRouter())
   React.useEffect(() => trackViewItemEvent(variant), [variant.sku])
+  React.useEffect(() => {
+    if (v) setVariantSku(v)
+  }, [v])
+
   return (
     <Layout {...appProps} seoTags={seoTags}>
-      <VariantProvider>
-        <ProductStage
-          {...props}
-          product={product}
-          variant={variant}
-          activeSku={variantSku}
-          setVariantSku={setVariantSku}
-        />
-      </VariantProvider>
+      <ProductStage
+        {...props}
+        product={product}
+        variant={variant}
+        activeSku={variantSku}
+        setVariantSku={setVariantSku}
+      />
       <DescriptionSection {...descriptionSection} />
       <InfoBannerSection {...productInfoBannerSection} />
       <MoodSlideShow {...moodSlideshowSection} />

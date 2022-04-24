@@ -55,9 +55,13 @@ const ProductStage: React.FC<IProductStageProps> = ({
     <section className="grid grid-cols-1 lg:gap-4 lg:grid-cols-2 max-w-site mx-auto mb-0">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
         <div className="relative h-full w-full lg:px-8">
-          <ProductSlideshow items={slideshowImages} variantItem={getVariantImageBySku(activeSku)} />
+          <ProductSlideshow
+            activeSku={activeSku}
+            items={slideshowImages}
+            variantItem={getVariantImageBySku(activeSku)}
+          />
           {variant.quantityAvailable < 1 && (
-            <div className="py-1 px-4 absolute top-4 lg:top-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
+            <div className="py-1 px-4 absolute top-4 lg:top-8 lg:right-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
               {soldoutLabel}
             </div>
           )}
@@ -88,6 +92,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           variant={variant}
           colorCaption={colorCaption}
           setVariantSku={setVariantSku}
+          activeSku={activeSku}
           variants={product.variants}
           quantityCaption={quantityCaption}
           soldoutLabel={soldoutLabel}

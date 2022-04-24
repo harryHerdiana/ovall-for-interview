@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IShopifyProductVariant } from '@modules/shopify/types'
 import Icon from '@component/Icon'
 import ShopContext from '@context/StoreContext'
-import { VariantContext } from '@context/VariantContext'
+import classNames from 'classnames'
 import AddToCartButton from './AddToCartButton'
 
 interface IVariantSelect {
@@ -13,10 +13,7 @@ interface IVariantSelect {
   colorCaption: string
   addToCartLabel: string
   soldoutLabel: string
-}
-
-interface IActiveButton {
-  buttonActivated: number
+  activeSku: string
 }
 
 const VariantSelect: React.FC<IVariantSelect> = ({
@@ -26,9 +23,9 @@ const VariantSelect: React.FC<IVariantSelect> = ({
   quantityCaption,
   colorCaption,
   addToCartLabel,
-  soldoutLabel
+  soldoutLabel,
+  activeSku
 }) => {
-  const variantContext = React.useContext(VariantContext)
   const shopContext = React.useContext(ShopContext)
 
   const option = [1, 2, 3, 4, 5, 6, 7]
@@ -44,9 +41,6 @@ const VariantSelect: React.FC<IVariantSelect> = ({
     shopContext.addVariantToCart(variant, currentQuantity)
     shopContext.setShowCart(true)
   }
-  const [activebutton, setActiveButton] = useState<IActiveButton>({
-    buttonActivated: 0
-  })
 
   return (
     <>
@@ -54,21 +48,15 @@ const VariantSelect: React.FC<IVariantSelect> = ({
         <div className="flex flex-col justify-between h-max">
           <h3 className="justify-self-start text-left mb-5 ">{colorCaption}</h3>
           <div className="flex flex-row gap-2 ml-1 mb-3">
-            {variants.map((vari, index) => (
+            {variants.map((vari) => (
               <button
                 key={vari.id}
-                className={`${
-                  activebutton.buttonActivated === index && 'ring-1 ring-offset-2 ring-black'
-                } md:w-4 md:h-4 w-5 h-5 rounded-full bg-${vari.sku}-500`}
+                className={classNames(`md:w-4 md:h-4 w-5 h-5 rounded-full bg-${vari.sku}-500`, {
+                  'ring-1 ring-offset-2 ring-black': activeSku === vari.sku
+                })}
                 type="button"
                 value={vari.sku}
-                onClick={() => {
-                  variantContext.setSelected()
-                  setVariantSku(vari.sku)
-                  setActiveButton({
-                    buttonActivated: index
-                  })
-                }}
+                onClick={() => setVariantSku(vari.sku)}
                 aria-hidden="true"
               />
             ))}

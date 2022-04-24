@@ -3,7 +3,6 @@
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
-import { VariantContext } from '@context/VariantContext'
 import React, { useEffect, useState } from 'react'
 import GradientSquare from '@component/GradientSquare'
 import Icon from '@component/Icon'
@@ -11,10 +10,10 @@ import Icon from '@component/Icon'
 interface IProductSlideshow {
   variantItem: Record<string, any>
   items: Record<string, any>[]
+  activeSku: string
 }
 
 const NextArrow = (props) => {
-  const variantContext = React.useContext(VariantContext)
   const { onClick, className, style } = props
   return (
     <div
@@ -23,10 +22,7 @@ const NextArrow = (props) => {
       style={{
         ...style
       }}>
-      <div
-        onClick={() => {
-          variantContext.setUnselected()
-        }}>
+      <div>
         <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
       </div>
     </div>
@@ -34,7 +30,6 @@ const NextArrow = (props) => {
 }
 
 const PrevArrow = (props) => {
-  const variantContext = React.useContext(VariantContext)
   const { onClick, className, style } = props
   return (
     <div
@@ -43,10 +38,7 @@ const PrevArrow = (props) => {
       style={{
         ...style
       }}>
-      <div
-        onClick={() => {
-          variantContext.setUnselected()
-        }}>
+      <div>
         <Icon src="/images/arrow-small.svg" className="h-10 w-10" />
       </div>
     </div>
@@ -63,7 +55,7 @@ const SliderItem: React.FC<ISliderItem> = ({ image }) => (
   </div>
 )
 
-const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) => {
+const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem, activeSku }) => {
   const [allItems, setAllItems] = useState([])
   useEffect(() => {
     setAllItems([variantItem].concat(items))
@@ -73,7 +65,7 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem }) =
     prevArrow: <PrevArrow />
   }
   return (
-    <Slider settings={setting} className="w-full items-center h-max">
+    <Slider name={activeSku} settings={setting} className="w-full items-center h-max">
       {allItems.map((item) => (
         <GradientSquare key={item.id} variantGradient={item.background} className="m-auto ">
           <SliderItem image={item.image} key={item.id} />
