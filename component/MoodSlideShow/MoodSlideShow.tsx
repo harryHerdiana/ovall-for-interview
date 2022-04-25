@@ -48,7 +48,7 @@ const MoodSliderItem: React.FC<IMoodSliderItem> = ({ image, title, text, id }) =
     </div>
     <div className=" my-3 max-w-800px">
       <div className="text-left md:text-center">
-        <span className="kicker">{title}</span>
+        <h3>{title}</h3>
       </div>
       <p className="mt-2 text-left md:text-center">{text}</p>
     </div>

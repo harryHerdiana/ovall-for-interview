@@ -47,7 +47,7 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
         </GradientSquare>
         <div className="flex-col items-start h-max justify-center w-full pt-8 p-4 lg:p-0 bg-white lg:bg-transparent lg:mt-0">
           <div className="text-center lg:text-left block">
-            <div className="self-center lg:self-start font-titleFont text-2xl">{title}</div>
+            <div className="self-center lg:self-start h2_element_normalcase">{title}</div>
             <div className=" mb-8 self-center lg:self-start" style={{ minHeight: '25px' }}>
               <ProductRating />
             </div>

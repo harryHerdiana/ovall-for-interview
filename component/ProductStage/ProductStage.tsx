@@ -68,7 +68,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
         </div>
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
-        <h1 className="w-full text-left mb-1">{product.title}</h1>
+        <div className="w-full text-left mb-1 h2_element_normalcase">{product.title}</div>
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
             <ProductRating />
