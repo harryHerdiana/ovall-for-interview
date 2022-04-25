@@ -24,13 +24,15 @@ export const PRODUCT_PAGE_QUERY = `
         }
       }
       slideshowItems {
+        id
         gradientBackground
         image {
           responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
             ...ResponsiveImageFragment
           }
         }
-        id
+        descriptionLabel
+        descriptionText
       }
       title
       slug

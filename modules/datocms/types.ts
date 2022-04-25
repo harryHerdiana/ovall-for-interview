@@ -122,6 +122,8 @@ export interface IDatoProductPage {
     image: {
       responsiveImage: DatoCMSResponsiveImage
     }
+    descriptionLabel: string
+    descriptionText: string
   }[]
   productClaims: {
     id: string

@@ -120,6 +120,8 @@ export interface IProductSlideshowImage {
   id: string
   background?: string
   image: DatoCMSResponsiveImage
+  descriptionLabel: string
+  descriptionText: string
 }
 
 export interface IMoodSlideshowItem {

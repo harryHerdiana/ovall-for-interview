@@ -23,7 +23,9 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       slideshowImages: d.slideshowItems.map((item) => ({
         id: item.id,
         background: item.gradientBackground,
-        image: item.image.responsiveImage
+        image: item.image.responsiveImage,
+        descriptionLabel: item.descriptionLabel,
+        descriptionText: item.descriptionText
       })),
       soldoutLabel: d.soldoutLabel,
       discountLabel: d.discountLabel
