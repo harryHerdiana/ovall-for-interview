@@ -32,9 +32,9 @@ const Button: React.FC<IButton> = ({
   )
   const buttonProperty = {
     primary:
-      ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-subtitleFont justify-center ',
+      ' hover:bg-white hover:text-black border-black bg-black text-white border-2 font-subtitleFont font-normal justify-center ',
     secondary:
-      ' hover:text-greenLink hover:border-black bg-transparent text-black  font-subtitleFont text-tiny justify-start',
+      ' hover:text-greenLink hover:border-black bg-transparent text-black  font-subtitleFont font-normal  text-tiny justify-start',
     disabled: 'bg-gray_soldout font-subtitleFont justify-center cursor-not-allowed',
     hidden: 'hidden'
   }

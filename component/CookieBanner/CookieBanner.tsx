@@ -20,7 +20,7 @@ const CookieBanner: React.FC<IProps> = ({
 }) => (
   <div className="w-screen fixed bottom-0 bg-greenLink flex z-50 py-2.5 px-2.5">
     <div className="mx-auto w-full lg:w-max max-w-800px">
-      <div className="font-titleFont text-2xl my-2">{title}</div>
+      <h2 className="my-2">{title}</h2>
       <div className="font-textFont mb-6">
         <StructuredText
           renderInlineRecord={({ record }) => (

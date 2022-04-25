@@ -24,18 +24,16 @@ const BlockImage: React.FC<IBlockRecord> = ({ record }) => (
 )
 
 const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
-  <section className="m-auto flex flex-col max-w-site lg:w-3/4 xl:w-1/2 h-auto lg:p-5 lg:text-center my-2">
+  <section className="m-auto flex flex-col max-w-content-sm lg:w-3/4 xl:w-1/2 h-auto  lg:text-center my-2">
     {items.map((item, index) => (
       <Disclosure key={item.id} defaultOpen={index === 0}>
         {({ open }) => (
           <>
             {index !== 0 && <hr />}
             <Disclosure.Button className="flex relative justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left ">
-              <div className="flex gap-4">
-                <span className=" font-subtitleFont text-base uppercase font-semibold ">
-                  {item.title}
-                </span>
-                <span className=" font-subtitleFont text-base uppercase ">{item.subtitle}</span>
+              <div className="flex gap-4 items-center">
+                <span className=" h3_element">{item.title}</span>
+                <span className=" h3_element_normalcase uppercase">{item.subtitle}</span>
               </div>
               <Icon
                 src="/images/arrow-big.svg"

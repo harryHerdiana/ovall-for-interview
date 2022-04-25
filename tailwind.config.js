@@ -15,8 +15,8 @@ module.exports = {
       decimal: 'decimal'
     },
     fontFamily: {
-      subtitleFont: ['SourceCodeProRegular', 'Courier New', 'Tahoma', 'monospace'],
-      titleFont: ['SourceCodeProSemibold', 'Courier New', 'Tahoma', 'monospace'],
+      subtitleFont: ['CartographRegular', 'Helvetica', 'Roboto', 'sans-serif'],
+      titleFont: ['CartographDemiBold', 'Helvetica', 'Roboto', 'sans-serif'],
       tagFont: ['WorkSansMedium', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       subTagFont: ['WorkSansRegular', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       textFont: ['WorkSansLight', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
