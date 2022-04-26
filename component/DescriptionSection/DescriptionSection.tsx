@@ -8,9 +8,7 @@ type IDescriptionSectionProps = {
 
 const DescriptionSection: React.FC<IDescriptionSectionProps> = ({ title, text, videoUrl }) => (
   <section className="px-4 md:px-0 m-auto flex flex-col max-w-content-sm md:w-3/4 xl:w-1/2 md:p-5 md:text-center mb-80px lg:items-center mt-12 lg:mt-40px">
-    <h2 style={{ letterSpacing: '0.10rem' }} className="mb-2 h2_element">
-      {title}
-    </h2>
+    <h2 className="mb-2">{title}</h2>
     <p className="mb-4">{text}</p>
     {videoUrl && (
       <div className="h-190px lg:h-370px lg:w-700px">

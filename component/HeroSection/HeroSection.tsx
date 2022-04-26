@@ -26,7 +26,7 @@ const HeroSection: React.FC<IHeroSectionProps> = ({
     <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
       <div className="flex-col items-start h-max justify-center w-full  lg:w-full p-4 lg:p-0 lg:mt-0 lg:mr-8  bg-white lg:bg-transparent">
         <div className="flex flex-col gap-2 mt-4 lg:ml-8">
-          <div className="h3_element">{title}</div>
+          <div className="kicker">{title}</div>
           <h2 className="my-0">{kicker || body}</h2>
         </div>
       </div>

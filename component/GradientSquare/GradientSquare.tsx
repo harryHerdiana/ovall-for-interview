@@ -4,7 +4,7 @@ import classnames from 'classnames'
 interface IGradientSquare {
   variantGradient: string
   className?: string
-  children: React.ReactElement
+  children: React.ReactElement[] | React.ReactElement
 }
 
 const gradientMap = {

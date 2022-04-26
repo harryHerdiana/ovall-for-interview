@@ -36,14 +36,14 @@
   h2 {
     line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont uppercase font-semibold;
   }
 
   h3 {
     line-height: 1.235294118rem;
     font-size: 1.058823529rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont uppercase font-semibold;
   }
 
@@ -83,32 +83,32 @@
   .h3_element {
     line-height: 1.235294118rem;
     font-size: 1.058823529rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont uppercase font-semibold;
   }
   .h3_element_normalcase {
     line-height: 1.235294118rem;
     font-size: 1.058823529rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont;
   }
   .h2_element {
     line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont uppercase font-semibold;
   }
   .h2_element_normalcase {
     line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont font-semibold;
   }
   .static-page-section > h1,
   h2 {
     line-height: 1.7647rem;
     font-size: 1.529411rem;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.16rem;
     @apply font-titleFont uppercase font-semibold;
   }
   .static-page-section > p {

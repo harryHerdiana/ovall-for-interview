@@ -15,7 +15,7 @@ const Menu: React.FC<IMenuProps> = ({ items, onClick }) => {
   const { pathname } = useRouter()
 
   return (
-    <ul className="-mx-4 w-screen md:w-1/2 lg:w-2/5 relative order-last md:order-2 flex flex-col overflow-y-auto p-3 pb-16 menu-height bg-white md:mt-6 md:flex-row md:justify-between md:h-auto items-start  md:p-0">
+    <ul className="-mx-4 w-screen md:w-3/5 md:min-w-450px lg:w-2/5 lg:min-w-500px relative order-last md:order-2 flex flex-col overflow-y-auto p-3 pb-16 menu-height bg-white md:mt-6 md:flex-row md:justify-between md:h-auto items-start  md:p-0">
       {items.map((menuItem) => (
         <li
           key={menuItem.id}

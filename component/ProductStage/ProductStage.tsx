@@ -43,6 +43,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
     discountLabel
   }
 }) => {
+  console.log(slideshowImages)
   const skuColorMap = {
     'Ovall-Blue': 'blue',
     'Ovall-Pink': 'rose',
