@@ -66,7 +66,7 @@ const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descr
   return (
     <div
       className={`${
-        !isOpen && 'translate-y-2/3 md:translate-y-16 lg:translate-y-2/3'
+        !isOpen && 'translate-y-2/3 md:translate-y-2/3 '
       } lg:min-h-190px max-h-150px lg:max-h-190px min-h-150px transition transform ease-in-out duration-500 delay-150 absolute bottom-0 w-full lg:w-full green_70 overflow-hidden px-4`}>
       <div className="items-start flex flex-col">
         <div
