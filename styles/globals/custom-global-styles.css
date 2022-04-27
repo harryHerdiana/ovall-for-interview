@@ -17,6 +17,10 @@ html {
   color: #000;
 }
 
+.green_70 {
+  background-color: rgba(156, 212, 185, 0.7);
+}
+
 /* Popup style */
 .popup-box {
   position: fixed;

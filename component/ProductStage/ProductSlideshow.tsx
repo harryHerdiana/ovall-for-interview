@@ -64,10 +64,10 @@ interface IImageDescription {
 const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descriptionText }) => {
   const [isOpen, setIsopen] = useState<boolean>(false)
   return (
-    <div className="absolute bottom-0 w-full lg:w-full bg-greenLink overflow-hidden px-4 opacity-70">
+    <div className="absolute bottom-0 w-full lg:w-full green_70 overflow-hidden px-4">
       <div className="items-start flex flex-col">
         <div
-          className="flex w-full lg:w-full items-center justify-between cursor-pointer"
+          className="flex w-full lg:w-full items-center justify-between cursor-pointer "
           onClick={() => setIsopen(!isOpen)}>
           <h3 className="text-left py-4 lg:py-6">{descriptionLabel}</h3>
           <div>
