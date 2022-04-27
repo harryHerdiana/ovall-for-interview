@@ -17,7 +17,7 @@
 .burger::before,
 .burger::after {
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   border-radius: calc(var(--thickness) / 2);
   width: calc(var(--burgerSize) - (2 * var(--margin)));

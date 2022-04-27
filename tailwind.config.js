@@ -113,7 +113,9 @@ module.exports = {
         'stage-desktop': '620px',
         'product-card': '528px',
         '235px': '235px',
-        '190px': '190px'
+        '190px': '190px',
+        '165px': '165px',
+        '150px': '150px'
       },
       width: {
         fit: 'fit-content',
