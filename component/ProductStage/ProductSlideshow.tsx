@@ -68,7 +68,7 @@ const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descr
       <div className="items-start flex flex-col">
         <div className="flex w-full lg:w-full items-center justify-between">
           <h3 className="text-left py-4 lg:py-6">{descriptionLabel}</h3>
-          <div onClick={() => setIsopen(!isOpen)}>
+          <div className="cursor-pointer" onClick={() => setIsopen(!isOpen)}>
             {isOpen ? (
               <img alt="closeIcon" src="/images/close.svg" className="h-8 w-8" />
             ) : (
