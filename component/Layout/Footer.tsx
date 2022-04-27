@@ -11,7 +11,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
       </div>
       <div className="flex justify-between flex-col lg:flex-row text-center lg:text-left gap-4 lg:gap-12">
         <div>
-          <div className="text-base font-subtitleFont uppercase mb-5">{leftColumn.title}</div>
+          <h3 className="mb-5">{leftColumn.title}</h3>
           {leftColumn.items.map((item, index) => (
             <Link key={item.id} href={`${item.path}`}>
               <div
@@ -26,7 +26,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-col">
-          <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
+          <h3 className="mb-5">{middleColumn.title}</h3>
           {middleColumn.items.map((item) => (
             <Link key={item.id} href={`${item.path}`}>
               <div
@@ -38,7 +38,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
           ))}
         </div>
         <div className="lg:w-400px mx-auto lg:mx-0">
-          <div className="text-base font-subtitleFont uppercase mb-5">{rightColumn.title}</div>
+          <h3 className="mb-5">{rightColumn.title}</h3>
           <div className="text-tiny">
             <p>{rightColumn.text}</p>
           </div>
@@ -66,7 +66,7 @@ const Footer: React.FC<IFooter> = ({ leftColumn, middleColumn, rightColumn }) =>
           </div>
         </div>
         <div className="lg:hidden">
-          <div className="text-base font-subtitleFont uppercase mb-5">{middleColumn.title}</div>
+          <h3 className="mb-5">{middleColumn.title}</h3>
           {middleColumn.items.map((item, index) => (
             <div key={item.id} id={item.id}>
               <Link href={item.path}>

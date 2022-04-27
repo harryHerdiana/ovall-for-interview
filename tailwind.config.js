@@ -15,8 +15,8 @@ module.exports = {
       decimal: 'decimal'
     },
     fontFamily: {
-      subtitleFont: ['CartographRegular', 'Helvetica', 'Roboto', 'sans-serif'],
-      titleFont: ['CartographDemiBold', 'Helvetica', 'Roboto', 'sans-serif'],
+      subtitleFont: ['CartographRegular', 'Roboto', 'Helvetica', 'sans-serif'],
+      titleFont: ['CartographDemiBold', 'Roboto', 'Helvetica', 'sans-serif'],
       tagFont: ['WorkSansMedium', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       subTagFont: ['WorkSansRegular', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
       textFont: ['WorkSansLight', 'Helvetica Neue', 'Helvetica', ' sans-serif'],
@@ -181,6 +181,7 @@ module.exports = {
         '245px': '245px',
         '235px': '235px',
         '190px': '190px',
+        '70px': '70px',
         '750px': '750px',
         '300px': '300px'
       },
@@ -214,6 +215,7 @@ module.exports = {
         'content-sm': '946px',
         img: '400px',
         '500px': '500px',
+        '450px': '450px',
         '570px': '570px',
         'img-sm': '300px',
         'img-slider-desktop': '600px'
