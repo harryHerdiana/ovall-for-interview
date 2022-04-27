@@ -64,11 +64,13 @@ interface IImageDescription {
 const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descriptionText }) => {
   const [isOpen, setIsopen] = useState<boolean>(false)
   return (
-    <div className="absolute bottom-0 w-full lg:w-full bg-greenLink overflow-hidden px-4">
+    <div className="absolute bottom-0 w-full lg:w-full bg-greenLink overflow-hidden px-4 opacity-70">
       <div className="items-start flex flex-col">
-        <div className="flex w-full lg:w-full items-center justify-between">
+        <div
+          className="flex w-full lg:w-full items-center justify-between cursor-pointer"
+          onClick={() => setIsopen(!isOpen)}>
           <h3 className="text-left py-4 lg:py-6">{descriptionLabel}</h3>
-          <div className="cursor-pointer" onClick={() => setIsopen(!isOpen)}>
+          <div>
             {isOpen ? (
               <img alt="closeIcon" src="/images/close.svg" className="h-8 w-8" />
             ) : (
@@ -83,10 +85,10 @@ const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descr
         <Transition
           show={isOpen}
           as={Fragment}
-          enter="transform transition ease-out"
+          enter="transform translate"
           enterFrom="translate-y-full"
           enterTo="translate-y-0"
-          leave="transform transition ease-in"
+          leave="transform translate"
           leaveFrom="translate-y-0"
           leaveTo="translate-y-full">
           <p className="w-full lg:w-400px xl:w-full text-left mb-6 max-h-70px md:max-h-full overflow-scroll md:overflow-hidden">

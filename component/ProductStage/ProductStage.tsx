@@ -43,7 +43,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
     discountLabel
   }
 }) => {
-  console.log(slideshowImages)
   const skuColorMap = {
     'Ovall-Blue': 'blue',
     'Ovall-Pink': 'rose',
@@ -68,7 +67,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           )}
         </div>
       </div>
-      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
+      <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-12 lg:mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
         <div className="w-full text-left mb-1 h2_element_normalcase">{product.title}</div>
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
