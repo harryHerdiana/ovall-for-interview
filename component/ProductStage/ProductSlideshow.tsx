@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import classNames from 'classnames'
 import { Transition } from '@headlessui/react'
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
@@ -65,9 +66,10 @@ const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descr
   const [isOpen, setIsopen] = useState<boolean>(false)
   return (
     <div
-      className={`${
-        !isOpen && 'translate-y-2/3'
-      } lg:min-h-190px max-h-150px lg:max-h-190px min-h-150px transition transform ease-in-out duration-500 delay-150 absolute bottom-0 w-full lg:w-full green_70 overflow-hidden px-4`}>
+      className={classNames(
+        !isOpen && 'translate-y-2/3',
+        'lg:min-h-190px max-h-150px lg:max-h-190px min-h-150px transition transform ease-in-out duration-500 delay-150 absolute bottom-0 w-full lg:w-full green_70 overflow-hidden px-4'
+      )}>
       <div className="items-start flex flex-col">
         <div
           className="flex w-full lg:w-full items-center justify-between cursor-pointer "
