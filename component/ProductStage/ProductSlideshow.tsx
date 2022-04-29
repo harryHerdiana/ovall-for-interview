@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from 'react'
-import classNames from 'classnames'
-import { Transition } from '@headlessui/react'
+/* import classNames from 'classnames'
+import { Transition } from '@headlessui/react' */
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
@@ -57,6 +57,8 @@ const SliderItem: React.FC<ISliderItem> = ({ image }) => (
   </div>
 )
 
+// ImageDescription (Text overlay) has been temporarily disabled due to performance issue
+/* 
 interface IImageDescription {
   descriptionLabel: string
   descriptionText: string
@@ -117,7 +119,7 @@ const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descr
       </div>
     </div>
   )
-}
+} */
 
 const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem, activeSku }) => {
   const [allItems, setAllItems] = useState([])
@@ -137,12 +139,12 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem, act
           variantGradient={item.background}
           className="relative m-auto ">
           <SliderItem image={item.image} key={item.id} />
-          {item.descriptionText && (
+          {/*   {item.descriptionText && (
             <ImageDescription
               descriptionLabel={item.descriptionLabel}
               descriptionText={item.descriptionText}
             />
-          )}
+          )} */}
         </GradientSquare>
       ))}
     </Slider>
