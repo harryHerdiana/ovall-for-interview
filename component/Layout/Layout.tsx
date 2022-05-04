@@ -146,6 +146,8 @@ const Layout: React.FC<ILayout> = ({
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="../../images/favicon/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+
+        <script async src="https://www.googleoptimize.com/optimize.js?id=OPT-PNS37MR" />
       </Head>
       <TrackingIframe />
       <div className="flex flex-col font-main">
