@@ -11,7 +11,7 @@ const DescriptionSection: React.FC<IDescriptionSectionProps> = ({ title, text, v
     <h2 className="mb-2" style={{ letterSpacing: '0.1rem' }}>
       {title}
     </h2>
-    <p className="mb-4">{text}</p>
+    <p>{text}</p>
     {videoUrl && (
       <div className="h-190px lg:h-370px lg:w-700px">
         <iframe title={title} className="w-full h-full" src={videoUrl} />
