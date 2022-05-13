@@ -96,10 +96,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         <div className="px-4">
           <span className="kicker">{testimonialSection.kicker}</span>
           <h2 className="mt-2 mb-4">{testimonialSection.title}</h2>
-          {/* <ProductReview /> */}
+          <ProductReview />
         </div>
-        <Script src="//loox.io/widget/loox.js?shop=ovallskincare.myshopify.com" />
-        <div id="looxReviews" data-product-id="6600332345552" />
       </div>
     </Layout>
   )
