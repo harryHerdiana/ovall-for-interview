@@ -1,7 +1,6 @@
 import React from 'react'
-import Script from 'next/script'
 import { GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
+
 import { trackViewItemEvent } from '@modules/tracking/events'
 import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
@@ -18,6 +17,7 @@ import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
 import InfoTechSection from '@component/InfoTechSection'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
+import { useRouter } from 'next/router'
 
 const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
 
@@ -73,14 +73,6 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         setVariantSku={setVariantSku}
       />
       <DescriptionSection {...descriptionSection} />
-      <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
-        <div className="px-2 lg:px-4">
-          <span className="kicker">{testimonialSection.kicker}</span>
-          <h2 className="mt-2 mb-4">{testimonialSection.title}</h2>
-        </div>
-        <Script src="//loox.io/widget/loox.js?shop=ovallskincare.myshopify.com" />
-        <div id="looxCarousel" data-show-more="true" />
-      </div>
       <InfoBannerSection {...productInfoBannerSection} />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
