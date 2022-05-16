@@ -22,7 +22,7 @@ const AboutUsPage: React.FC<IAboutUsPage> = (props: IAboutUsPage & IDefaultProps
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection}>
-        <div className="m-auto lg:hidden flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto text-left ">
+        <div className="m-auto flex flex-col max-w-content-sm lg:w-3/4 xl:w-1/2 h-auto lg:text-center ">
           <StructuredText data={content} />
         </div>
       </HeroSection>
