@@ -64,7 +64,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   }, [v])
 
   return (
-    <Layout {...appProps} seoTags={seoTags}>
+    <Layout {...appProps} seoTags={seoTags} indexable={false}>
       <ProductStage
         {...props}
         product={product}
