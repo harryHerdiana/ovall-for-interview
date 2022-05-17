@@ -10,7 +10,8 @@ import {
   ABOUT_US_QUERY,
   FAQ_QUERY,
   RATINGS_QUERY,
-  STATIC_PAGE_QUERY
+  STATIC_PAGE_QUERY,
+  LANDING_PAGE1_QUERY
 } from '@modules/datocms/api/queries'
 import {
   Context,
@@ -20,7 +21,8 @@ import {
   IFAQPage,
   IHomePage,
   IProductPage,
-  IStaticPage
+  IStaticPage,
+  ILandingPage
 } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
@@ -30,6 +32,7 @@ import mapAboutUsData from './mapper/aboutUs'
 import mapFAQData from './mapper/faq'
 import mapRatingData from './mapper/ratings'
 import mapStaticPage from './mapper/staticPage'
+import mapLandingPage from './mapper/landingPage'
 
 export default class PageDataService {
   context: Context
@@ -128,5 +131,9 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
       slug
     })
+  }
+
+  public async getLandingPage(): Promise<ILandingPage> {
+    return this.requestDatoCMSWithBaseData(LANDING_PAGE1_QUERY, 'landingpage', mapLandingPage)
   }
 }

@@ -346,6 +346,47 @@ export interface IProductPage {
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type
 }
+
+export interface ILandingPage {
+  heroSection: {
+    backgroundColor: string
+    title?: string
+    body?: string
+    image?: DatoCMSResponsiveImage
+  }
+  slideshow: {
+    images: DatoCMSResponsiveImage[]
+  }
+  porenBanner: {
+    backgroundColor: string
+    title?: string
+    body?: string
+    image?: DatoCMSResponsiveImage
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
+  productTeaserSection: IProductTeaserSection
+  skinTypeInfoSection: {
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    title: string
+    body: string
+  }
+  productInfoBannerFeatures: {
+    title: string
+    backgroundColor: string
+    image: DatoCMSResponsiveImage
+    items: {
+      id: string
+      icon: string
+      title: string
+      text: StructuredTextDocument
+    }[]
+  }
+}
+
 /** ************************* */
 
 /** ******** DATOCMS ********* */
