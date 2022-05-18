@@ -62,7 +62,6 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   React.useEffect(() => {
     if (v) setVariantSku(v)
   }, [v])
-
   return (
     <Layout {...appProps} seoTags={seoTags}>
       <ProductStage

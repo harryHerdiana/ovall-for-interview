@@ -13,7 +13,7 @@ const FAQPage: React.FC<IFAQPage> = (props: IFAQPage & IDefaultProps) => {
   const { newsletterSection, productTeaserSection, faqSection, heroSection, product } = props
   // const router = useRouter()
   // const linkToProduct = '/products/ovall-ultraschall-gesichtsreiniger'
-
+  console.log(productTeaserSection)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} title={heroSection.kicker} kicker={heroSection.title} />

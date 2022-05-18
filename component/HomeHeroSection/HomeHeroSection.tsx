@@ -9,7 +9,7 @@ type IHomeHeroSectionProps = {
   image: DatoCMSResponsiveImage
   title: string
   body: string
-  buttonText: string
+  buttonText?: string
   onClickButton?: () => void
 }
 
@@ -22,14 +22,14 @@ const HomeHeroSection: React.FC<IHomeHeroSectionProps> = ({
   onClickButton
 }) => (
   <GradientRectangle
-    className="block lg:h-max lg:min-h-540px"
+    className="block lg:min-h-400px lg:h-max "
     contentPlacement="right"
     variantGradient={backgroundColor}>
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
       <ResponsiveImage
         lazyLoad={false}
         image={image}
-        className="flex justify-start  w-full h-full md:justify-center "
+        className="flex justify-start w-auto h-full md:justify-center "
       />
       <div className="flex-col items-start h-max justify-center w-full lg:w-full p-4 lg:p-0 -mt-16 lg:mt-0 lg:mr-8">
         <div className="flex flex-col mb-4 lg:mb-0">

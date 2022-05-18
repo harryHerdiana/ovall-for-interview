@@ -9,7 +9,7 @@ type IInfoBannerSectionProps = {
   backgroundColor: string
   image: DatoCMSResponsiveImage
   title: string
-  body: string
+  body?: string
   buttonText?: string
   onClickButton?: () => void
 }
@@ -25,7 +25,7 @@ const InfoBannerSection: React.FC<IInfoBannerSectionProps> = ({
   <GradientRectangle
     contentPlacement="left"
     variantGradient={backgroundColor}
-    className="block lg:h-max lg:min-h-465px">
+    className="block lg:h-max lg:min-h-400px">
     <div className="flex flex-col-reverse lg:flex-row lg:items-center max-w-site mx-auto">
       <div className="flex-col items-start h-max justify-center w-full pt-8 p-4 lg:p-0 bg-white lg:bg-transparent lg:mt-0 lg:pl-8 ">
         <div className="flex flex-col lg:mb-0">
@@ -45,7 +45,7 @@ const InfoBannerSection: React.FC<IInfoBannerSectionProps> = ({
       <GradientSquare className="lg:bg-none lg:self-end" variantGradient={backgroundColor}>
         <ResponsiveImage
           image={image}
-          className="flex justify-start md:justify-center lg:justify-end h-max lg:w-full "
+          className="flex justify-start md:justify-center lg:justify-start h-max lg:w-full "
         />
       </GradientSquare>
     </div>
