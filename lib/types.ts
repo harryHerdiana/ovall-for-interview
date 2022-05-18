@@ -357,9 +357,10 @@ export interface ILandingPage {
   slideshow: DatoCMSResponsiveImage[]
   porenBanner: {
     backgroundColor: string
-    title?: string
-    body?: string
-    image?: DatoCMSResponsiveImage
+    title: string
+    body: string
+    image: DatoCMSResponsiveImage
+    buttonText: string
   }
   testimonialSection: {
     kicker: string

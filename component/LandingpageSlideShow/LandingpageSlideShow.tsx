@@ -93,7 +93,7 @@ const LandingpageSlideShow: React.FC<ILpSlideShowProps> = ({ items }) => {
     ]
   }
   return (
-    <section className="mx-auto lg:text-center mt-60px mb-120px  lg:my-70px max-w-fullHd">
+    <section className="mx-auto lg:text-center my-60px lg:my-70px max-w-fullHd">
       <Slider name="MoodSlideShow" settings={setting} className="w-full items-center h-max">
         {items.map((item, index) => (
           <LpSliderItem id={index} image={item} />
