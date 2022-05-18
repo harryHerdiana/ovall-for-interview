@@ -30,7 +30,7 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
       <LandingpageSlideShow items={slideshow} />
-      <HomeHeroSection {...porenBanner} onClickButton={() => router.push(PRODUCT_PATH)} />
+      <InfoBannerSection {...porenBanner} onClickButton={() => router.push(PRODUCT_PATH)} />
       <ReviewCarousel {...testimonialSection} />
       <ProductTeaser product={product} {...productTeaserSection} />
       <InfoBannerSection {...skinTypeInfoSection} />
