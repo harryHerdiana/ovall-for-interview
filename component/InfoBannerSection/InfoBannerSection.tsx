@@ -45,7 +45,7 @@ const InfoBannerSection: React.FC<IInfoBannerSectionProps> = ({
       <GradientSquare className="lg:bg-none lg:self-end" variantGradient={backgroundColor}>
         <ResponsiveImage
           image={image}
-          className="flex justify-start md:justify-center lg:justify-end h-max lg:w-full "
+          className="flex justify-start md:justify-center lg:justify-start h-max lg:w-full "
         />
       </GradientSquare>
     </div>

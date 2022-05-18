@@ -47,7 +47,6 @@ const LpSliderItem: React.FC<ILpSlideItem> = ({ image, id }) => (
 )
 
 const LandingpageSlideShow: React.FC<ILpSlideShowProps> = ({ items }) => {
-  console.log(items)
   const setting = {
     swipeToSlide: true,
     className: 'center',
@@ -56,8 +55,8 @@ const LandingpageSlideShow: React.FC<ILpSlideShowProps> = ({ items }) => {
     centerMode: true,
     speed: 500,
     infinite: true,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     dots: false,
@@ -94,7 +93,7 @@ const LandingpageSlideShow: React.FC<ILpSlideShowProps> = ({ items }) => {
     ]
   }
   return (
-    <section className="mx-auto lg:text-center mt-60px mb-120px lg:mb-115px lg:mt-70px max-w-fullHd">
+    <section className="mx-auto lg:text-center mt-60px mb-120px  lg:my-70px max-w-fullHd">
       <Slider name="MoodSlideShow" settings={setting} className="w-full items-center h-max">
         {items.map((item, index) => (
           <LpSliderItem id={index} image={item} />

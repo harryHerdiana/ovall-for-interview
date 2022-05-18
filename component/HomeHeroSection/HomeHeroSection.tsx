@@ -9,7 +9,7 @@ type IHomeHeroSectionProps = {
   image: DatoCMSResponsiveImage
   title: string
   body: string
-  buttonText: string
+  buttonText?: string
   onClickButton?: () => void
 }
 

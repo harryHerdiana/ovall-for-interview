@@ -3,12 +3,13 @@ import { GetStaticProps } from 'next'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, ILandingPage } from '@lib/types'
-import HeroSection from '@component/HeroSection'
 import LandingpageSlideShow from '@component/LandingpageSlideShow'
 import InfoBannerSection from '@component/InfoBannerSection'
 import TestimonialSection from '@component/Testimonial'
 import ProductTeaser from '@component/ProductTeaser'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
+import HomeHeroSection from '@component/HomeHeroSection'
+import { ReviewCarousel } from '@component/ProductReview'
 
 const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProps) => {
   const {
@@ -18,12 +19,14 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
     testimonialSection,
     productTeaserSection,
     product,
-    productInfoBannerFeatures
+    productInfoBannerFeatures,
+    skinTypeInfoSection
   } = props
   console.log('PROPS', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <HeroSection {...heroSection} />
+      <HomeHeroSection {...heroSection} />
+
       <LandingpageSlideShow items={slideshow} />
       <InfoBannerSection
         backgroundColor={porenBanner.backgroundColor}
@@ -31,9 +34,11 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
         title={porenBanner.title}
         body={porenBanner.body}
       />
-      <TestimonialSection {...testimonialSection} />
+      <ReviewCarousel />
       <ProductTeaser product={product} {...productTeaserSection} />
+      <InfoBannerSection {...skinTypeInfoSection} />
       <InfoBannerFeatures {...productInfoBannerFeatures} />
+      <TestimonialSection {...testimonialSection} />
     </Layout>
   )
 }

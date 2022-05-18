@@ -350,9 +350,9 @@ export interface IProductPage {
 export interface ILandingPage {
   heroSection: {
     backgroundColor: string
-    title?: string
-    body?: string
-    image?: DatoCMSResponsiveImage
+    title: string
+    body: string
+    image: DatoCMSResponsiveImage
   }
   slideshow: DatoCMSResponsiveImage[]
   porenBanner: {
