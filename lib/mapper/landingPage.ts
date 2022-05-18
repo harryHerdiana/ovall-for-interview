@@ -4,7 +4,7 @@ import * as utils from './utils'
 export default function mapLandingPage(d: any): ILandingPage {
   console.log('D', d)
   return {
-    slideshow: d.slideshow,
+    slideshow: d.slideshow.map((item) => item.responsiveImage),
     heroSection: utils.parseInfoBannerSection(d.heroSection),
     porenBanner: utils.parseInfoBannerSection(d.porenbanner.content),
     testimonialSection: {
