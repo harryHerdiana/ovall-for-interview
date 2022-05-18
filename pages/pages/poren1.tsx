@@ -7,11 +7,10 @@ import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, ILandingPage } from '@lib/types'
 import LandingpageSlideShow from '@component/LandingpageSlideShow'
 import InfoBannerSection from '@component/InfoBannerSection'
-import TestimonialSection from '@component/Testimonial'
 import ProductTeaser from '@component/ProductTeaser'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
 import HomeHeroSection from '@component/HomeHeroSection'
-import { ReviewCarousel } from '@component/ProductReview'
+import ProductReview, { ReviewCarousel } from '@component/ProductReview'
 
 const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProps) => {
   const router = useRouter()
@@ -35,7 +34,9 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
       <ProductTeaser product={product} {...productTeaserSection} />
       <InfoBannerSection {...skinTypeInfoSection} />
       <InfoBannerFeatures {...productInfoBannerFeatures} />
-      <TestimonialSection {...testimonialSection} />
+      <div id="testimonial" className="lg:w-4/5 mx-auto lg:text-center my-12 max-w-fullhd">
+        <ProductReview />
+      </div>
     </Layout>
   )
 }
