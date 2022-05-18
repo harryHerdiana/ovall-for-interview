@@ -9,7 +9,7 @@ type IInfoBannerSectionProps = {
   backgroundColor: string
   image: DatoCMSResponsiveImage
   title: string
-  body: string
+  body?: string
   buttonText?: string
   onClickButton?: () => void
 }

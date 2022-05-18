@@ -354,9 +354,7 @@ export interface ILandingPage {
     body?: string
     image?: DatoCMSResponsiveImage
   }
-  slideshow: {
-    images: DatoCMSResponsiveImage[]
-  }
+  slideshow: DatoCMSResponsiveImage[]
   porenBanner: {
     backgroundColor: string
     title?: string

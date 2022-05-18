@@ -3,13 +3,37 @@ import { GetStaticProps } from 'next'
 import Layout from '@component/Layout'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, ILandingPage } from '@lib/types'
+import HeroSection from '@component/HeroSection'
+import LandingpageSlideShow from '@component/LandingpageSlideShow'
+import InfoBannerSection from '@component/InfoBannerSection'
+import TestimonialSection from '@component/Testimonial'
+import ProductTeaser from '@component/ProductTeaser'
+import InfoBannerFeatures from '@component/InfoBannerFeatures'
 
 const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProps) => {
+  const {
+    heroSection,
+    slideshow,
+    porenBanner,
+    testimonialSection,
+    productTeaserSection,
+    product,
+    productInfoBannerFeatures
+  } = props
   console.log('PROPS', props)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <h1>LandingPage 1</h1>
-      <h2>landing page</h2>
+      <HeroSection {...heroSection} />
+      <LandingpageSlideShow items={slideshow} />
+      <InfoBannerSection
+        backgroundColor={porenBanner.backgroundColor}
+        image={porenBanner.image}
+        title={porenBanner.title}
+        body={porenBanner.body}
+      />
+      <TestimonialSection {...testimonialSection} />
+      <ProductTeaser product={product} {...productTeaserSection} />
+      <InfoBannerFeatures {...productInfoBannerFeatures} />
     </Layout>
   )
 }

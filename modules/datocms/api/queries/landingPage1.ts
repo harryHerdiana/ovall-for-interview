@@ -34,7 +34,7 @@ export const LANDING_PAGE1_QUERY = `
       slideshow {
         name
         images {
-          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 700, h: 500 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: max, w: 500, h: 500, mask:corners, cornerRadius:"25,25,25,25" }) {
             ...ResponsiveImageFragment
           }
         }

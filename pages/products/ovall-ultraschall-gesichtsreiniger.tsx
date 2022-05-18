@@ -62,7 +62,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   React.useEffect(() => {
     if (v) setVariantSku(v)
   }, [v])
-
+  console.log(moodSlideshowSection)
   return (
     <Layout {...appProps} seoTags={seoTags}>
       <ProductStage
