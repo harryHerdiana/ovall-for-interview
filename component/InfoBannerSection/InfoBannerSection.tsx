@@ -25,7 +25,7 @@ const InfoBannerSection: React.FC<IInfoBannerSectionProps> = ({
   <GradientRectangle
     contentPlacement="left"
     variantGradient={backgroundColor}
-    className="block lg:h-max lg:min-h-400px">
+    className="block lg:h-max lg:min-h-300px">
     <div className="flex flex-col-reverse lg:flex-row lg:items-center max-w-site mx-auto">
       <div className="flex-col items-start h-max justify-center w-full pt-8 p-4 lg:p-0 bg-white lg:bg-transparent lg:mt-0 lg:pl-8 ">
         <div className="flex flex-col lg:mb-0">
