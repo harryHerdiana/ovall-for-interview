@@ -33,7 +33,8 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
     descriptionSection: {
       title: utils.findByApiKey(d.productDescriptionSection, 'section_headline', 'text'),
       text: utils.findByApiKey(d.productDescriptionSection, 'section_text', 'text'),
-      videoUrl: utils.findByApiKey(d.productDescriptionSection, 'video_url_record', 'url')
+      // videoUrl: utils.findByApiKey(d.productDescriptionSection, 'video_url_record', 'url')
+      videoUrl: 'test'
     },
     testimonialSection: {
       kicker: d.testimonialSection.title,
