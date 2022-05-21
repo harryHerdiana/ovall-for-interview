@@ -22,7 +22,7 @@ const HomeHeroSection: React.FC<IHomeHeroSectionProps> = ({
   onClickButton
 }) => (
   <GradientRectangle
-    className="block lg:min-h-400px lg:h-max "
+    className="block lg:min-h-235px lg:h-max "
     contentPlacement="right"
     variantGradient={backgroundColor}>
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
