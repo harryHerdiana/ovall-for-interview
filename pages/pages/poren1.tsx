@@ -43,7 +43,7 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const pageDataService = new PageDataService(context)
-  const data = await pageDataService.getLandingPage()
+  const data = await pageDataService.getLandingPage('poren1')
 
   return {
     props: { ...data, seoTags: { title: 'Porentiefe Reinigung', description: '' } }

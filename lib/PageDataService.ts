@@ -133,7 +133,7 @@ export default class PageDataService {
     })
   }
 
-  public async getLandingPage(): Promise<ILandingPage> {
-    return this.requestDatoCMSWithBaseData(LANDING_PAGE1_QUERY, 'landingpage', mapLandingPage)
+  public async getLandingPage(name: string): Promise<ILandingPage> {
+    return this.requestDatoCMSWithBaseData(LANDING_PAGE1_QUERY(name), 'landingpage', mapLandingPage)
   }
 }

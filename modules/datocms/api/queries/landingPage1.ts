@@ -4,9 +4,9 @@ import {
   ProductTeaserFragment
 } from '@modules/datocms/api/fragments'
 
-export const LANDING_PAGE1_QUERY = ` 
+export const LANDING_PAGE1_QUERY = (name: string) => ` 
   query getLandingPage($locale: SiteLocale!) {
-    landingpage(locale: $locale) {
+    landingpage(locale: $locale, filter: { name: { eq: ${name} }}) {
       heroSection {
         ... on SectionTextRecord {
           id
