@@ -26,7 +26,7 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
   } = props
 
   return (
-    <Layout seoTags={props.seoTags} {...props.appProps}>
+    <Layout seoTags={props.seoTags} {...props.appProps} indexable={false}>
       <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
       <LandingpageSlideShow items={slideshow} />
       <InfoBannerSection {...porenBanner} onClickButton={() => router.push(PRODUCT_PATH)} />
