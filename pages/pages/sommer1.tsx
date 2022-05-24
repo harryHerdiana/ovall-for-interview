@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const data = await pageDataService.getLandingPage('sommer1')
 
   return {
-    props: { ...data, seoTags: { title: 'Porentiefe Reinigung', description: '' } }
+    props: { ...data, seoTags: { title: 'Sommer', description: '' } }
   }
 }
 
