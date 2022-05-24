@@ -12,7 +12,7 @@ import InfoBannerFeatures from '@component/InfoBannerFeatures'
 import HomeHeroSection from '@component/HomeHeroSection'
 import ProductReview, { ReviewCarousel } from '@component/ProductReview'
 
-const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProps) => {
+const LandingPage2: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProps) => {
   const router = useRouter()
   const {
     heroSection,
@@ -24,7 +24,6 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
     productInfoBannerFeatures,
     skinTypeInfoSection
   } = props
-
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
@@ -43,11 +42,11 @@ const LandingPage1: React.FC<ILandingPage> = (props: ILandingPage & IDefaultProp
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const pageDataService = new PageDataService(context)
-  const data = await pageDataService.getLandingPage('poren1')
+  const data = await pageDataService.getLandingPage('sommer1')
 
   return {
     props: { ...data, seoTags: { title: 'Porentiefe Reinigung', description: '' } }
   }
 }
 
-export default LandingPage1
+export default LandingPage2

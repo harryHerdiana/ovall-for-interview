@@ -2,7 +2,6 @@ import { ILandingPage } from '@lib/types'
 import * as utils from './utils'
 
 export default function mapLandingPage(d: any): ILandingPage {
-  console.log('D', d)
   return {
     slideshow: d.slideshow.images.map((item) => item.responsiveImage),
     heroSection: utils.parseInfoBannerSection(d.heroSection),
