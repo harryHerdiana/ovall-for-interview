@@ -7,6 +7,7 @@ import ScrollableLink from '@component/ScrollableLink'
 import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
+import ProducStageAccordion from './ProductStageAccordion'
 
 interface IProductStageProps extends IProductPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
@@ -51,6 +52,35 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
+  const dummyAccordionData = [
+    {
+      text: 'VOHRER & NACHHER',
+      subItems: [
+        {
+          heading: 'After one use',
+          body: 'Instant relieve & hydration'
+        },
+        {
+          heading: 'After 4-6 weeks',
+          body: 'A reduction in the appearance of ingrown hairs and razor bumps. For best results use the full ingrown hair collection'
+        }
+      ],
+      image: slideshowImages[0].image
+    },
+    {
+      text: 'How to Use',
+      subItems: [
+        {
+          heading: 'Step 1',
+          body: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, et?'
+        },
+        {
+          heading: 'Step 2',
+          body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae neque quis nihil illo ut.'
+        }
+      ]
+    }
+  ]
   return (
     <section className="grid grid-cols-1 lg:gap-4 lg:grid-cols-2 max-w-site mx-auto mb-0">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
@@ -103,6 +133,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
+        <ProducStageAccordion items={dummyAccordionData} />
       </div>
     </section>
   )
