@@ -46,7 +46,7 @@ const BeforeAfterBanner: React.FC<IBeforeAfterBannerProps> = ({
       <ResponsiveImage
         lazyLoad={false}
         image={image}
-        className="flex justify-start mx-auto w-3/4 h-full md:justify-center drop-shadow-2xl p-8"
+        className="flex justify-start mx-auto w-3/4 h-full md:justify-center drop-shadow-2xl"
       />
     </div>
   </GradientRectangle>
