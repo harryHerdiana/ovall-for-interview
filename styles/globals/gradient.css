@@ -65,7 +65,7 @@
 }
 
 .blue_gradient_rectangle_left {
-  background:conic-gradient(from 243deg at 66% 61%, #FFF7EF 0%, #FEE8E0 100%);
+  background: conic-gradient(from 243deg at 66% 61%, #fff7ef 0%, #fee8e0 100%);
 }
 
 .pink_gradient_rectangle_left {
@@ -96,6 +96,13 @@
   background: conic-gradient(from 243deg at 25% 75%, #d2d6f2, #f2e0ff);
 }
 
+.grey_gradient_rectangle_left {
+  background: #efefef;
+}
+.grey_gradient_rectangle_right {
+  background: #efefef;
+}
+
 /*  */
 
 .people_gradient_rectangle {
@@ -116,6 +123,10 @@
 
 .green_gradient_rectangle {
   background: conic-gradient(from 243deg at 50% 50%, #d2d6f2, #f2e0ff);
+}
+
+.grey_gradient_rectangle {
+  background: #efefef;
 }
 
 .square_gradient {
