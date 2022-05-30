@@ -14,7 +14,7 @@ interface IProductAccordionProps {
 }
 
 const ProducStageAccordion: React.FC<IProductAccordionProps> = ({ items }) => (
-  <div className="max-w-content-sm">
+  <div className="max-w-content-sm pl-10">
     {items.map((item, index) => (
       <Disclosure key={item.text} defaultOpen={index === 0}>
         {({ open }) => (
