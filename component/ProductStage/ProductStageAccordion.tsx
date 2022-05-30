@@ -14,20 +14,20 @@ interface IProductAccordionProps {
 }
 
 const ProducStageAccordion: React.FC<IProductAccordionProps> = ({ items }) => (
-  <div className="max-w-content-sm pl-10">
+  <div className="max-w-content-sm md:pl-10">
     {items.map((item, index) => (
       <Disclosure key={item.text} defaultOpen={index === 0}>
         {({ open }) => (
           <>
             {index !== 0 && <hr className="border-grayLine" />}
-            <Disclosure.Button className="flex justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left rounded-lg  ">
+            <Disclosure.Button className="flex justify-between items-center w-full  md:px-4 py-3 text-tiny font-medium text-left rounded-lg  ">
               <h3 className="w-full md:w-3/4 my-3px">{item.text}</h3>
               <Icon
                 src="/images/arrow-big.svg"
                 className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
               />
             </Disclosure.Button>
-            <Disclosure.Panel className="px-4 pt-0 pb-5 text-tiny font-textFont text-left flex md:flex-row flex-col">
+            <Disclosure.Panel className=" md:px-4 pt-0 pb-5 text-tiny font-textFont text-left flex md:flex-row flex-col">
               <div className="">
                 {item.subItems.map((subItem) => (
                   <div key={subItem.heading} className="mb-4">
