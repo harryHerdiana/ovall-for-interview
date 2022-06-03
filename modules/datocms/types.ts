@@ -150,6 +150,7 @@ export interface IDatoProductPage {
     items: IDatoAccordionItem[]
   }
   newsletterSection: IDatoNewsletterSection
+  beforeAfterBanner: DatoCMSBeforeAfterBanner
 }
 
 export interface IDatoHomepage {
@@ -182,4 +183,19 @@ export interface IDatoFooter {
   followUsTitle: string
   leftColumn: Array<IColumnNavItem | IColumnTitle>
   middleColumn: Array<IColumnNavItem | IColumnTitle>
+}
+
+export type DatoCMSBeforeAfterBanner = {
+  kicker: string
+  title: string
+  backgroundColor: string
+  disclaimer: string
+  items: {
+    id: string
+    text: string
+    title: string
+  }[]
+  image: {
+    responsiveImage: DatoCMSResponsiveImage
+  }
 }

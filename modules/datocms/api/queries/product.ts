@@ -129,6 +129,24 @@ export const PRODUCT_PAGE_QUERY = `
         subtitle
         title
       }
+
+      beforeAfterBanner {
+        backgroundColor
+        kicker
+        name
+        title
+        disclaimer
+        items {
+          text
+          title
+          id
+        }
+        image {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+      }
     }
   }
 

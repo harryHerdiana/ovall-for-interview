@@ -1,3 +1,4 @@
+import { IBeforeAfterBannerProps } from '@component/BeforeAfterBanner'
 import { DatoCMSImage, DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { StructuredText } from 'datocms-structured-text-utils'
@@ -342,6 +343,7 @@ export interface IProductPage {
     items: IDatoAccordionItem[]
   }
   newsletterSection: INewsletterSection
+  beforeAfterBanner: IBeforeAfterBannerProps
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type

@@ -3,13 +3,14 @@ import ResponsiveImage from '@component/ResponsiveImage'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 import GradientRectangle from '@component/GradientRectangle'
 
-interface IBeforeAfterBannerProps {
+export interface IBeforeAfterBannerProps {
   backgroundColor: string
   image: DatoCMSResponsiveImage
   title: string
   kicker: string
   disclaimer: string
   items: {
+    id: string
     percentage: string
     text: string
   }[]
@@ -34,7 +35,7 @@ const BeforeAfterBanner: React.FC<IBeforeAfterBannerProps> = ({
           <h2 className="mb-6 mt-2">{title}</h2>
           <div className="grid md:grid-cols-3 md:gap-16 gap-5">
             {items.map((item) => (
-              <div className="lg:block grid grid-cols-2">
+              <div className="lg:block grid grid-cols-2" key={item.id}>
                 <h3 className="text-xxl font-bold m-auto md:mt-4 md:mb-8">{item.percentage}</h3>
                 <p>{item.text}</p>
               </div>

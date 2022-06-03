@@ -52,7 +52,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     howToUseSection,
     moodSlideshowSection,
     testimonialSection,
-    descriptionSection
+    descriptionSection,
+    beforeAfterBanner
   } = props
 
   const [variantSku, setVariantSku] = React.useState(product.variants[1].sku)
@@ -64,27 +65,6 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     if (v) setVariantSku(v)
   }, [v])
 
-  const dummyBeforeAfter = {
-    backgroundColor: 'blue',
-    title: 'Du Bist Nicht Alleine!',
-    kicker: ' Hautprobeleme',
-    disclaimer: 'Based on Data from our annual Customer survey',
-    items: [
-      {
-        percentage: '94%',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sint dolorem quos temporibus minima.'
-      },
-      {
-        percentage: '54%',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        percentage: '60%',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quae quasi quia et cupiditate debitis? '
-      }
-    ]
-  }
-
   return (
     <Layout {...appProps} seoTags={seoTags} indexable={false}>
       <ProductStage
@@ -95,7 +75,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         setVariantSku={setVariantSku}
       />
       <DescriptionSection {...descriptionSection} showVideo />
-      <BeforeAfterBanner {...dummyBeforeAfter} image={productInfoBannerFeatures.image} />
+      <BeforeAfterBanner {...beforeAfterBanner} />
       <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>
