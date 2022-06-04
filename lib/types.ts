@@ -1,4 +1,5 @@
 import { IBeforeAfterBannerProps } from '@component/BeforeAfterBanner'
+import { IProductStageAccordion } from '@component/ProductStage/ProductStageAccordion'
 import { DatoCMSImage, DatoCMSResponsiveImage, IDatoAccordionItem } from '@modules/datocms/types'
 import { IShopifyProduct } from '@modules/shopify/types'
 import { StructuredText } from 'datocms-structured-text-utils'
@@ -294,6 +295,7 @@ export interface IProductPage {
     slideshowImages: IProductSlideshowImage[]
     soldoutLabel: string
     discountLabel: string
+    productStageAccordion: IProductStageAccordion
   }
   faqSection: {
     faqButtonText: string

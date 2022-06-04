@@ -147,6 +147,23 @@ export const PRODUCT_PAGE_QUERY = `
           }
         }
       }
+
+      productStageAccordion {
+        items {
+          id
+          text
+          image {
+            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
+              ...ResponsiveImageFragment
+            }
+          }
+          items {
+            id
+            text
+            title
+          }
+        }
+      }
     }
   }
 

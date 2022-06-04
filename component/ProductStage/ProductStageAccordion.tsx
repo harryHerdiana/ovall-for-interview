@@ -5,15 +5,16 @@ import ResponsiveImage from '@component/ResponsiveImage'
 import Icon from '@component/Icon'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
 
-interface IProductAccordionProps {
+export interface IProductStageAccordion {
   items: {
+    id: string
     text: string
-    subItems: { heading: string; body: string }[]
+    subItems: { id: string; heading: string; body: string }[]
     image?: DatoCMSResponsiveImage
   }[]
 }
 
-const ProducStageAccordion: React.FC<IProductAccordionProps> = ({ items }) => (
+const ProducStageAccordion: React.FC<IProductStageAccordion> = ({ items }) => (
   <div className="max-w-content-sm md:pl-10">
     {items.map((item, index) => (
       <Disclosure key={item.text} defaultOpen={index === 0}>

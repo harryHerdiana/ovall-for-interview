@@ -1,3 +1,4 @@
 import mapBeforeAfterBanner from './beforeAfterBanner'
+import mapProductStageAccordion from './productStageAccordion'
 
-export { mapBeforeAfterBanner }
+export { mapBeforeAfterBanner, mapProductStageAccordion }

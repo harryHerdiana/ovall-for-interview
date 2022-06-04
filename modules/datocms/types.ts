@@ -151,6 +151,7 @@ export interface IDatoProductPage {
   }
   newsletterSection: IDatoNewsletterSection
   beforeAfterBanner: DatoCMSBeforeAfterBanner
+  productStageAccordion: DatoProductStageAccordion
 }
 
 export interface IDatoHomepage {
@@ -198,4 +199,19 @@ export type DatoCMSBeforeAfterBanner = {
   image: {
     responsiveImage: DatoCMSResponsiveImage
   }
+}
+
+export type DatoProductStageAccordion = {
+  items: {
+    id: string
+    text: string
+    image?: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
+    items: {
+      id: string
+      text: string
+      title: string
+    }[]
+  }[]
 }
