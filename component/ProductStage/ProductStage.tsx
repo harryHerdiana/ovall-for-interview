@@ -7,9 +7,8 @@ import ScrollableLink from '@component/ScrollableLink'
 import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
-import ProducStageAccordion from './ProductStageAccordion'
 
-interface IProductStageProps extends IProductPage {
+export interface IProductStageProps extends IProductPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
   activeSku: string
   setVariantSku: (sku: string) => void
@@ -41,8 +40,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
     slideshowImages,
     variantImages,
     soldoutLabel,
-    discountLabel,
-    productStageAccordion
+    discountLabel
   }
 }) => {
   const skuColorMap = {

@@ -1,6 +1,4 @@
 import React from 'react'
-import { IProductPage } from '@lib/types'
-import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import { toEuro } from '@lib/utils'
 import { ProductRating } from '@component/ProductReview'
 import ScrollableLink from '@component/ScrollableLink'
@@ -8,23 +6,7 @@ import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
 import ProducStageAccordion from './ProductStageAccordion'
-
-interface IProductStageProps extends IProductPage {
-  variant: IShopifyProductVariant // derived from state (selected variant)
-  activeSku: string
-  setVariantSku: (sku: string) => void
-  product: IShopifyProduct
-}
-
-export const getCheapestVariantPrice = (product: IShopifyProduct) => {
-  const cheapest = product.variants.sort(
-    (a, b) => Number(a.priceV2.amount) - Number(b.priceV2.amount)
-  )[0]
-
-  const afterPrice = cheapest.priceV2.amount
-  const beforePrice = cheapest.compareAtPriceV2.amount
-  return { price: afterPrice, before: beforePrice }
-}
+import { IProductStageProps } from './ProductStage'
 
 const ProductStage2: React.FC<IProductStageProps> = ({
   product,

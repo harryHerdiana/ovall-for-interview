@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { Listbox, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import { IShopifyLineItem } from '@modules/shopify/types'
@@ -29,9 +30,10 @@ const QuantitySelect: React.FC<IQuantitySelectProps> = ({ onchange, lineItem }) 
               <Listbox.Option
                 key={v}
                 className={({ active }) =>
-                  `cursor-pointer select-none relative py-2 pl-10 pr-4 ${
-                    active ? 'text-gray-600 bg-gray-200' : 'text-gray-900'
-                  }`
+                  classNames(
+                    { 'text-gray-600 bg-gray-200': active, 'text-gray-900': !active },
+                    'cursor-pointer select-none relative py-2 pl-10 pr-4'
+                  )
                 }
                 value={v}>
                 {v}

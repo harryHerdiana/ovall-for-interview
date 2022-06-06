@@ -1,5 +1,6 @@
 import React from 'react'
 import { Disclosure } from '@headlessui/react'
+import classNames from 'classnames'
 
 import ResponsiveImage from '@component/ResponsiveImage'
 import Icon from '@component/Icon'
@@ -25,7 +26,7 @@ const ProducStageAccordion: React.FC<IProductStageAccordion> = ({ items }) => (
               <h3 className="w-full md:w-3/4 my-3px">{item.text}</h3>
               <Icon
                 src="/images/arrow-big.svg"
-                className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
+                className={classNames({ 'transform rotate-180': open }, ' ml-4 w-8 h-8 ')}
               />
             </Disclosure.Button>
             <Disclosure.Panel className=" md:px-4 pt-0 pb-5 text-tiny font-textFont text-left flex md:flex-row flex-col">
