@@ -37,7 +37,7 @@ const ProducStageAccordion: React.FC<IProductStageAccordion> = ({ items }) => (
                   </div>
                 ))}
               </div>
-              {item.image && <ResponsiveImage image={item.image} className="drop-shadow-2xl" />}
+              {item.image && <ResponsiveImage image={item.image} />}
             </Disclosure.Panel>
           </>
         )}

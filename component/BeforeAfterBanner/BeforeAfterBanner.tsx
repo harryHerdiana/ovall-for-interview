@@ -25,7 +25,7 @@ const BeforeAfterBanner: React.FC<IBeforeAfterBannerProps> = ({
   items
 }) => (
   <GradientRectangle
-    className="block lg:min-h-235px lg:h-max "
+    className="block lg:min-h-235px lg:h-max mb-100px"
     contentPlacement="left"
     variantGradient={backgroundColor}>
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
@@ -36,7 +36,7 @@ const BeforeAfterBanner: React.FC<IBeforeAfterBannerProps> = ({
           <div className="grid md:grid-cols-3 md:gap-16 gap-5">
             {items.map((item) => (
               <div className="lg:block grid grid-cols-2" key={item.id}>
-                <h3 className="text-xxl font-bold m-auto md:mt-4 md:mb-8">{item.percentage}</h3>
+                <h3 className="text-xxl2 font-bold m-auto md:mt-4 md:mb-8">{item.percentage}</h3>
                 <p>{item.text}</p>
               </div>
             ))}
@@ -47,7 +47,7 @@ const BeforeAfterBanner: React.FC<IBeforeAfterBannerProps> = ({
       <ResponsiveImage
         lazyLoad={false}
         image={image}
-        className="flex justify-start mx-auto w-3/4 h-full md:justify-center drop-shadow-2xl"
+        className="flex justify-start mx-auto w-auto lg:w-4/5 h-full md:justify-center drop-shadow-2xl mb-50px lg:mb-0 lg:p-10"
       />
     </div>
   </GradientRectangle>

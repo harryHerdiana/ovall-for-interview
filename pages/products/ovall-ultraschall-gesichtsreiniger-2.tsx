@@ -84,7 +84,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         <Script src="//loox.io/widget/loox.js?shop=ovallskincare.myshopify.com" />
         <div id="looxCarousel" data-show-more="true" />
       </div>
-      <InfoBannerSection {...productInfoBannerSection} backgroundColor="grey" />
+      <InfoBannerSection {...productInfoBannerSection} />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />
       <InfoBannerSection {...skinTypeInfoSection} />
