@@ -26,7 +26,7 @@ export const getCheapestVariantPrice = (product: IShopifyProduct) => {
   return { price: afterPrice, before: beforePrice }
 }
 
-const ProductStage: React.FC<IProductStageProps> = ({
+const ProductStage2: React.FC<IProductStageProps> = ({
   product,
   variant,
   activeSku,
@@ -105,8 +105,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
+        <ProducStageAccordion {...productStageAccordion} />
       </div>
     </section>
   )
 }
-export default ProductStage
+export default ProductStage2

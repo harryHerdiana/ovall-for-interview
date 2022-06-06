@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { trackViewItemEvent } from '@modules/tracking/events'
 import Layout from '@component/Layout'
-import ProductStage from '@component/ProductStage'
+import ProductStage2 from '@component/ProductStage/ProducStage2'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
 import Newsletter from '@component/Newsletter'
@@ -67,7 +67,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
 
   return (
     <Layout {...appProps} seoTags={seoTags} indexable={false}>
-      <ProductStage
+      <ProductStage2
         {...props}
         product={product}
         variant={variant}
