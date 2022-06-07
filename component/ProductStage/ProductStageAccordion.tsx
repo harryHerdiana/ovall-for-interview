@@ -18,7 +18,7 @@ export interface IProductStageAccordion {
 const ProducStageAccordion: React.FC<IProductStageAccordion> = ({ items }) => (
   <div className="max-w-content-sm md:pl-10 mt-8">
     {items.map((item, index) => (
-      <Disclosure key={item.text} defaultOpen={index === 0}>
+      <Disclosure key={item.text}>
         {({ open }) => (
           <>
             {index !== 0 && <hr className="border-grayLine" />}
