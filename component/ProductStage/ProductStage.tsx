@@ -24,7 +24,11 @@ export const getCheapestVariantPrice = (product: IShopifyProduct) => {
   const beforePrice = cheapest.compareAtPriceV2.amount
   return { price: afterPrice, before: beforePrice }
 }
-
+export const skuColorMap = {
+  'Ovall-Blue': 'blue',
+  'Ovall-Pink': 'rose',
+  'Ovall-Turquoise': 'green'
+}
 const ProductStage: React.FC<IProductStageProps> = ({
   product,
   variant,
@@ -43,11 +47,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
     discountLabel
   }
 }) => {
-  const skuColorMap = {
-    'Ovall-Blue': 'blue',
-    'Ovall-Pink': 'rose',
-    'Ovall-Turquoise': 'green'
-  }
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }

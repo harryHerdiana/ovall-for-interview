@@ -6,7 +6,7 @@ import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
 import ProducStageAccordion from './ProductStageAccordion'
-import { IProductStageProps } from './ProductStage'
+import { IProductStageProps, skuColorMap } from './ProductStage'
 
 const ProductStage2: React.FC<IProductStageProps> = ({
   product,
@@ -27,11 +27,6 @@ const ProductStage2: React.FC<IProductStageProps> = ({
     productStageAccordion
   }
 }) => {
-  const skuColorMap = {
-    'Ovall-Blue': 'blue',
-    'Ovall-Pink': 'rose',
-    'Ovall-Turquoise': 'green'
-  }
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
