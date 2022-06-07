@@ -2,7 +2,6 @@
 
 This project relies mainly on [Next.js](https://nextjs.org/), [tailwindcss](https://tailwindcss.com/) and [shopify](https://shopify.com)
 
-
 ## Table of Contents
 
 - [**Setup**](#Setup)
@@ -17,7 +16,6 @@ This project relies mainly on [Next.js](https://nextjs.org/), [tailwindcss](http
 
 ## Setup
 
-
 For getting started with development, please follow these simple steps.
 
 ### Prerequisites
@@ -31,7 +29,7 @@ Please make sure that the listed tools are installed on your machine:
 
 ### Dependencies
 
- `yarn install`
+`yarn install`
 
 ### Configuration
 
@@ -66,7 +64,6 @@ To ease the development flow we've established a couple of commands in `package.
 - `lint` – Runs ESLint and prints possible issues.
 - `prettier` – Runs prettier and writes changes directly to the files.
 
-
 ### Code Conventions & Styles
 
 We utilize prettier and ESLint with the well known [AirBnb Style Guide](https://github.com/airbnb/javascript). Please configure your editor in a way that it uses prettier on save and ESLint. This will greatly benefit the developer experience as issues are shown right away.
@@ -84,14 +81,16 @@ This is an excerpt from a VSCode config that uses [prettier-vscode](https://gith
 - Please keep the code DRY (two instances of a given piece of code is fine, from three times it should be refactored)
 - That applies as well for querying DatoCMS. Since there are quite a few models that are being shared between pages, we can use fragments to reuse the subqueries
 - Take the time to specify the types, including those for the page data (search for "TODO" in the project)
-- Please create a PR early in the process. Tag it with "work and progress" and "ready", respectively. 
+- Please create a PR early in the process. Tag it with "work and progress" and "ready", respectively.
 
 ### Find Unused Files
 
 With the help of the `next-unused` package (https://www.npmjs.com/package/next-unused), you can simply run:
+
 ```
 yarn find:unused
 ```
+
 - Please double check before actually removing those supposedly unused files
 - The `next-unused` package is configured in the `package.json`
 
@@ -99,8 +98,19 @@ yarn find:unused
 
 We will use [Playwright](https://playwright.dev/docs/intro) for our end-to-end testing (later)
 
-
 ## DatoCMS
 
-All the content (except some product and variant information) is served by DatoCMS. 
+All the content (except some product and variant information) is served by DatoCMS.
+
 - To explore the models for the pages, use the [API Explorer](https://ovall-shopify.admin.datocms.com/cda-explorer) (click on "Explorer")
+
+### How To Create a new Component (e.g. Banner)
+
+1. Create a Model in [DATO CMS](https://ovall-shopify.admin.datocms.com/admin/item_types)
+
+2. Create a mapping function for the component
+
+- update the graphql query to include the data
+- create a type for the raw data coming from dato
+- create a type for the Domain Model (= what is used in the page or section)
+- map the raw data to the domain model

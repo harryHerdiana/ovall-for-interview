@@ -4,6 +4,7 @@ import { IHtmlAccordionItem } from '@lib/types'
 import { Disclosure } from '@headlessui/react'
 import { StructuredText, Image } from 'react-datocms'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
+import classNames from 'classnames'
 
 type IHtmlAccordionProps = {
   items: IHtmlAccordionItem[]
@@ -37,7 +38,7 @@ const HtmlAccordion: React.FC<IHtmlAccordionProps> = ({ items }) => (
               </div>
               <Icon
                 src="/images/arrow-big.svg"
-                className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
+                className={classNames({ 'transform rotate-180': open }, 'ml-4 w-8 h-8 ')}
               />
             </Disclosure.Button>
             <Disclosure.Panel className="px-4 pt-3 pb-2 text-tiny font-textFont text-left">

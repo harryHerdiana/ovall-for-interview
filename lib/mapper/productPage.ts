@@ -1,5 +1,6 @@
 import { IProductPage } from '@lib/types'
 import { IDatoProductPage } from '@modules/datocms/types'
+import { mapBeforeAfterBanner, mapProductStageAccordion } from './models'
 import * as utils from './utils'
 
 export default function mapProductPageData(d: IDatoProductPage): IProductPage {
@@ -28,7 +29,8 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         descriptionText: item.descriptionText
       })),
       soldoutLabel: d.soldoutLabel,
-      discountLabel: d.discountLabel
+      discountLabel: d.discountLabel,
+      productStageAccordion: mapProductStageAccordion(d.productStageAccordion[0])
     },
     descriptionSection: {
       title: utils.findByApiKey(d.productDescriptionSection, 'section_headline', 'text'),
@@ -118,6 +120,7 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       ...d.newsletterSection,
       disclaimer: d.newsletterSection.disclaimer.value,
       description: d.newsletterSection.description.value
-    }
+    },
+    beforeAfterBanner: mapBeforeAfterBanner(d.beforeAfterBanner)
   }
 }

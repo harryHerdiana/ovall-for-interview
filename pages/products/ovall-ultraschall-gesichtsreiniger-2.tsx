@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { trackViewItemEvent } from '@modules/tracking/events'
 import Layout from '@component/Layout'
-import ProductStage from '@component/ProductStage'
+import ProductStage2 from '@component/ProductStage/ProducStage2'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
 import Newsletter from '@component/Newsletter'
@@ -18,6 +18,7 @@ import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
 import InfoTechSection from '@component/InfoTechSection'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
+import BeforeAfterBanner from '@component/BeforeAfterBanner'
 
 const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
 
@@ -51,7 +52,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     howToUseSection,
     moodSlideshowSection,
     testimonialSection,
-    descriptionSection
+    descriptionSection,
+    beforeAfterBanner
   } = props
 
   const [variantSku, setVariantSku] = React.useState(product.variants[2].sku)
@@ -65,7 +67,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
 
   return (
     <Layout {...appProps} seoTags={seoTags} indexable={false}>
-      <ProductStage
+      <ProductStage2
         {...props}
         product={product}
         variant={variant}
@@ -73,7 +75,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         setVariantSku={setVariantSku}
       />
       <DescriptionSection {...descriptionSection} showVideo />
-      <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
+      <BeforeAfterBanner {...beforeAfterBanner} />
+      <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>
           <h2 className="mt-2 mb-4">{testimonialSection.title}</h2>

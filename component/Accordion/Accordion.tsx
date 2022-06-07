@@ -5,6 +5,7 @@ import { IDatoAccordionItem } from '@modules/datocms/types'
 import { Disclosure } from '@headlessui/react'
 import { PRODUCT_PATH } from '@lib/constants'
 import { useRouter } from 'next/router'
+import classNames from 'classnames'
 
 type IAccordionProps = {
   buttonText?: string
@@ -36,7 +37,7 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
                   <h3 className="w-full md:w-3/4 my-3px">{item.text}</h3>
                   <Icon
                     src="/images/arrow-big.svg"
-                    className={`${open ? 'transform rotate-180' : ''} ml-4 w-8 h-8 `}
+                    className={classNames({ 'transform rotate-180': open }, 'ml-4 w-8 h-8 ')}
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pt-0 pb-5 text-tiny font-textFont text-left">

@@ -14,7 +14,8 @@ const gradientMap = {
   green: 'green_gradient_rectangle',
   pink: 'pink_gradient_rectangle',
   violet: 'violet_gradient_rectangle',
-  'lotus-pink': 'pink_gradient_rectangle'
+  'lotus-pink': 'pink_gradient_rectangle',
+  grey: 'grey_gradient_rectangle'
 }
 const GradientRectangle: React.FC<IGradientRectangle> = ({
   variantGradient,
