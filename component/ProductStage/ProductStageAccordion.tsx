@@ -30,7 +30,7 @@ const ProducStageAccordion: React.FC<IProductStageAccordion> = ({ items }) => (
               />
             </Disclosure.Button>
             <Disclosure.Panel className=" md:px-4 pt-0 pb-5 text-tiny font-textFont text-left flex md:flex-row flex-col">
-              <div className="">
+              <div className="md:w-4/5 md:mr-10">
                 {item.subItems.map((subItem) => (
                   <div key={subItem.heading} className="mb-4">
                     <h4 className="font-bold mb-1">{subItem.heading}</h4>
@@ -38,7 +38,7 @@ const ProducStageAccordion: React.FC<IProductStageAccordion> = ({ items }) => (
                   </div>
                 ))}
               </div>
-              {item.image && <ResponsiveImage image={item.image} />}
+              {item.image && <ResponsiveImage image={item.image} className="w-full" />}
             </Disclosure.Panel>
           </>
         )}
