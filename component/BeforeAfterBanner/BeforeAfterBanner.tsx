@@ -25,7 +25,7 @@ const BeforeAfterBanner: React.FC<IBeforeAfterBannerProps> = ({
   items
 }) => (
   <GradientRectangle
-    className="block lg:min-h-235px lg:h-max mb-100px"
+    className="block lg:min-h-235px lg:h-max "
     contentPlacement="left"
     variantGradient={backgroundColor}>
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center max-w-site lg:mx-auto">
