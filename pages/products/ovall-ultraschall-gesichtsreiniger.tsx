@@ -1,6 +1,7 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import Script from 'next/script'
+import { useRouter } from 'next/router'
 
 import { trackViewItemEvent } from '@modules/tracking/events'
 import Layout from '@component/Layout'
@@ -18,7 +19,6 @@ import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
 import InfoTechSection from '@component/InfoTechSection'
 import InfoBannerFeatures from '@component/InfoBannerFeatures'
-import { useRouter } from 'next/router'
 
 const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
 

@@ -28,7 +28,7 @@ export type DatoCMSImage = {
 export type DatoProductVariantImage = {
   color: 'blue' | 'rose' | 'green'
   image: {
-    gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people'
+    gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people' | 'grey' | 'white'
     image: {
       responsiveImage: DatoCMSResponsiveImage
     }
