@@ -166,6 +166,8 @@ const Layout: React.FC<ILayout> = ({
       )}
 
       <Footer {...footer} />
+
+      <script src="https://t.cometlytrack.com?uid=9219ad-5646-320648" />
     </>
   )
 }
