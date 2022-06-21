@@ -113,4 +113,4 @@ All the content (except some product and variant information) is served by DatoC
 - update the graphql query to include the data
 - create a type for the raw data coming from dato
 - create a type for the Domain Model (= what is used in the page or section)
-- map the raw data to the domain model
+- map the raw data to the domain model.
