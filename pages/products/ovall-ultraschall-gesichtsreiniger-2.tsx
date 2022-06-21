@@ -52,11 +52,10 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     howToUseSection,
     moodSlideshowSection,
     testimonialSection,
-    descriptionSection,
-    beforeAfterBanner
+    descriptionSection
   } = props
 
-  const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
+  const [variantSku, setVariantSku] = React.useState(product.variants[1].sku)
   const variant = product.variants.find((v) => v.sku === variantSku) || product.variants[0]
 
   const v = getVariantFromRouter(useRouter())
@@ -83,7 +82,6 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         <Script src="//loox.io/widget/loox.js?shop=ovallskincare.myshopify.com" />
         <div id="looxCarousel" data-show-more="true" />
       </div>
-      <BeforeAfterBanner {...beforeAfterBanner} />
       <InfoBannerSection {...productInfoBannerSection} />
       <MoodSlideShow {...moodSlideshowSection} />
       <HowToUse {...howToUseSection} />

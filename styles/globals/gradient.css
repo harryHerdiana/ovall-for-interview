@@ -103,6 +103,12 @@
   background: #efefef;
 }
 
+.white_gradient_rectangle_left {
+  background: #ffffff;
+}
+.white_gradient_rectangle_right {
+  background: #ffffff;
+}
 /*  */
 
 .people_gradient_rectangle {
@@ -127,6 +133,10 @@
 
 .grey_gradient_rectangle {
   background: #efefef;
+}
+
+.white_gradient_rectangle {
+  background: #ffffff;
 }
 
 .square_gradient {

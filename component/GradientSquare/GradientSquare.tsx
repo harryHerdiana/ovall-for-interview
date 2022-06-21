@@ -14,6 +14,7 @@ const gradientMap = {
   pink: 'pink_gradient_rectangle',
   violet: 'violet_gradient_rectangle',
   grey: 'grey_gradient_rectangle',
+  white: 'white_gradient_rectangle',
   'lotus-pink': 'pink_gradient_rectangle',
   'Ovall-Turquoise': 'green_gradient_rectangle',
   'Ovall-Blue': 'blue_gradient_rectangle',
