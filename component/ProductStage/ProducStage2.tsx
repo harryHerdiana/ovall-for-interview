@@ -35,6 +35,7 @@ const ProductStage2: React.FC<IProductStageProps> = ({
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
         <div className="relative h-full w-full lg:px-8">
           <ProductSlideshow
+            enableCaptions
             activeSku={activeSku}
             items={slideshowImages}
             variantItem={getVariantImageBySku(activeSku)}

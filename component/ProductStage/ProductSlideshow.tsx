@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from 'react'
-/* import classNames from 'classnames'
-import { Transition } from '@headlessui/react' */
+import classNames from 'classnames'
+import { Transition } from '@headlessui/react'
 import ResponsiveImage from '@component/ResponsiveImage'
 import Slider from '@component/Slider'
 import { DatoCMSResponsiveImage } from '@modules/datocms/types'
@@ -13,6 +13,7 @@ interface IProductSlideshow {
   variantItem: Record<string, any>
   items: Record<string, any>[]
   activeSku: string
+  enableCaptions?: boolean
 }
 
 const NextArrow = (props) => {
@@ -58,7 +59,7 @@ const SliderItem: React.FC<ISliderItem> = ({ image }) => (
 )
 
 // ImageDescription (Text overlay) has been temporarily disabled due to performance issue
-/* 
+
 interface IImageDescription {
   descriptionLabel: string
   descriptionText: string
@@ -119,9 +120,14 @@ const ImageDescription: React.FC<IImageDescription> = ({ descriptionLabel, descr
       </div>
     </div>
   )
-} */
+}
 
-const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem, activeSku }) => {
+const ProductSlideshow: React.FC<IProductSlideshow> = ({
+  items,
+  variantItem,
+  activeSku,
+  enableCaptions = false
+}) => {
   const [allItems, setAllItems] = useState([])
   useEffect(() => {
     setAllItems([variantItem].concat(items))
@@ -139,12 +145,12 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({ items, variantItem, act
           variantGradient={item.background}
           className="relative m-auto ">
           <SliderItem image={item.image} key={item.id} />
-          {/*   {item.descriptionText && (
+          {item.descriptionText && enableCaptions && (
             <ImageDescription
               descriptionLabel={item.descriptionLabel}
               descriptionText={item.descriptionText}
             />
-          )} */}
+          )}
         </GradientSquare>
       ))}
     </Slider>
