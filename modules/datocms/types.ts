@@ -152,6 +152,16 @@ export interface IDatoProductPage {
   newsletterSection: IDatoNewsletterSection
   beforeAfterBanner: DatoCMSBeforeAfterBanner
   productStageAccordion: DatoProductStageAccordion
+  faqShampooSection: {
+    faqTitle: string
+    items: IDatoAccordionItem[]
+  }
+  ingredientSection: {
+    backgroundColor: string
+    title: string
+    text: string
+    items: IDatoAccordionItem[]
+  }
 }
 
 export interface IDatoHomepage {

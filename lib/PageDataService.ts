@@ -33,6 +33,7 @@ import mapFAQData from './mapper/faq'
 import mapRatingData from './mapper/ratings'
 import mapStaticPage from './mapper/staticPage'
 import mapLandingPage from './mapper/landingPage'
+import mapProductShampooData from './mapper/productShampoo'
 
 export default class PageDataService {
   context: Context
@@ -113,6 +114,14 @@ export default class PageDataService {
 
   public async product(): Promise<IProductPage> {
     return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
+  }
+
+  public async productShampoo(): Promise<IProductPage> {
+    return this.requestDatoCMSWithBaseData(
+      PRODUCT_PAGE_QUERY,
+      'productShampoo',
+      mapProductShampooData
+    )
   }
 
   public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {

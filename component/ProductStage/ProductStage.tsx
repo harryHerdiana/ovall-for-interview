@@ -104,7 +104,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
         <ProductClaimsSection productClaims={productClaims} />
-        <ProducStageAccordion {...productStageAccordion} />
+        {productStageAccordion && <ProducStageAccordion {...productStageAccordion} />}
       </div>
     </section>
   )

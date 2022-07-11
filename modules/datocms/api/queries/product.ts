@@ -3,6 +3,7 @@ import {
   MoodSlideShowFragment,
   NewsletterRecordFragment,
   ProductInfoBannerFragment,
+  ProductTeaserFragment,
   // ProductInfoAccordionRecordFragment,
   ResponsiveImageFragment
 } from '@modules/datocms/api/fragments'
@@ -165,11 +166,110 @@ export const PRODUCT_PAGE_QUERY = `
         }
       }
     }
+    productShampoo(locale: $locale) {
+      variantImages {
+        id
+        color
+        createdAt
+        image {
+          gradientBackground
+          image {
+            responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
+              ...ResponsiveImageFragment
+            }
+          }
+        }
+      }
+      slideshowItems {
+        id
+        gradientBackground
+        image {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+        descriptionLabel
+        descriptionText
+      }
+      title
+      slug
+      freeShippingCaption
+      deliveryTime
+      colorCaption
+      deliveryTime
+      quantityCaption
+      addToCartLabel
+      discountLabel
+      soldoutLabel
+      seoTags {
+        description
+        title
+      }
+      productClaims {
+        id
+        text
+        title
+        image {
+          alt
+          url
+          width
+          height
+        }
+      }
+      productDescriptionSection {
+        ... on SectionHeadlineRecord {
+          _modelApiKey
+          text
+        }
+        ... on SectionTextRecord {
+          _modelApiKey
+          text
+        }
+      }
+      newsletterSection {
+        ...NewsletterRecordFragment
+      }
+      testimonialSection {
+        subtitle
+        title
+      }
+      productTeaser {
+        ...ProductTeaserFragment
+      }
+      faqAccordionShampoo {
+        name
+        items {
+          id
+          text
+          body
+        }
+      }
+      ingredient {
+        content {
+          ... on AccordionItemRecord {
+            id
+            text
+            body
+          }
+          ... on LargeHeadlineTextBlockRecord {
+            id
+            text
+            title
+          }
+          ... on SectionWithGradientBackgroundRecord {
+            id
+            backgroundColor
+          }
+        }
+      }
+    }
+  
   }
-
   ${ProductInfoBannerFragment}
   ${ResponsiveImageFragment}
   ${NewsletterRecordFragment}
   ${MoodSlideShowFragment}
   ${HowToUseSectionFragment}
+  ${ProductTeaserFragment}
 `
+/*   */

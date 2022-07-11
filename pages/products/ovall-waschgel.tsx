@@ -9,16 +9,9 @@ import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
 import Newsletter from '@component/Newsletter'
-import FaqSection from '@component/FaqSection'
-import ProductInfoAccordion from '@component/ProductInfoAccordion'
-import HowToUse from '@component/HowToUse'
-import MoodSlideShow from '@component/MoodSlideShow'
 import ProductReview from '@component/ProductReview'
 import DescriptionSection from '@component/DescriptionSection'
 import SocialFeed from '@component/SocialFeed'
-import InfoBannerSection from '@component/InfoBannerSection'
-import InfoTechSection from '@component/InfoTechSection'
-import InfoBannerFeatures from '@component/InfoBannerFeatures'
 import ProductTeaser from '@component/ProductTeaser'
 
 const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
@@ -46,14 +39,14 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     productInfoBannerSection,
     newsletterSection,
     faqSection,
-    productInfoAccordionSection,
     skinTypeInfoSection,
     productInfoBannerTechnology,
     productInfoBannerFeatures,
     howToUseSection,
     moodSlideshowSection,
     testimonialSection,
-    descriptionSection
+    descriptionSection,
+    productTeaserSection
   } = props
 
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
@@ -66,16 +59,16 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   }, [v])
   return (
     <Layout {...appProps} seoTags={seoTags}>
-      {/* <ProductStage
+      <ProductStage
         {...props}
         product={product}
         variant={variant}
         activeSku={variantSku}
         setVariantSku={setVariantSku}
-      /> */}
+      />
       {/* new component here */}
       <DescriptionSection {...descriptionSection} />
-      <FaqSection {...faqSection} buttonAction="scroll" />
+
       <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>
@@ -84,14 +77,11 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         <Script src="//loox.io/widget/loox.js?shop=ovallskincare.myshopify.com" />
         <div id="looxCarousel" data-show-more="true" />
       </div>
-      {/* <ProductTeaser/> */}
-      <InfoBannerSection {...productInfoBannerSection} />
-      <MoodSlideShow {...moodSlideshowSection} />
-      <HowToUse {...howToUseSection} />
-      <InfoBannerSection {...skinTypeInfoSection} />
-      <InfoTechSection {...productInfoBannerTechnology} />
-      <ProductInfoAccordion {...productInfoAccordionSection} buttonAction="scroll" />
-      <InfoBannerFeatures {...productInfoBannerFeatures} />
+      <ProductTeaser
+        className="mb-80px mt-80px lg:mb-100px block lg:h-max lg:min-h-650px"
+        product={product}
+        {...productTeaserSection}
+      />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
 
@@ -108,7 +98,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const pageDataService = new PageDataService(context)
-  const data = await pageDataService.product()
+  const data = await pageDataService.productShampoo()
 
   return {
     props: data,
