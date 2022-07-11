@@ -245,21 +245,17 @@ export const PRODUCT_PAGE_QUERY = `
         }
       }
       ingredient {
+        background {
+          backgroundColor
+        }
+        ingredientAccordion {
+          text
+          body
+        }
         content {
-          ... on AccordionItemRecord {
-            id
-            text
-            body
-          }
-          ... on LargeHeadlineTextBlockRecord {
-            id
-            text
-            title
-          }
-          ... on SectionWithGradientBackgroundRecord {
-            id
-            backgroundColor
-          }
+          text
+          title
+          _modelApiKey
         }
       }
     }

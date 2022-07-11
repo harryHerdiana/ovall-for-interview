@@ -43,8 +43,13 @@ export default function mapProductShampooData(d: any): IProductPage {
       disclaimer: d.newsletterSection.disclaimer.value,
       description: d.newsletterSection.description.value
     },
-    // ingredientSection: d.ingredientSection,
-    // faqShampooSection: d.faqShampooSection,
+    ingredientSection: {
+      backgroundColor: d.ingredient.background[0].backgroundColor,
+      items: d.ingredient.ingredientAccordion,
+      text: utils.findByApiKey(d.ingredient.content, 'large_headline_text_block', 'text'),
+      title: utils.findByApiKey(d.ingredient.content, 'large_headline_text_block', 'title')
+    },
+    faqShampooSection: { faqTitle: d.faqAccordionShampoo.name, items: d.faqAccordionShampoo.items },
     productTeaserSection: utils.parseProductTeaser(d.productTeaser)
   }
 }

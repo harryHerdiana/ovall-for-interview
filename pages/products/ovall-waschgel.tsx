@@ -48,7 +48,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     descriptionSection,
     productTeaserSection
   } = props
-
+  console.log(props)
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku) || product.variants[0]
 

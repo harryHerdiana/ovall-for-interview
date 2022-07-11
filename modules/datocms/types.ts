@@ -152,15 +152,14 @@ export interface IDatoProductPage {
   newsletterSection: IDatoNewsletterSection
   beforeAfterBanner: DatoCMSBeforeAfterBanner
   productStageAccordion: DatoProductStageAccordion
-  faqShampooSection: {
-    faqTitle: string
+  faqAccordionShampoo: {
+    name: string
     items: IDatoAccordionItem[]
   }
-  ingredientSection: {
-    backgroundColor: string
-    title: string
-    text: string
-    items: IDatoAccordionItem[]
+  ingredient: {
+    background: { backgroundColor: string }[]
+    ingredientAccordion: IDatoAccordionItem[]
+    content: { text: string; title: string; _modelApiKey: string }[]
   }
 }
 
