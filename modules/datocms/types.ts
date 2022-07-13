@@ -161,6 +161,14 @@ export interface IDatoProductPage {
     ingredientAccordion: IDatoAccordionItem[]
     content: { text: string; title: string; _modelApiKey: string }[]
   }
+  productDetail: {
+    title: string
+    iconList: {
+      icon: string
+      id: string
+      text: string
+    }[]
+  }[]
 }
 
 export interface IDatoHomepage {

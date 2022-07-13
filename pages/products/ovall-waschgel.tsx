@@ -13,6 +13,8 @@ import ProductReview from '@component/ProductReview'
 import DescriptionSection from '@component/DescriptionSection'
 import SocialFeed from '@component/SocialFeed'
 import ProductTeaser from '@component/ProductTeaser'
+import MainIngredients from '@component/MainIngredients'
+import FaqSection from '@component/FaqSection'
 
 const VALID_SKUS = ['Ovall-Pink', 'Ovall-Blue', 'Ovall-Turquoise']
 
@@ -36,19 +38,14 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
     seoTags,
     appProps,
     product,
-    productInfoBannerSection,
     newsletterSection,
-    faqSection,
-    skinTypeInfoSection,
-    productInfoBannerTechnology,
-    productInfoBannerFeatures,
-    howToUseSection,
-    moodSlideshowSection,
     testimonialSection,
     descriptionSection,
-    productTeaserSection
+    productTeaserSection,
+    ingredientSection,
+    faqShampooSection
   } = props
-  console.log(props)
+  // console.log(props)
   const [variantSku, setVariantSku] = React.useState(product.variants[0].sku)
   const variant = product.variants.find((v) => v.sku === variantSku) || product.variants[0]
 
@@ -66,9 +63,9 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      {/* new component here */}
+      <MainIngredients {...ingredientSection}/>
       <DescriptionSection {...descriptionSection} />
-
+      <FaqSection items={faqShampooSection.items} faqSubtitle={faqShampooSection.faqTitle}/>
       <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>

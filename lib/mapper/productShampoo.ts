@@ -1,7 +1,8 @@
 import { IProductPage } from '@lib/types'
+import { IDatoProductPage } from '@modules/datocms/types'
 import * as utils from './utils'
 
-export default function mapProductShampooData(d: any): IProductPage {
+export default function mapProductShampooData(d: IDatoProductPage): IProductPage {
   return {
     stageSection: {
       quantityCaption: d.quantityCaption,
@@ -9,10 +10,6 @@ export default function mapProductShampooData(d: any): IProductPage {
       colorCaption: d.colorCaption,
       freeShippingCaption: d.freeShippingCaption,
       deliveryTime: d.deliveryTime,
-      productClaims: d.productClaims.map((claim) => ({
-        ...claim,
-        image: claim.image || null
-      })),
       variantImages: d.variantImages.map((variantImage) => ({
         id: variantImage.color,
         color: variantImage.color,
@@ -27,7 +24,15 @@ export default function mapProductShampooData(d: any): IProductPage {
         descriptionText: item.descriptionText
       })),
       soldoutLabel: d.soldoutLabel,
-      discountLabel: d.discountLabel
+      discountLabel: d.discountLabel,
+      productDetails: {
+        title: d.productDetail[0].title,
+        items: d.productDetail[0].iconList.map((item) => ({
+          icon: item.icon,
+          id: item.id,
+          text: item.text
+        }))
+      }
     },
     descriptionSection: {
       title: utils.findByApiKey(d.productDescriptionSection, 'section_headline', 'text'),

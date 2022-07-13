@@ -8,6 +8,7 @@ import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
 import ProducStageAccordion from './ProductStageAccordion'
+import ProductDetails from './ProductDetails'
 
 export interface IProductStageProps extends IProductPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
@@ -46,7 +47,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
     variantImages,
     soldoutLabel,
     discountLabel,
-    productStageAccordion
+    productStageAccordion,
+    productDetails
   }
 }) => {
   function getVariantImageBySku(sku: string) {
@@ -56,11 +58,13 @@ const ProductStage: React.FC<IProductStageProps> = ({
     <section className="grid grid-cols-1 lg:gap-4 lg:grid-cols-2 max-w-site mx-auto mb-0">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
         <div className="relative h-full w-full lg:px-8">
-          <ProductSlideshow
-            activeSku={activeSku}
-            items={slideshowImages}
-            variantItem={getVariantImageBySku(activeSku)}
-          />
+          {activeSku && (
+            <ProductSlideshow
+              activeSku={activeSku}
+              items={slideshowImages}
+              variantItem={getVariantImageBySku(activeSku)}
+            />
+          )}
           {variant.quantityAvailable < 1 && (
             <div className="py-1 px-4 absolute top-4 lg:top-8 lg:right-8 right-0 text-base font-subtitleFont uppercase text-white bg-purple_soldout w-2/3 lg:w-2/5">
               {soldoutLabel}
@@ -83,9 +87,11 @@ const ProductStage: React.FC<IProductStageProps> = ({
             <div className="font-bold text-greenLink text-tiny md:text-tiny font-subtitleFont -mb-1.5 lg:-mb-1.5">
               {discountLabel}
             </div>
-            <span className="line-through font-bold text-sm font-subtitleFont">
-              {toEuro(variant.compareAtPriceV2.amount)}
-            </span>
+            {variant.compareAtPriceV2 && (
+              <span className="line-through font-bold text-sm font-subtitleFont">
+                {toEuro(variant.compareAtPriceV2.amount)}
+              </span>
+            )}
           </div>
         </div>
         <VariantSelect
@@ -103,8 +109,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
           <span className="w-32 md:w-max text-left font-textFont">{deliveryTime}</span>
           <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
-        <ProductClaimsSection productClaims={productClaims} />
+        {productClaims && <ProductClaimsSection productClaims={productClaims} />}
         {productStageAccordion && <ProducStageAccordion {...productStageAccordion} />}
+        {productDetails && <ProductDetails {...productDetails} />}
       </div>
     </section>
   )

@@ -11,9 +11,15 @@ type IAccordionProps = {
   buttonText?: string
   items: IDatoAccordionItem[]
   buttonAction?: 'scroll' | 'link'
+  blackLine?: boolean
 }
 
-const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction = 'link' }) => {
+const Accordion: React.FC<IAccordionProps> = ({
+  buttonText,
+  blackLine,
+  items,
+  buttonAction = 'link'
+}) => {
   const router = useRouter()
   const scrollToTop = () => {
     window.scrollTo({
@@ -27,12 +33,12 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
   }
   return (
     <>
-      <div className="max-w-content-sm">
+      <div className="max-w-content-sm w-full">
         {items.map((item, index) => (
           <Disclosure key={item.text} defaultOpen={index === 0}>
             {({ open }) => (
               <>
-                {index !== 0 && <hr className="border-grayLine" />}
+                {index !== 0 && <hr className={blackLine ? 'border-black' : 'border-grayLine'} />}
                 <Disclosure.Button className="flex justify-between items-center w-full px-4 py-3 text-tiny font-medium text-left rounded-lg  ">
                   <h3 className="w-full md:w-3/4 my-3px">{item.text}</h3>
                   <Icon
@@ -47,15 +53,17 @@ const Accordion: React.FC<IAccordionProps> = ({ buttonText, items, buttonAction 
             )}
           </Disclosure>
         ))}
-        <div className="w-full md:w-1/2 m-auto  px-4 md:px-0 mt-8">
-          <Button
-            className="accordion-action-button"
-            onClick={buttonAction === 'link' ? linkToProductPage : scrollToTop}
-            buttonType="primary"
-            type="button">
-            {buttonText}
-          </Button>
-        </div>
+        {buttonText && (
+          <div className="w-full md:w-1/2 m-auto  px-4 md:px-0 mt-8">
+            <Button
+              className="accordion-action-button"
+              onClick={buttonAction === 'link' ? linkToProductPage : scrollToTop}
+              buttonType="primary"
+              type="button">
+              {buttonText}
+            </Button>
+          </div>
+        )}
       </div>
     </>
   )

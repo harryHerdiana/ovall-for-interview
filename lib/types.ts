@@ -278,6 +278,15 @@ export interface IAboutUsPage {
   newsletterSection: INewsletterSection
 }
 
+export interface ProductDetailsProps {
+  title: string
+  items: {
+    icon: string
+    id: string
+    text: string
+  }[]
+}
+
 export interface IProductPage {
   stageSection: {
     quantityCaption: string
@@ -285,7 +294,7 @@ export interface IProductPage {
     colorCaption: string
     freeShippingCaption: string
     deliveryTime: string
-    productClaims: {
+    productClaims?: {
       id: string
       text: string
       title: string
@@ -296,6 +305,7 @@ export interface IProductPage {
     soldoutLabel: string
     discountLabel: string
     productStageAccordion?: IProductStageAccordion
+    productDetails?: ProductDetailsProps
   }
   faqSection?: {
     faqButtonText: string
@@ -353,13 +363,15 @@ export interface IProductPage {
     faqTitle: string
     items: IDatoAccordionItem[]
   }
-  ingredientSection?: {
-    backgroundColor: string
-    title: string
-    text: string
-    items: IDatoAccordionItem[]
-  }
+  ingredientSection?: IngredientSectionProps
   productTeaserSection?: IProductTeaserSection
+}
+
+export interface IngredientSectionProps {
+  backgroundColor: string
+  title: string
+  text: string
+  items: IDatoAccordionItem[]
 }
 
 export interface ILandingPage {

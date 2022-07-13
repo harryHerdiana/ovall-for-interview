@@ -55,12 +55,14 @@ export default class PageDataService {
     })
   }
 
-  private async getProductData(): Promise<IShopifyProduct> {
+  private async getProductData(
+    productHandle = 'ovall-ultraschall-gesichtsreiniger'
+  ): Promise<IShopifyProduct> {
     try {
       const response = await this.shopifyClient.query({
         data: {
           query: GET_PRODUCT,
-          variables: { handle: 'ovall-ultraschall-gesichtsreiniger' }
+          variables: { handle: productHandle }
         }
       })
 
@@ -90,8 +92,17 @@ export default class PageDataService {
    * @param entryKey model name in datocms
    * @returns IPageProps
    */
-  private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
-    const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
+  private async requestDatoCMSWithBaseData(
+    query,
+    datoCMSModelKey,
+    mappingFn?,
+    productHandle?,
+    variables?
+  ) {
+    const [appProps, product] = await Promise.all([
+      this.getMenus(),
+      this.getProductData(productHandle)
+    ])
 
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
@@ -120,7 +131,8 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(
       PRODUCT_PAGE_QUERY,
       'productShampoo',
-      mapProductShampooData
+      mapProductShampooData,
+      'aloe-face-cleansing-gel'
     )
   }
 

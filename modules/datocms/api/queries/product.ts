@@ -205,17 +205,6 @@ export const PRODUCT_PAGE_QUERY = `
         description
         title
       }
-      productClaims {
-        id
-        text
-        title
-        image {
-          alt
-          url
-          width
-          height
-        }
-      }
       productDescriptionSection {
         ... on SectionHeadlineRecord {
           _modelApiKey
@@ -256,6 +245,14 @@ export const PRODUCT_PAGE_QUERY = `
           text
           title
           _modelApiKey
+        }
+      }
+      productDetail {
+        title
+        iconList {
+          text
+          id
+          icon
         }
       }
     }
