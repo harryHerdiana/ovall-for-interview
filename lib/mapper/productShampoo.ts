@@ -1,8 +1,7 @@
 import { IProductPage } from '@lib/types'
-import { IDatoProductPage } from '@modules/datocms/types'
 import * as utils from './utils'
 
-export default function mapProductShampooData(d: IDatoProductPage): IProductPage {
+export default function mapProductShampooData(d: any): IProductPage {
   return {
     stageSection: {
       quantityCaption: d.quantityCaption,
