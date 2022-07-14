@@ -63,9 +63,9 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <MainIngredients {...ingredientSection}/>
+      <MainIngredients {...ingredientSection} />
       <DescriptionSection {...descriptionSection} />
-      <FaqSection items={faqShampooSection.items} faqSubtitle={faqShampooSection.faqTitle}/>
+      <FaqSection items={faqShampooSection.items} faqSubtitle={faqShampooSection.faqTitle} />
       <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>
