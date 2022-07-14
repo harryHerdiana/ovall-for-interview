@@ -182,6 +182,22 @@ export interface IHtmlAccordionItem {
   body: StructuredText
 }
 
+export interface IngredientSectionProps {
+  backgroundColor: string
+  title: string
+  text: string
+  items: {
+    id: string
+    text: string
+    body?: string
+    promise?: {
+      icon: string
+      id: string
+      text: string
+    }[]
+  }[]
+}
+
 /** ***** PAGES ************** */
 
 export interface IStaticPage {
@@ -210,7 +226,7 @@ export interface IHomePage {
   productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoAccordionSection: {
     buttonText: string
-    items: IDatoAccordionItem[]
+    items: []
   }
   howToUseSection: IHowToUseSection
   infoSection: any // TODO add type
@@ -365,13 +381,6 @@ export interface IProductPage {
   }
   ingredientSection?: IngredientSectionProps
   productTeaserSection?: IProductTeaserSection
-}
-
-export interface IngredientSectionProps {
-  backgroundColor: string
-  title: string
-  text: string
-  items: IDatoAccordionItem[]
 }
 
 export interface ILandingPage {

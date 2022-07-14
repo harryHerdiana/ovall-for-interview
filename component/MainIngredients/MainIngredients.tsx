@@ -1,8 +1,9 @@
 import React from 'react'
 
-import Accordion from '@component/Accordion'
 import GradientRectangle from '@component/GradientRectangle'
 import { IngredientSectionProps } from '@lib/types'
+
+import IngredientAccordion from './IngredientAccordion'
 
 const MainIngredients: React.FC<IngredientSectionProps> = (props: IngredientSectionProps) => {
   const { backgroundColor, text, title, items } = props
@@ -13,7 +14,7 @@ const MainIngredients: React.FC<IngredientSectionProps> = (props: IngredientSect
           <h2 className="mb-4">{title}</h2>
           <p>{text}</p>
         </div>
-        <Accordion items={items} blackLine />
+        <IngredientAccordion items={items} />
       </div>
     </GradientRectangle>
   )

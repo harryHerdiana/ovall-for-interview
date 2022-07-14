@@ -51,6 +51,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
     productDetails
   }
 }) => {
+  console.log(product)
+
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }

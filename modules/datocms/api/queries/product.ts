@@ -239,7 +239,13 @@ export const PRODUCT_PAGE_QUERY = `
         }
         ingredientAccordion {
           text
+          id
           body
+          promise {
+            icon
+            text
+            id
+          }
         }
         content {
           text

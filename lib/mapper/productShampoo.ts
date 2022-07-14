@@ -49,7 +49,12 @@ export default function mapProductShampooData(d: any): IProductPage {
     },
     ingredientSection: {
       backgroundColor: d.ingredient.background[0].backgroundColor,
-      items: d.ingredient.ingredientAccordion,
+      items: d.ingredient.ingredientAccordion.map((item) => ({
+        id: item.id,
+        text: item.text,
+        body: item.body,
+        promise: item.promise.map((item2) => ({ icon: item2.icon, id: item2.id, text: item2.text }))
+      })),
       text: utils.findByApiKey(d.ingredient.content, 'large_headline_text_block', 'text'),
       title: utils.findByApiKey(d.ingredient.content, 'large_headline_text_block', 'title')
     },

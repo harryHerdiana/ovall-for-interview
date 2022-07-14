@@ -158,7 +158,16 @@ export interface IDatoProductPage {
   }
   ingredient: {
     background: { backgroundColor: string }[]
-    ingredientAccordion: IDatoAccordionItem[]
+    ingredientAccordion: {
+      id: string
+      text: string
+      body?: string
+      promise?: {
+        icon: string
+        id: string
+        text: string
+      }[]
+    }[]
     content: { text: string; title: string; _modelApiKey: string }[]
   }
   productDetail: {
