@@ -149,9 +149,15 @@ export default class PageDataService {
   }
 
   public async staticPage(slug: string): Promise<IStaticPage & IDefaultProps> {
-    return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
-      slug
-    })
+    return this.requestDatoCMSWithBaseData(
+      STATIC_PAGE_QUERY,
+      'staticPage',
+      mapStaticPage,
+      'ovall-ultraschall-gesichtsreiniger',
+      {
+        slug
+      }
+    )
   }
 
   public async getLandingPage(name: string): Promise<ILandingPage> {
