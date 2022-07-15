@@ -139,6 +139,11 @@
   background: #ffffff;
 }
 
+.people_gradient_rectangle_center {
+  background: conic-gradient(from 243deg at 50% 50%, #b6dcff, #b9b7e5);
+}
+
+
 .square_gradient {
   width: 100%;
   height: 100%;
