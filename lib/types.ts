@@ -305,6 +305,8 @@ export interface ProductDetailsProps {
 
 export interface IProductPage {
   stageSection: {
+    productDescription?: string
+    productVolume?: string
     quantityCaption: string
     addToCartLabel: string
     colorCaption: string

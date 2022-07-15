@@ -48,7 +48,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
     soldoutLabel,
     discountLabel,
     productStageAccordion,
-    productDetails
+    productDetails,
+    productDescription,
+    productVolume
   }
 }) => {
   console.log(product)
@@ -76,6 +78,8 @@ const ProductStage: React.FC<IProductStageProps> = ({
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-12 lg:mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
         <div className="w-full text-left mb-1 h2_element_normalcase">{product.title}</div>
+        {productDescription && <p className="text-left ">{productDescription}</p>}
+        {productVolume && <p className="mb-5 text-left">{productVolume}</p>}
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
             <ProductRating />

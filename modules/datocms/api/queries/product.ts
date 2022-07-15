@@ -191,6 +191,8 @@ export const PRODUCT_PAGE_QUERY = `
         descriptionLabel
         descriptionText
       }
+      productDesc
+      volume
       title
       slug
       freeShippingCaption

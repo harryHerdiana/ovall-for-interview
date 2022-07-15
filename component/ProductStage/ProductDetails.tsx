@@ -4,13 +4,15 @@ import { ProductDetailsProps } from '@lib/types'
 import Icon from '@component/Icon'
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ title, items }) => (
-  <div className="mt-14">
+  <div className="mt-14 text-left">
     <h2>{title}</h2>
     <div className="mt-4">
       {items.map((item) => (
         <div key={item.id} className="flex items-center my-4">
-          <Icon src={`/images/${item.icon}.svg`} className="h-10 w-10" />
-          <p className="ml-6">{item.text}</p>
+          <div className="flex items-center justify-center min-w-[50px] ">
+            <Icon src={`/images/${item.icon}.svg`} className="h-[40px] w-[40px]" />
+          </div>
+          <p className="ml-5">{item.text}</p>
         </div>
       ))}
     </div>

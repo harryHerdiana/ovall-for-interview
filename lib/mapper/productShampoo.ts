@@ -4,6 +4,8 @@ import * as utils from './utils'
 export default function mapProductShampooData(d: any): IProductPage {
   return {
     stageSection: {
+      productDescription: d.productDesc,
+      productVolume: d.volume,
       quantityCaption: d.quantityCaption,
       addToCartLabel: d.addToCartLabel,
       colorCaption: d.colorCaption,

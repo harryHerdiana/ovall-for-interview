@@ -100,6 +100,8 @@ export interface IDatoHowToUseSection {
   }[]
 }
 export interface IDatoProductPage {
+  productDesc?: string
+  volume?: string
   seoTags: SeoTags
   quantityCaption: string
   deliveryTime: string
