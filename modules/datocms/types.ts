@@ -100,6 +100,8 @@ export interface IDatoHowToUseSection {
   }[]
 }
 export interface IDatoProductPage {
+  productDesc?: string
+  volume?: string
   seoTags: SeoTags
   quantityCaption: string
   deliveryTime: string
@@ -114,6 +116,10 @@ export interface IDatoProductPage {
   faqItems: {
     items: IDatoAccordionItem[]
   }
+  productSlogan?: {
+    normalText: string
+    boldText: string
+  }[]
   slug: string // check: do we need this?
   variantImages: DatoProductVariantImage[]
   slideshowItems: {
@@ -152,6 +158,32 @@ export interface IDatoProductPage {
   newsletterSection: IDatoNewsletterSection
   beforeAfterBanner: DatoCMSBeforeAfterBanner
   productStageAccordion: DatoProductStageAccordion
+  faqAccordionShampoo: {
+    name: string
+    items: IDatoAccordionItem[]
+  }
+  ingredient: {
+    background: { backgroundColor: string }[]
+    ingredientAccordion: {
+      id: string
+      text: string
+      body?: string
+      promise?: {
+        icon: string
+        id: string
+        text: string
+      }[]
+    }[]
+    content: { text: string; title: string; _modelApiKey: string }[]
+  }
+  productDetail: {
+    title: string
+    iconList: {
+      icon: string
+      id: string
+      text: string
+    }[]
+  }[]
 }
 
 export interface IDatoHomepage {

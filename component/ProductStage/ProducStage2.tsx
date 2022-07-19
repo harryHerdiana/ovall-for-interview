@@ -24,7 +24,8 @@ const ProductStage2: React.FC<IProductStageProps> = ({
     variantImages,
     soldoutLabel,
     discountLabel,
-    productStageAccordion
+    productStageAccordion,
+    productSlogan
   }
 }) => {
   function getVariantImageBySku(sku: string) {
@@ -35,7 +36,6 @@ const ProductStage2: React.FC<IProductStageProps> = ({
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
         <div className="relative h-full w-full lg:px-8">
           <ProductSlideshow
-            enableCaptions
             activeSku={activeSku}
             items={slideshowImages}
             variantItem={getVariantImageBySku(activeSku)}
@@ -54,7 +54,11 @@ const ProductStage2: React.FC<IProductStageProps> = ({
             <ProductRating />
           </ScrollableLink>
         </div>
-        <div className="text-left flex flex-row mb-3 mt-5">
+        <span className="mt-7 font-textFont text-left">
+          {productSlogan[0].normalText}{' '}
+          <strong className="font-textFontBold">{productSlogan[0].boldText}</strong>
+        </span>
+        <div className="text-left flex flex-row mb-3 ">
           <span className=" self-end font-subtitleFont font-semibold text-2xl">
             {toEuro(variant.priceV2.amount)}
           </span>

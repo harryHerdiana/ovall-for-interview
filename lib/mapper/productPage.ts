@@ -11,6 +11,10 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       colorCaption: d.colorCaption,
       freeShippingCaption: d.freeShippingCaption,
       deliveryTime: d.deliveryTime,
+      productSlogan: d.productSlogan.map((item) => ({
+        normalText: item.normalText,
+        boldText: item.boldText
+      })),
       productClaims: d.productClaims.map((claim) => ({
         ...claim,
         image: claim.image || null
