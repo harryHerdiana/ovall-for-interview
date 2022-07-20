@@ -38,9 +38,9 @@ const IngredientAccordion: React.FC<IIngredientAccordionProps> = ({ items }) => 
                 {item.promise && (
                   <div className="columns-2">
                     {item.promise.map((item2) => (
-                      <div key={item2.id} className="flex items-center my-1">
-                        <Icon src={`/images/${item2.icon}.svg`} className="h-9 w-9" />
-                        <p>{item2.text}</p>
+                      <div key={item2.id} className="flex items-start my-1">
+                        <Icon src={`/images/${item2.icon}.svg`} className="h-8 w-8" />
+                        <p className="mt-1">{item2.text}</p>
                       </div>
                     ))}
                   </div>
