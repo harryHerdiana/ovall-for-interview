@@ -8,7 +8,6 @@ import VariantSelect from './VariantSelect'
 import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
 import ProducStageAccordion from './ProductStageAccordion'
-import ProductDetails from './ProductDetails'
 
 export interface IProductStageProps extends IProductPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
@@ -47,10 +46,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
     variantImages,
     soldoutLabel,
     discountLabel,
-    productStageAccordion,
-    productDetails,
-    productDescription,
-    productVolume
+    productStageAccordion
   }
 }) => {
   function getVariantImageBySku(sku: string) {
@@ -76,8 +72,6 @@ const ProductStage: React.FC<IProductStageProps> = ({
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-12 lg:mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
         <div className="w-full text-left mb-1 h2_element_normalcase">{product.title}</div>
-        {productDescription && <p className="text-left ">{productDescription}</p>}
-        {productVolume && <p className="mb-5 text-left">{productVolume}</p>}
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
             <ProductRating />
@@ -108,14 +102,12 @@ const ProductStage: React.FC<IProductStageProps> = ({
           quantityCaption={quantityCaption}
           soldoutLabel={soldoutLabel}
         />
-
         <div className="flex justify-between mt-4">
           <span className="w-32 md:w-max text-left font-textFont">{deliveryTime}</span>
           <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
         {productClaims && <ProductClaimsSection productClaims={productClaims} />}
         {productStageAccordion && <ProducStageAccordion {...productStageAccordion} />}
-        {productDetails && <ProductDetails {...productDetails} />}
       </div>
     </section>
   )

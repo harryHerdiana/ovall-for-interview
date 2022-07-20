@@ -1,7 +1,7 @@
-import { IProductPage } from '@lib/types'
+import { ICleanserPage } from '@lib/types'
 import * as utils from './utils'
 
-export default function mapProductShampooData(d: any): IProductPage {
+export default function mapProductShampooData(d: any): ICleanserPage {
   return {
     stageSection: {
       productDescription: d.productDesc,
@@ -11,12 +11,6 @@ export default function mapProductShampooData(d: any): IProductPage {
       colorCaption: d.colorCaption,
       freeShippingCaption: d.freeShippingCaption,
       deliveryTime: d.deliveryTime,
-      variantImages: d.variantImages.map((variantImage) => ({
-        id: variantImage.color,
-        color: variantImage.color,
-        background: variantImage.image[0].gradientBackground,
-        image: variantImage.image[0].image?.responsiveImage || null
-      })),
       slideshowImages: d.slideshowItems.map((item) => ({
         id: item.id,
         background: item.gradientBackground,

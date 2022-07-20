@@ -192,8 +192,8 @@ export interface IngredientSectionProps {
     body?: string
     promise?: {
       icon: string
-      id: string
       text: string
+      id: string
     }[]
   }[]
 }
@@ -226,7 +226,7 @@ export interface IHomePage {
   productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoAccordionSection: {
     buttonText: string
-    items: []
+    items: IDatoAccordionItem[]
   }
   howToUseSection: IHowToUseSection
   infoSection: any // TODO add type
@@ -303,16 +303,50 @@ export interface ProductDetailsProps {
   }[]
 }
 
-export interface IProductPage {
+export interface ICleanserPage {
   stageSection: {
-    productDescription?: string
-    productVolume?: string
+    productDescription: string
+    productVolume: string
     quantityCaption: string
     addToCartLabel: string
     colorCaption: string
     freeShippingCaption: string
     deliveryTime: string
-    productClaims?: {
+    // variantImages: IProductVariantImage[] // Does cleanser have a variant?
+    slideshowImages: IProductSlideshowImage[]
+    soldoutLabel: string
+    discountLabel: string
+    productDetails: ProductDetailsProps
+  }
+  descriptionSection: {
+    title: string
+    text: string
+    videoUrl: string
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
+  newsletterSection: INewsletterSection
+  // slug: string // check: do we need this?
+  // moodSlideshowSection: any // TODO add type
+  // productInfoBannerFeatures: any // TODO add type
+  faqShampooSection: {
+    faqTitle: string
+    items: IDatoAccordionItem[]
+  }
+  ingredientSection: IngredientSectionProps
+  productTeaserSection: IProductTeaserSection
+}
+
+export interface IProductPage {
+  stageSection: {
+    quantityCaption: string
+    addToCartLabel: string
+    colorCaption: string
+    freeShippingCaption: string
+    deliveryTime: string
+    productClaims: {
       id: string
       text: string
       title: string
@@ -322,10 +356,9 @@ export interface IProductPage {
     slideshowImages: IProductSlideshowImage[]
     soldoutLabel: string
     discountLabel: string
-    productStageAccordion?: IProductStageAccordion
-    productDetails?: ProductDetailsProps
+    productStageAccordion: IProductStageAccordion
   }
-  faqSection?: {
+  faqSection: {
     faqButtonText: string
     faqSubtitle: string
     faqTitle: string
@@ -340,7 +373,7 @@ export interface IProductPage {
     kicker: string
     title: string
   }
-  howToUseSection?: IHowToUseSection
+  howToUseSection: IHowToUseSection
   moodSlideshowSection?: IMoodSlideshow
   skinTypeInfoSection?: {
     backgroundColor: string
@@ -368,7 +401,7 @@ export interface IProductPage {
       text: StructuredTextDocument
     }[]
   }
-  productInfoAccordionSection?: {
+  productInfoAccordionSection: {
     buttonText: string
     items: IDatoAccordionItem[]
   }
@@ -381,8 +414,6 @@ export interface IProductPage {
     faqTitle: string
     items: IDatoAccordionItem[]
   }
-  ingredientSection?: IngredientSectionProps
-  productTeaserSection?: IProductTeaserSection
 }
 
 export interface ILandingPage {

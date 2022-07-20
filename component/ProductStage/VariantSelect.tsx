@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import AddToCartButton from './AddToCartButton'
 
 interface IVariantSelect {
-  setVariantSku: (arg0: string) => void
+  setVariantSku?: (arg0: string) => void
   variant: IShopifyProductVariant
   variants: IShopifyProductVariant[]
   quantityCaption: string
