@@ -35,6 +35,10 @@ export const PRODUCT_PAGE_QUERY = `
         descriptionText
       }
       title
+      productSlogan {
+        normalText
+        boldText
+      }
       slug
       freeShippingCaption
       deliveryTime

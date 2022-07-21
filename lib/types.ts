@@ -210,7 +210,7 @@ export interface IHomePage {
   productInfoBannerTechnology: IProductInfoTechnologySection
   productInfoAccordionSection: {
     buttonText: string
-    items: IDatoAccordionItem[]
+    items: []
   }
   howToUseSection: IHowToUseSection
   infoSection: any // TODO add type
@@ -278,8 +278,21 @@ export interface IAboutUsPage {
   newsletterSection: INewsletterSection
 }
 
+export interface ProductDetailsProps {
+  title: string
+  items: {
+    icon: string
+    id: string
+    text: string
+  }[]
+}
+
 export interface IProductPage {
   stageSection: {
+    productSlogan?: {
+      normalText: string
+      boldText: string
+    }
     quantityCaption: string
     addToCartLabel: string
     colorCaption: string
@@ -346,6 +359,7 @@ export interface IProductPage {
   }
   newsletterSection: INewsletterSection
   beforeAfterBanner: IBeforeAfterBannerProps
+
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type
