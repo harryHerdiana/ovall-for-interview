@@ -55,8 +55,8 @@ const ProductStage2: React.FC<IProductStageProps> = ({
           </ScrollableLink>
         </div>
         <span className="mt-7 font-textFont text-left">
-          {productSlogan[0].normalText}{' '}
-          <strong className="font-textFontBold">{productSlogan[0].boldText}</strong>
+          {productSlogan.normalText}{' '}
+          <strong className="font-textFontBold">{productSlogan.boldText}</strong>
         </span>
         <div className="text-left flex flex-row mb-3 ">
           <span className=" self-end font-subtitleFont font-semibold text-2xl">

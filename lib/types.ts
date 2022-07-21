@@ -305,31 +305,28 @@ export interface ProductDetailsProps {
 
 export interface IProductPage {
   stageSection: {
-    productDescription?: string
-    productVolume?: string
+    productSlogan?: {
+      normalText: string
+      boldText: string
+    }
     quantityCaption: string
     addToCartLabel: string
     colorCaption: string
     freeShippingCaption: string
     deliveryTime: string
-    productClaims?: {
+    productClaims: {
       id: string
       text: string
       title: string
       image?: DatoCMSImage
     }[]
-    productSlogan?: {
-      normalText: string
-      boldText: string
-    }[]
     variantImages: IProductVariantImage[]
     slideshowImages: IProductSlideshowImage[]
     soldoutLabel: string
     discountLabel: string
-    productStageAccordion?: IProductStageAccordion
-    productDetails?: ProductDetailsProps
+    productStageAccordion: IProductStageAccordion
   }
-  faqSection?: {
+  faqSection: {
     faqButtonText: string
     faqSubtitle: string
     faqTitle: string
@@ -344,15 +341,15 @@ export interface IProductPage {
     kicker: string
     title: string
   }
-  howToUseSection?: IHowToUseSection
-  moodSlideshowSection?: IMoodSlideshow
-  skinTypeInfoSection?: {
+  howToUseSection: IHowToUseSection
+  moodSlideshowSection: IMoodSlideshow
+  skinTypeInfoSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage
     title: string
     body: string
   }
-  productInfoBannerSection?: {
+  productInfoBannerSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage
     title: string
@@ -360,8 +357,8 @@ export interface IProductPage {
     buttonText: string
     dropDownText: StructuredTextDocument // see https://www.datocms.com/docs/react/structured-text-fields
   }
-  productInfoBannerTechnology?: IProductInfoTechnologySection
-  productInfoBannerFeatures?: {
+  productInfoBannerTechnology: IProductInfoTechnologySection
+  productInfoBannerFeatures: {
     title: string
     backgroundColor: string
     image: DatoCMSResponsiveImage
@@ -372,21 +369,16 @@ export interface IProductPage {
       text: StructuredTextDocument
     }[]
   }
-  productInfoAccordionSection?: {
+  productInfoAccordionSection: {
     buttonText: string
     items: IDatoAccordionItem[]
   }
   newsletterSection: INewsletterSection
-  beforeAfterBanner?: IBeforeAfterBannerProps
+  beforeAfterBanner: IBeforeAfterBannerProps
+
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type
-  faqShampooSection?: {
-    faqTitle: string
-    items: IDatoAccordionItem[]
-  }
-  ingredientSection?: IngredientSectionProps
-  productTeaserSection?: IProductTeaserSection
 }
 
 export interface ILandingPage {
