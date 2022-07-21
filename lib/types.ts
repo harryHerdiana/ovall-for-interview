@@ -182,22 +182,6 @@ export interface IHtmlAccordionItem {
   body: StructuredText
 }
 
-export interface IngredientSectionProps {
-  backgroundColor: string
-  title: string
-  text: string
-  items: {
-    id: string
-    text: string
-    body?: string
-    promise?: {
-      icon: string
-      id: string
-      text: string
-    }[]
-  }[]
-}
-
 /** ***** PAGES ************** */
 
 export interface IStaticPage {
