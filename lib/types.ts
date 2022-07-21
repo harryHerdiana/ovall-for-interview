@@ -374,14 +374,14 @@ export interface IProductPage {
     title: string
   }
   howToUseSection: IHowToUseSection
-  moodSlideshowSection?: IMoodSlideshow
-  skinTypeInfoSection?: {
+  moodSlideshowSection: IMoodSlideshow
+  skinTypeInfoSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage
     title: string
     body: string
   }
-  productInfoBannerSection?: {
+  productInfoBannerSection: {
     backgroundColor: string
     image: DatoCMSResponsiveImage
     title: string
@@ -389,8 +389,8 @@ export interface IProductPage {
     buttonText: string
     dropDownText: StructuredTextDocument // see https://www.datocms.com/docs/react/structured-text-fields
   }
-  productInfoBannerTechnology?: IProductInfoTechnologySection
-  productInfoBannerFeatures?: {
+  productInfoBannerTechnology: IProductInfoTechnologySection
+  productInfoBannerFeatures: {
     title: string
     backgroundColor: string
     image: DatoCMSResponsiveImage
@@ -406,14 +406,10 @@ export interface IProductPage {
     items: IDatoAccordionItem[]
   }
   newsletterSection: INewsletterSection
-  beforeAfterBanner?: IBeforeAfterBannerProps
+  beforeAfterBanner: IBeforeAfterBannerProps
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type
-  faqShampooSection?: {
-    faqTitle: string
-    items: IDatoAccordionItem[]
-  }
 }
 
 export interface ILandingPage {
