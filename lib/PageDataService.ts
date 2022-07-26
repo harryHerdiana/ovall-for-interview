@@ -33,6 +33,7 @@ import mapFAQData from './mapper/faq'
 import mapRatingData from './mapper/ratings'
 import mapStaticPage from './mapper/staticPage'
 import mapLandingPage from './mapper/landingPage'
+import mapAllProductData from './mapper/allProductPage'
 
 export default class PageDataService {
   context: Context
@@ -54,12 +55,14 @@ export default class PageDataService {
     })
   }
 
-  private async getProductData(): Promise<IShopifyProduct> {
+  private async getProductData(
+    productHandle = 'ovall-ultraschall-gesichtsreiniger'
+  ): Promise<IShopifyProduct> {
     try {
       const response = await this.shopifyClient.query({
         data: {
           query: GET_PRODUCT,
-          variables: { handle: 'ovall-ultraschall-gesichtsreiniger' }
+          variables: { handle: productHandle }
         }
       })
 
@@ -90,7 +93,14 @@ export default class PageDataService {
    * @returns IPageProps
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
-    const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
+    const [appProps, product, allProducts] = await Promise.all([
+      this.getMenus(),
+      this.getProductData(),
+      [
+        await this.getProductData('ovall-ultraschall-gesichtsreiniger'),
+        await this.getProductData('aloe-face-cleansing-gel')
+      ]
+    ])
 
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
@@ -103,6 +113,7 @@ export default class PageDataService {
       appProps,
       seoTags: content.seoTags,
       product,
+      allProducts,
       ...mappedContent
     }
   }
@@ -117,6 +128,10 @@ export default class PageDataService {
 
   public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {
     return this.requestDatoCMSWithBaseData(ABOUT_US_QUERY, 'aboutUsPage', mapAboutUsData)
+  }
+
+  public async allProduct(): Promise<IAboutUsPage & IDefaultProps> {
+    return this.requestDatoCMSWithBaseData(ABOUT_US_QUERY, 'allProductPage', mapAllProductData)
   }
 
   public async faqPage(): Promise<IFAQPage> {
