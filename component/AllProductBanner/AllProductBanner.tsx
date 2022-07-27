@@ -50,8 +50,8 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
   }
 
   return (
-    <div className="flex flex-col lg:items-center lg:h-max max-w-site mx-auto mb-[80px] mt-[20px] lg:mt-[40px]">
-      <div className="lg:flex grid grid-cols-2 items-start justify-center w-full bg-white lg:bg-transparent lg:mt-0 gap-[20px] gap-y-[40px] lg:gap-[40px]">
+    <div className="lg:items-center lg:h-max max-w-site mx-auto mb-[80px] mt-[20px] lg:mt-[40px]">
+      <div className="lg:flex grid grid-cols-2 items-start justify-center w-full lg:mt-0 gap-[20px] gap-y-[40px] lg:gap-[40px]">
         {newItems.map((item) => (
           <div className="text-left" key={item.id}>
             <GradientSquare variantGradient={item.sku}>
@@ -62,20 +62,20 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
                 />
               </div>
             </GradientSquare>
-            <div className="lg:max-w-[220px] lg:pl-[30px] pl-[25px] mt-5">
+            <div className="lg:max-w-[200px] lg:pl-[30px] px-[15px] mt-5">
               <div
                 role="presentation"
                 onClick={() => redirectBySku(item.sku)}
-                className="self-center lg:self-start font-titleFont font-semibold text-md lg:text-xl cursor-pointer">
+                className="self-center lg:self-start font-titleFont  text-[18px] cursor-pointer">
                 {getTitleBySku(item.sku)}
               </div>
-              <div className="mt-1 mb-4 self-center lg:self-start" style={{ minHeight: '25px' }}>
+              <div className="mb-2 self-center lg:self-start" style={{ minHeight: '25px' }}>
                 <ProductRating />
               </div>
-              <span className="self-center lg:self-start font-subtitleFont font-semibold text-sm lg:text-xl">
+              <span className="self-center lg:self-start font-titleFont text-[18px] ">
                 {toEuro(item.priceV2.amount)}
               </span>
-              <span className="line-through font-bold font-subtitleFont block text-xs lg:text-sm">
+              <span className="line-through font-subTagFont block text-[15px] ">
                 {item.compareAtPriceV2 && toEuro(item.compareAtPriceV2.amount)}
               </span>
             </div>
