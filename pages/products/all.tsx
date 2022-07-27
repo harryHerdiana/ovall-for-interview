@@ -11,7 +11,6 @@ import AllProductBanner from '@component/AllProductBanner'
 
 const AllProductPage: React.FC<IAllProductPage> = (props: IAllProductPage & IDefaultProps) => {
   const { newsletterSection, allProducts, heroSection, testimonialSection, productImages } = props
-  console.log(allProducts)
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} />

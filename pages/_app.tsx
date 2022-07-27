@@ -7,6 +7,8 @@ import '@styles/globals.css'
 import 'slick-carousel/slick/slick.css'
 import '../styles/globals/slick.css'
 import { StoreProvider } from '@context/StoreContext'
+import { VariantProvider } from '@context/VariantContext'
+
 import { addPageviewAndOptimizeEvent, setOriginalPageLocation } from '@modules/tracking/events'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -27,7 +29,9 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => smoothscroll.polyfill())
   return (
     <StoreProvider locale={router.locale} shopifyProduct={pageProps.shopifyProduct}>
-      <Component {...pageProps} />
+      <VariantProvider>
+        <Component {...pageProps} />
+      </VariantProvider>
     </StoreProvider>
   )
 }
