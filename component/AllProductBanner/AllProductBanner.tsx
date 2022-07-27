@@ -62,7 +62,7 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
                 />
               </div>
             </GradientSquare>
-            <div className="lg:max-w-[200px] lg:pl-[30px] px-[15px] mt-5">
+            <div className="max-w-[175px] lg:pl-[30px] pl-[15px] mt-5">
               <div
                 role="presentation"
                 onClick={() => redirectBySku(item.sku)}
