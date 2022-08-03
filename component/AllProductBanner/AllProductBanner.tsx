@@ -6,17 +6,18 @@ import { skuColorMap } from '@component/ProductStage/ProductStage'
 import ResponsiveImage from '@component/ResponsiveImage'
 import GradientSquare from '@component/GradientSquare'
 import { PRODUCT_PATH, CLEANSER_PRODUCT_PATH } from '@lib/constants'
-import VariantContext from '@context/VariantContext'
+import { IProductVariantImage } from '@lib/types'
+import { IShopifyProductVariant } from '@modules/shopify/types'
 
 type IAllProductBannerProps = {
-  allProducts: any[]
-  productImages: any[]
+  allProducts: IShopifyProductVariant[]
+  productImages: IProductVariantImage[]
 }
 
 const skuMap = {
-  'Ovall-Blue': { title: 'Ovall™ 2 - Blue', link: PRODUCT_PATH, variant: 1 },
-  'Ovall-Pink': { title: 'Ovall™	2 - Pink', link: PRODUCT_PATH, variant: 0 },
-  'Ovall-Turquoise': { title: 'Ovall™	2 - Green', link: PRODUCT_PATH, variant: 2 },
+  'Ovall-Blue': { title: 'Ovall™ 2 - Blue', link: `${PRODUCT_PATH}?variant=Ovall-Blue` },
+  'Ovall-Pink': { title: 'Ovall™	2 - Pink', link: `${PRODUCT_PATH}?variant=Ovall-Pink` },
+  'Ovall-Turquoise': { title: 'Ovall™	2 - Green', link: `${PRODUCT_PATH}?variant=Ovall-Turquoise` },
   'Ovall-Aloe-Cleanser': {
     title: 'Aloe Face Cleansing Gel',
     link: CLEANSER_PRODUCT_PATH,
@@ -25,15 +26,7 @@ const skuMap = {
 }
 
 const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, productImages }) => {
-  const [newItems, setNewItems] = React.useState([])
   const router = useRouter()
-
-  const { setSelectedVariant } = React.useContext(VariantContext)
-
-  React.useEffect(() => {
-    const temp = allProducts.reduce((prev, cur) => prev.variants.concat(cur.variants))
-    setNewItems(temp)
-  }, [])
 
   function getVariantImageBySku(sku: string) {
     const selectedImage = productImages.find((image) => image.color === skuColorMap[sku])
@@ -45,28 +38,26 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
   }
 
   function redirectBySku(sku: string) {
-    setSelectedVariant(skuMap[sku]?.variant)
     router.push(skuMap[sku]?.link)
   }
 
   return (
     <div className="lg:items-center lg:h-max max-w-site mx-auto mb-[80px] mt-[20px] lg:mt-[40px]">
       <div className="lg:flex grid grid-cols-2 items-start justify-center w-full lg:mt-0 gap-[20px] gap-y-[40px] lg:gap-[40px]">
-        {newItems.map((item) => (
-          <div className="text-left" key={item.id}>
+        {allProducts.map((item) => (
+          <div
+            className="text-left  cursor-pointer"
+            key={item.id}
+            role="presentation"
+            onClick={() => redirectBySku(item.sku)}>
             <GradientSquare variantGradient={item.sku}>
-              <div role="presentation" onClick={() => redirectBySku(item.sku)}>
-                <ResponsiveImage
-                  image={getVariantImageBySku(item.sku)}
-                  className="flex justify-start md:justify-center lg:justify-end h-max lg:w-full cursor-pointer"
-                />
-              </div>
+              <ResponsiveImage
+                image={getVariantImageBySku(item.sku)}
+                className="flex justify-start md:justify-center lg:justify-end h-max lg:w-full"
+              />
             </GradientSquare>
             <div className="max-w-[175px] lg:pl-[30px] pl-[15px] mt-5">
-              <div
-                role="presentation"
-                onClick={() => redirectBySku(item.sku)}
-                className="self-center lg:self-start font-titleFont  text-[18px] cursor-pointer">
+              <div className="self-center lg:self-start font-titleFont  text-[18px]">
                 {getTitleBySku(item.sku)}
               </div>
               <div className="mb-2 self-center lg:self-start" style={{ minHeight: '25px' }}>

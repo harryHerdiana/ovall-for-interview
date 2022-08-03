@@ -8,13 +8,21 @@ import SocialFeed from '@component/SocialFeed'
 import HeroSection from '@component/HeroSection'
 import Testimonial from '@component/Testimonial'
 import AllProductBanner from '@component/AllProductBanner'
+import { IShopifyProductVariant } from '@modules/shopify/types'
 
 const AllProductPage: React.FC<IAllProductPage> = (props: IAllProductPage & IDefaultProps) => {
   const { newsletterSection, allProducts, heroSection, testimonialSection, productImages } = props
+
+  const [allProductVariants, setAllProductVariants] = React.useState<IShopifyProductVariant[]>([])
+  React.useEffect(() => {
+    const temp = allProducts.flatMap((i) => i.variants)
+    setAllProductVariants(temp)
+  }, [allProducts])
+
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} />
-      <AllProductBanner allProducts={allProducts} productImages={productImages} />
+      <AllProductBanner allProducts={allProductVariants} productImages={productImages} />
       <Testimonial {...testimonialSection} />
       <SocialFeed {...props.appProps.socialFeedSection} />
       <Newsletter {...newsletterSection} />
@@ -32,7 +40,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       appProps: {
         ...data.appProps,
         i18n: {
-          en: '/en/all-product',
+          en: '/en/all-products',
           de: '/alle-produkte'
         }
       }
