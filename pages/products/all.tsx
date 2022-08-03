@@ -35,16 +35,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const data = await pageDataService.allProduct()
 
   return {
-    props: {
-      ...data,
-      appProps: {
-        ...data.appProps,
-        i18n: {
-          en: '/en/all-products',
-          de: '/alle-produkte'
-        }
-      }
-    }
+    props: data,
+    revalidate: 600
   }
 }
 
