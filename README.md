@@ -46,8 +46,6 @@ NEXT_PUBLIC_DISABLE_TRACKING=true
 
 ### Starting Up
 
-As we use Next.js we have to spin up the development server.
-
 ```bash
 yarn dev
 ```
