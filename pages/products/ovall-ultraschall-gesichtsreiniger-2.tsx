@@ -1,10 +1,11 @@
 import React from 'react'
-import Script from 'next/script'
 import { GetStaticProps } from 'next'
+import Script from 'next/script'
 import { useRouter } from 'next/router'
+
 import { trackViewItemEvent } from '@modules/tracking/events'
 import Layout from '@component/Layout'
-import ProductStage2 from '@component/ProductStage/ProducStage2'
+import ProductStage from '@component/ProductStage'
 import PageDataService from '@lib/PageDataService'
 import { IDefaultProps, IProductPage } from '@lib/types'
 import Newsletter from '@component/Newsletter'
@@ -62,10 +63,9 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   React.useEffect(() => {
     if (v) setVariantSku(v)
   }, [v])
-
   return (
-    <Layout {...appProps} seoTags={seoTags} indexable={false}>
-      <ProductStage2
+    <Layout {...appProps} seoTags={seoTags}>
+      <ProductStage
         {...props}
         product={product}
         variant={variant}
@@ -73,7 +73,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         setVariantSku={setVariantSku}
       />
       <DescriptionSection {...descriptionSection} showVideo />
-      <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center">
+      <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>
           <h2 className="mt-2 mb-4">{testimonialSection.title}</h2>
