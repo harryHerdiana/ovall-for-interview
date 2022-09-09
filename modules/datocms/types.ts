@@ -26,7 +26,7 @@ export type DatoCMSImage = {
 }
 
 export type DatoProductVariantImage = {
-  color: 'blue' | 'rose' | 'green'
+  color: 'blue' | 'rose' | 'green' | ''
   image: {
     gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people' | 'grey' | 'white'
     image: {

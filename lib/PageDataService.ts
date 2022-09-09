@@ -11,7 +11,8 @@ import {
   FAQ_QUERY,
   RATINGS_QUERY,
   STATIC_PAGE_QUERY,
-  LANDING_PAGE1_QUERY
+  LANDING_PAGE1_QUERY,
+  ALL_PRODUCTS_QUERY
 } from '@modules/datocms/api/queries'
 import {
   Context,
@@ -22,7 +23,8 @@ import {
   IHomePage,
   IProductPage,
   IStaticPage,
-  ILandingPage
+  ILandingPage,
+  IAllProductPage
 } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
@@ -33,6 +35,7 @@ import mapFAQData from './mapper/faq'
 import mapRatingData from './mapper/ratings'
 import mapStaticPage from './mapper/staticPage'
 import mapLandingPage from './mapper/landingPage'
+import mapAllProductData from './mapper/allProductPage'
 
 export default class PageDataService {
   context: Context
@@ -54,12 +57,14 @@ export default class PageDataService {
     })
   }
 
-  private async getProductData(): Promise<IShopifyProduct> {
+  private async getProductData(
+    productHandle = 'ovall-ultraschall-gesichtsreiniger'
+  ): Promise<IShopifyProduct> {
     try {
       const response = await this.shopifyClient.query({
         data: {
           query: GET_PRODUCT,
-          variables: { handle: 'ovall-ultraschall-gesichtsreiniger' }
+          variables: { handle: productHandle }
         }
       })
 
@@ -90,8 +95,12 @@ export default class PageDataService {
    * @returns IPageProps
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
-    const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
-
+    const [appProps, product, productCleanser] = await Promise.all([
+      this.getMenus(),
+      this.getProductData('ovall-ultraschall-gesichtsreiniger'),
+      this.getProductData('aloe-face-cleansing-gel')
+    ])
+    const allProducts = [product, productCleanser]
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
@@ -103,6 +112,7 @@ export default class PageDataService {
       appProps,
       seoTags: content.seoTags,
       product,
+      allProducts,
       ...mappedContent
     }
   }
@@ -117,6 +127,10 @@ export default class PageDataService {
 
   public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {
     return this.requestDatoCMSWithBaseData(ABOUT_US_QUERY, 'aboutUsPage', mapAboutUsData)
+  }
+
+  public async allProduct(): Promise<IAllProductPage & IDefaultProps> {
+    return this.requestDatoCMSWithBaseData(ALL_PRODUCTS_QUERY, 'allProductPage', mapAllProductData)
   }
 
   public async faqPage(): Promise<IFAQPage> {

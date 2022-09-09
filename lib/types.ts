@@ -84,6 +84,7 @@ export interface IDefaultProps {
   }
   seoTags: SeoTags
   product: IShopifyProduct
+  allProducts: IShopifyProduct[]
 }
 
 export interface ICartText {
@@ -276,6 +277,21 @@ export interface IAboutUsPage {
   }
   productTeaserSection: IProductTeaserSection
   newsletterSection: INewsletterSection
+}
+
+export interface IAllProductPage {
+  heroSection: {
+    backgroundColor: string
+    title?: string
+    body?: string
+    image?: DatoCMSResponsiveImage
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
+  newsletterSection: INewsletterSection
+  productImages: IProductVariantImage[]
 }
 
 export interface ProductDetailsProps {

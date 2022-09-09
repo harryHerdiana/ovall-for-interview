@@ -28,7 +28,8 @@ export const getCheapestVariantPrice = (product: IShopifyProduct) => {
 export const skuColorMap = {
   'Ovall-Blue': 'blue',
   'Ovall-Pink': 'rose',
-  'Ovall-Turquoise': 'green'
+  'Ovall-Turquoise': 'green',
+  'Ovall-Aloe-Cleanser': 'cleanser'
 }
 const ProductStage: React.FC<IProductStageProps> = ({
   product,
@@ -52,6 +53,7 @@ const ProductStage: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
+
   return (
     <section className="grid grid-cols-1 lg:gap-4 lg:grid-cols-2 max-w-site mx-auto mb-0">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
