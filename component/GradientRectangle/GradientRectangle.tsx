@@ -5,7 +5,7 @@ interface IGradientRectangle {
   variantGradient: string
   className?: string
   children: React.ReactElement[] | React.ReactElement
-  contentPlacement: 'left' | 'right'
+  contentPlacement?: 'left' | 'right' | 'center'
 }
 
 const gradientMap = {

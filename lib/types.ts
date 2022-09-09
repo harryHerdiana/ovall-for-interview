@@ -183,6 +183,22 @@ export interface IHtmlAccordionItem {
   body: StructuredText
 }
 
+export interface IngredientSectionProps {
+  backgroundColor: string
+  title: string
+  text: string
+  items: {
+    id: string
+    text: string
+    body?: string
+    promise?: {
+      icon: string
+      text: string
+      id: string
+    }[]
+  }[]
+}
+
 /** ***** PAGES ************** */
 
 export interface IStaticPage {
@@ -301,6 +317,42 @@ export interface ProductDetailsProps {
     id: string
     text: string
   }[]
+}
+
+export interface ICleanserPage {
+  stageSection: {
+    productDescription: string
+    productVolume: string
+    quantityCaption: string
+    addToCartLabel: string
+    colorCaption: string
+    freeShippingCaption: string
+    deliveryTime: string
+    // variantImages: IProductVariantImage[] // Does cleanser have a variant?
+    slideshowImages: IProductSlideshowImage[]
+    soldoutLabel: string
+    discountLabel: string
+    productDetails: ProductDetailsProps
+  }
+  descriptionSection: {
+    title: string
+    text: string
+    videoUrl: string
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
+  newsletterSection: INewsletterSection
+  // slug: string // check: do we need this?
+  // moodSlideshowSection: any // TODO add type
+  // productInfoBannerFeatures: any // TODO add type
+  faqShampooSection: {
+    faqTitle: string
+    items: IDatoAccordionItem[]
+  }
+  ingredientSection: IngredientSectionProps
+  productTeaserSection: IProductTeaserSection
 }
 
 export interface IProductPage {

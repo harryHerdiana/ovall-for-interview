@@ -36,6 +36,7 @@ import mapRatingData from './mapper/ratings'
 import mapStaticPage from './mapper/staticPage'
 import mapLandingPage from './mapper/landingPage'
 import mapAllProductData from './mapper/allProductPage'
+import mapProductShampooData from './mapper/productShampoo'
 
 export default class PageDataService {
   context: Context
@@ -89,33 +90,45 @@ export default class PageDataService {
     return this.getAppContent()
   }
 
-  /**
-   * @param query graphql query string
-   * @param entryKey model name in datocms
-   * @returns IPageProps
-   */
-  private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
-    const [appProps, product, productCleanser] = await Promise.all([
-      this.getMenus(),
-      this.getProductData('ovall-ultraschall-gesichtsreiniger'),
-      this.getProductData('aloe-face-cleansing-gel')
-    ])
-    const allProducts = [product, productCleanser]
-    const datoCMSResponse = await this.requestDatoCMS(query, variables)
-    const content = datoCMSResponse[datoCMSModelKey]
-    const mappedContent = mappingFn ? mappingFn(content) : content
+  // /**
+  //  * @param query graphql query string
+  //  * @param entryKey model name in datocms
+  //  * @returns IPageProps
+  //  */
+  // private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
+  //   const [appProps, product, productCleanser] = await Promise.all([
+  //     this.getMenus(),
+  //     this.getProductData('ovall-ultraschall-gesichtsreiniger'),
+  //     this.getProductData('aloe-face-cleansing-gel')
+  //   ])
+  //   const allProducts = [product, productCleanser]
+  // private async requestDatoCMSWithBaseData(
+  //   query,
+  //   datoCMSModelKey,
+  //   mappingFn?,
+  //   productHandle?,
+  //   variables?
+  // ) {
+  //   const [appProps, product] = await Promise.all([
+  //     this.getMenus(),
+  //     this.getProductData(productHandle)
+  //   ])
 
-    if (!content.seoTags) {
-      console.warn('Page Data does not contain SeoTags')
-    }
-    return {
-      appProps,
-      seoTags: content.seoTags,
-      product,
-      allProducts,
-      ...mappedContent
-    }
-  }
+  //   const datoCMSResponse = await this.requestDatoCMS(query, variables)
+  //   const content = datoCMSResponse[datoCMSModelKey]
+  //   const mappedContent = mappingFn ? mappingFn(content) : content
+
+  //   if (!content.seoTags) {
+  //     console.warn('Page Data does not contain SeoTags')
+  //   }
+  //   return {
+  //     appProps,
+  //     seoTags: content.seoTags,
+  //     product,
+  //     allProducts,
+  //     ...mappedContent
+  //   }
+  // }
 
   public async homepage(): Promise<IHomePage> {
     return this.requestDatoCMSWithBaseData(HOMEPAGE_QUERY, 'homepage', mapHomepageData)
@@ -123,6 +136,15 @@ export default class PageDataService {
 
   public async product(): Promise<IProductPage> {
     return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
+  }
+
+  public async productShampoo(): Promise<IProductPage> {
+    return this.requestDatoCMSWithBaseData(
+      PRODUCT_PAGE_QUERY,
+      'productShampoo',
+      mapProductShampooData,
+      'aloe-face-cleansing-gel'
+    )
   }
 
   public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {
@@ -142,9 +164,15 @@ export default class PageDataService {
   }
 
   public async staticPage(slug: string): Promise<IStaticPage & IDefaultProps> {
-    return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
-      slug
-    })
+    return this.requestDatoCMSWithBaseData(
+      STATIC_PAGE_QUERY,
+      'staticPage',
+      mapStaticPage,
+      'ovall-ultraschall-gesichtsreiniger',
+      {
+        slug
+      }
+    )
   }
 
   public async getLandingPage(name: string): Promise<ILandingPage> {
