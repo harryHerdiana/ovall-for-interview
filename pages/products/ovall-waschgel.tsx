@@ -19,6 +19,7 @@ const ProductPage: React.FC<ICleanserPage> = (props: ICleanserPage & IDefaultPro
     seoTags,
     appProps,
     product,
+    allProducts,
     newsletterSection,
     testimonialSection,
     descriptionSection,
@@ -26,12 +27,11 @@ const ProductPage: React.FC<ICleanserPage> = (props: ICleanserPage & IDefaultPro
     ingredientSection,
     faqShampooSection
   } = props
-
-  const variant = product.variants[0]
+  const variant = allProducts[1].variants[0]
 
   return (
     <Layout {...appProps} seoTags={seoTags}>
-      <CleanserStage product={product} variant={variant} activeSku="" {...props} />
+      <CleanserStage product={allProducts[1]} variant={variant} activeSku="" {...props} />
       <MainIngredients {...ingredientSection} />
       <DescriptionSection {...descriptionSection} />
       <FaqSection items={faqShampooSection.items} faqSubtitle={faqShampooSection.faqTitle} />
