@@ -18,7 +18,6 @@ const AllProductPage: React.FC<IAllProductPage> = (props: IAllProductPage & IDef
     const temp = allProducts.flatMap((i) => i.variants)
     setAllProductVariants(temp)
   }, [allProducts])
-
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} />

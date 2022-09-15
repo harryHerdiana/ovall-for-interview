@@ -3,6 +3,7 @@ import { NewsletterRecordFragment, ResponsiveImageFragment } from '@modules/dato
 export const ALL_PRODUCTS_QUERY = ` 
   query getAllProductPage($locale: SiteLocale!) {
     allProductPage(locale: $locale) {
+      slug
       seoTags {
         description
         title
