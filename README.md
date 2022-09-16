@@ -38,6 +38,7 @@ Before you getting started with development please create a `.env.local` file.
 
 It should consist of the following parts:
 
+
 ```
 NEXT_PUBLIC_DISABLE_TRACKING=true
 ```
