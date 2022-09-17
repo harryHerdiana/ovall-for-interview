@@ -39,6 +39,7 @@ const skuMap = {
 
 const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, productImages }) => {
   const router = useRouter()
+  console.log(productImages)
 
   function getVariantImageBySku(sku: string) {
     const selectedImage = productImages.find((image) => image.color === skuColorMap[sku])
