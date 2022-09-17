@@ -29,8 +29,12 @@ export const skuColorMap = {
   'Ovall-Blue': 'blue',
   'Ovall-Pink': 'rose',
   'Ovall-Turquoise': 'green',
-  'Ovall-Aloe-Cleanser': 'cleanser'
+  'Ovall-Aloe-Cleanser': 'cleanser',
+  'Ovall-Blue-Cleansing-Bundle': 'blue',
+  'Ovall-Pink-Cleansing-Bundle': 'rose',
+  'Ovall-Turquoise-Cleansing-Bundle': 'green'
 }
+
 const ProductStage: React.FC<IProductStageProps> = ({
   product,
   variant,

@@ -16,6 +16,16 @@ interface IVariantSelect {
   activeSku: string
 }
 
+export const variColorMap = {
+  'Ovall-Pink': 'Ovall-Pink',
+  'Ovall-Turquoise': 'Ovall-Turquoise',
+  'Ovall-Blue': 'Ovall-Blue',
+  'Ovall-Aloe-Cleanser': 'Ovall-Pink',
+  'Ovall-Blue-Cleansing-Bundle': 'Ovall-Blue',
+  'Ovall-Pink-Cleansing-Bundle': 'Ovall-Pink',
+  'Ovall-Turquoise-Cleansing-Bundle': 'Ovall-Turquoise'
+}
+
 const VariantSelect: React.FC<IVariantSelect> = ({
   setVariantSku,
   variant,
@@ -52,9 +62,12 @@ const VariantSelect: React.FC<IVariantSelect> = ({
               {variants.map((vari) => (
                 <button
                   key={vari.id}
-                  className={classNames(`md:w-4 md:h-4 w-5 h-5 rounded-full bg-${vari.sku}-500`, {
-                    'ring-1 ring-offset-2 ring-black': activeSku === vari.sku
-                  })}
+                  className={classNames(
+                    `md:w-4 md:h-4 w-5 h-5 rounded-full bg-${variColorMap[vari.sku]}-500`,
+                    {
+                      'ring-1 ring-offset-2 ring-black': activeSku === vari.sku
+                    }
+                  )}
                   type="button"
                   value={vari.sku}
                   onClick={() => setVariantSku(vari.sku)}

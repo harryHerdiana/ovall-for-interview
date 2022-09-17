@@ -141,14 +141,14 @@ const ProductSlideshow: React.FC<IProductSlideshow> = ({
     <Slider name={activeSku} settings={setting} className="w-full items-center h-max">
       {allItems.map((item) => (
         <GradientSquare
-          key={item.id}
-          variantGradient={item.background}
+          key={item?.id}
+          variantGradient={item?.background || 'people'}
           className="relative m-auto ">
-          <SliderItem image={item.image} key={item.id} />
-          {item.descriptionText && enableCaptions && (
+          <SliderItem image={item?.image} key={item?.id} />
+          {item?.descriptionText && enableCaptions && (
             <ImageDescription
-              descriptionLabel={item.descriptionLabel}
-              descriptionText={item.descriptionText}
+              descriptionLabel={item?.descriptionLabel}
+              descriptionText={item?.descriptionText}
             />
           )}
         </GradientSquare>

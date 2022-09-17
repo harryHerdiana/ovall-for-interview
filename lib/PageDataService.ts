@@ -96,12 +96,13 @@ export default class PageDataService {
    * @returns IPageProps
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
-    const [appProps, product, productCleanser] = await Promise.all([
+    const [appProps, product, productCleanser, productBundle] = await Promise.all([
       this.getMenus(),
       this.getProductData('ovall-ultraschall-gesichtsreiniger'),
-      this.getProductData('aloe-face-cleansing-gel')
+      this.getProductData('aloe-face-cleansing-gel'),
+      this.getProductData('ovall-2-aloe-face-cleansing-gel')
     ])
-    const allProducts = [product, productCleanser]
+    const allProducts = [product, productCleanser, productBundle]
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
@@ -115,6 +116,7 @@ export default class PageDataService {
       product,
       allProducts,
       productCleanser,
+      productBundle,
       ...mappedContent
     }
   }
@@ -125,6 +127,10 @@ export default class PageDataService {
 
   public async product(): Promise<IProductPage> {
     return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
+  }
+
+  public async productBundle(): Promise<IProductPage> {
+    return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'productBundle', mapProductPageData)
   }
 
   public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {

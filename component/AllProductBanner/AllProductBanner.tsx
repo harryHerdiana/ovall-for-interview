@@ -5,9 +5,10 @@ import { toEuro } from '@lib/utils'
 import { skuColorMap } from '@component/ProductStage/ProductStage'
 import ResponsiveImage from '@component/ResponsiveImage'
 import GradientSquare from '@component/GradientSquare'
-import { PRODUCT_PATH, CLEANSER_PRODUCT_PATH } from '@lib/constants'
+import { PRODUCT_PATH, CLEANSER_PRODUCT_PATH, PRODUCT_BUNDLE_PATH } from '@lib/constants'
 import { IProductVariantImage } from '@lib/types'
 import { IShopifyProductVariant } from '@modules/shopify/types'
+import { variColorMap } from '@component/ProductStage/VariantSelect'
 
 type IAllProductBannerProps = {
   allProducts: IShopifyProductVariant[]
@@ -20,8 +21,19 @@ const skuMap = {
   'Ovall-Turquoise': { title: 'Ovall™	2 - Green', link: `${PRODUCT_PATH}?variant=Ovall-Turquoise` },
   'Ovall-Aloe-Cleanser': {
     title: 'Aloe Face Cleansing Gel',
-    link: CLEANSER_PRODUCT_PATH,
-    variant: 0
+    link: CLEANSER_PRODUCT_PATH
+  },
+  'Ovall-Pink-Cleansing-Bundle': {
+    title: 'Aloe Pink Cleansing Bundle',
+    link: `${PRODUCT_BUNDLE_PATH}?variant=Ovall-Pink-Cleansing-Bundle`
+  },
+  'Ovall-Blue-Cleansing-Bundle': {
+    title: 'Aloe Blue Cleansing Bundle',
+    link: `${PRODUCT_BUNDLE_PATH}?variant=Ovall-Blue-Cleansing-Bundle`
+  },
+  'Ovall-Turquoise-Cleansing-Bundle': {
+    title: 'Aloe Turquoise Cleansing Bundle',
+    link: `${PRODUCT_BUNDLE_PATH}?variant=Ovall-Turquoise-Cleansing-Bundle`
   }
 }
 
@@ -30,11 +42,11 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
 
   function getVariantImageBySku(sku: string) {
     const selectedImage = productImages.find((image) => image.color === skuColorMap[sku])
-    return selectedImage.image
+    return selectedImage?.image
   }
 
   function getTitleBySku(sku: string) {
-    return skuMap[sku].title
+    return skuMap[sku]?.title
   }
 
   function redirectBySku(sku: string) {
@@ -50,7 +62,7 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
             key={item.id}
             role="presentation"
             onClick={() => redirectBySku(item.sku)}>
-            <GradientSquare variantGradient={item.sku}>
+            <GradientSquare variantGradient={variColorMap[item.sku]}>
               <ResponsiveImage
                 image={getVariantImageBySku(item.sku)}
                 className="flex justify-start md:justify-center lg:justify-end h-max lg:w-full"

@@ -18,20 +18,25 @@ const ProductPage: React.FC<ICleanserPage> = (props: ICleanserPage & IDefaultPro
   const {
     seoTags,
     appProps,
-    product,
-    allProducts,
     newsletterSection,
     testimonialSection,
     descriptionSection,
     productTeaserSection,
     ingredientSection,
-    faqShampooSection
+    faqShampooSection,
+    productCleanser
   } = props
-  const variant = allProducts[1].variants[0]
-
+  const variantSku = productCleanser.variants[0].sku
+  const variant =
+    productCleanser.variants.find((v) => v.sku === variantSku) || productCleanser.variants[0]
   return (
     <Layout {...appProps} seoTags={seoTags}>
-      <CleanserStage product={allProducts[1]} variant={variant} activeSku="" {...props} />
+      <CleanserStage
+        product={productCleanser}
+        variant={variant}
+        activeSku={variantSku}
+        {...props}
+      />
       <MainIngredients {...ingredientSection} />
       <DescriptionSection {...descriptionSection} />
       <FaqSection items={faqShampooSection.items} faqSubtitle={faqShampooSection.faqTitle} />
@@ -45,7 +50,7 @@ const ProductPage: React.FC<ICleanserPage> = (props: ICleanserPage & IDefaultPro
       </div>
       <ProductTeaser
         className="mb-80px mt-80px lg:mb-100px block lg:h-max lg:min-h-650px"
-        product={product}
+        product={productCleanser}
         {...productTeaserSection}
       />
       <SocialFeed {...props.appProps.socialFeedSection} />

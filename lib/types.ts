@@ -85,6 +85,8 @@ export interface IDefaultProps {
   seoTags: SeoTags
   product: IShopifyProduct
   allProducts: IShopifyProduct[]
+  productBundle: IShopifyProduct
+  productCleanser: IShopifyProduct
 }
 
 export interface ICartText {
@@ -328,7 +330,7 @@ export interface ICleanserPage {
     colorCaption: string
     freeShippingCaption: string
     deliveryTime: string
-    // variantImages: IProductVariantImage[] // Does cleanser have a variant?
+    variantImages: IProductVariantImage[] // Does cleanser have a variant?
     slideshowImages: IProductSlideshowImage[]
     soldoutLabel: string
     discountLabel: string
