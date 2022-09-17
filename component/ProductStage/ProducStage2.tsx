@@ -7,12 +7,15 @@ import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
 import ProducStageAccordion from './ProductStageAccordion'
 import { IProductStageProps, skuColorMap } from './ProductStage'
+import CrossSellBanner from './CrossSellBanner'
 
 const ProductStage2: React.FC<IProductStageProps> = ({
   product,
   variant,
   activeSku,
   setVariantSku,
+  productCleanser,
+  crossSellBanner,
   stageSection: {
     addToCartLabel,
     quantityCaption,
@@ -31,6 +34,7 @@ const ProductStage2: React.FC<IProductStageProps> = ({
   function getVariantImageBySku(sku: string) {
     return variantImages.find((image) => image.color === skuColorMap[sku])
   }
+
   return (
     <section className="grid grid-cols-1 lg:gap-4 lg:grid-cols-2 max-w-site mx-auto mb-0">
       <div className="text-center md:text-left mx-auto md:pr-0 flex flex-wrap self-start justify-center w-full ">
@@ -46,6 +50,15 @@ const ProductStage2: React.FC<IProductStageProps> = ({
             </div>
           )}
         </div>
+        {crossSellBanner && (
+          <CrossSellBanner
+            productCleanser={productCleanser}
+            crossSellBanner={crossSellBanner}
+            addToCartLabel={addToCartLabel}
+            variant={productCleanser.variants[0]}
+            soldoutLabel={soldoutLabel}
+          />
+        )}
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-12 lg:mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
         <div className="w-full text-left mb-1 h2_element_normalcase">{product.title}</div>

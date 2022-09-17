@@ -40,6 +40,20 @@ export const PRODUCT_PAGE_QUERY = `
         normalText
         boldText
       }
+      crossSellBanner {
+        discountInfo {
+          value
+        }
+        productVolume
+        productDescription
+        headline
+        productImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 600, h: 600 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+        discountTerms
+      }
       slug
       freeShippingCaption
       deliveryTime

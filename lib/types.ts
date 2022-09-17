@@ -357,6 +357,17 @@ export interface ICleanserPage {
   productTeaserSection: IProductTeaserSection
 }
 
+export interface ICrossSellBanner {
+  discountInfo: StructuredTextDocument
+  headline: string
+  discountTerms: string
+  productImage: {
+    responsiveImage: DatoCMSResponsiveImage
+  }
+  productDescription: string
+  productVolume: string
+}
+
 export interface IProductPage {
   stageSection: {
     productSlogan?: {
@@ -429,7 +440,7 @@ export interface IProductPage {
   }
   newsletterSection: INewsletterSection
   beforeAfterBanner: IBeforeAfterBannerProps
-
+  crossSellBanner?: ICrossSellBanner
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type

@@ -14,6 +14,7 @@ export interface IProductStageProps extends IProductPage {
   activeSku: string
   setVariantSku: (sku: string) => void
   product: IShopifyProduct
+  productCleanser: IShopifyProduct
 }
 
 export const getCheapestVariantPrice = (product: IShopifyProduct) => {

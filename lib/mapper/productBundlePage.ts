@@ -3,7 +3,7 @@ import { IDatoProductPage } from '@modules/datocms/types'
 import { mapBeforeAfterBanner, mapProductStageAccordion } from './models'
 import * as utils from './utils'
 
-export default function mapProductPageData(d: IDatoProductPage): IProductPage {
+export default function mapProductBundlePageData(d: IDatoProductPage): IProductPage {
   return {
     stageSection: {
       quantityCaption: d.quantityCaption,
@@ -125,14 +125,6 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       disclaimer: d.newsletterSection.disclaimer.value,
       description: d.newsletterSection.description.value
     },
-    beforeAfterBanner: mapBeforeAfterBanner(d.beforeAfterBanner),
-    crossSellBanner: {
-      discountInfo: d.crossSellBanner.discountInfo.value,
-      headline: d.crossSellBanner.headline,
-      discountTerms: d.crossSellBanner.discountTerms,
-      productImage: d.crossSellBanner.productImage,
-      productDescription: d.crossSellBanner.productDescription,
-      productVolume: d.crossSellBanner.productVolume
-    }
+    beforeAfterBanner: mapBeforeAfterBanner(d.beforeAfterBanner)
   }
 }

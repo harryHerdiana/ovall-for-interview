@@ -267,6 +267,18 @@ export interface IDatoProductPage {
       text: string
     }[]
   }[]
+  crossSellBanner?: {
+    discountInfo: {
+      value: StructuredTextDocument
+    }
+    headline: string
+    discountTerms: string
+    productVolume: string
+    productDescription: string
+    productImage: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
+  }
 }
 
 export interface IDatoHomepage {
