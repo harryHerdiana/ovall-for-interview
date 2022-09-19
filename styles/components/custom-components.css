@@ -63,9 +63,11 @@
   p {
     line-height: 1.353;
     font-size: 1em;
-    @apply font-textFont font-light;
+    @apply font-textFont;
   }
-
+  p>strong{
+    @apply font-textFontBold;
+  }
   a {
     @apply text-tiny font-subTagFont font-semibold underline text-greenLink;
   }
@@ -125,7 +127,5 @@
     font-size: 1rem;
     @apply font-tagFont font-medium;
   }
-  p>strong{
-    @apply font-bold;
-  }
+
 }
