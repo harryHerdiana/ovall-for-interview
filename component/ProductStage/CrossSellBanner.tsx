@@ -54,7 +54,10 @@ const CrossSellBanner: React.FC<ICrossSellBannerProps> = ({
             {crossSellBanner.headline}
           </h2>
           <div className="flex items-center">
-            <ResponsiveImage image={crossSellBanner.productImage.responsiveImage} />
+            <ResponsiveImage
+              className="self-start"
+              image={crossSellBanner.productImage.responsiveImage}
+            />
             <div className="ml-6 mt-3 sm:mt-6 text-left">
               <ScrollableLink anchor="testimonial" className="no-underline text-black">
                 <ProductRating />
@@ -62,15 +65,15 @@ const CrossSellBanner: React.FC<ICrossSellBannerProps> = ({
               <h3 className="mt-3">{productCleanser.title}</h3>
               <p>{crossSellBanner.productDescription}</p>
               <p>{crossSellBanner.productVolume}</p>
-              <p className="mt-6 ">
+              <div className="mt-6 ">
                 <span className="line-through text-lg sm:text-xl font-subtitleFont">
                   {/* {toEuro(variant.compareAtPriceV2.amount)} tempoary commented due to the discount price isn't available */}
                   {toEuro(25.99)}
                 </span>
-                <span className="sm:ml-5 ml-3 font-bold text-xl sm:text-2xl font-titleFont">
+                <span className="sm:ml-5 ml-3 font-black text-xl sm:text-2xl font-titleFont">
                   {toEuro(variant.priceV2.amount)}
                 </span>
-              </p>
+              </div>
               <div id="discount-info">
                 <StructuredText data={crossSellBanner.discountInfo} />
               </div>
