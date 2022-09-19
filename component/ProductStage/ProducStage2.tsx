@@ -51,13 +51,15 @@ const ProductStage2: React.FC<IProductStageProps> = ({
           )}
         </div>
         {crossSellBanner && (
-          <CrossSellBanner
-            productCleanser={productCleanser}
-            crossSellBanner={crossSellBanner}
-            addToCartLabel={addToCartLabel}
-            variant={productCleanser.variants[0]}
-            soldoutLabel={soldoutLabel}
-          />
+          <div className="hidden sm:block">
+            <CrossSellBanner
+              productCleanser={productCleanser}
+              crossSellBanner={crossSellBanner}
+              addToCartLabel={addToCartLabel}
+              variant={productCleanser.variants[0]}
+              soldoutLabel={soldoutLabel}
+            />
+          </div>
         )}
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-12 lg:mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
@@ -102,6 +104,17 @@ const ProductStage2: React.FC<IProductStageProps> = ({
         <ProductClaimsSection productClaims={productClaims} />
         <ProducStageAccordion {...productStageAccordion} />
       </div>
+      {crossSellBanner && (
+        <div className="block sm:hidden">
+          <CrossSellBanner
+            productCleanser={productCleanser}
+            crossSellBanner={crossSellBanner}
+            addToCartLabel={addToCartLabel}
+            variant={productCleanser.variants[0]}
+            soldoutLabel={soldoutLabel}
+          />
+        </div>
+      )}
     </section>
   )
 }

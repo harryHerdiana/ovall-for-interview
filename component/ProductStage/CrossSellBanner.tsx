@@ -63,11 +63,11 @@ const CrossSellBanner: React.FC<ICrossSellBannerProps> = ({
               <p>{crossSellBanner.productDescription}</p>
               <p>{crossSellBanner.productVolume}</p>
               <p className="mt-6 ">
-                <span className="line-through text-xl font-subtitleFont">
+                <span className="line-through text-lg sm:text-xl font-subtitleFont">
                   {/* {toEuro(variant.compareAtPriceV2.amount)} tempoary commented due to the discount price isn't available */}
                   {toEuro(25.99)}
                 </span>
-                <span className="sm:ml-5 ml-3 font-bold text-2xl font-titleFont">
+                <span className="sm:ml-5 ml-3 font-bold text-xl sm:text-2xl font-titleFont">
                   {toEuro(variant.priceV2.amount)}
                 </span>
               </p>
