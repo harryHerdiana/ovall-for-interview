@@ -168,7 +168,6 @@ html {
   }
 }
 
-
 .slide-testimonial {
   display: flex !important;
 }
@@ -385,7 +384,7 @@ button:hover .triangle {
   font-family: 'CartographDemiBold';
   font-style: normal;
   font-display: swap;
-  src: url('/fonts/Cartograph/CartographCF-Bold.woff2') format('woff2');
+  src: url('/fonts/Cartograph/CartographCF-Regular.woff2') format('woff2');
 }
 
 @font-face {
