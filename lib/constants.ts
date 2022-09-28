@@ -4,6 +4,10 @@ export const PRODUCT_PATH = '/products/ovall-ultraschall-gesichtsreiniger'
 export const CLEANSER_PRODUCT_PATH = '/products/ovall-waschgel'
 export const PRODUCT_BUNDLE_PATH = '/products/ovall-2-ultraschall-gesichtsreiniger'
 
+export const SHOPIFY_PRODUCT_HANDLE = 'ovall-ultraschall-gesichtsreiniger'
+export const SHOPIFY_CLEANSING_PRODUCT_HANDLE = 'ovall-aloe-face-cleansing-gel'
+export const SHOPIFY_BUNDLE_HANDLE = 'ovall-aloe-face-cleansing-gel-bundle'
+
 const staticPages = [
   {
     en: 'imprint',
