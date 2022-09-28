@@ -1,58 +1,37 @@
 import React from 'react'
-import { IProductPage } from '@lib/types'
+import { ICleanserPage } from '@lib/types'
 import { IShopifyProduct, IShopifyProductVariant } from '@modules/shopify/types'
 import { toEuro } from '@lib/utils'
 import { ProductRating } from '@component/ProductReview'
 import ScrollableLink from '@component/ScrollableLink'
 import VariantSelect from './VariantSelect'
-import ProductClaimsSection from './ProductClaims'
 import ProductSlideshow from './ProductSlideshow'
-import ProducStageAccordion from './ProductStageAccordion'
+import ProductDetails from './ProductDetails'
+import { skuColorMap } from './ProductStage'
 
-export interface IProductStageProps extends IProductPage {
+export interface IProductStageCleanserProps extends ICleanserPage {
   variant: IShopifyProductVariant // derived from state (selected variant)
   activeSku: string
-  setVariantSku: (sku: string) => void
-  product: IShopifyProduct
   productCleanser: IShopifyProduct
 }
 
-export const getCheapestVariantPrice = (product: IShopifyProduct) => {
-  const cheapest = product.variants.sort(
-    (a, b) => Number(a.priceV2.amount) - Number(b.priceV2.amount)
-  )[0]
-
-  const afterPrice = cheapest.priceV2.amount
-  const beforePrice = cheapest.compareAtPriceV2.amount
-  return { price: afterPrice, before: beforePrice }
-}
-export const skuColorMap = {
-  'Ovall-Blue': 'blue',
-  'Ovall-Pink': 'rose',
-  'Ovall-Turquoise': 'green',
-  'Ovall-Aloe-Cleanser': 'cleanser',
-  'Ovall-Blue-Cleansing-Bundle': 'bundle-blue',
-  'Ovall-Pink-Cleansing-Bundle': 'bundle-rose',
-  'Ovall-Turquoise-Cleansing-Bundle': 'bundle-green'
-}
-
-const ProductStage: React.FC<IProductStageProps> = ({
-  product,
+const CleanserStage: React.FC<IProductStageCleanserProps> = ({
+  productCleanser,
   variant,
   activeSku,
-  setVariantSku,
   stageSection: {
     addToCartLabel,
     quantityCaption,
-    productClaims,
     colorCaption,
     deliveryTime,
     freeShippingCaption,
     slideshowImages,
-    variantImages,
     soldoutLabel,
     discountLabel,
-    productStageAccordion
+    productDetails,
+    variantImages,
+    productDescription,
+    productVolume
   }
 }) => {
   function getVariantImageBySku(sku: string) {
@@ -78,7 +57,9 @@ const ProductStage: React.FC<IProductStageProps> = ({
         </div>
       </div>
       <div className="text-center lg:text-left text-black  flex flex-col flex-wrap mx-auto p-4 mt-12 lg:mt-4 lg:p-0  lg:pt-5 lg:pr-8 site:pr-0">
-        <div className="w-full text-left mb-1 h2_element_normalcase">{product.title}</div>
+        <div className="w-full text-left mb-1 h2_element_normalcase">{productCleanser.title}</div>
+        {productDescription && <p className="text-left ">{productDescription}</p>}
+        {productVolume && <p className="mb-5 text-left">{productVolume}</p>}
         <div className="mt-1 self-start" style={{ minHeight: '25px' }}>
           <ScrollableLink anchor="testimonial" className="no-underline text-black">
             <ProductRating />
@@ -103,20 +84,19 @@ const ProductStage: React.FC<IProductStageProps> = ({
           addToCartLabel={addToCartLabel}
           variant={variant}
           colorCaption={colorCaption}
-          setVariantSku={setVariantSku}
           activeSku={activeSku}
-          variants={product.variants}
+          variants={productCleanser.variants}
           quantityCaption={quantityCaption}
           soldoutLabel={soldoutLabel}
         />
+
         <div className="flex justify-between mt-4">
           <span className="w-32 md:w-max text-left font-textFont">{deliveryTime}</span>
           <span className="text-greenLink font-textFont mr-2">{freeShippingCaption}</span>
         </div>
-        {productClaims && <ProductClaimsSection productClaims={productClaims} />}
-        {productStageAccordion && <ProducStageAccordion {...productStageAccordion} />}
+        {productDetails && <ProductDetails {...productDetails} />}
       </div>
     </section>
   )
 }
-export default ProductStage
+export default CleanserStage

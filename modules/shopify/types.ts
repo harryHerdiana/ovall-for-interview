@@ -21,6 +21,10 @@ export interface IShopifyProduct {
   variants: IShopifyProductVariant[]
 }
 
+export interface IShopifyAllProduct {
+  allProducts: IShopifyProduct[]
+}
+
 export interface IShopifyLineItemVariant extends IShopifyProductVariant {
   product: {
     id: string

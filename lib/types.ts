@@ -84,6 +84,9 @@ export interface IDefaultProps {
   }
   seoTags: SeoTags
   product: IShopifyProduct
+  allProducts: IShopifyProduct[]
+  productBundle: IShopifyProduct
+  productCleanser: IShopifyProduct
 }
 
 export interface ICartText {
@@ -182,6 +185,22 @@ export interface IHtmlAccordionItem {
   body: StructuredText
 }
 
+export interface IngredientSectionProps {
+  backgroundColor: string
+  title: string
+  text: string
+  items: {
+    id: string
+    text: string
+    body?: string
+    promise?: {
+      icon: string
+      text: string
+      id: string
+    }[]
+  }[]
+}
+
 /** ***** PAGES ************** */
 
 export interface IStaticPage {
@@ -278,6 +297,21 @@ export interface IAboutUsPage {
   newsletterSection: INewsletterSection
 }
 
+export interface IAllProductPage {
+  heroSection: {
+    backgroundColor: string
+    title?: string
+    body?: string
+    image?: DatoCMSResponsiveImage
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
+  newsletterSection: INewsletterSection
+  productImages: IProductVariantImage[]
+}
+
 export interface ProductDetailsProps {
   title: string
   items: {
@@ -285,6 +319,53 @@ export interface ProductDetailsProps {
     id: string
     text: string
   }[]
+}
+
+export interface ICleanserPage {
+  stageSection: {
+    productDescription: string
+    productVolume: string
+    quantityCaption: string
+    addToCartLabel: string
+    colorCaption: string
+    freeShippingCaption: string
+    deliveryTime: string
+    variantImages: IProductVariantImage[] // Does cleanser have a variant?
+    slideshowImages: IProductSlideshowImage[]
+    soldoutLabel: string
+    discountLabel: string
+    productDetails: ProductDetailsProps
+  }
+  descriptionSection: {
+    title: string
+    text: string
+    videoUrl: string
+  }
+  testimonialSection: {
+    kicker: string
+    title: string
+  }
+  newsletterSection: INewsletterSection
+  // slug: string // check: do we need this?
+  // moodSlideshowSection: any // TODO add type
+  // productInfoBannerFeatures: any // TODO add type
+  faqShampooSection: {
+    faqTitle: string
+    items: IDatoAccordionItem[]
+  }
+  ingredientSection: IngredientSectionProps
+  productTeaserSection: IProductTeaserSection
+}
+
+export interface ICrossSellBanner {
+  discountInfo: StructuredTextDocument
+  headline: string
+  discountTerms: string
+  productImage: {
+    responsiveImage: DatoCMSResponsiveImage
+  }
+  productDescription: string
+  productVolume: string
 }
 
 export interface IProductPage {
@@ -359,7 +440,7 @@ export interface IProductPage {
   }
   newsletterSection: INewsletterSection
   beforeAfterBanner: IBeforeAfterBannerProps
-
+  crossSellBanner?: ICrossSellBanner
   // slug: string // check: do we need this?
   // moodSlideshowSection: any // TODO add type
   // productInfoBannerFeatures: any // TODO add type

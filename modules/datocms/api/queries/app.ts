@@ -7,6 +7,11 @@ query getFooter($locale: SiteLocale!) {
     items {
       id
       internalLink {
+        ... on AllProductPageRecord {
+          id
+          slug
+          title
+        }
         ... on AboutUsPageRecord {
           id
           slug
@@ -93,6 +98,11 @@ query getFooter($locale: SiteLocale!) {
         label
         externalLink
         internalLink {
+          ... on AllProductPageRecord {
+            id
+            slug
+            title
+          }
           ... on AboutUsPageRecord {
             id
             slug
