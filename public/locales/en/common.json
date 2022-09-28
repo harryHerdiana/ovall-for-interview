@@ -1,4 +1,5 @@
 {
   "language": "English",
-  "emptyCartText": "There aren't any products in the cart"
+  "emptyCartText": "There aren't any products in the cart",
+  "shipping": "plus 3,90€ shipping"
 }

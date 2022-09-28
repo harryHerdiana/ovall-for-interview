@@ -33,6 +33,7 @@ export const defaultValues = {
     completedAt: null
   },
   showCart: false,
+  locale: 'de',
 }
 /* eslint-enable */
 
@@ -166,7 +167,8 @@ export const StoreProvider: React.FC<GlobalContext> = ({ children, locale, shopi
         setShowCart,
         showCart,
         checkout,
-        product
+        product,
+        locale
       }}>
       {children}
     </StoreContext.Provider>

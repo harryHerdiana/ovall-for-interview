@@ -8,6 +8,9 @@ export const SHOPIFY_PRODUCT_HANDLE = 'ovall-ultraschall-gesichtsreiniger'
 export const SHOPIFY_CLEANSING_PRODUCT_HANDLE = 'ovall-aloe-face-cleansing-gel'
 export const SHOPIFY_BUNDLE_HANDLE = 'ovall-aloe-face-cleansing-gel-bundle'
 
+export const FREE_SHIPPING_THRESHOLD = 45
+export const SHIPPING_COSTS = 4.9
+
 const staticPages = [
   {
     en: 'imprint',

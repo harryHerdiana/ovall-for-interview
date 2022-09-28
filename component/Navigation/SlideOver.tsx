@@ -6,25 +6,36 @@ import Button from '@component/Button'
 import ShopContext from '@context/StoreContext'
 import Cart from '@component/Cart'
 import Icon from '@component/Icon'
-import { toEuro, toEuroNS, hasGenericDiscount } from '@lib/utils'
+import { toEuroNS, hasGenericDiscount } from '@lib/utils'
 import { ICartText, IProductVariantImage } from '@lib/types'
 import { trackBeginCheckoutEvent } from '@modules/tracking/events/trackBeginCheckoutEvent'
 import Subtotal from '@component/Cart/Subtotal'
 import ShippingCost from '@component/Cart/ShippingCost'
 import Discount from '@component/Cart/Discount'
 import GoodChoice from '@component/Cart/GoodChoice'
+import { FREE_SHIPPING_THRESHOLD } from '@lib/constants'
+
+const getTaxShippingText = (hasFreeShipping, text, locale) => {
+  if (hasFreeShipping) {
+    return text
+  }
+  return `${text}, ${locale === 'en' ? 'plus 3,90€ shipping' : 'zzgl. 3,90€ Versand'} `
+}
 
 interface IProps extends ICartText {
   variantImages: IProductVariantImage[]
 }
 const SlideOver: React.FC<IProps> = (props) => {
-  const { checkout, showCart, setShowCart } = React.useContext(ShopContext)
+  const { checkout, showCart, setShowCart, locale } = React.useContext(ShopContext)
   const handleCheckout = () => {
     trackBeginCheckoutEvent(checkout.lineItems)
     window.location.href = checkout.webUrl
   }
 
   const hasDiscount = hasGenericDiscount(checkout) && checkout.lineItems.length > 0
+  const hasFreeShipping = Number(checkout.subtotalPriceV2.amount) >= FREE_SHIPPING_THRESHOLD
+
+  const taxShippingText = getTaxShippingText(hasFreeShipping, props.taxInfo, locale)
 
   return (
     <Transition.Root show={showCart} as={Fragment}>
@@ -81,8 +92,9 @@ const SlideOver: React.FC<IProps> = (props) => {
                         )}
 
                         <ShippingCost
+                          subtotal={checkout.subtotalPriceV2.amount}
                           label={props.shippingCostLabel}
-                          value={props.shippingCostValue}
+                          textNoShippingCost={props.shippingCostValue}
                         />
 
                         <div className="flex flex-wrap w-full justify-between items-center font-subtitleFont font-bold text-2xl mt-10">
@@ -92,7 +104,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                           <div className="h2_element">{toEuroNS(checkout.totalPrice)}</div>
                         </div>
                         <div className="text-sm self-end mb-3">
-                          <p className="md:text-right sm:pb-0">{props.taxInfo}</p>
+                          <p className="md:text-right sm:pb-0">{taxShippingText}</p>
                         </div>
 
                         <div className="w-full flex flex-col justify-center sm:justify-end">
