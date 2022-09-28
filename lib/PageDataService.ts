@@ -14,6 +14,7 @@ import {
   LANDING_PAGE1_QUERY,
   ALL_PRODUCTS_QUERY
 } from '@modules/datocms/api/queries'
+import * as CONSTS from '@lib/constants'
 import {
   Context,
   IAboutUsPage,
@@ -99,9 +100,9 @@ export default class PageDataService {
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
     const [appProps, product, productCleanser, productBundle] = await Promise.all([
       this.getMenus(),
-      this.getProductData('ovall-ultraschall-gesichtsreiniger'),
-      this.getProductData('aloe-face-cleansing-gel'),
-      this.getProductData('ovall-2-aloe-face-cleansing-gel')
+      this.getProductData(CONSTS.SHOPIFY_PRODUCT_HANDLE),
+      this.getProductData(CONSTS.SHOPIFY_CLEANSING_PRODUCT_HANDLE),
+      this.getProductData(CONSTS.SHOPIFY_BUNDLE_HANDLE)
     ])
     const allProducts = [product, productCleanser, productBundle]
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
