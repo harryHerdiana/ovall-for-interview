@@ -9,7 +9,7 @@ type IHeader = {
   variantImages: IProductVariantImage[]
 }
 
-const Header: React.FC<IHeader> = ({ menu, cart, variantImages, i18n }) => {
+const Header: React.FC<IHeader> = ({ menu, cart, variantImages }) => {
   const [isScrollDown, setIsScrollDown] = React.useState(false)
   const handleScroll = () => {
     setIsScrollDown(window.scrollY >= 20)
