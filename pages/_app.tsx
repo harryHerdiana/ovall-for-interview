@@ -7,6 +7,7 @@ import '@styles/globals.css'
 import 'slick-carousel/slick/slick.css'
 import '../styles/globals/slick.css'
 import { StoreProvider } from '@context/StoreContext'
+
 import { addPageviewAndOptimizeEvent, setOriginalPageLocation } from '@modules/tracking/events'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {

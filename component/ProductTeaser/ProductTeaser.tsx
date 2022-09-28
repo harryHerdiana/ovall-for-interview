@@ -54,11 +54,14 @@ const ProductTeaser: React.FC<IProductTeaserProps> = ({
             <span className="self-center lg:self-start font-subtitleFont font-semibold text-2xl">
               {toEuro(product.variants[0].priceV2.amount)}
             </span>
-            <div className="self-center lg:self-start">
-              <span className="line-through font-bold font-subtitleFont">
-                {toEuro(product.variants[0].compareAtPriceV2.amount)}
-              </span>
-            </div>
+            {product.variants[0].compareAtPriceV2 && (
+              <div className="self-center lg:self-start">
+                <span className="line-through font-bold font-subtitleFont">
+                  {toEuro(product.variants[0].compareAtPriceV2.amount)}
+                </span>
+              </div>
+            )}
+
             <div className="my-8 flex justify-center lg:justify-start">
               <ul className="flex gap-2">
                 <li

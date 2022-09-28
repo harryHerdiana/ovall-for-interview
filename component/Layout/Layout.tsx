@@ -146,6 +146,14 @@ const Layout: React.FC<ILayout> = ({
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="../../images/favicon/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+        <meta
+          name="google-site-verification"
+          content="01D9YHXFDa2OCkpqLxh-d8zSD-3lpNz_h8PgwuDjl8I"
+        />
+        <script
+          async
+          src="https://scripting.tracify.ai/tracifyv2.js?csid=4e80cc05-b58a-438e-b493-ba37f917b59f"
+        />
 
         <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PNS37MR" />
       </Head>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import classNames from 'classnames'
 import { Image } from 'react-datocms'
 import GradientSquare from '@component/GradientSquare'
 import { IShopifyLineItem } from '@modules/shopify/types'
@@ -47,9 +48,10 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       )}
 
       <div
-        className={`mt-4 transition duration-300 transition-opacity ${
-          loading ? 'opacity-30' : ''
-        } `}>
+        className={classNames(
+          { 'opacity-30': loading },
+          'mt-4 transition duration-300 transition-opacity'
+        )}>
         <div className="grid gap-2 grid-cols-4 text-black">
           <div className="flex items-start">
             {lineItem.variant.image && (

@@ -26,9 +26,9 @@ export type DatoCMSImage = {
 }
 
 export type DatoProductVariantImage = {
-  color: 'blue' | 'rose' | 'green'
+  color: 'blue' | 'rose' | 'green' | ''
   image: {
-    gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people'
+    gradientBackground: 'lotus-pink' | 'green' | 'blue' | 'people' | 'grey' | 'white'
     image: {
       responsiveImage: DatoCMSResponsiveImage
     }
@@ -99,7 +99,10 @@ export interface IDatoHowToUseSection {
     }[]
   }[]
 }
-export interface IDatoProductPage {
+
+export interface IDatoCleanserPage {
+  productDesc?: string
+  volume?: string
   seoTags: SeoTags
   quantityCaption: string
   deliveryTime: string
@@ -114,6 +117,92 @@ export interface IDatoProductPage {
   faqItems: {
     items: IDatoAccordionItem[]
   }
+  slug: string // check: do we need this?
+  // variantImages: DatoProductVariantImage[] // Does cleanser have a variant?
+  slideshowItems: {
+    id: string
+    gradientBackground: string
+    image: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
+    descriptionLabel: string
+    descriptionText: string
+  }[]
+  productClaims: {
+    id: string
+    text: string
+    title: string
+    image?: DatoCMSImage
+  }[]
+  productDescriptionSection: {
+    _modelApiKey: string
+    text: string
+  }[]
+  howToUseSection: IDatoHowToUseSection
+  skinTypeInfoSection: Array<SectionWithGradientBackground | SectionText>
+  productInfoBannerMiniSpa: IDatoProductBannerSection
+  productInfoBannerSection: IDatoProductBannerSection
+  moodSlideshowSection: any // TODO add type
+  testimonialSection: {
+    subtitle: string
+    title: string
+  }
+  productInfoBannerFeatures: IDatoProductBannerSection
+  productInfoAccordionSection: {
+    buttonText: string
+    items: IDatoAccordionItem[]
+  }
+  newsletterSection: IDatoNewsletterSection
+  beforeAfterBanner: DatoCMSBeforeAfterBanner
+  productStageAccordion: DatoProductStageAccordion
+  faqAccordionShampoo: {
+    name: string
+    items: IDatoAccordionItem[]
+  }
+  ingredient: {
+    background: { backgroundColor: string }[]
+    ingredientAccordion: {
+      id: string
+      text: string
+      body?: string
+      promise?: {
+        icon: string
+        text: string
+        id: string
+      }[]
+    }[]
+    content: { text: string; title: string; _modelApiKey: string }[]
+  }
+  productDetail: {
+    title: string
+    iconList: {
+      icon: string
+      id: string
+      text: string
+    }[]
+  }[]
+}
+export interface IDatoProductPage {
+  productDesc?: string
+  volume?: string
+  seoTags: SeoTags
+  quantityCaption: string
+  deliveryTime: string
+  addToCartLabel: string
+  colorCaption: string
+  freeShippingCaption: string
+  faqButtonText: string
+  faqSubtitle: string
+  faqTitle: string
+  soldoutLabel: string
+  discountLabel: string
+  faqItems: {
+    items: IDatoAccordionItem[]
+  }
+  productSlogan?: {
+    normalText: string
+    boldText: string
+  }[]
   slug: string // check: do we need this?
   variantImages: DatoProductVariantImage[]
   slideshowItems: {
@@ -150,6 +239,46 @@ export interface IDatoProductPage {
     items: IDatoAccordionItem[]
   }
   newsletterSection: IDatoNewsletterSection
+  beforeAfterBanner: DatoCMSBeforeAfterBanner
+  productStageAccordion: DatoProductStageAccordion
+  faqAccordionShampoo: {
+    name: string
+    items: IDatoAccordionItem[]
+  }
+  ingredient: {
+    background: { backgroundColor: string }[]
+    ingredientAccordion: {
+      id: string
+      text: string
+      body?: string
+      promise?: {
+        icon: string
+        id: string
+        text: string
+      }[]
+    }[]
+    content: { text: string; title: string; _modelApiKey: string }[]
+  }
+  productDetail: {
+    title: string
+    iconList: {
+      icon: string
+      id: string
+      text: string
+    }[]
+  }[]
+  crossSellBanner?: {
+    discountInfo: {
+      value: StructuredTextDocument
+    }
+    headline: string
+    discountTerms: string
+    productVolume: string
+    productDescription: string
+    productImage: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
+  }
 }
 
 export interface IDatoHomepage {
@@ -182,4 +311,34 @@ export interface IDatoFooter {
   followUsTitle: string
   leftColumn: Array<IColumnNavItem | IColumnTitle>
   middleColumn: Array<IColumnNavItem | IColumnTitle>
+}
+
+export type DatoCMSBeforeAfterBanner = {
+  kicker: string
+  title: string
+  backgroundColor: string
+  disclaimer: string
+  items: {
+    id: string
+    text: string
+    title: string
+  }[]
+  image: {
+    responsiveImage: DatoCMSResponsiveImage
+  }
+}
+
+export type DatoProductStageAccordion = {
+  items: {
+    id: string
+    text: string
+    image?: {
+      responsiveImage: DatoCMSResponsiveImage
+    }
+    items: {
+      id: string
+      text: string
+      title: string
+    }[]
+  }[]
 }

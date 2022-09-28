@@ -39,6 +39,7 @@ module.exports = {
       '5xl': '2.6rem', // 38px for H1 on desktop
       '6xl': '3.5rem', // 80px, for H1 on desktop
       xxl: '4rem',
+      xxl2: '4.1rem',
       '2xxl': '5rem', // 56px
       '3xxl': '7rem',
       'stage-variable': 'calc(56px + (56 - 38) * (100vw - 1280px) / (1536 - 1280));'
@@ -112,6 +113,8 @@ module.exports = {
         'stage-tablet': '480px',
         'stage-desktop': '620px',
         'product-card': '528px',
+        '400px': '400px',
+        '300px': '300px',
         '235px': '235px',
         '190px': '190px',
         '165px': '165px',

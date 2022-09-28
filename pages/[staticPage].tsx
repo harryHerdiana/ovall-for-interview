@@ -13,7 +13,7 @@ const ImprintPage: React.FC<IStaticPage> = (props: IStaticPage & IDefaultProps) 
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
       <HeroSection {...heroSection} kicker={heroSection.title} title="" />
-      <section className="static-page-section m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-left">
+      <section className="static-page-section m-auto flex flex-col max-w-site md:w-3/4 xl:w-1/2 h-auto p-4 md:text-left lg:mt-[40px]">
         <StructuredText data={content} />
       </section>
     </Layout>

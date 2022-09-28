@@ -10,7 +10,9 @@ import {
   ABOUT_US_QUERY,
   FAQ_QUERY,
   RATINGS_QUERY,
-  STATIC_PAGE_QUERY
+  STATIC_PAGE_QUERY,
+  LANDING_PAGE1_QUERY,
+  ALL_PRODUCTS_QUERY
 } from '@modules/datocms/api/queries'
 import {
   Context,
@@ -20,7 +22,9 @@ import {
   IFAQPage,
   IHomePage,
   IProductPage,
-  IStaticPage
+  IStaticPage,
+  ILandingPage,
+  IAllProductPage
 } from './types'
 import { mapLocaleString } from './utils'
 import mapProductPageData from './mapper/productPage'
@@ -30,6 +34,10 @@ import mapAboutUsData from './mapper/aboutUs'
 import mapFAQData from './mapper/faq'
 import mapRatingData from './mapper/ratings'
 import mapStaticPage from './mapper/staticPage'
+import mapLandingPage from './mapper/landingPage'
+import mapAllProductData from './mapper/allProductPage'
+import mapProductShampooData from './mapper/productShampoo'
+import mapProductBundlePageData from './mapper/productBundlePage'
 
 export default class PageDataService {
   context: Context
@@ -51,12 +59,14 @@ export default class PageDataService {
     })
   }
 
-  private async getProductData(): Promise<IShopifyProduct> {
+  private async getProductData(
+    productHandle = 'ovall-ultraschall-gesichtsreiniger'
+  ): Promise<IShopifyProduct> {
     try {
       const response = await this.shopifyClient.query({
         data: {
           query: GET_PRODUCT,
-          variables: { handle: 'ovall-ultraschall-gesichtsreiniger' }
+          variables: { handle: productHandle }
         }
       })
 
@@ -87,8 +97,13 @@ export default class PageDataService {
    * @returns IPageProps
    */
   private async requestDatoCMSWithBaseData(query, datoCMSModelKey, mappingFn?, variables?) {
-    const [appProps, product] = await Promise.all([this.getMenus(), this.getProductData()])
-
+    const [appProps, product, productCleanser, productBundle] = await Promise.all([
+      this.getMenus(),
+      this.getProductData('ovall-ultraschall-gesichtsreiniger'),
+      this.getProductData('aloe-face-cleansing-gel'),
+      this.getProductData('ovall-2-aloe-face-cleansing-gel')
+    ])
+    const allProducts = [product, productCleanser, productBundle]
     const datoCMSResponse = await this.requestDatoCMS(query, variables)
     const content = datoCMSResponse[datoCMSModelKey]
     const mappedContent = mappingFn ? mappingFn(content) : content
@@ -100,6 +115,9 @@ export default class PageDataService {
       appProps,
       seoTags: content.seoTags,
       product,
+      allProducts,
+      productCleanser,
+      productBundle,
       ...mappedContent
     }
   }
@@ -112,8 +130,20 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(PRODUCT_PAGE_QUERY, 'product', mapProductPageData)
   }
 
+  public async productBundle(): Promise<IProductPage> {
+    return this.requestDatoCMSWithBaseData(
+      PRODUCT_PAGE_QUERY,
+      'productBundle',
+      mapProductBundlePageData
+    )
+  }
+
   public async aboutUs(): Promise<IAboutUsPage & IDefaultProps> {
     return this.requestDatoCMSWithBaseData(ABOUT_US_QUERY, 'aboutUsPage', mapAboutUsData)
+  }
+
+  public async allProduct(): Promise<IAllProductPage & IDefaultProps> {
+    return this.requestDatoCMSWithBaseData(ALL_PRODUCTS_QUERY, 'allProductPage', mapAllProductData)
   }
 
   public async faqPage(): Promise<IFAQPage> {
@@ -128,5 +158,17 @@ export default class PageDataService {
     return this.requestDatoCMSWithBaseData(STATIC_PAGE_QUERY, 'staticPage', mapStaticPage, {
       slug
     })
+  }
+
+  public async productShampoo(): Promise<IProductPage> {
+    return this.requestDatoCMSWithBaseData(
+      PRODUCT_PAGE_QUERY,
+      'productShampoo',
+      mapProductShampooData
+    )
+  }
+
+  public async getLandingPage(name: string): Promise<ILandingPage> {
+    return this.requestDatoCMSWithBaseData(LANDING_PAGE1_QUERY(name), 'landingpage', mapLandingPage)
   }
 }

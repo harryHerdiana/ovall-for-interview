@@ -1,7 +1,8 @@
 import React from 'react'
-import Script from 'next/script'
 import { GetStaticProps } from 'next'
+import Script from 'next/script'
 import { useRouter } from 'next/router'
+
 import { trackViewItemEvent } from '@modules/tracking/events'
 import Layout from '@component/Layout'
 import ProductStage from '@component/ProductStage'
@@ -62,9 +63,8 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
   React.useEffect(() => {
     if (v) setVariantSku(v)
   }, [v])
-
   return (
-    <Layout {...appProps} seoTags={seoTags} indexable={false}>
+    <Layout {...appProps} seoTags={seoTags}>
       <ProductStage
         {...props}
         product={product}
@@ -72,7 +72,7 @@ const ProductPage: React.FC<IProductPage> = (props: IProductPage & IDefaultProps
         activeSku={variantSku}
         setVariantSku={setVariantSku}
       />
-      <DescriptionSection {...descriptionSection} />
+      <DescriptionSection {...descriptionSection} showVideo />
       <div className="max-w-site md:mx-auto mb-80px px-2 md:px-0 lg:text-center ">
         <div className="px-2 lg:px-4">
           <span className="kicker">{testimonialSection.kicker}</span>

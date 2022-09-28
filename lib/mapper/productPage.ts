@@ -1,5 +1,6 @@
 import { IProductPage } from '@lib/types'
 import { IDatoProductPage } from '@modules/datocms/types'
+import { mapBeforeAfterBanner, mapProductStageAccordion } from './models'
 import * as utils from './utils'
 
 export default function mapProductPageData(d: IDatoProductPage): IProductPage {
@@ -10,6 +11,10 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       colorCaption: d.colorCaption,
       freeShippingCaption: d.freeShippingCaption,
       deliveryTime: d.deliveryTime,
+      productSlogan: {
+        normalText: d.productSlogan[0].normalText,
+        boldText: d.productSlogan[0].boldText
+      },
       productClaims: d.productClaims.map((claim) => ({
         ...claim,
         image: claim.image || null
@@ -28,12 +33,13 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
         descriptionText: item.descriptionText
       })),
       soldoutLabel: d.soldoutLabel,
-      discountLabel: d.discountLabel
+      discountLabel: d.discountLabel,
+      productStageAccordion: mapProductStageAccordion(d.productStageAccordion[0])
     },
     descriptionSection: {
       title: utils.findByApiKey(d.productDescriptionSection, 'section_headline', 'text'),
       text: utils.findByApiKey(d.productDescriptionSection, 'section_text', 'text'),
-      videoUrl: utils.findByApiKey(d.productDescriptionSection, 'video_url_record', 'url')
+      videoUrl: utils.findByApiKey(d.productDescriptionSection, 'video_url', 'url')
     },
     testimonialSection: {
       kicker: d.testimonialSection.title,
@@ -118,6 +124,15 @@ export default function mapProductPageData(d: IDatoProductPage): IProductPage {
       ...d.newsletterSection,
       disclaimer: d.newsletterSection.disclaimer.value,
       description: d.newsletterSection.description.value
+    },
+    beforeAfterBanner: mapBeforeAfterBanner(d.beforeAfterBanner),
+    crossSellBanner: {
+      discountInfo: d.crossSellBanner.discountInfo.value,
+      headline: d.crossSellBanner.headline,
+      discountTerms: d.crossSellBanner.discountTerms,
+      productImage: d.crossSellBanner.productImage,
+      productDescription: d.crossSellBanner.productDescription,
+      productVolume: d.crossSellBanner.productVolume
     }
   }
 }
