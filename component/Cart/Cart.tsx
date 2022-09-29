@@ -22,6 +22,14 @@ const getImage = (
         return variantImage.color === 'green'
       case 'Ovall-Pink':
         return variantImage.color === 'rose'
+      case 'Ovall-Turquoise-Cleansing-Bundle':
+        return variantImage.color === 'bundle-green'
+      case 'Ovall-Blue-Cleansing-Bundle':
+        return variantImage.color === 'bundle-blue'
+      case 'Ovall-Pink-Cleansing-Bundle':
+        return variantImage.color === 'bundle-rose'
+      case 'Ovall-Aloe-Wash':
+        return variantImage.color === 'cleanser'
       default:
         return variantImage.color === 'blue'
     }

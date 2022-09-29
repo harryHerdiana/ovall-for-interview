@@ -7,6 +7,8 @@ interface IData {
   cookieNotice: any
   cart: ICartText
   product: any
+  productShampoo: any
+  productBundle: any
   socialFeedSection: any
 }
 export default function mapAppContent(d: IData): {
@@ -15,9 +17,20 @@ export default function mapAppContent(d: IData): {
   cookieNotice: ICookieNotice
   cart: ICartText
   variantImages: IProductVariantImage[]
+  bundleVariantImages: IProductVariantImage[]
+  cleanserVariantImages: IProductVariantImage[]
   socialFeedSection: { title: string; subtitle }
 } {
-  const { footer, cookieNotice, topMenu, cart, product, socialFeedSection } = d
+  const {
+    footer,
+    cookieNotice,
+    topMenu,
+    cart,
+    product,
+    socialFeedSection,
+    productBundle,
+    productShampoo
+  } = d
   return {
     menu: {
       notification: topMenu.notification,
@@ -33,6 +46,18 @@ export default function mapAppContent(d: IData): {
     },
     socialFeedSection,
     variantImages: product.variantImages.map((variantImage) => ({
+      id: variantImage.id,
+      color: variantImage.color,
+      background: null,
+      image: variantImage.image[0].image.responsiveImage
+    })),
+    bundleVariantImages: productBundle.variantImages.map((variantImage) => ({
+      id: variantImage.id,
+      color: variantImage.color,
+      background: null,
+      image: variantImage.image[0].image.responsiveImage
+    })),
+    cleanserVariantImages: productShampoo.variantImages.map((variantImage) => ({
       id: variantImage.id,
       color: variantImage.color,
       background: null,

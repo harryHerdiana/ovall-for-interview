@@ -68,6 +68,33 @@ query getFooter($locale: SiteLocale!) {
       }
     }
   }
+  productShampoo(locale: $locale) {
+    variantImages {
+      id
+      color
+      image {
+        image {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 200, h: 200 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+      }
+    }
+  }
+  productBundle(locale: $locale) {
+    variantImages {
+      id
+      color
+      image {
+        image {
+          responsiveImage(imgixParams: {fm: jpg, fit: fillmax, w: 200, h: 200 }) {
+            ...ResponsiveImageFragment
+          }
+        }
+      }
+    }
+  }
+  
   cart(locale: $locale) {
     cartEmpty
     buttonText

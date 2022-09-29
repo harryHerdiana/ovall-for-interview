@@ -18,7 +18,6 @@ interface IShoppingCartItem {
 const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
   const [loading, setLoading] = React.useState(false)
   const { updateLineItem, removeLineItem } = useContext(ShopContext)
-
   const updateItem = async (value) => {
     setLoading(true)
     await updateLineItem(lineItem, value)
@@ -33,7 +32,6 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       updateItem(value)
     }
   }
-  console.log(lineItem.variant.image)
 
   const handleRemove = async () => {
     setLoading(true)

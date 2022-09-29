@@ -26,6 +26,8 @@ interface ILayout {
   footer: IFooter
   cart: ICartText
   variantImages: IProductVariantImage[]
+  bundleVariantImages: IProductVariantImage[]
+  cleanserVariantImages: IProductVariantImage[]
   i18n?: {
     en: string
     de: string
@@ -63,6 +65,8 @@ const Layout: React.FC<ILayout> = ({
   footer,
   cookieNotice,
   variantImages,
+  bundleVariantImages,
+  cleanserVariantImages,
   i18n,
   indexable = true
 }) => {
@@ -94,7 +98,7 @@ const Layout: React.FC<ILayout> = ({
 
   const en = i18n?.en || `/en${router.pathname}`
   const de = i18n?.de || router.pathname.replace('en/', '')
-
+  const allVariantImages = variantImages.concat(bundleVariantImages, cleanserVariantImages)
   return (
     <>
       <Head>
@@ -159,7 +163,7 @@ const Layout: React.FC<ILayout> = ({
       </Head>
       <TrackingIframe />
       <div className="flex flex-col font-main">
-        <Header menu={menu} cart={cart} variantImages={variantImages} />
+        <Header menu={menu} cart={cart} variantImages={allVariantImages} />
         <div>
           <DiscountToast title={cart.discountAddedTitle} text={cart.discountAddedText} />
         </div>

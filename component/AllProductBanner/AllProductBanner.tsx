@@ -52,7 +52,6 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
   function redirectBySku(sku: string) {
     router.push(skuMap[sku]?.link)
   }
-  console.log(allProducts)
 
   return (
     <div className="lg:items-center lg:h-max max-w-site mx-auto mb-[80px] mt-[20px] lg:mt-[40px]">
