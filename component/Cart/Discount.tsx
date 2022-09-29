@@ -1,7 +1,6 @@
 import React from 'react'
 import { IShopifyCheckout } from '@modules/shopify/types'
 import { getGenericDiscountLabel, getTotalDiscountAmount, toEuro } from '@lib/utils'
-import Icon from '@component/Icon'
 
 interface IProps {
   checkout: IShopifyCheckout

@@ -9,7 +9,7 @@ interface IData {
   product: any
   socialFeedSection: any
 }
-export default function mapFooter(d: IData): {
+export default function mapAppContent(d: IData): {
   menu: ITopMenu
   footer: IFooter
   cookieNotice: ICookieNotice
