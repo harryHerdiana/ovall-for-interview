@@ -31,7 +31,6 @@ const SlideOver: React.FC<IProps> = (props) => {
     trackBeginCheckoutEvent(checkout.lineItems)
     window.location.href = checkout.webUrl
   }
-
   const hasDiscount = hasGenericDiscount(checkout) && checkout.lineItems.length > 0
   const hasFreeShipping = Number(checkout.subtotalPriceV2.amount) >= FREE_SHIPPING_THRESHOLD
 

@@ -76,6 +76,8 @@ export interface IDefaultProps {
     footer: IFooter
     cart: ICartText
     variantImages: IProductVariantImage[]
+    bundleVariantImages: IProductVariantImage[]
+    cleanserVariantImages: IProductVariantImage[]
     socialFeedSection: {
       subtitle
       title

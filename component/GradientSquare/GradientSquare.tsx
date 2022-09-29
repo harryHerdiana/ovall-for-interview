@@ -19,7 +19,10 @@ const gradientMap = {
   'Ovall-Turquoise': 'green_gradient_rectangle',
   'Ovall-Blue': 'blue_gradient_rectangle',
   'Ovall-Pink': 'pink_gradient_rectangle',
-  'Ovall-Aloe-Cleanser': 'people_gradient_rectangle'
+  'Ovall-Aloe-Wash': 'people_gradient_rectangle',
+  'Ovall-Turquoise-Cleansing-Bundle': 'green_gradient_rectangle',
+  'Ovall-Blue-Cleansing-Bundle': 'blue_gradient_rectangle',
+  'Ovall-Pink-Cleansing-Bundle': 'pink_gradient_rectangle'
 }
 
 const GradientSquare: React.FC<IGradientSquare> = ({ variantGradient, className, children }) => {
