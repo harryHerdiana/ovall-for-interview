@@ -2,7 +2,7 @@ export const LOCALSTORAGE_CHECKOUT_KEY = 'shopify_checkout_id'
 export const BRAND_NAME = 'ovallskincare'
 export const PRODUCT_PATH = '/products/ovall-ultraschall-gesichtsreiniger'
 export const CLEANSER_PRODUCT_PATH = '/products/ovall-aloe-face-cleansing-gel'
-export const PRODUCT_BUNDLE_PATH = '/products/ovall-2-ultraschall-gesichtsreiniger'
+export const PRODUCT_BUNDLE_PATH = '/products/ovall-aloe-face-cleansing-gel-bundle'
 
 export const SHOPIFY_PRODUCT_HANDLE = 'ovall-ultraschall-gesichtsreiniger'
 export const SHOPIFY_CLEANSING_PRODUCT_HANDLE = 'ovall-aloe-face-cleansing-gel'
