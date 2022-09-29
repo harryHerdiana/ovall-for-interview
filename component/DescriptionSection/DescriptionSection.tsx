@@ -14,7 +14,7 @@ const DescriptionSection: React.FC<IDescriptionSectionProps> = ({
   showVideo = false
 }) => (
   <section className="px-4 md:px-0 m-auto flex mb-100px lg:mb-80px flex-col max-w-content-sm md:w-3/4 xl:w-1/2  md:text-center  lg:items-center mt-12 lg:mt-80px">
-    <h2 className="mb-2" style={{ letterSpacing: '0.1rem' }}>
+    <h2 className="mb-2 text-xl sm:text-2xl" style={{ letterSpacing: '0.1rem' }}>
       {title}
     </h2>
     <p>{text}</p>
