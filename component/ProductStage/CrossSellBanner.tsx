@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import { StructuredText } from 'react-datocms'
 import ShopContext from '@context/StoreContext'
 import { ICrossSellBanner } from '@lib/types'
@@ -8,6 +9,7 @@ import ResponsiveImage from '@component/ResponsiveImage'
 import ScrollableLink from '@component/ScrollableLink'
 import { ProductRating } from '@component/ProductReview'
 import { toEuro } from '@lib/utils'
+import { CLEANSER_PRODUCT_PATH } from '@lib/constants'
 import AddToCartButton from './AddToCartButton'
 
 interface ICrossSellBannerProps {
@@ -26,11 +28,14 @@ const CrossSellBanner: React.FC<ICrossSellBannerProps> = ({
   soldoutLabel
 }) => {
   const shopContext = React.useContext(ShopContext)
+  const router = useRouter()
   const handleAddToCartClick = () => {
     shopContext.addVariantToCart(variant, 1)
     shopContext.setShowCart(true)
   }
-
+  const linkToCleanserPage = () => {
+    router.push(CLEANSER_PRODUCT_PATH)
+  }
   const ButtonGroup = () => (
     <div className="sm:mt-20 mt-10 text-left">
       {variant.quantityAvailable < 1 ? (
@@ -42,7 +47,7 @@ const CrossSellBanner: React.FC<ICrossSellBannerProps> = ({
           {addToCartLabel}
         </AddToCartButton>
       )}
-      <p className="text-xs mt-2">{crossSellBanner.discountTerms}</p>
+      {/* <p className="text-xs mt-2">{crossSellBanner.discountTerms}</p> */}
     </div>
   )
 
@@ -62,15 +67,16 @@ const CrossSellBanner: React.FC<ICrossSellBannerProps> = ({
               <ScrollableLink anchor="testimonial" className="no-underline text-black">
                 <ProductRating />
               </ScrollableLink>
-              <h3 className="mt-3">{productCleanser.title}</h3>
+              <button onClick={linkToCleanserPage} className="mt-3 cursor-pointer text-left">
+                <h3>{productCleanser.title}</h3>
+              </button>
               <p>{crossSellBanner.productDescription}</p>
               <p>{crossSellBanner.productVolume}</p>
               <div className="mt-6 ">
-                <span className="line-through text-lg sm:text-xl font-subtitleFont">
-                  {/* {toEuro(variant.compareAtPriceV2.amount)} tempoary commented due to the discount price isn't available */}
-                  {toEuro(25.99)}
-                </span>
-                <span className="sm:ml-5 ml-3 font-black text-xl sm:text-2xl font-titleFont">
+                {/* <span className="line-through text-lg sm:text-xl font-subtitleFont">
+                  {toEuro(variant.compareAtPriceV2.amount)} tempoary commented due to the discount price isn't available
+                </span> */}
+                <span className="font-black text-xl sm:text-2xl font-titleFont">
                   {toEuro(variant.priceV2.amount)}
                 </span>
               </div>

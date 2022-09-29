@@ -19,7 +19,7 @@ const skuMap = {
   'Ovall-Blue': { title: 'Ovall™ 2 - Blue', link: `${PRODUCT_PATH}?variant=Ovall-Blue` },
   'Ovall-Pink': { title: 'Ovall™	2 - Pink', link: `${PRODUCT_PATH}?variant=Ovall-Pink` },
   'Ovall-Turquoise': { title: 'Ovall™	2 - Green', link: `${PRODUCT_PATH}?variant=Ovall-Turquoise` },
-  'Ovall-Aloe-Cleanser': {
+  'Ovall-Aloe-Wash': {
     title: 'Aloe Face Cleansing Gel',
     link: CLEANSER_PRODUCT_PATH
   },
@@ -52,6 +52,7 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
   function redirectBySku(sku: string) {
     router.push(skuMap[sku]?.link)
   }
+  console.log(allProducts)
 
   return (
     <div className="lg:items-center lg:h-max max-w-site mx-auto mb-[80px] mt-[20px] lg:mt-[40px]">

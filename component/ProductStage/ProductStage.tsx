@@ -30,7 +30,7 @@ export const skuColorMap = {
   'Ovall-Blue': 'blue',
   'Ovall-Pink': 'rose',
   'Ovall-Turquoise': 'green',
-  'Ovall-Aloe-Cleanser': 'cleanser',
+  'Ovall-Aloe-Wash': 'cleanser',
   'Ovall-Blue-Cleansing-Bundle': 'bundle-blue',
   'Ovall-Pink-Cleansing-Bundle': 'bundle-rose',
   'Ovall-Turquoise-Cleansing-Bundle': 'bundle-green'

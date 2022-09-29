@@ -20,7 +20,7 @@ export const variColorMap = {
   'Ovall-Pink': 'Ovall-Pink',
   'Ovall-Turquoise': 'Ovall-Turquoise',
   'Ovall-Blue': 'Ovall-Blue',
-  'Ovall-Aloe-Cleanser': 'Ovall-Pink',
+  'Ovall-Aloe-Wash': 'Ovall-Pink',
   'Ovall-Blue-Cleansing-Bundle': 'Ovall-Blue',
   'Ovall-Pink-Cleansing-Bundle': 'Ovall-Pink',
   'Ovall-Turquoise-Cleansing-Bundle': 'Ovall-Turquoise'
