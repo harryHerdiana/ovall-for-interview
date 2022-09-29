@@ -33,6 +33,7 @@ const LineItem: React.FC<IShoppingCartItem> = ({ lineItem, image }) => {
       updateItem(value)
     }
   }
+  console.log(lineItem.variant.image)
 
   const handleRemove = async () => {
     setLoading(true)
