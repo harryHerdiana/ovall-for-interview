@@ -55,7 +55,7 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
 
   return (
     <div className="lg:items-center lg:h-max max-w-site mx-auto mb-[80px] mt-[20px] lg:mt-[40px]">
-      <div className="lg:flex grid grid-cols-2 items-start justify-center w-full lg:mt-0 gap-[20px] gap-y-[40px] lg:gap-[40px]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 items-start justify-center w-full lg:mt-0 gap-[20px] gap-y-[40px] lg:gap-[40px]">
         {allProducts.map((item) => (
           <div
             className="text-left  cursor-pointer"
