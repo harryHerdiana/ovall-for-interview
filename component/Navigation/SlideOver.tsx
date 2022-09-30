@@ -13,14 +13,14 @@ import Subtotal from '@component/Cart/Subtotal'
 import ShippingCost from '@component/Cart/ShippingCost'
 import Discount from '@component/Cart/Discount'
 import GoodChoice from '@component/Cart/GoodChoice'
-import { FREE_SHIPPING_THRESHOLD } from '@lib/constants'
+// import { FREE_SHIPPING_THRESHOLD } from '@lib/constants'
 
-const getTaxShippingText = (hasFreeShipping, text, locale) => {
-  if (hasFreeShipping) {
-    return text
-  }
-  return `${text}, ${locale === 'en' ? 'plus 3,90€ shipping' : 'zzgl. 3,90€ Versand'} `
-}
+// const getTaxShippingText = (hasFreeShipping, text, locale) => {
+//   if (hasFreeShipping) {
+//     return text
+//   }
+//   return `${text}, ${locale === 'en' ? 'plus 3,90€ shipping' : 'zzgl. 3,90€ Versand'} `
+// }
 
 interface IProps extends ICartText {
   variantImages: IProductVariantImage[]
@@ -32,9 +32,9 @@ const SlideOver: React.FC<IProps> = (props) => {
     window.location.href = checkout.webUrl
   }
   const hasDiscount = hasGenericDiscount(checkout) && checkout.lineItems.length > 0
-  const hasFreeShipping = Number(checkout.subtotalPriceV2.amount) >= FREE_SHIPPING_THRESHOLD
+  // const hasFreeShipping = Number(checkout.subtotalPriceV2.amount) >= FREE_SHIPPING_THRESHOLD
 
-  const taxShippingText = getTaxShippingText(hasFreeShipping, props.taxInfo, locale)
+  // const taxShippingText = getTaxShippingText(hasFreeShipping, props.taxInfo, locale)
 
   return (
     <Transition.Root show={showCart} as={Fragment}>
@@ -91,7 +91,6 @@ const SlideOver: React.FC<IProps> = (props) => {
                         )}
 
                         <ShippingCost
-                          subtotal={checkout.subtotalPriceV2.amount}
                           label={props.shippingCostLabel}
                           textNoShippingCost={props.shippingCostValue}
                         />
@@ -103,7 +102,7 @@ const SlideOver: React.FC<IProps> = (props) => {
                           <div className="h2_element">{toEuroNS(checkout.totalPrice)}</div>
                         </div>
                         <div className="text-sm self-end mb-3">
-                          <p className="md:text-right sm:pb-0">{taxShippingText}</p>
+                          <p className="md:text-right sm:pb-0">{props.taxInfo}</p>
                         </div>
 
                         <div className="w-full flex flex-col justify-center sm:justify-end">
