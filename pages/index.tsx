@@ -10,7 +10,7 @@ import ProductTeaser from '@component/ProductTeaser'
 import Testimonial from '@component/Testimonial'
 import MoodSlideShow from '@component/MoodSlideShow'
 import HowToUse from '@component/HowToUse'
-import { PRODUCT_PATH } from '@lib/constants'
+import { ALL_PRODUCTS_PATH, PRODUCT_PATH } from '@lib/constants'
 import SocialFeed from '@component/SocialFeed'
 import InfoBannerSection from '@component/InfoBannerSection'
 import HomeHeroSection from '@component/HomeHeroSection'
@@ -32,7 +32,7 @@ const HomePage: React.FC<IHomePage> = (props: IHomePage & IDefaultProps) => {
   } = props
   return (
     <Layout seoTags={props.seoTags} {...props.appProps}>
-      <HomeHeroSection {...heroSection} onClickButton={() => router.push(PRODUCT_PATH)} />
+      <HomeHeroSection {...heroSection} onClickButton={() => router.push(ALL_PRODUCTS_PATH)} />
       <InfoBannerSection {...infoSection} onClickButton={() => router.push(PRODUCT_PATH)} />
       <MoodSlideShow {...moodSlideshowSection} />
       <Testimonial {...testimonialSection} />
