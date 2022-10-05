@@ -62,11 +62,16 @@ const AllProductBanner: React.FC<IAllProductBannerProps> = ({ allProducts, produ
             key={item.id}
             role="presentation"
             onClick={() => redirectBySku(item.sku)}>
-            <GradientSquare variantGradient={variColorMap[item.sku]}>
+            <GradientSquare className="relative" variantGradient={variColorMap[item.sku]}>
               <ResponsiveImage
                 image={getVariantImageBySku(item.sku)}
                 className="flex justify-start md:justify-center lg:justify-end h-max lg:w-full"
               />
+              {item.quantityAvailable < 1 && (
+                <div className="py-1 px-4 absolute top-2  lg:top-4 lg:right-0 right-0 text-xs lg:text-2xs font-subtitleFont uppercase text-white bg-purple_soldout w-[50%] lg:w-[45%] whitespace-nowrap">
+                  Sold Out
+                </div>
+              )}
             </GradientSquare>
             <div className="max-w-[175px] lg:pl-[30px] pl-[15px] mt-5">
               <div className="self-center lg:self-start font-titleFont  text-[18px]">
